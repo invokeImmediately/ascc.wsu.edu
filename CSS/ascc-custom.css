@@ -796,7 +796,8 @@ header:first-child + .has-pull-quote-bordering:not(.alt) {
   background: #5e6a71;
 }
 .row.halves.article-header .column.one header:first-child,
-.row.halves.article-header .column.one header:first-child + .wrapper {
+.row.halves.article-header .column.one header:first-child + .wrapper,
+.row.halves.article-header .column.one header:first-child + .location {
   position: absolute;
   top: 50%;
   right: 2rem;
@@ -807,7 +808,8 @@ header:first-child + .has-pull-quote-bordering:not(.alt) {
 }
 @media all and (max-width: 693px) {
   .row.halves.article-header .column.one header:first-child,
-  .row.halves.article-header .column.one header:first-child + .wrapper {
+  .row.halves.article-header .column.one header:first-child + .wrapper,
+  .row.halves.article-header .column.one header:first-child + .location {
     right: 1rem;
     left: 1rem;
   }
