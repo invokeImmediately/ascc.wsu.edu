@@ -483,59 +483,6 @@ div#cssslider2 figure {
 .column .soft-gray-border {
   border: 1px solid rgba(42, 48, 51, 0.5);
 }
-.has-pull-quote-bordering:not(.alt) {
-  position: relative;
-  padding-top: 0.33333333rem !important;
-  padding-bottom: 0.33333333rem !important;
-}
-.has-pull-quote-bordering:not(.alt):not(:first-child) {
-  margin-top: 2rem;
-}
-.has-pull-quote-bordering:not(.alt):first-child,
-header:first-child + .has-pull-quote-bordering:not(.alt) {
-  margin-top: 0.33333333rem;
-}
-.has-pull-quote-bordering:not(.alt):before,
-.has-pull-quote-bordering:not(.alt):after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 67%;
-}
-.has-pull-quote-bordering:not(.alt):before {
-  top: -0.33333333rem;
-  height: 5px;
-  border-top: 5px solid #464e54;
-}
-.has-pull-quote-bordering:not(.alt):after {
-  bottom: -0.33333333rem;
-  height: 1px;
-  width: 33%;
-  border-top: 1px solid rgba(70, 78, 84, 0.75757576);
-}
-.has-pull-quote-bordering.alt {
-  position: relative;
-  padding-left: 0.75rem !important;
-  padding-right: 0.75rem !important;
-  border-right: 1px solid rgba(70, 78, 84, 0.18939394);
-  border-left: 5px solid #464e54;
-}
-.has-pull-quote-bordering.alt:before,
-.has-pull-quote-bordering.alt:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 1px;
-  height: 100%;
-}
-.has-pull-quote-bordering.alt:before {
-  right: 1px;
-  background-color: rgba(70, 78, 84, 0.37878788);
-}
-.has-pull-quote-bordering.alt:after {
-  right: 3px;
-  background-color: rgba(70, 78, 84, 0.75757576);
-}
 /*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 *       │ ++++ ANIMATIONS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
 *       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
@@ -1286,7 +1233,7 @@ header:first-child + .article-tagline:not(.has-no-bordering):not(.alt) {
 }
 .article-tagline:not(.has-no-bordering).alt:after {
   right: 3px;
-  background-color: rgba(70, 78, 84, 0.75757576);
+  background-color: rgba(70, 78, 84, 0.37878788);
 }
 .column h1 + .article-tagline:not(.has-no-bordering):not(.alt),
 .column h2 + .article-tagline:not(.has-no-bordering):not(.alt),
@@ -1295,6 +1242,71 @@ header:first-child + .article-tagline:not(.has-no-bordering):not(.alt) {
 .column h5 + .article-tagline:not(.has-no-bordering):not(.alt),
 .column h6 + .article-tagline:not(.has-no-bordering):not(.alt) {
   margin-top: 1.33333333rem;
+}
+.article-tagline:not(.has-no-bordering).crimson {
+  color: #981e32;
+}
+.article-tagline:not(.has-no-bordering).crimson:not(.alt) {
+  position: relative;
+  padding-top: 0.33333333rem !important;
+  padding-bottom: 0.33333333rem !important;
+}
+.article-tagline:not(.has-no-bordering).crimson:not(.alt):not(:first-child) {
+  margin-top: 2rem;
+}
+.article-tagline:not(.has-no-bordering).crimson:not(.alt):first-child,
+header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
+  margin-top: 0.33333333rem;
+}
+.article-tagline:not(.has-no-bordering).crimson:not(.alt):before,
+.article-tagline:not(.has-no-bordering).crimson:not(.alt):after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 67%;
+}
+.article-tagline:not(.has-no-bordering).crimson:not(.alt):before {
+  top: -0.33333333rem;
+  height: 5px;
+  border-top: 5px solid #981e32;
+}
+.article-tagline:not(.has-no-bordering).crimson:not(.alt):after {
+  bottom: -0.33333333rem;
+  height: 1px;
+  width: 33%;
+  border-top: 1px solid rgba(152, 30, 50, 0.75757576);
+}
+.article-tagline:not(.has-no-bordering).crimson.alt {
+  position: relative;
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+  border-right: 1px solid rgba(152, 30, 50, 0.18939394);
+  border-left: 5px solid #981e32;
+}
+.article-tagline:not(.has-no-bordering).crimson.alt:before,
+.article-tagline:not(.has-no-bordering).crimson.alt:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+}
+.article-tagline:not(.has-no-bordering).crimson.alt:before {
+  right: 1px;
+  background-color: rgba(152, 30, 50, 0.37878788);
+}
+.article-tagline:not(.has-no-bordering).crimson.alt:after {
+  right: 3px;
+  background-color: rgba(152, 30, 50, 0.37878788);
+}
+.article-tagline:not(.has-no-bordering).crimson .has-gray-text {
+  color: #464e54;
+}
+.article-tagline.bold {
+  font-weight: bold;
+}
+.article-tagline + * {
+  margin-top: 2rem;
 }
 /*! 
 * dr-css-1.4: Article headings
