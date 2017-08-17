@@ -767,7 +767,16 @@ header:first-child + .has-pull-quote-bordering:not(.alt) {
   }
 }
 /*! 
-* dr-css-1.1: Sectional article headers
+* dr-css-1.1: Section overrides
+*/
+.row.single .column.one {
+  padding-bottom: 2rem;
+}
+.row.single .column.one > :last-child {
+  padding-bottom: 0;
+}
+/*! 
+* dr-css-1.2: Sectional article headers
 */
 .row.halves.article-header,
 .row.single.article-header {
