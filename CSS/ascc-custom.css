@@ -1315,32 +1315,32 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
 }
 @media all and (min-width: 1073px) {
   .row.single:not(.mimic-multi-column-sections) .column .intro-text {
-    font-size: 1.2521322em;
+    font-size: 1.3216951em;
   }
 }
 @media all and (min-width: 990px) and (max-width: 1072px) {
   .row.single:not(.mimic-multi-column-sections) .column .intro-text {
-    font-size: 1.1745em;
+    font-size: 1.23975em;
   }
 }
 @media all and (min-width: 792px) and (max-width: 989px) {
   .row.single:not(.mimic-multi-column-sections) .column .intro-text {
-    font-size: 1.2521322em;
+    font-size: 1.3216951em;
   }
 }
 @media all and (min-width: 481px) and (max-width: 791px) {
   .row.single:not(.mimic-multi-column-sections) .column .intro-text {
-    font-size: 1.1745em;
+    font-size: 1.23975em;
   }
 }
 @media all and (min-width: 361px) and (max-width: 480px) {
   .row.single:not(.mimic-multi-column-sections) .column .intro-text {
-    font-size: 1.101681em;
+    font-size: 1.1628855em;
   }
 }
 @media all and (max-width: 360px) {
   .row.single:not(.mimic-multi-column-sections) .column .intro-text {
-    font-size: 1.03337678em;
+    font-size: 1.0907866em;
   }
 }
 @media all {
@@ -1350,32 +1350,32 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
 }
 @media all and (min-width: 1073px) {
   .row.single.mimic-two-column-sections .column .intro-text {
-    font-size: 1.1745em;
+    font-size: 1.23975em;
   }
 }
 @media all and (min-width: 990px) and (max-width: 1072px) {
   .row.single.mimic-two-column-sections .column .intro-text {
-    font-size: 1.1745em;
+    font-size: 1.23975em;
   }
 }
 @media all and (min-width: 792px) and (max-width: 989px) {
   .row.single.mimic-two-column-sections .column .intro-text {
-    font-size: 1.1745em;
+    font-size: 1.23975em;
   }
 }
 @media all and (min-width: 481px) and (max-width: 791px) {
   .row.single.mimic-two-column-sections .column .intro-text {
-    font-size: 1.1745em;
+    font-size: 1.23975em;
   }
 }
 @media all and (min-width: 361px) and (max-width: 480px) {
   .row.single.mimic-two-column-sections .column .intro-text {
-    font-size: 1.101681em;
+    font-size: 1.1628855em;
   }
 }
 @media all and (max-width: 360px) {
   .row.single.mimic-two-column-sections .column .intro-text {
-    font-size: 1.03337678em;
+    font-size: 1.0907866em;
   }
 }
 @media all {
@@ -1389,42 +1389,42 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   .row.side-right .column .intro-text,
   .row.side-left .column .intro-text,
   .row.halves .column .intro-text {
-    font-size: 1.1745em;
+    font-size: 1.23975em;
   }
 }
 @media all and (min-width: 990px) and (max-width: 1072px) {
   .row.side-right .column .intro-text,
   .row.side-left .column .intro-text,
   .row.halves .column .intro-text {
-    font-size: 1.1745em;
+    font-size: 1.23975em;
   }
 }
 @media all and (min-width: 792px) and (max-width: 989px) {
   .row.side-right .column .intro-text,
   .row.side-left .column .intro-text,
   .row.halves .column .intro-text {
-    font-size: 1.1745em;
+    font-size: 1.23975em;
   }
 }
 @media all and (min-width: 481px) and (max-width: 791px) {
   .row.side-right .column .intro-text,
   .row.side-left .column .intro-text,
   .row.halves .column .intro-text {
-    font-size: 1.1745em;
+    font-size: 1.23975em;
   }
 }
 @media all and (min-width: 361px) and (max-width: 480px) {
   .row.side-right .column .intro-text,
   .row.side-left .column .intro-text,
   .row.halves .column .intro-text {
-    font-size: 1.101681em;
+    font-size: 1.1628855em;
   }
 }
 @media all and (max-width: 360px) {
   .row.side-right .column .intro-text,
   .row.side-left .column .intro-text,
   .row.halves .column .intro-text {
-    font-size: 1.03337678em;
+    font-size: 1.0907866em;
   }
 }
 @media all {
@@ -1436,37 +1436,37 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
 @media all and (min-width: 1073px) {
   .row.thirds .column .intro-text,
   .row.quarters .column .intro-text {
-    font-size: 1.1745em;
+    font-size: 1.23975em;
   }
 }
 @media all and (min-width: 990px) and (max-width: 1072px) {
   .row.thirds .column .intro-text,
   .row.quarters .column .intro-text {
-    font-size: 1.101681em;
+    font-size: 1.1628855em;
   }
 }
 @media all and (min-width: 792px) and (max-width: 989px) {
   .row.thirds .column .intro-text,
   .row.quarters .column .intro-text {
-    font-size: 1.1745em;
+    font-size: 1.23975em;
   }
 }
 @media all and (min-width: 481px) and (max-width: 791px) {
   .row.thirds .column .intro-text,
   .row.quarters .column .intro-text {
-    font-size: 1.101681em;
+    font-size: 1.1628855em;
   }
 }
 @media all and (min-width: 361px) and (max-width: 480px) {
   .row.thirds .column .intro-text,
   .row.quarters .column .intro-text {
-    font-size: 1.03337678em;
+    font-size: 1.0907866em;
   }
 }
 @media all and (max-width: 360px) {
   .row.thirds .column .intro-text,
   .row.quarters .column .intro-text {
-    font-size: 1.03337678em;
+    font-size: 1.0907866em;
   }
 }
 /*! 
