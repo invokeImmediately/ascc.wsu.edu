@@ -1,0 +1,257 @@
+/*!
+Welcome to Custom CSS!
+
+CSS (Cascading Style Sheets) is a kind of code that tells the browser how
+to render a web page. You may delete these comments and get started with
+your customizations.
+
+By default, your stylesheet will be loaded after the theme stylesheets,
+which means that your rules can take precedence and override the theme CSS
+rules. Just write here what you want to change, you don't need to copy all
+your theme's stylesheet content.
+*/
+body {
+	font-family: "OpenSans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	background: url('/wp-content/uploads/sites/167/2015/02/campus.jpg') no-repeat center center;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+a {
+	font-weight: inherit;
+}
+
+p {
+	line-height: 1.7em;
+}
+
+h2,h3,h4 {
+}
+
+h2 {
+	font-size: 3em;
+	padding: 1em 0 .5em;
+}
+
+h2:first-child {
+	padding: 0 0 .5em;
+}
+
+h3,.column.two h2 {
+	color: #981e32;
+	font-size: 2em;
+	font-weight: 400;
+	padding: .5em 0 .3em;
+}
+
+h4,.column.two h3 {
+	color: #5e6a71;
+	font-size: 1.5em;
+	font-weight: 700;
+	padding: .5em 0 .3em;
+}
+
+h3+h4 {
+	padding-top: 0;
+}
+
+ol li,ul li {
+	line-height: 1.4em;
+	padding-bottom: 1em;
+}
+
+b,strong {
+}
+
+.main-header {
+	background: #5e6a71 url('/wp-content/uploads/sites/167/2014/11/bright-squares.png') repeat center center;
+	border-bottom: 1px solid #fff;
+	height: auto;
+	margin: 0 0 0 -100%;
+	padding: .5em 0 .5em 100%;
+	box-sizing: content-box;
+	z-index: 2;
+}	
+
+.home .main-header {
+	margin-bottom: 0;
+}
+
+.main-header .header-group:not(.unset),.main-header .header-group {
+	padding: 0;
+	position: relative;
+	width: 100%;
+	max-width: 100%;
+}
+
+.main-header sup:not(.unset),.main-header sup,.main-header sub:not(.unset),.main-header sub {
+	color: #fff;
+	display: inline-block;
+	font-size: 1em;
+	padding: 1rem 2rem .9rem;
+}
+
+.home .main-header sup:not(.unset),.home .main-header sup,.home .main-header sub:not(.unset),.home .main-header sub {
+	font-size: 3.5em;
+	padding: 2rem 2rem 1.8rem;
+	text-transform: none;
+}
+
+.main-header sub:not(.unset),.main-header sub {
+	border-left: 1px solid #fff;
+	display: none;
+	text-transform: none;
+}
+
+.main-header sup:not(.unset) {
+	text-transform: none;
+}
+
+.main-header sub:not(.unset) *, .main-header sub:not(.unset) a, .main-header sup:not(.unset) a {
+	font-size: 200%;
+}
+
+.main-header sub:not(.unset),.main-header sub,.main-header sub:not(.unset) a,.main-header sub a {
+	color: #fff;
+}
+
+main {
+	padding-bottom: 100px;
+}
+
+.home .fluid .row.side-left .column.one,.home .fluid .row.side-right .column.two {
+	margin-top: 2.5%;
+}
+
+.home .fluid .row.side-left .column.two,.home .fluid .row.side-right .column.one {
+	margin-top: 2.5%;
+}
+
+.bgcover.row.unbound {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 900px;
+	width: 100%;
+	max-width: 100% !important;
+}
+
+section:not(.bgcover) .column {
+	background: rgba(255,255,255,.95);
+	box-sizing: border-box;
+}
+
+.wrapbox {
+	margin: 2%;
+}
+
+.fluid .row.side-left .column.one,.fluid .row.side-right .column.two {
+	width: 33%;
+	margin-top: 4%;
+	padding: 2em;
+}
+
+.fluid .row.side-left .column.two,.fluid .row.side-right .column.one {
+	width: 64%;
+	margin-right: 2%;
+	padding: 2em;
+}
+
+@keyframes slidy {
+	0% {
+		left: 0;
+	}
+	
+	20% {
+		left: 0;
+	}
+	
+	25% {
+		left: -100%;
+	}
+	
+	45% {
+		left: -100%;
+	}
+	
+	50% {
+		left: -200%;
+	}
+	
+	70% {
+		left: -200%;
+	}
+	
+	75% {
+		left: -300%;
+	}
+	
+	95% {
+		left: -300%;
+	}
+	
+	100% {
+		left: -400%;
+	}
+}
+
+body {
+	margin: 0;
+}
+
+div#cssslider2 {
+	overflow: hidden;
+}
+
+div#cssslider2 figure img {
+	width: 20%;
+	float: left;
+}
+
+div#cssslider2 figure {
+	position: relative;
+	width: 500%;
+	margin: 0;
+	left: 0;
+	text-align: left;
+	font-size: 0;
+	animation: 30s slidy infinite;
+}
+
+.btn {
+	-webkit-border-radius: 4;
+	-moz-border-radius: 4;
+	border-radius: 4px;
+	color: #ffffff;
+	background: #981e32;
+	padding: 10px 20px;
+	text-decoration: none;
+}
+
+.btn:hover {
+	background: #b14254;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+#col-wrap {
+/* overflow to handle inner floating block */
+	overflow: hidden;
+}
+
+.col {
+	padding: 10px;
+	width: 45%;
+	float: left;
+}
+
+#third-wrap {
+/* overflow to handle inner floating block */
+	overflow: hidden;
+}
+
+.thirdcol {
+	padding: 10px;
+	width: 30%;
+	float: left;
+}
