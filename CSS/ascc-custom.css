@@ -769,10 +769,10 @@ header:first-child + .has-pull-quote-bordering:not(.alt) {
 /*! 
 * dr-css-1.1: Section overrides
 */
-.row.single .column.one {
+.row.single:last-child .column.one {
   padding-bottom: 2rem;
 }
-.row.single .column.one > :last-child {
+.row.single:last-child .column.one > :last-child {
   padding-bottom: 0;
 }
 /*! 
