@@ -753,11 +753,9 @@ body.has-normal-line-spacing ol > li:not(:first-child) {
 /*! 
 * dr-css-1.2: Section overrides
 */
-.row.single:last-child .column.one {
+.row.single:last-child .column,
+.row.halves:last-child .column {
   padding-bottom: 2rem;
-}
-.row.single:last-child .column.one > :last-child {
-  padding-bottom: 0;
 }
 /*! 
 * dr-css-1.3: Sectional article headers
@@ -1505,6 +1503,32 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   .row.quarters .column .intro-text {
     font-size: 0.97596696em;
   }
+}
+/*! 
+* dr-css-1.5: Article sidebars
+*/
+.sidebar {
+  padding: 0.5rem;
+  border-left: 4px solid #d7dadb;
+  background: #d7dadb;
+}
+.sidebar > h1:first-child,
+.sidebar > h2:first-child,
+.sidebar > h3:first-child,
+.sidebar > h4:first-child,
+.sidebar > h5:first-child,
+.sidebar > h6:first-child,
+.sidebar > header:first-child > * {
+  box-sizing: content-box;
+  width: 100%;
+  width: calc(100% + 4px);
+  padding: 0.5em 0.25em;
+  margin-top: -0.5rem;
+  margin-left: -0.5rem;
+  margin-left: calc(-0.5rem - 4px);
+  margin-bottom: 0.5rem;
+  background-color: #981e32;
+  color: #fff;
 }
 /*! 
 * dr-css-1.5: Article headings
