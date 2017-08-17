@@ -757,6 +757,12 @@ body.has-normal-line-spacing ol > li:not(:first-child) {
 .row.halves:last-child .column {
   padding-bottom: 2rem;
 }
+.row.halves {
+  background: rgba(255, 255, 255, 0.95);
+}
+.row.halves .column {
+  background: transparent;
+}
 /*! 
 * dr-css-1.3: Sectional article headers
 */
