@@ -789,8 +789,8 @@ body.has-normal-line-spacing ol > li:not(:first-child) {
   background: #00a5bd;
 }
 .row.halves.article-header .column.one header:first-child,
-.row.halves.article-header .column.one header:first-child + .wrapper,
-.row.halves.article-header .column.one .article-name:first-child {
+.row.halves.article-header .column.one .article-name:first-child,
+.row.halves.article-header .column.one .wrapper:first-child {
   position: absolute;
   top: 50%;
   right: 2rem;
@@ -801,8 +801,8 @@ body.has-normal-line-spacing ol > li:not(:first-child) {
 }
 @media all and (max-width: 693px) {
   .row.halves.article-header .column.one header:first-child,
-  .row.halves.article-header .column.one header:first-child + .wrapper,
-  .row.halves.article-header .column.one .article-name:first-child {
+  .row.halves.article-header .column.one .article-name:first-child,
+  .row.halves.article-header .column.one .wrapper:first-child {
     right: 1rem;
     left: 1rem;
   }
