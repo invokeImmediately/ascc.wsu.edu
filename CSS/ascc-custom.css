@@ -1509,8 +1509,9 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
 */
 .sidebar {
   padding: 0.5rem;
-  border-left: 4px solid #b5babe;
-  background: #d7dadb;
+  border-left: 4px solid #8d959a;
+  background: #eff0f1;
+  color: #646464;
 }
 .sidebar > h1:first-child,
 .sidebar > h2:first-child,
