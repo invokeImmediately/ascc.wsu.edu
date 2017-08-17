@@ -723,6 +723,36 @@ div#cssslider2 figure {
 .row.single:last-child .column.one > :last-child {
   padding-bottom: 0;
 }
+body.has-normal-line-spacing p {
+  line-height: 1.375em;
+}
+body.has-normal-line-spacing p ~ p {
+  padding-bottom: 0;
+}
+body.has-normal-line-spacing p + p {
+  margin-top: 1rem;
+}
+body.has-normal-line-spacing p + ul,
+body.has-normal-line-spacing p + ol {
+  margin-top: 0.3em;
+}
+body.has-normal-line-spacing p + h1,
+body.has-normal-line-spacing p + h2,
+body.has-normal-line-spacing p + h3,
+body.has-normal-line-spacing p + h4,
+body.has-normal-line-spacing p + h5,
+body.has-normal-line-spacing p + h6 {
+  margin-top: 0.5rem;
+}
+body.has-normal-line-spacing ul li,
+body.has-normal-line-spacing ol li {
+  line-height: 1.375em;
+  padding-bottom: 0;
+}
+body.has-normal-line-spacing ul > li:not(:first-child),
+body.has-normal-line-spacing ol > li:not(:first-child) {
+  margin-top: 0.3em;
+}
 /*! 
 * dr-css-1.2: Sectional article headers
 */
