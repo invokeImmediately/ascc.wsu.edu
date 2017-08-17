@@ -817,6 +817,7 @@ body.has-normal-line-spacing ol > li:not(:first-child) {
   }
 }
 .row.halves.article-header .column.one .article-location {
+  padding-bottom: 0;
   margin-bottom: 0.125em;
   color: #eff0f1;
 }
