@@ -1545,6 +1545,9 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
 #on-this-page {
   background-color: #2f3438;
 }
+#on-this-page .column {
+  background-color: inherit;
+}
 #on-this-page h2 {
   color: #fff;
   padding-left: 2rem;
@@ -1555,7 +1558,7 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   overflow: hidden;
   border-top: 1px solid #2f3438;
   border-left: 1px solid #2f3438;
-  background-color: #2f3438;
+  background-color: inherit;
   list-style-type: none;
 }
 #on-this-page li {
