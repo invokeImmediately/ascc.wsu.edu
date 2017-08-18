@@ -750,6 +750,9 @@ body.has-normal-line-spacing ul > li:not(:first-child),
 body.has-normal-line-spacing ol > li:not(:first-child) {
   margin-top: 0.3em;
 }
+body.has-improved-contrast {
+  color: #464e54;
+}
 /*! 
 * dr-css-1.2: Section overrides
 */
@@ -1537,5 +1540,47 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   color: #fff;
 }
 /*! 
-* dr-css-1.5: Article headings
+* dr-css-1.6: Tables of Conents
 */
+#on-this-page {
+  background-color: #2f3438;
+}
+#on-this-page h2 {
+  color: #fff;
+  padding-left: 2rem;
+}
+#on-this-page ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-top: 1px solid #2f3438;
+  border-left: 1px solid #2f3438;
+  background-color: #2f3438;
+  list-style-type: none;
+}
+#on-this-page li {
+  float: left;
+  list-style-image: none;
+  padding: 0;
+}
+#on-this-page li a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  border-right: 1px solid #2f3438;
+  border-bottom: 1px solid #2f3438;
+  border-radius: 0;
+  background-color: #464e54;
+  box-shadow: none;
+}
+#on-this-page li a:hover {
+  border-color: #2f3438;
+  background-color: #23272a;
+  text-shadow: none;
+}
+@media all and (max-width: 791px) {
+  #on-this-page li a {
+    padding: 8px 10px;
+  }
+}
