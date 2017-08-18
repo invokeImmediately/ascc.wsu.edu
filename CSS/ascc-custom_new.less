@@ -36,14 +36,26 @@ body.has-normal-line-spacing {
 	}
 }
 
+body.has-improved-contrast {
+	color: @hex-darker-gray;
+}
+
 /*! 
 * dr-css-1.2: Section overrides
 */
-.row.single:last-child .column.one {
-	& > :last-child {
-		padding-bottom: 0;
+.row {
+	&.single,
+	&.halves {
+		&:last-child .column {
+			padding-bottom: @v-dflt-spcng;
+		}
 	}
-	padding-bottom: @v-dflt-spcng;
+	&.halves {
+		background: rgba(255,255,255,.95);
+		.column {
+			background: transparent;
+		}
+	}
 }
 
 /*! 
@@ -72,17 +84,19 @@ body.has-normal-line-spacing {
 			padding-left: 0;
 			padding-right: 0;			
 			background: @hex-accent-blue;
-			header:first-child,
-			header:first-child + .wrapper,
-			.article-name:first-child {
-				position: absolute;
-				top: 50%;
-				right: @v-dflt-spcng;
-				left: @v-dflt-spcng;
-				.transform(~"translateY(-50%)");
-				@media all and (max-width: @v-rghtclmn-thrshld) {
-					right: (@v-dflt-spcng / 2);
-					left: (@v-dflt-spcng / 2);
+			header,
+			.article-name,
+			.wrapper {
+				&:first-child {
+					position: absolute;
+					top: 50%;
+					right: @v-dflt-spcng;
+					left: @v-dflt-spcng;
+					.transform(~"translateY(-50%)");
+					@media all and (max-width: @v-rghtclmn-thrshld) {
+						right: (@v-dflt-spcng / 2);
+						left: (@v-dflt-spcng / 2);
+					}
 				}
 			}
 			.article-name {
@@ -93,6 +107,7 @@ body.has-normal-line-spacing {
 				}
 			}
 			.article-location {
+				padding-bottom: 0;
 				margin-bottom: 0.125em;
 				color: @hex-bright-gray;
 				@media all and (max-width: @v-rghtclmn-thrshld) {
@@ -210,6 +225,46 @@ body.has-normal-line-spacing {
 
 .intro-text {
 	.has-sectionally-responsive-font((@v-artcl-tgln-sz * .85), @v-p-lnhght);
+}
+
+/*! 
+* dr-css-1.5: Article sidebars
+*/
+.sidebar {
+	@spacing: @v-dflt-spcng / 4;
+	@header-padding: 0.5em;
+	@border-width: 4px;
+	@text-color: #646464;
+	padding: @spacing;
+	border-left: @border-width solid @hex-gray;
+	background: @hex-bright-gray;
+	color: @text-color;
+	& > h1:first-child,
+	& > h2:first-child,
+	& > h3:first-child,
+	& > h4:first-child,
+	& > h5:first-child,
+	& > h6:first-child,
+	& > header:first-child > * {
+		box-sizing: content-box;
+		width: 100%;
+		width: ~"calc(100% + @{border-width})";
+		padding: @header-padding (@header-padding / 2);
+		margin-top: (-1 * @spacing);
+		margin-left: (-1 * @spacing);
+		margin-bottom: @spacing;
+		background-color: @hex-crimson;
+		color: @hex-white;
+	}
+//	font-size: 0.9rem;
+//	@media all {
+//		@media (max-width: (@v-rghtclmn-thrshld)) {
+//			width: 94%;
+//			width: ~"calc(100% - @{spacing} * 2)";
+//			margin-top: @spacing * 2;
+//			margin-bottom: @spacing * 4;
+//		}
+//	}
 }
 
 /*! 
