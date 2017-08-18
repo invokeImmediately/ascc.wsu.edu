@@ -1563,6 +1563,7 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
 }
 #on-this-page li {
   float: left;
+  margin-top: 0 !important;
   list-style-image: none;
   padding: 0;
 }
