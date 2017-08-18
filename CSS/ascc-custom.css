@@ -1589,3 +1589,6 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
     padding: 8px 10px;
   }
 }
+.back-to-otp {
+  font-size: 0.9em;
+}
