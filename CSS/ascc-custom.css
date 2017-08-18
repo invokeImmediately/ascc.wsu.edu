@@ -1601,4 +1601,5 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-left: 1rem;
+  font-size: 0.9rem;
 }
