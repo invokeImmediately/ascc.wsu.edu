@@ -1551,7 +1551,7 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
 #on-this-page h2 {
   color: #fff;
   padding-left: 2rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.66666667rem;
 }
 #on-this-page ul {
   margin: 0;

@@ -268,6 +268,68 @@ body.has-improved-contrast {
 }
 
 /*! 
-* dr-css-1.5: Article headings
+* dr-css-1.6: Tables of Conents
 */
-// TODO: add code based on WSU-UE---CSS submodule components
+#on-this-page {
+	@otp-background: #2f3438;
+	@highlight-color: #23272a;
+	background-color: @otp-background;
+	.column {
+		background-color: inherit;
+	}
+	h2 {
+		color: @hex-white;
+		padding-left: @v-dflt-spcng;
+		padding-bottom: (@v-dflt-spcng / 3);
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		border-top: 1px solid @otp-background;
+		border-left: 1px solid @otp-background;
+		background-color: inherit;
+		list-style-type: none;
+	}
+	li {
+		float: left;
+		margin-top: 0 !important;
+		list-style-image: none;
+		padding: 0;
+		a {
+			display: inline-block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			border-right: 1px solid @otp-background;
+			border-bottom: 1px solid @otp-background;
+			border-radius: 0;
+			background-color: @hex-darker-gray;
+			box-shadow: none;
+			&:hover {
+				border-color: @otp-background;
+				background-color: @highlight-color;
+				text-shadow: none;
+			}
+			@media all and (max-width: @v-tblt-thrshld) {
+				padding: 8px 10px;
+			}
+		}
+	}
+}
+
+.back-to-otp {
+	font-size: 0.9em;
+}
+
+/*! 
+* dr-css-1.6: Asides
+*/
+#experience-business {
+	float: right;
+	width: 33%;
+	margin-top: (@v-dflt-spcng / 2);
+	margin-bottom: (@v-dflt-spcng / 2);
+	margin-left: (@v-dflt-spcng / 2);
+	font-size: 0.9rem;
+}
