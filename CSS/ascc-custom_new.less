@@ -323,13 +323,35 @@ body.has-improved-contrast {
 }
 
 /*! 
-* dr-css-1.6: Asides
+* dr-css-1.7: Asides
 */
-#experience-business {
-	float: right;
-	width: 33%;
-	margin-top: (@v-dflt-spcng / 2);
-	margin-bottom: (@v-dflt-spcng / 2);
-	margin-left: (@v-dflt-spcng / 2);
-	font-size: 0.9rem;
+.page.cea {
+	#experience-business {
+		float: right;
+		width: 33%;
+		margin-top: (@v-dflt-spcng / 2);
+		margin-bottom: (@v-dflt-spcng / 2);
+		margin-left: (@v-dflt-spcng / 2);
+		font-size: 0.9rem;
+	}
+}
+
+/*! 
+* dr-css-1.8: Sidebar Right Sections
+*/
+.row.side-right.has-graphical-sidebar {
+	.column.one {
+		@media all and (min-width: (@v-rghtclmn-thrshld + 1)) {
+			margin-right: 0;
+		}
+	}
+	.column.two {
+		@media all and (min-width: (@v-rghtclmn-thrshld + 1)) {
+			position: absolute;
+			right: 0;
+			width: 36%;
+			height: 100%;
+			margin-top: 0;
+		}
+	}
 }
