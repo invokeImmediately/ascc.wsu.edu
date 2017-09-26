@@ -36,4 +36,6 @@ your theme's stylesheet content.
 * dr-css-1.7: Asides
 */.page.cea #experience-business{float:right;width:33%;margin-top:1rem;margin-bottom:1rem;margin-left:1rem;font-size:.9rem}/*! 
 * dr-css-1.8: Sidebar Right Sections
-*/@media all and (min-width:694px){.row.side-right.has-graphical-sidebar .column.one{margin-right:0}}@media all and (min-width:694px){.row.side-right.has-graphical-sidebar .column.two{position:absolute;right:0;width:36%;height:100%;margin-top:0}}
+*/@media all and (min-width:694px){.row.side-right.has-graphical-sidebar .column.one{margin-right:0}}@media all and (min-width:694px){.row.side-right.has-graphical-sidebar .column.two{position:absolute;right:0;width:36%;height:100%;margin-top:0;background-size:cover}}/*! 
+* dr-css-1.8: Sidebar Right Sections
+*/
