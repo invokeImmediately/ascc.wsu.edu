@@ -1860,13 +1860,30 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   font-size: 0.9em;
 }
 /*! 
-* dr-css-1.6: Asides
+* dr-css-1.7: Asides
 */
-#experience-business {
+.page.cea #experience-business {
   float: right;
   width: 33%;
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-left: 1rem;
   font-size: 0.9rem;
+}
+/*! 
+* dr-css-1.8: Sidebar Right Sections
+*/
+@media all and (min-width: 694px) {
+  .row.side-right.has-graphical-sidebar .column.one {
+    margin-right: 0;
+  }
+}
+@media all and (min-width: 694px) {
+  .row.side-right.has-graphical-sidebar .column.two {
+    position: absolute;
+    right: 0;
+    width: 36%;
+    height: 100%;
+    margin-top: 0;
+  }
 }
