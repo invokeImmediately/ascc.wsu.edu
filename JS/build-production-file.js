@@ -4,8 +4,8 @@ concat([
 	'../WSU-UE---JS/jQuery.oue-custom.js',
 	'../WSU-UE---JS/jQuery.are-you-sure.js',
 	'../WSU-UE---JS/jQuery.textResize.js',
-	'./ascc-custom.js'
-], './wp-custom-javascript-source.dsp.js', function() {
+	'./ascc-specific.js'
+], './ascc-custom.js', function() {
 	console.log('Concatenation complete.');     
 });
  
