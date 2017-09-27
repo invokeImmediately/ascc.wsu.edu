@@ -319,7 +319,17 @@ body.has-improved-contrast {
 }
 
 .back-to-otp {
+	position: relative;
+	padding-left: 1rem;
 	font-size: 0.9em;
+	&:before {
+		content: "";
+		position: absolute;
+		width: 1rem;
+		left: -3px;
+		height: .9rem;
+		background: url(https://s3.wp.wsu.edu/uploads/sites/167/2017/09/micon_returnKey_rotated-90-deg-cw_54x64.png) center center/auto 100% no-repeat;
+	}
 }
 
 /*! 
