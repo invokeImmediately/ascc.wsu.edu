@@ -1889,5 +1889,10 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   }
 }
 /*! 
-* dr-css-1.8: Sidebar Right Sections
+* dr-css-1.9: Styling specific to the Career Exploration Abroad page
 */
+.page.cea .row.article-header .column.two {
+  background-color: #fff;
+  background-size: auto 90%;
+  background-repeat: no-repeat;
+}
