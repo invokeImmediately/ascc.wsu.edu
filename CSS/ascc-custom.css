@@ -216,9 +216,11 @@ div#cssslider2 figure {
   /* overflow to handle inner floating block */
   overflow: hidden;
 }
+.col {
+  padding: 10px;
+}
 @media all and (min-width: 694px) {
   .col {
-    padding: 10px;
     width: 45%;
     float: left;
   }
@@ -227,9 +229,11 @@ div#cssslider2 figure {
   /* overflow to handle inner floating block */
   overflow: hidden;
 }
+.thirdcol {
+  padding: 10px;
+}
 @media all and (min-width: 694px) {
   .thirdcol {
-    padding: 10px;
     width: 30%;
     float: left;
   }
