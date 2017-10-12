@@ -1010,24 +1010,7 @@ body.has-normal-line-spacing {
 }
 body.has-normal-line-spacing p {
   line-height: 1.375em;
-}
-body.has-normal-line-spacing p ~ p {
   padding-bottom: 0;
-}
-body.has-normal-line-spacing p + p {
-  margin-top: 1rem;
-}
-body.has-normal-line-spacing p + ul,
-body.has-normal-line-spacing p + ol {
-  margin-top: 0.3em;
-}
-body.has-normal-line-spacing p + h1,
-body.has-normal-line-spacing p + h2,
-body.has-normal-line-spacing p + h3,
-body.has-normal-line-spacing p + h4,
-body.has-normal-line-spacing p + h5,
-body.has-normal-line-spacing p + h6 {
-  margin-top: 0.5rem;
 }
 body.has-normal-line-spacing ul li,
 body.has-normal-line-spacing ol li {
@@ -1036,6 +1019,21 @@ body.has-normal-line-spacing ol li {
 }
 body.has-normal-line-spacing ul > li:not(:first-child),
 body.has-normal-line-spacing ol > li:not(:first-child) {
+  margin-top: 0.3em;
+}
+body.has-normal-line-spacing * + h1,
+body.has-normal-line-spacing * + h2,
+body.has-normal-line-spacing * + h3,
+body.has-normal-line-spacing * + h4,
+body.has-normal-line-spacing * + h5,
+body.has-normal-line-spacing * + h6 {
+  margin-top: 0.5rem;
+}
+body.has-normal-line-spacing * + p {
+  margin-top: 1rem;
+}
+body.has-normal-line-spacing * + ul,
+body.has-normal-line-spacing * + ol {
   margin-top: 0.3em;
 }
 body.has-improved-contrast {
