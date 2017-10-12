@@ -134,17 +134,21 @@ section:not(.bgcover) .column {
 .wrapbox {
   margin: 2%;
 }
-.fluid .row.side-left .column.one,
-.fluid .row.side-right .column.two {
-  width: 33%;
-  margin-top: 4%;
-  padding: 2em;
+@media all and (min-width: 694px) {
+  .fluid .row.side-left .column.one,
+  .fluid .row.side-right .column.two {
+    width: 33%;
+    margin-top: 4%;
+    padding: 2em;
+  }
 }
-.fluid .row.side-left .column.two,
-.fluid .row.side-right .column.one {
-  width: 64%;
-  margin-right: 2%;
-  padding: 2em;
+@media all and (min-width: 694px) {
+  .fluid .row.side-left .column.two,
+  .fluid .row.side-right .column.one {
+    width: 64%;
+    margin-right: 2%;
+    padding: 2em;
+  }
 }
 @keyframes slidy {
   0% {
