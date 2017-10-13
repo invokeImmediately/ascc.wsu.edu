@@ -58,6 +58,45 @@ body.has-improved-contrast {
 	}
 }
 
+.sub-row {
+	.fluid .row &.row {
+		.column {
+			padding: 0;
+			margin: 0;
+			@media all {
+				@media (max-width: @v-rghtclmn-thrshld) {
+					width: 100%;
+				}
+			}
+			& + .column {
+				@media all {
+					@media (max-width: @v-rghtclmn-thrshld) {
+						margin-top: (@v-dflt-spcng / 2);
+					}
+				}
+			}
+		}
+		&.side-right {
+			.column {
+				&.one {
+					@media all {
+						@media (min-width: (@v-rghtclmn-thrshld + 1)) {
+							padding-right: (@v-dflt-spcng / 2);
+						}
+					}
+				}
+				&.two {
+					@media all {
+						@media (min-width: (@v-rghtclmn-thrshld + 1)) {
+							padding-left: (@v-dflt-spcng / 2);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 /*! 
 * dr-css-1.3: Sectional article headers
 */
