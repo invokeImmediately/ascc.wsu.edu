@@ -1068,12 +1068,14 @@ body.has-improved-contrast {
   }
 }
 @media all and (min-width: 694px) {
-  .fluid .row .sub-row.row.side-right .column.one {
+  .fluid .row .sub-row.row.side-right .column.one,
+  .fluid .row .sub-row.row.halves .column.one {
     padding-right: 1rem;
   }
 }
 @media all and (min-width: 694px) {
-  .fluid .row .sub-row.row.side-right .column.two {
+  .fluid .row .sub-row.row.side-right .column.two,
+  .fluid .row .sub-row.row.halves .column.two {
     padding-left: 1rem;
   }
 }
