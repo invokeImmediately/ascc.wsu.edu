@@ -1052,6 +1052,30 @@ body.has-improved-contrast {
 .row.halves .column {
   background: transparent;
 }
+.fluid .row .sub-row.row .column {
+  padding: 0;
+  margin: 0;
+}
+@media all and (max-width: 693px) {
+  .fluid .row .sub-row.row .column {
+    width: 100%;
+  }
+}
+@media all and (max-width: 693px) {
+  .fluid .row .sub-row.row .column + .column {
+    margin-top: 1rem;
+  }
+}
+@media all and (min-width: 694px) {
+  .fluid .row .sub-row.row.side-right .column.one {
+    padding-right: 1rem;
+  }
+}
+@media all and (min-width: 694px) {
+  .fluid .row .sub-row.row.side-right .column.two {
+    padding-left: 1rem;
+  }
+}
 /*! 
 * dr-css-1.3: Sectional article headers
 */
