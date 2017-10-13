@@ -1029,11 +1029,11 @@ body.has-normal-line-spacing * + h5,
 body.has-normal-line-spacing * + h6 {
   margin-top: 0.5rem;
 }
-body.has-normal-line-spacing * + p {
+body.has-normal-line-spacing :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + p {
   margin-top: 1rem;
 }
-body.has-normal-line-spacing * + ul,
-body.has-normal-line-spacing * + ol {
+body.has-normal-line-spacing :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + ul,
+body.has-normal-line-spacing :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + ol {
   margin-top: 0.3em;
 }
 body.has-improved-contrast {
