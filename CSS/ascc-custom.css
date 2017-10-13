@@ -1983,7 +1983,7 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   padding-bottom: 0;
 }
 @media all and (min-width: 694px) {
-  .page.cea #wsu-staffing .staff-photo {
+  .page.cea #wsu-staffing + .toggled-panel .staff-photo {
     float: left;
     margin-top: 4px;
     margin-right: 1em;
@@ -1991,7 +1991,7 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   }
 }
 @media all and (max-width: 693px) {
-  .page.cea #wsu-staffing .staff-photo {
+  .page.cea #wsu-staffing + .toggled-panel .staff-photo {
     display: block;
   }
 }
