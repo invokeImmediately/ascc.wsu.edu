@@ -25,12 +25,14 @@ body.has-normal-line-spacing {
 	* + h6 {
 		margin-top: (@v-btm-mrgns / 2);
 	}
-	* + p {
-		margin-top: @v-btm-mrgns;
-	}
-	* + ul,
-	* + ol {
-		margin-top: 0.3em;
+	:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+		& + p {
+			margin-top: @v-btm-mrgns;
+		}
+		& + ul,
+		& + ol {
+			margin-top: 0.3em;
+		}
 	}
 }
 
