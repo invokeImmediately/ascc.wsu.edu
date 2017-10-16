@@ -462,6 +462,42 @@ body.has-improved-contrast {
 			}
 		}
 	}
+	#contact-form-wrapper {
+		position: fixed;
+		top: 10%;
+		bottom: 10%;
+		max-height: 0;
+		padding: 0;
+		background-color: @hex-white;
+		.getRgbaStr(@hex-black, 0.5);
+		box-shadow: 5px 5px 18px @rgba;
+		opacity: 0;
+		overflow-y: scroll;
+		z-index: 99352;
+		@media all {
+			@media (min-width: (@v-spn-thrshld + 1)) {
+				@spacing: (@v-dflt-spcng / 2 * 5);
+				right: @spacing;
+				left: @spacing;
+				left: ~"calc((100% - 990px) / 2 + 198px + @{spacing})";
+			}
+			@media (min-width: (@v-rghtclmn-thrshld + 1)) {
+				@spacing: (@v-dflt-spcng / 2 * 5);
+				right: @spacing;
+				left: @spacing;
+			}
+			@media (min-width: (@v-lg-mbl-thrshld + 1)) {
+				@spacing: @v-dflt-spcng;
+				right: @spacing;
+				left: @spacing;
+			}
+		}
+		&.shown {
+			max-height: none;
+			opacity: 1;
+			padding: @v-dflt-spcng;
+		}
+	}
 }
 
 /*! 
@@ -552,4 +588,11 @@ body.has-improved-contrast {
 			}
 		}
 	}
+}
+
+/*! 
+* dr-css-1.11: Styling of main header construct
+*/
+.main-header sup span {
+	line-height: 1.5em;
 }
