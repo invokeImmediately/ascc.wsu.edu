@@ -498,6 +498,26 @@ body.has-improved-contrast {
 			padding: @v-dflt-spcng;
 		}
 	}
+	#close-contact-form {
+		@spacing: (@v-dflt-spcng / 2 * 5);
+		@size: (@v-dflt-spcng / 4 * 3);
+		@margins: @size / 6;
+		@scroll-bar-size: 16px;
+		position: fixed;
+		top: 11%;
+		top: ~"calc(10% + @{margins})";
+		right: 6rem;
+		right: ~"calc(@{spacing} + @{scroll-bar-size} + @{margins})";
+		height: @size;
+		padding-left: (@size + @margins);
+		padding-left: ~"calc(@{size} + 3px)";
+		.has-mono-font;
+		font-size: .9rem;
+		line-height: 1.4rem;
+		text-transform: uppercase;
+		z-index: 99353;
+		background: url(/wp-content/uploads/sites/167/2017/10/button_close-form_crimson-and-white.jpg) left center/24px auto no-repeat;
+	}
 }
 
 /*! 
