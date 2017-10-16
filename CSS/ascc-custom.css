@@ -2031,6 +2031,23 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   opacity: 1;
   padding: 2rem;
 }
+.page.cea #close-contact-form {
+  position: fixed;
+  top: 11%;
+  top: calc(10% + 0.25rem);
+  right: 6rem;
+  right: calc(5rem + 16px + 0.25rem);
+  height: 1.5rem;
+  padding-left: 1.75rem;
+  padding-left: calc(1.5rem + 3px);
+  font-family: 'Roboto Mono', monospace, sans-serif;
+  font-weight: 300;
+  font-size: .9rem;
+  line-height: 1.4rem;
+  text-transform: uppercase;
+  z-index: 99353;
+  background: url(/wp-content/uploads/sites/167/2017/10/button_close-form_crimson-and-white.jpg) left center / 24px auto no-repeat;
+}
 /*! 
 * dr-css-1.10: Styling of glass buttons
 */
