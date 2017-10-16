@@ -143,15 +143,25 @@ section:not(.bgcover) .column {
 }
 
 .fluid .row.side-left .column.one,.fluid .row.side-right .column.two {
-	width: 33%;
-	margin-top: 4%;
 	padding: 2em;
 }
 
+@media all and (min-width:694px) {
+	.fluid .row.side-left .column.one,.fluid .row.side-right .column.two {
+		width: 33%;
+		margin-top: 4%;
+	}
+}
+
 .fluid .row.side-left .column.two,.fluid .row.side-right .column.one {
-	width: 64%;
-	margin-right: 2%;
 	padding: 2em;
+}
+
+@media all and (min-width:694px) {
+	.fluid .row.side-left .column.two,.fluid .row.side-right .column.one {
+		width: 64%;
+		margin-right: 2%;
+	}
 }
 
 @keyframes slidy {
@@ -237,8 +247,13 @@ div#cssslider2 figure {
 
 .col {
 	padding: 10px;
-	width: 45%;
-	float: left;
+}
+
+@media all and (min-width:694px) {
+	.col {
+		width: 45%;
+		float: left;
+	}
 }
 
 #third-wrap {
@@ -247,8 +262,13 @@ div#cssslider2 figure {
 
 .thirdcol {
 	padding: 10px;
-	width: 30%;
-	float: left;
+}
+
+@media all and (min-width:694px) {
+	.thirdcol {
+		width: 30%;
+		float: left;
+	}
 }
 
 /*!
@@ -1081,22 +1101,7 @@ body.has-normal-line-spacing {
 
 body.has-normal-line-spacing p {
 	line-height: 1.375em;
-}
-
-body.has-normal-line-spacing p~p {
 	padding-bottom: 0;
-}
-
-body.has-normal-line-spacing p+p {
-	margin-top: 1rem;
-}
-
-body.has-normal-line-spacing p+ol,body.has-normal-line-spacing p+ul {
-	margin-top: .3em;
-}
-
-body.has-normal-line-spacing p+h1,body.has-normal-line-spacing p+h2,body.has-normal-line-spacing p+h3,body.has-normal-line-spacing p+h4,body.has-normal-line-spacing p+h5,body.has-normal-line-spacing p+h6 {
-	margin-top: .5rem;
 }
 
 body.has-normal-line-spacing ol li,body.has-normal-line-spacing ul li {
@@ -1105,6 +1110,18 @@ body.has-normal-line-spacing ol li,body.has-normal-line-spacing ul li {
 }
 
 body.has-normal-line-spacing ol>li:not(:first-child),body.has-normal-line-spacing ul>li:not(:first-child) {
+	margin-top: .3em;
+}
+
+body.has-normal-line-spacing *+h1,body.has-normal-line-spacing *+h2,body.has-normal-line-spacing *+h3,body.has-normal-line-spacing *+h4,body.has-normal-line-spacing *+h5,body.has-normal-line-spacing *+h6 {
+	margin-top: .5rem;
+}
+
+body.has-normal-line-spacing :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6)+p {
+	margin-top: 1rem;
+}
+
+body.has-normal-line-spacing :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6)+ol,body.has-normal-line-spacing :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6)+ul {
 	margin-top: .3em;
 }
 
@@ -1125,6 +1142,36 @@ body.has-improved-contrast {
 
 .row.halves .column {
 	background: 0 0;
+}
+
+.fluid .row .sub-row.row .column {
+	padding: 0;
+	margin: 0;
+	background: 0 0;
+}
+
+@media all and (max-width:693px) {
+	.fluid .row .sub-row.row .column {
+		width: 100%;
+	}
+}
+
+@media all and (max-width:693px) {
+	.fluid .row .sub-row.row .column+.column {
+		margin-top: 1rem;
+	}
+}
+
+@media all and (min-width:694px) {
+	.fluid .row .sub-row.row.halves .column.one,.fluid .row .sub-row.row.side-right .column.one {
+		padding-right: 1rem;
+	}
+}
+
+@media all and (min-width:694px) {
+	.fluid .row .sub-row.row.halves .column.two,.fluid .row .sub-row.row.side-right .column.two {
+		padding-left: 1rem;
+	}
 }
 
 /*! 
@@ -2055,6 +2102,21 @@ body.has-improved-contrast {
 
 .page.cea #cea-tagline .column.one {
 	padding-bottom: 0;
+}
+
+@media all and (min-width:694px) {
+	.page.cea #wsu-staffing+.toggled-panel .staff-photo {
+		float: left;
+		margin-top: 4px;
+		margin-right: 1em;
+		margin-bottom: 4px;
+	}
+}
+
+@media all and (max-width:693px) {
+	.page.cea #wsu-staffing+.toggled-panel .staff-photo {
+		display: block;
+	}
 }
 
 /*! 
