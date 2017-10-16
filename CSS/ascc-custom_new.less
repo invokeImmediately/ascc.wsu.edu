@@ -481,12 +481,12 @@ body.has-improved-contrast {
 				left: @spacing;
 				left: ~"calc((100% - 990px) / 2 + 198px + @{spacing})";
 			}
-			@media (min-width: (@v-rghtclmn-thrshld + 1)) {
+			@media (max-width: @v-rghtclmn-thrshld) {
 				@spacing: (@v-dflt-spcng / 2 * 5);
 				right: @spacing;
 				left: @spacing;
 			}
-			@media (min-width: (@v-lg-mbl-thrshld + 1)) {
+			@media (max-width: @v-lg-mbl-thrshld) {
 				@spacing: @v-dflt-spcng;
 				right: @spacing;
 				left: @spacing;
