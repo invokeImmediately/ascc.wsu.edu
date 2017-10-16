@@ -2014,13 +2014,13 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
     left: calc((100% - 990px) / 2 + 198px + 5rem);
   }
 }
-@media all and (min-width: 694px) {
+@media all and (max-width: 693px) {
   .page.cea #contact-form-wrapper {
     right: 5rem;
     left: 5rem;
   }
 }
-@media all and (min-width: 481px) {
+@media all and (max-width: 480px) {
   .page.cea #contact-form-wrapper {
     right: 2rem;
     left: 2rem;
