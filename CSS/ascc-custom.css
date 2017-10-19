@@ -1865,6 +1865,7 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   color: #fff;
   padding-left: 2rem;
   padding-bottom: 0.66666667rem;
+  font-size: 1.7rem;
 }
 #on-this-page ul {
   margin: 0;
@@ -1965,6 +1966,12 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
 /*! 
 * dr-css-1.9: Styling specific to the Career Exploration Abroad page
 */
+.page.cea .row.article-header .column.one .wrapper {
+  font-size: 1.4rem;
+}
+.page.cea .row.article-header .column.one .article-name {
+  font-size: 2em;
+}
 .page.cea .row.article-header .column.two {
   background-color: #fff;
   background-size: auto 90%;
