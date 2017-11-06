@@ -483,6 +483,7 @@ body.has-improved-contrast {
 		opacity: 0;
 		overflow-y: scroll;
 		z-index: 99352;
+		.transition(~"opacity 0.3s ease");
 		@media all {
 			@media (min-width: (@v-spn-thrshld + 1)) {
 				@spacing: (@v-dflt-spcng / 2 * 5);
@@ -506,6 +507,19 @@ body.has-improved-contrast {
 			opacity: 1;
 			padding: @v-dflt-spcng;
 		}
+		.gform_wrapper {
+			margin: 0;			
+		}
+		form {
+			padding: 0;
+		}
+		.gform_title {
+			margin-top: 0;
+			padding-top: 0;
+		}
+		.gform_footer {
+			padding-bottom: 0;
+		}
 	}
 	#close-contact-form {
 		@spacing: (@v-dflt-spcng / 2 * 5);
@@ -524,8 +538,10 @@ body.has-improved-contrast {
 		font-size: .9rem;
 		line-height: 1.4rem;
 		text-transform: uppercase;
+		background: @hex-darkest-gray url(/wp-content/uploads/sites/167/2017/10/button_close-form_crimson-and-white.jpg) left center/24px auto no-repeat;
+		color: @hex-white;
+		cursor: pointer;
 		z-index: 99353;
-		background: url(/wp-content/uploads/sites/167/2017/10/button_close-form_crimson-and-white.jpg) left center/24px auto no-repeat;
 	}
 }
 
