@@ -2013,6 +2013,9 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   opacity: 0;
   overflow-y: scroll;
   z-index: 99352;
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 @media all and (min-width: 990px) {
   .page.cea #contact-form-wrapper {
@@ -2038,6 +2041,19 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   opacity: 1;
   padding: 2rem;
 }
+.page.cea #contact-form-wrapper .gform_wrapper {
+  margin: 0;
+}
+.page.cea #contact-form-wrapper form {
+  padding: 0;
+}
+.page.cea #contact-form-wrapper .gform_title {
+  margin-top: 0;
+  padding-top: 0;
+}
+.page.cea #contact-form-wrapper .gform_footer {
+  padding-bottom: 0;
+}
 .page.cea #close-contact-form {
   position: fixed;
   top: 11%;
@@ -2052,8 +2068,10 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   font-size: .9rem;
   line-height: 1.4rem;
   text-transform: uppercase;
+  background: #2a3033 url(/wp-content/uploads/sites/167/2017/10/button_close-form_crimson-and-white.jpg) left center / 24px auto no-repeat;
+  color: #fff;
+  cursor: pointer;
   z-index: 99353;
-  background: url(/wp-content/uploads/sites/167/2017/10/button_close-form_crimson-and-white.jpg) left center / 24px auto no-repeat;
 }
 /*! 
 * dr-css-1.10: Styling of glass buttons
