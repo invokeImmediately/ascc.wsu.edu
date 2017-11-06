@@ -533,7 +533,8 @@ body.has-improved-contrast {
 		right: ~"calc(@{spacing} + @{scroll-bar-size} + @{margins})";
 		height: @size;
 		padding-left: (@size + @margins);
-		padding-left: ~"calc(@{size} + 3px)";
+		padding-left: ~"calc(@{size} + @{margins})";
+		padding-right: @margins;
 		.has-mono-font;
 		font-size: .9rem;
 		line-height: 1.4rem;
