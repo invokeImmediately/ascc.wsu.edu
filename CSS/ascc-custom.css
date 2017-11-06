@@ -2062,7 +2062,8 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   right: calc(5rem + 16px + 0.25rem);
   height: 1.5rem;
   padding-left: 1.75rem;
-  padding-left: calc(1.5rem + 3px);
+  padding-left: calc(1.5rem + 0.25rem);
+  padding-right: 0.25rem;
   font-family: 'Roboto Mono', monospace, sans-serif;
   font-weight: 300;
   font-size: .9rem;
