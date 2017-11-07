@@ -1519,7 +1519,7 @@ function setupCeaContactForm( slctrPage, slctrContactUsButton, slctrFormWrapper,
 	try {
 		$ceaPage = findCeaPage( slctrPage );
 		$contactUsButton = findContactUsButton( $ceaPage, slctrContactUsButton );
-		$formWrapper = findContactForm( $ceaPage, slctrPage );
+		$formWrapper = findContactForm( $ceaPage, slctrFormWrapper );
 		$closeButton = findCloseButton( $formWrapper, slctrCloseButton );
 		initFormInteractivity( $contactUsButton, $formWrapper, formActivationClass, $closeButton );
 	} catch( errorMsg ) {
