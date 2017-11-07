@@ -1536,9 +1536,11 @@ function setupCeaContactForm( slctrPage, slctrContactUsButton, slctrFormWrapper,
 
 	function findContactUsButton( $ceaPage, slctrContactUsButton ) {
 		var $contactUsButton = undefined;
-		$.isJQueryObj( $ceaPage ) ?
-			$contactUsButton = $ceaPage.find( slctrContactUsButton ) :
+		if ( $.isJQueryObj( $ceaPage ) ) {
+			$contactUsButton = $ceaPage.find( slctrContactUsButton );
+		} else {
 			throw 'Sub-function findContactUsButton was passed an non-jQuery object as its first argument.';
+		}
 		if ( $contactUsButton.length > 1 ) {
 			throw 'More than one "Contact Us" button was found on the CEA page.';
 		}
@@ -1547,9 +1549,11 @@ function setupCeaContactForm( slctrPage, slctrContactUsButton, slctrFormWrapper,
 
 	function findContactForm( $ceaPage, slctrFormWrapper ) {
 		var $formWrapper = undefined;
-		$.isJQueryObj( $ceaPage ) ?
-			$formWrapper = $ceaPage.find( slctrFormWrapper ) :
+		if ( $.isJQueryObj( $ceaPage ) ) {
+			$formWrapper = $ceaPage.find( slctrFormWrapper );
+		} else {
 			throw 'Sub-function findContactForm was passed an non-jQuery object as its first argument.';
+		}
 		if ( $formWrapper.length > 1 ) {
 			throw 'More than one "Contact Us" form was found on the CEA page.';
 		}
@@ -1558,9 +1562,11 @@ function setupCeaContactForm( slctrPage, slctrContactUsButton, slctrFormWrapper,
 
 	function findCloseButton( $formWrapper, slctrCloseButton ) {
 		var $closeButton = undefined;
-		$.isJQueryObj( $formWrapper ) ?
-			$closeButton = $formWrapper.find( slctrCloseButton ) :
+		if ( $.isJQueryObj( $formWrapper ) ) {
+			$closeButton = $formWrapper.find( slctrCloseButton );
+		} else {
 			throw 'Sub-function findCloseButton was passed an non-jQuery object as its first argument.';
+		}
 		if ( $closeButton.length > 1 ) {
 			throw 'More than one close button for the "Contact Us" form was found within the CEA page.';
 		} else if ( $formWrapper.length == 1 && $closeButton.length == 0 ) {
