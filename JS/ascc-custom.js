@@ -1022,6 +1022,198 @@
         return;
       }
 
+      $fields = $form.find(settings.fieldSelector);
+
+      if (settings.addRemoveFieldsMarksDirty) {              
+        // Check if field count has changed
+        var origCount = $form.data("ays-orig-field-count");
+        if (origCount != $fields.length) {
+          setDirtyStatus($form, true);
+          return;
+        }
+      }
+
+      // Brute force - check each field
+      var isDirty = false;
+      $fields.each(function() {
+        $field = $(this);
+        if (isFieldDirty($field)) {
+          isDirty = true;
+          return false; // break
+        }
+      });
+      
+      setDirtyStatus($form, isDirty);
+    };
+
+    var initForm = function($form) {
+      var fields = $form.find(settings.fieldSelector);
+      $(fields).each(function() { storeOrigValue($(this)); });
+      $(fields).unbind(settings.fieldEvents, checkForm);
+      $(fields).bind(settings.fieldEvents, checkForm);
+      $form.data("ays-orig-field-count", $(fields).length);
+      setDirtyStatus($form, false);
+    };
+
+    var setDirtyStatus = function($form, isDirty) {
+      var changed = isDirty != $form.hasClass(settings.dirtyClass);
+      $form.toggleClass(settings.dirtyClass, isDirty);
+        
+      // Fire change event if required
+      if (changed) {
+        if (settings.change) settings.change.call($form, $form);
+
+        if (isDirty) $form.trigger('dirty.areYouSure', [$form]);
+        if (!isDirty) $form.trigger('clean.areYouSure', [$form]);
+        $form.trigger('change.areYouSure', [$form]);
+      }
+    };
+
+    var rescan = function() {
+      var $form = $(this);
+      var fields = $form.find(settings.fieldSelector);
+      $(fields).each(function() {
+        var $field = $(this);
+        if (!$field.data('ays-orig')) {
+          storeOrigValue($field);
+          $field.bind(settings.fieldEvents, checkForm);
+        }
+      });
+      // Check for changes while we're here
+      $form.trigger('checkform.areYouSure');
+    };
+
+    var reinitialize = function() {
+      initForm($(this));
+    }
+
+    if (!settings.silent && !window.aysUnloadSet) {
+      window.aysUnloadSet = true;
+      $(window).bind('beforeunload', function() {
+        $dirtyForms = $("form").filter('.' + settings.dirtyClass);
+        if ($dirtyForms.length == 0) {
+          return;
+        }
+        // Prevent multiple prompts - seen on Chrome and IE
+        if (navigator.userAgent.toLowerCase().match(/msie|chrome/)) {
+          if (window.aysHasPrompted) {
+            return;
+          }
+          window.aysHasPrompted = true;
+          window.setTimeout(function() {window.aysHasPrompted = false;}, 900);
+        }
+        return settings.message;
+      });
+    }
+
+    return this.each(function(elem) {
+      if (!$(this).is('form')) {
+        return;
+      }
+      var $form = $(this);
+        
+      $form.submit(function() {
+        $form.removeClass(settings.dirtyClass);
+      });
+      $form.bind('reset', function() { setDirtyStatus($form, false); });
+      // Add a custom events
+      $form.bind('rescan.areYouSure', rescan);
+      $form.bind('reinitialize.areYouSure', reinitialize);
+      $form.bind('checkform.areYouSure', checkForm);
+      initForm($form);
+    });
+  };
+})(jQuery);
+/*!
+ * jQuery Plugin: Are-You-Sure (Dirty Form Detection)
+ * https://github.com/codedance/jquery.AreYouSure/
+ *
+ * Copyright (c) 2012-2014, Chris Dance and PaperCut Software http://www.papercut.com/
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * Author:  chris.dance@papercut.com
+ * Version: 1.9.0
+ * Date:    13th August 2014
+ */
+(function($) {
+  
+  $.fn.areYouSure = function(options) {
+      
+    var settings = $.extend(
+      {
+        'message' : 'You have unsaved changes!',
+        'dirtyClass' : 'dirty',
+        'change' : null,
+        'silent' : false,
+        'addRemoveFieldsMarksDirty' : false,
+        'fieldEvents' : 'change keyup propertychange input',
+        'fieldSelector': ":input:not(input[type=submit]):not(input[type=button])"
+      }, options);
+
+    var getValue = function($field) {
+      if ($field.hasClass('ays-ignore')
+          || $field.hasClass('aysIgnore')
+          || $field.attr('data-ays-ignore')
+          || $field.attr('name') === undefined) {
+        return null;
+      }
+
+      if ($field.is(':disabled')) {
+        return 'ays-disabled';
+      }
+
+      var val;
+      var type = $field.attr('type');
+      if ($field.is('select')) {
+        type = 'select';
+      }
+
+      switch (type) {
+        case 'checkbox':
+        case 'radio':
+          val = $field.is(':checked');
+          break;
+        case 'select':
+          val = '';
+          $field.find('option').each(function(o) {
+            var $option = $(this);
+            if ($option.is(':selected')) {
+              val += $option.val();
+            }
+          });
+          break;
+        default:
+          val = $field.val();
+      }
+
+      return val;
+    };
+
+    var storeOrigValue = function($field) {
+      $field.data('ays-orig', getValue($field));
+    };
+
+    var checkForm = function(evt) {
+
+      var isFieldDirty = function($field) {
+        var origValue = $field.data('ays-orig');
+        if (undefined === origValue) {
+          return false;
+        }
+        return (getValue($field) != origValue);
+      };
+
+      var $form = ($(this).is('form')) 
+                    ? $(this)
+                    : $(this).parents('form');
+
+      // Test on the target first as it's the most likely to be dirty
+      if (isFieldDirty($(evt.target))) {
+        setDirtyStatus($form, true);
+        return;
+      }
+
       var $fields = $form.find(settings.fieldSelector);
 
       if (settings.addRemoveFieldsMarksDirty) {              
@@ -1308,22 +1500,112 @@ $(function() {
  CUSTOM JQUERY-BASED DYNAMIC CONTENT
  *********************************************************************************************************************/
 (function ($) {
-    "use strict";
+"use strict";
+
+var thisFileName = 'ascc-specific.js';
     
-	$(document).ready(function () {
-        /**********************************************************************************************
-         * Tweak HTML source to work around some quirks of WordPress setup                            *
-         **********************************************************************************************/
-        var siteURL = window.location.pathname;
-        switch(siteURL) {
-/*				case '/':
-                $('#menu-item-35').remove();
-                $('#spine-sitenav ul li').first().css('border-top', 'none');
-                $('#spine-sitenav').addClass('homeless');
-                break;*/
-            case '/news/':
-                $('div.column.one').first().parent('section').before('<section class="row single gutter pad-top"><div class="column one"><section class="article-header header-newsEvents"><div class="header-content"><h2>News</h2><h3>What We and Our Students Have Accomplished</h3></div></section></div></section>');
-                break;
-        }
-	});    
-})(jQuery);
+$( function () {
+	setupCeaContactForm( '.page.cea', '#contact-us', '#contact-form-wrapper', 'shown', '#close-contact-form' );
+} );
+
+function setupCeaContactForm( slctrPage, slctrContactUsButton, slctrFormWrapper, formActivationClass,
+		slctrCloseButton ) {
+	var thisFuncName = 'setupCeaContactForm';
+	var thisFuncDesc = 'Initializes user interactivity for the CEA page\'s "contact us" form.';
+	var $ceaPage;
+	var $contactUsButton;
+	var $formWrapper;
+	var $closeButton;
+	try {
+		$ceaPage = findCeaPage( slctrPage );
+		$contactUsButton = findContactUsButton( $ceaPage, slctrContactUsButton );
+		$formWrapper = findContactForm( $ceaPage, slctrPage );
+		$closeButton = findCloseButton( $formWrapper, slctrCloseButton );
+		initFormInteractivity( $contactUsButton, $formWrapper, formActivationClass, $closeButton );
+	} catch( errorMsg ) {
+		$.logError( thisFileName, thisFuncName, thisFuncDesc, errorMsg );
+	}
+
+	function findCeaPage( slctrPage ) {
+		var $ceaPage = $( slctrPage );
+		if ( $ceaPage.length > 1 ) {
+			throw 'More than one CEA page element was encountered.';
+		}
+		return $ceaPage;
+	}
+
+	function findContactUsButton( $ceaPage, slctrContactUsButton ) {
+		var $contactUsButton = undefined;
+		$.isJQueryObj( $ceaPage ) ?
+			$contactUsButton = $ceaPage.find( slctrContactUsButton ) :
+			throw 'Sub-function findContactUsButton was passed an non-jQuery object as its first argument.';
+		if ( $contactUsButton.length > 1 ) {
+			throw 'More than one "Contact Us" button was found on the CEA page.';
+		}
+		return $contactUsButton;
+	}
+
+	function findContactForm( $ceaPage, slctrFormWrapper ) {
+		var $formWrapper = undefined;
+		$.isJQueryObj( $ceaPage ) ?
+			$formWrapper = $ceaPage.find( slctrFormWrapper ) :
+			throw 'Sub-function findContactForm was passed an non-jQuery object as its first argument.';
+		if ( $formWrapper.length > 1 ) {
+			throw 'More than one "Contact Us" form was found on the CEA page.';
+		}
+		return $formWrapper;
+	}
+
+	function findCloseButton( $formWrapper, slctrCloseButton ) {
+		var $closeButton = undefined;
+		$.isJQueryObj( $formWrapper ) ?
+			$closeButton = $formWrapper.find( slctrCloseButton ) :
+			throw 'Sub-function findCloseButton was passed an non-jQuery object as its first argument.';
+		if ( $closeButton.length > 1 ) {
+			throw 'More than one close button for the "Contact Us" form was found within the CEA page.';
+		} else if ( $formWrapper.length == 1 && $closeButton.length == 0 ) {
+			throw 'No close button was found within the "Contact Us" form on the CEA page.';
+		}
+		return $closeButton;
+	}
+
+	function initFormInteractivity( $contactUsButton, $formWrapper, formActivationClass, $closeButton ) {
+		if ( $contactUsButton.length == 1 && $formWrapper.length == 1 && $closeButton.length == 1 ) {
+			$contactUsButton.click( handleContactUsButtonClick );
+			$contactUsButton.on( 'keydown', handleContactUsButtonKeydown );
+			$closeButton.click( handleCloseButtonClick );
+			$closeButton.on( 'keydown', handleCloseButtonKeydown );
+		}
+
+		function handleContactUsButtonClick( e ) {
+			e.preventDefault();
+			$formWrapper.addClass( formActivationClass );			
+		}
+
+		function handleContactUsButtonKeydown ( e ) {
+			if ( wereTriggerKeysPressed ( e ) ) {
+				e.preventDefault();
+				$formWrapper.addClass( formActivationClass );
+			}
+		}
+
+		function wereTriggerKeysPressed ( e ) {
+			var regExMask = /Enter| /g;
+			return regExMask.exec( e.key ) != null;
+		}
+
+		function handleCloseButtonClick( e ) {
+			e.preventDefault();
+			$formWrapper.removeClass( formActivationClass );			
+		}
+
+		function handleCloseButtonKeydown ( e ) {
+			if ( wereTriggerKeysPressed ( e ) ) {
+				e.preventDefault();
+				$formWrapper.removeClass( formActivationClass );
+			}
+		}
+	}	
+}
+
+} )( jQuery );
