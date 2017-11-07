@@ -1977,14 +1977,17 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   background-size: auto 90%;
   background-repeat: no-repeat;
 }
-.page.cea #apply-now {
-  max-width: 288px;
+.page.cea #apply-now,
+.page.cea #contact-us {
   margin-right: auto;
-  margin-bottom: 10px;
   margin-left: auto;
   text-align: center;
   font-size: 1.5em;
   font-weight: bold;
+}
+.page.cea #apply-now {
+  max-width: 288px;
+  margin-bottom: 10px;
 }
 .page.cea #cea-tagline .column.one {
   padding-bottom: 0;
