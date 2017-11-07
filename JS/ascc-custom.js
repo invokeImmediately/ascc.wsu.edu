@@ -1521,6 +1521,7 @@ function setupCeaContactForm( slctrPage, slctrContactUsButton, slctrFormWrapper,
 		$contactUsButton = findContactUsButton( $ceaPage, slctrContactUsButton );
 		$formWrapper = findContactForm( $ceaPage, slctrFormWrapper );
 		$closeButton = findCloseButton( $formWrapper, slctrCloseButton );
+		resetFormTabIndices( $formWrapper );
 		initFormInteractivity( $contactUsButton, $formWrapper, formActivationClass, $closeButton );
 	} catch( errorMsg ) {
 		$.logError( thisFileName, thisFuncName, thisFuncDesc, errorMsg );
@@ -1575,6 +1576,19 @@ function setupCeaContactForm( slctrPage, slctrContactUsButton, slctrFormWrapper,
 		return $closeButton;
 	}
 
+	function resetFormTabIndices( $formWrapper ) {
+		var $form;
+		var $formFields;
+		if ( $.isJQueryObj( $formWrapper ) && $formWrapper.length == 1 ) {
+			$form = $formWrapper.find( 'form' );
+			$formFields = $form.find( 'input, select, textArea' );
+			$formFields.each( function() {
+				var $this = $( this );
+				$this.attr('tabindex', '0');
+			} );
+		}
+	}
+
 	function initFormInteractivity( $contactUsButton, $formWrapper, formActivationClass, $closeButton ) {
 		if ( $contactUsButton.length == 1 && $formWrapper.length == 1 && $closeButton.length == 1 ) {
 			$contactUsButton.click( handleContactUsButtonClick );
@@ -1611,7 +1625,7 @@ function setupCeaContactForm( slctrPage, slctrContactUsButton, slctrFormWrapper,
 				$formWrapper.removeClass( formActivationClass );
 			}
 		}
-	}	
+	}
 }
 
 } )( jQuery );
