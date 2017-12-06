@@ -2047,13 +2047,6 @@ body.page.cea #contact-form-wrapper.shown {
 body.page.cea #contact-form-wrapper .gform_wrapper {
   margin: 0;
 }
-body.page.cea #contact-form-wrapper .gform_wrapper .top_label .gfield_description + div.ginput_container {
-  margin-top: 2px;
-}
-body.page.cea #contact-form-wrapper .gform_wrapper .gform_wrapper .gfield_checkbox li,
-body.page.cea #contact-form-wrapper .gform_wrapper .gform_wrapper .gfield_radio li {
-  margin: 0 !important;
-}
 body.page.cea #contact-form-wrapper form {
   padding: 0;
 }
@@ -2083,6 +2076,13 @@ body.page.cea #close-contact-form {
   color: #fff;
   cursor: pointer;
   z-index: 99353;
+}
+body.page.cea .gform_wrapper .top_label .gfield_description + div.ginput_container {
+  margin-top: 2px;
+}
+body.page.cea .gform_wrapper .gform_wrapper .gfield_checkbox li,
+body.page.cea .gform_wrapper .gform_wrapper .gfield_radio li {
+  margin: 0 !important;
 }
 /*! 
 * dr-css-1.10: Styling of glass buttons
