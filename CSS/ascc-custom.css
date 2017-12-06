@@ -2177,3 +2177,30 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_radio li {
 .main-header sup span {
   line-height: 1.5em;
 }
+/*! 
+* dr-css-1.2: Gravity forms
+*/
+.column li.gfield.uses-rich-editor .tmce-active .mce-menubar {
+  display: none;
+}
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp > .mce-stack-layout > .mce-toolbar.mce-first .mce-btn[aria-label="Blockquote"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp > .mce-stack-layout > .mce-toolbar.mce-first .mce-btn[aria-label="Insert/edit link"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp > .mce-stack-layout > .mce-toolbar.mce-first .mce-btn[aria-label="Remove link"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp > .mce-stack-layout > .mce-toolbar.mce-first .mce-btn[aria-label="Insert/edit image"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp > .mce-stack-layout > .mce-toolbar.mce-first .mce-btn[aria-label="Table"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp > .mce-stack-layout > .mce-toolbar.mce-first .mce-btn[aria-label="Toolbar Toggle"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp > .mce-stack-layout > .mce-toolbar.mce-first .mce-btn[aria-label="Fullscreen"] {
+  display: none;
+}
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp > .mce-stack-layout > .mce-toolbar.mce-last {
+  display: none;
+}
+.column li.gfield.uses-rich-editor .tmce-active .mce-statusbar {
+  display: none;
+}
+.column li.gfield.uses-rich-editor iframe {
+  width: 100% !important;
+}
+.column li.gfield.uses-rich-editor span.gp-word-count-label {
+  margin-top: 0 !important;
+}
