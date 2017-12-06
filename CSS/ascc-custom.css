@@ -902,6 +902,18 @@ div#cssslider2 figure {
   border-bottom: none;
   border-left: 8px solid transparent;
 }
+.drop-down-toggle + .toggled-panel {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.drop-down-toggle:not(.activated) + .toggled-panel {
+  height: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  border: none !important;
+  opacity: 0 !important;
+}
 .drop-down-toggle.boxed {
   padding-left: 44px;
   padding-top: 5px;
