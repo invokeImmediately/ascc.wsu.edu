@@ -647,7 +647,7 @@
 						var state = sessionStorage.getItem($this[0].id);
 						if (state == "expanded") {
 							$this.toggleClass(activatingClass);
-							$this.next(slctrWhatsToggled).toggle(animDuration);							
+							//$this.next(slctrWhatsToggled).toggle(animDuration);							
 						}
 					} catch(e) {
 						$.logError(thisFileName, thisFuncName, thisFuncDesc, e.message);
