@@ -1508,6 +1508,10 @@ $( function () {
 	setupCeaContactForm( '.page.cea', '#contact-us', '#contact-form-wrapper', 'shown', '#close-contact-form' );
 } );
 
+$(window).on("load", function(e) {
+	changeRichTextFontFamily( '.gfield_contains_required.uses-rich-editor' );
+});
+
 function setupCeaContactForm( slctrPage, slctrContactUsButton, slctrFormWrapper, formActivationClass,
 		slctrCloseButton ) {
 	var thisFuncName = 'setupCeaContactForm';
@@ -1625,6 +1629,20 @@ function setupCeaContactForm( slctrPage, slctrContactUsButton, slctrFormWrapper,
 				$formWrapper.removeClass( formActivationClass );
 			}
 		}
+	}
+}
+
+function changeRichTextFontFamily( $fields ) {
+    if ( $.isJQueryObj($fields) && $fields.length > 0 ) {
+        $fields.each( function () {
+			var $edtrFrm = $( this ).find( 'iframe' );
+			$edtrFrm.each( function () {
+				var $edtrBdy = $( this ).contents().find( '#tinymce' );
+				$edtrBdy.css( {
+					 fontFamily: '"Open sans", sans-serif'
+				} );
+			} );
+		} );
 	}
 }
 
