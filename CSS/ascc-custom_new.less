@@ -7,7 +7,7 @@ body.has-normal-line-spacing {
 		line-height: @v-p-lnhght;
 		padding-bottom: 0;
 	}
-	ul,
+	ul:not(.gform_fields),
 	ol {
 		li {
 			line-height: @v-p-lnhght;
@@ -426,7 +426,7 @@ body.has-improved-contrast {
 /*! 
 * dr-css-1.9: Styling specific to the Career Exploration Abroad page
 */
-.page.cea {
+body.page.cea {
 	.row.article-header {
 		.column.one {
 			.wrapper {
@@ -511,7 +511,16 @@ body.has-improved-contrast {
 			padding: @v-dflt-spcng;
 		}
 		.gform_wrapper {
-			margin: 0;			
+			margin: 0;
+
+			.top_label .gfield_description + div.ginput_container {
+				margin-top: 2px;
+			}
+
+			.gform_wrapper .gfield_checkbox li,
+			.gform_wrapper .gfield_radio li {
+				margin: 0 !important;
+			}
 		}
 		form {
 			padding: 0;
