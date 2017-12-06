@@ -1509,7 +1509,7 @@ $( function () {
 } );
 
 $(window).on("load", function(e) {
-	changeRichTextFontFamily( '.gfield_contains_required.uses-rich-editor' );
+	changeRichTextFontFamily( $( '.gfield_contains_required.uses-rich-editor' ) );
 });
 
 function setupCeaContactForm( slctrPage, slctrContactUsButton, slctrFormWrapper, formActivationClass,
