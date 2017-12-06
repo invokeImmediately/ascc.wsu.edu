@@ -7,7 +7,7 @@ body.has-normal-line-spacing {
 		line-height: @v-p-lnhght;
 		padding-bottom: 0;
 	}
-	ul:not(.gform_fields),
+	ul:not(.gform_fields):not(.gfield_radio):not(.gfield_checkbox),
 	ol {
 		li {
 			line-height: @v-p-lnhght;
@@ -548,8 +548,12 @@ body.page.cea {
 		z-index: 99353;
 	}
 	.gform_wrapper {
-		.top_label .gfield_description + div.ginput_container {
-			margin-top: 2px;
+		.top_label .gfield_description {
+			padding-bottom: 0;
+
+			& + div.ginput_container {
+				margin-top: 2px;
+			}
 		}
 
 		.gform_wrapper .gfield_checkbox li,
