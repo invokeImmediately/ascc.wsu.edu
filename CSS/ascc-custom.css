@@ -2083,8 +2083,12 @@ body.page.cea .gform_wrapper .top_label .gfield_description {
 body.page.cea .gform_wrapper .top_label .gfield_description + div.ginput_container {
   margin-top: 2px;
 }
-body.page.cea .gform_wrapper .gform_wrapper .gfield_checkbox li,
-body.page.cea .gform_wrapper .gform_wrapper .gfield_radio li {
+body.page.cea .gform_wrapper .top_label li ul.gfield_checkbox,
+body.page.cea .gform_wrapper .top_label li ul.gfield_radio {
+  margin-top: 0 !important;
+}
+body.page.cea .gform_wrapper .top_label li ul.gfield_checkbox li,
+body.page.cea .gform_wrapper .top_label li ul.gfield_radio li {
   margin: 0 !important;
 }
 /*! 
