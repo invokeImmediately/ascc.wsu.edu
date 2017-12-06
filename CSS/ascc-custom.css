@@ -1003,6 +1003,7 @@ div#cssslider2 figure {
   border-left: 1px solid rgba(0, 165, 189, 0.2);
 }
 .drop-down-toggle + .toggled-panel {
+  opacity: 1;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   transition: all 0.5s ease;
