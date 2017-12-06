@@ -621,7 +621,7 @@
             var $this = $(this);
 			$this.blur();
             $this.toggleClass(activatingClass);
-            $this.next(slctrWhatsToggled).toggle(animDuration);
+            //$this.next(slctrWhatsToggled).toggle(animDuration);
 			setupDropDownTogglePermanence($this, activatingClass);
         }); // TODO: change implementation to height + overflow based hiding approach
 		$toggles.on("keydown", function(e) {
@@ -630,7 +630,7 @@
 				e.preventDefault();
 				var $this = $(this);
 				$this.toggleClass(activatingClass);
-				$this.next(slctrWhatsToggled).toggle(animDuration);
+				//$this.next(slctrWhatsToggled).toggle(animDuration);
 				setupDropDownTogglePermanence($this, activatingClass);
 			}
 		});
