@@ -1012,12 +1012,12 @@ body.has-normal-line-spacing p {
   line-height: 1.375em;
   padding-bottom: 0;
 }
-body.has-normal-line-spacing ul:not(.gform_fields) li,
+body.has-normal-line-spacing ul:not(.gform_fields):not(.gfield_radio):not(.gfield_checkbox) li,
 body.has-normal-line-spacing ol li {
   line-height: 1.375em;
   padding-bottom: 0;
 }
-body.has-normal-line-spacing ul:not(.gform_fields) > li:not(:first-child),
+body.has-normal-line-spacing ul:not(.gform_fields):not(.gfield_radio):not(.gfield_checkbox) > li:not(:first-child),
 body.has-normal-line-spacing ol > li:not(:first-child) {
   margin-top: 0.3em;
 }
@@ -2076,6 +2076,9 @@ body.page.cea #close-contact-form {
   color: #fff;
   cursor: pointer;
   z-index: 99353;
+}
+body.page.cea .gform_wrapper .top_label .gfield_description {
+  padding-bottom: 0;
 }
 body.page.cea .gform_wrapper .top_label .gfield_description + div.ginput_container {
   margin-top: 2px;
