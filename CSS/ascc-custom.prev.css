@@ -1104,12 +1104,12 @@ body.has-normal-line-spacing p {
 	padding-bottom: 0;
 }
 
-body.has-normal-line-spacing ol li,body.has-normal-line-spacing ul li {
+body.has-normal-line-spacing ol li,body.has-normal-line-spacing ul:not(.gform_fields):not(.gfield_radio):not(.gfield_checkbox) li {
 	line-height: 1.375em;
 	padding-bottom: 0;
 }
 
-body.has-normal-line-spacing ol>li:not(:first-child),body.has-normal-line-spacing ul>li:not(:first-child) {
+body.has-normal-line-spacing ol>li:not(:first-child),body.has-normal-line-spacing ul:not(.gform_fields):not(.gfield_radio):not(.gfield_checkbox)>li:not(:first-child) {
 	margin-top: .3em;
 }
 
@@ -2085,21 +2085,21 @@ body.has-improved-contrast {
 /*! 
 * dr-css-1.9: Styling specific to the Career Exploration Abroad page
 */
-.page.cea .row.article-header .column.one .wrapper {
+body.page.cea .row.article-header .column.one .wrapper {
 	font-size: 1.4rem;
 }
 
-.page.cea .row.article-header .column.one .article-name {
+body.page.cea .row.article-header .column.one .article-name {
 	font-size: 2em;
 }
 
-.page.cea .row.article-header .column.two {
+body.page.cea .row.article-header .column.two {
 	background-color: #fff;
 	background-size: auto 90%;
 	background-repeat: no-repeat;
 }
 
-.page.cea #apply-now,.page.cea #contact-us {
+body.page.cea #apply-now,body.page.cea #contact-us {
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;
@@ -2107,17 +2107,17 @@ body.has-improved-contrast {
 	font-weight: 700;
 }
 
-.page.cea #apply-now {
+body.page.cea #apply-now {
 	max-width: 288px;
 	margin-bottom: 10px;
 }
 
-.page.cea #cea-tagline .column.one {
+body.page.cea #cea-tagline .column.one {
 	padding-bottom: 0;
 }
 
 @media all and (min-width:694px) {
-	.page.cea #wsu-staffing+.toggled-panel .staff-photo {
+	body.page.cea #wsu-staffing+.toggled-panel .staff-photo {
 		float: left;
 		margin-top: 4px;
 		margin-right: 1em;
@@ -2126,12 +2126,12 @@ body.has-improved-contrast {
 }
 
 @media all and (max-width:693px) {
-	.page.cea #wsu-staffing+.toggled-panel .staff-photo {
+	body.page.cea #wsu-staffing+.toggled-panel .staff-photo {
 		display: block;
 	}
 }
 
-.page.cea #contact-form-wrapper {
+body.page.cea #contact-form-wrapper {
 	position: fixed;
 	top: 10%;
 	bottom: 10%;
@@ -2148,7 +2148,7 @@ body.has-improved-contrast {
 }
 
 @media all and (min-width:990px) {
-	.page.cea #contact-form-wrapper {
+	body.page.cea #contact-form-wrapper {
 		right: 5rem;
 		left: 5rem;
 		left: calc((100% - 990px)/ 2 + 198px + 5rem);
@@ -2156,43 +2156,43 @@ body.has-improved-contrast {
 }
 
 @media all and (max-width:693px) {
-	.page.cea #contact-form-wrapper {
+	body.page.cea #contact-form-wrapper {
 		right: 5rem;
 		left: 5rem;
 	}
 }
 
 @media all and (max-width:480px) {
-	.page.cea #contact-form-wrapper {
+	body.page.cea #contact-form-wrapper {
 		right: 2rem;
 		left: 2rem;
 	}
 }
 
-.page.cea #contact-form-wrapper.shown {
+body.page.cea #contact-form-wrapper.shown {
 	max-height: none;
 	opacity: 1;
 	padding: 2rem;
 }
 
-.page.cea #contact-form-wrapper .gform_wrapper {
+body.page.cea #contact-form-wrapper .gform_wrapper {
 	margin: 0;
 }
 
-.page.cea #contact-form-wrapper form {
+body.page.cea #contact-form-wrapper form {
 	padding: 0;
 }
 
-.page.cea #contact-form-wrapper .gform_title {
+body.page.cea #contact-form-wrapper .gform_title {
 	margin-top: 0;
 	padding-top: 0;
 }
 
-.page.cea #contact-form-wrapper .gform_footer {
+body.page.cea #contact-form-wrapper .gform_footer {
 	padding-bottom: 0;
 }
 
-.page.cea #close-contact-form {
+body.page.cea #close-contact-form {
 	position: fixed;
 	top: 11%;
 	top: calc(10% + .25rem);
@@ -2211,6 +2211,22 @@ body.has-improved-contrast {
 	color: #fff;
 	cursor: pointer;
 	z-index: 99353;
+}
+
+body.page.cea .gform_wrapper .top_label .gfield_description {
+	padding-bottom: 0;
+}
+
+body.page.cea .gform_wrapper .top_label .gfield_description+div.ginput_container {
+	margin-top: 2px;
+}
+
+body.page.cea .gform_wrapper .top_label li ul.gfield_checkbox,body.page.cea .gform_wrapper .top_label li ul.gfield_radio {
+	margin-top: 0 !important;
+}
+
+body.page.cea .gform_wrapper .top_label li ul.gfield_checkbox li,body.page.cea .gform_wrapper .top_label li ul.gfield_radio li {
+	margin: 0 !important;
 }
 
 /*! 
@@ -2296,4 +2312,31 @@ body.has-improved-contrast {
 */
 .main-header sup span {
 	line-height: 1.5em;
+}
+
+/*! 
+* dr-css-1.2: Gravity forms
+*/
+.column li.gfield.uses-rich-editor .tmce-active .mce-menubar {
+	display: none;
+}
+
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp>.mce-stack-layout>.mce-toolbar.mce-first .mce-btn[aria-label=Blockquote],.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp>.mce-stack-layout>.mce-toolbar.mce-first .mce-btn[aria-label="Insert/edit link"],.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp>.mce-stack-layout>.mce-toolbar.mce-first .mce-btn[aria-label="Remove link"],.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp>.mce-stack-layout>.mce-toolbar.mce-first .mce-btn[aria-label="Insert/edit image"],.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp>.mce-stack-layout>.mce-toolbar.mce-first .mce-btn[aria-label=Table],.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp>.mce-stack-layout>.mce-toolbar.mce-first .mce-btn[aria-label="Toolbar Toggle"],.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp>.mce-stack-layout>.mce-toolbar.mce-first .mce-btn[aria-label=Fullscreen] {
+	display: none;
+}
+
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp>.mce-stack-layout>.mce-toolbar.mce-last {
+	display: none;
+}
+
+.column li.gfield.uses-rich-editor .tmce-active .mce-statusbar {
+	display: none;
+}
+
+.column li.gfield.uses-rich-editor iframe {
+	width: 100% !important;
+}
+
+.column li.gfield.uses-rich-editor span.gp-word-count-label {
+	margin-top: 0 !important;
 }
