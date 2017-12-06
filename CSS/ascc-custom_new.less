@@ -548,17 +548,21 @@ body.page.cea {
 		z-index: 99353;
 	}
 	.gform_wrapper {
-		.top_label .gfield_description {
-			padding-bottom: 0;
+		.top_label {
+			.gfield_description {
+				padding-bottom: 0;
 
-			& + div.ginput_container {
-				margin-top: 2px;
+				& + div.ginput_container {
+					margin-top: 2px;
 			}
-		}
+			li ul.gfield_checkbox,
+			li ul.gfield_radio {
+				margin-top: 0 !important;
 
-		.gform_wrapper .gfield_checkbox li,
-		.gform_wrapper .gfield_radio li {
-			margin: 0 !important;
+				li {
+					margin: 0 !important;
+				}
+			}
 		}
 	}
 }
