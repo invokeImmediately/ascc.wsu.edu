@@ -902,18 +902,6 @@ div#cssslider2 figure {
   border-bottom: none;
   border-left: 8px solid transparent;
 }
-.drop-down-toggle + .toggled-panel {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-.drop-down-toggle:not(.activated) + .toggled-panel {
-  height: 0 !important;
-  padding: 0 !important;
-  overflow: hidden;
-  border: none !important;
-  opacity: 0 !important;
-}
 .drop-down-toggle.boxed {
   padding-left: 44px;
   padding-top: 5px;
@@ -1013,6 +1001,18 @@ div#cssslider2 figure {
   border-right: 1px solid rgba(0, 165, 189, 0.2);
   border-bottom: 1px solid rgba(0, 165, 189, 0.2);
   border-left: 1px solid rgba(0, 165, 189, 0.2);
+}
+.drop-down-toggle + .toggled-panel {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.drop-down-toggle:not(.activated) + .toggled-panel {
+  height: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  border: none !important;
+  opacity: 0 !important;
 }
 /*! 
 * dr-css-1.1: Site-wide sizing & spacing overrides
