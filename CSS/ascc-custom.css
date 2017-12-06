@@ -1012,12 +1012,12 @@ body.has-normal-line-spacing p {
   line-height: 1.375em;
   padding-bottom: 0;
 }
-body.has-normal-line-spacing ul li,
+body.has-normal-line-spacing ul:not(.gform_fields) li,
 body.has-normal-line-spacing ol li {
   line-height: 1.375em;
   padding-bottom: 0;
 }
-body.has-normal-line-spacing ul > li:not(:first-child),
+body.has-normal-line-spacing ul:not(.gform_fields) > li:not(:first-child),
 body.has-normal-line-spacing ol > li:not(:first-child) {
   margin-top: 0.3em;
 }
@@ -1966,34 +1966,34 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
 /*! 
 * dr-css-1.9: Styling specific to the Career Exploration Abroad page
 */
-.page.cea .row.article-header .column.one .wrapper {
+body.page.cea .row.article-header .column.one .wrapper {
   font-size: 1.4rem;
 }
-.page.cea .row.article-header .column.one .article-name {
+body.page.cea .row.article-header .column.one .article-name {
   font-size: 2em;
 }
-.page.cea .row.article-header .column.two {
+body.page.cea .row.article-header .column.two {
   background-color: #fff;
   background-size: auto 90%;
   background-repeat: no-repeat;
 }
-.page.cea #apply-now,
-.page.cea #contact-us {
+body.page.cea #apply-now,
+body.page.cea #contact-us {
   margin-right: auto;
   margin-left: auto;
   text-align: center;
   font-size: 1.5em;
   font-weight: bold;
 }
-.page.cea #apply-now {
+body.page.cea #apply-now {
   max-width: 288px;
   margin-bottom: 10px;
 }
-.page.cea #cea-tagline .column.one {
+body.page.cea #cea-tagline .column.one {
   padding-bottom: 0;
 }
 @media all and (min-width: 694px) {
-  .page.cea #wsu-staffing + .toggled-panel .staff-photo {
+  body.page.cea #wsu-staffing + .toggled-panel .staff-photo {
     float: left;
     margin-top: 4px;
     margin-right: 1em;
@@ -2001,11 +2001,11 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   }
 }
 @media all and (max-width: 693px) {
-  .page.cea #wsu-staffing + .toggled-panel .staff-photo {
+  body.page.cea #wsu-staffing + .toggled-panel .staff-photo {
     display: block;
   }
 }
-.page.cea #contact-form-wrapper {
+body.page.cea #contact-form-wrapper {
   position: fixed;
   top: 10%;
   bottom: 10%;
@@ -2021,43 +2021,50 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   transition: opacity 0.3s ease;
 }
 @media all and (min-width: 990px) {
-  .page.cea #contact-form-wrapper {
+  body.page.cea #contact-form-wrapper {
     right: 5rem;
     left: 5rem;
     left: calc((100% - 990px) / 2 + 198px + 5rem);
   }
 }
 @media all and (max-width: 693px) {
-  .page.cea #contact-form-wrapper {
+  body.page.cea #contact-form-wrapper {
     right: 5rem;
     left: 5rem;
   }
 }
 @media all and (max-width: 480px) {
-  .page.cea #contact-form-wrapper {
+  body.page.cea #contact-form-wrapper {
     right: 2rem;
     left: 2rem;
   }
 }
-.page.cea #contact-form-wrapper.shown {
+body.page.cea #contact-form-wrapper.shown {
   max-height: none;
   opacity: 1;
   padding: 2rem;
 }
-.page.cea #contact-form-wrapper .gform_wrapper {
+body.page.cea #contact-form-wrapper .gform_wrapper {
   margin: 0;
 }
-.page.cea #contact-form-wrapper form {
+body.page.cea #contact-form-wrapper .gform_wrapper .top_label .gfield_description + div.ginput_container {
+  margin-top: 2px;
+}
+body.page.cea #contact-form-wrapper .gform_wrapper .gform_wrapper .gfield_checkbox li,
+body.page.cea #contact-form-wrapper .gform_wrapper .gform_wrapper .gfield_radio li {
+  margin: 0 !important;
+}
+body.page.cea #contact-form-wrapper form {
   padding: 0;
 }
-.page.cea #contact-form-wrapper .gform_title {
+body.page.cea #contact-form-wrapper .gform_title {
   margin-top: 0;
   padding-top: 0;
 }
-.page.cea #contact-form-wrapper .gform_footer {
+body.page.cea #contact-form-wrapper .gform_footer {
   padding-bottom: 0;
 }
-.page.cea #close-contact-form {
+body.page.cea #close-contact-form {
   position: fixed;
   top: 11%;
   top: calc(10% + 0.25rem);
