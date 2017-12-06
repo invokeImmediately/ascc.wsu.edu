@@ -664,3 +664,45 @@ body.page.cea {
 .main-header sup span {
 	line-height: 1.5em;
 }
+
+/*! 
+* dr-css-1.2: Gravity forms
+*/
+.column {
+	li.gfield {
+		&.uses-rich-editor {
+			.tmce-active {
+				.mce-menubar {
+					display: none;
+				}
+				.mce-toolbar-grp > .mce-stack-layout {
+					& > .mce-toolbar.mce-first {
+						.mce-btn {
+							&[aria-label="Blockquote"],
+							&[aria-label="Insert/edit link"],
+							&[aria-label="Remove link"],
+							&[aria-label="Insert/edit image"],
+							&[aria-label="Table"],
+							&[aria-label="Toolbar Toggle"],
+							&[aria-label="Fullscreen"] {
+								display: none;
+							}
+						}
+					}
+					& > .mce-toolbar.mce-last {
+						display: none;
+					}
+				}
+				.mce-statusbar {
+					display: none;
+				}
+			}
+			iframe {
+				width: 100% !important;
+			}
+			span.gp-word-count-label {
+				margin-top: 0 !important;
+			}
+		}
+	}
+}
