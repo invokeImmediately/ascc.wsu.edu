@@ -1,18 +1,22 @@
-// See [https://github.com/invokeImmediately/distinguishedscholarships.wsu.edu] for repository of source code
-/**********************************************************************************************************************
- CUSTOM JQUERY-BASED DYNAMIC CONTENT
- *********************************************************************************************************************/
+/**************************************************************************************************\
+| CUSTOM JQUERY-BASED DYNAMIC CONTENT                                                              |
+\**************************************************************************************************/
 (function ($) {
 "use strict";
 
 var thisFileName = 'ascc-specific.js';
     
 $( function () {
-	setupCeaContactForm( '.page.cea', '#contact-us', '#contact-form-wrapper', 'shown', '#close-contact-form' );
+	setupCeaContactForm( '.page.cea', '#contact-us', '#contact-form-wrapper', 'shown', 
+		'#close-contact-form' );
 } );
 
-function setupCeaContactForm( slctrPage, slctrContactUsButton, slctrFormWrapper, formActivationClass,
-		slctrCloseButton ) {
+$(window).on("load", function(e) {
+	changeRichTextFontFamily( $( '.gfield_contains_required.uses-rich-editor' ) );
+});
+
+function setupCeaContactForm( slctrPage, slctrContactUsButton, slctrFormWrapper, 
+		formActivationClass, slctrCloseButton ) {
 	var thisFuncName = 'setupCeaContactForm';
 	var thisFuncDesc = 'Initializes user interactivity for the CEA page\'s "contact us" form.';
 	var $ceaPage;
@@ -43,7 +47,8 @@ function setupCeaContactForm( slctrPage, slctrContactUsButton, slctrFormWrapper,
 		if ( $.isJQueryObj( $ceaPage ) ) {
 			$contactUsButton = $ceaPage.find( slctrContactUsButton );
 		} else {
-			throw 'Sub-function findContactUsButton was passed an non-jQuery object as its first argument.';
+			throw 'Sub-function findContactUsButton was passed an non-jQuery object as its first '
+				+ 'argument.';
 		}
 		if ( $contactUsButton.length > 1 ) {
 			throw 'More than one "Contact Us" button was found on the CEA page.';
@@ -56,7 +61,8 @@ function setupCeaContactForm( slctrPage, slctrContactUsButton, slctrFormWrapper,
 		if ( $.isJQueryObj( $ceaPage ) ) {
 			$formWrapper = $ceaPage.find( slctrFormWrapper );
 		} else {
-			throw 'Sub-function findContactForm was passed an non-jQuery object as its first argument.';
+			throw 'Sub-function findContactForm was passed an non-jQuery object as its first '
+				+ 'argument.';
 		}
 		if ( $formWrapper.length > 1 ) {
 			throw 'More than one "Contact Us" form was found on the CEA page.';
@@ -69,10 +75,12 @@ function setupCeaContactForm( slctrPage, slctrContactUsButton, slctrFormWrapper,
 		if ( $.isJQueryObj( $formWrapper ) ) {
 			$closeButton = $formWrapper.find( slctrCloseButton );
 		} else {
-			throw 'Sub-function findCloseButton was passed an non-jQuery object as its first argument.';
+			throw 'Sub-function findCloseButton was passed an non-jQuery object as its first '
+				+ 'argument.';
 		}
 		if ( $closeButton.length > 1 ) {
-			throw 'More than one close button for the "Contact Us" form was found within the CEA page.';
+			throw 'More than one close button for the "Contact Us" form was found within the CEA '
+				+ 'page.';
 		} else if ( $formWrapper.length == 1 && $closeButton.length == 0 ) {
 			throw 'No close button was found within the "Contact Us" form on the CEA page.';
 		}
@@ -92,8 +100,10 @@ function setupCeaContactForm( slctrPage, slctrContactUsButton, slctrFormWrapper,
 		}
 	}
 
-	function initFormInteractivity( $contactUsButton, $formWrapper, formActivationClass, $closeButton ) {
-		if ( $contactUsButton.length == 1 && $formWrapper.length == 1 && $closeButton.length == 1 ) {
+	function initFormInteractivity( $contactUsButton, $formWrapper, formActivationClass, 
+			$closeButton ) {
+		if ( $contactUsButton.length == 1 && $formWrapper.length == 1 && 
+				$closeButton.length == 1 ) {
 			$contactUsButton.click( handleContactUsButtonClick );
 			$contactUsButton.on( 'keydown', handleContactUsButtonKeydown );
 			$closeButton.click( handleCloseButtonClick );
@@ -128,6 +138,20 @@ function setupCeaContactForm( slctrPage, slctrContactUsButton, slctrFormWrapper,
 				$formWrapper.removeClass( formActivationClass );
 			}
 		}
+	}
+}
+
+function changeRichTextFontFamily( $fields ) {
+    if ( $.isJQueryObj($fields) && $fields.length > 0 ) {
+        $fields.each( function () {
+			var $edtrFrm = $( this ).find( 'iframe' );
+			$edtrFrm.each( function () {
+				var $edtrBdy = $( this ).contents().find( '#tinymce' );
+				$edtrBdy.css( {
+					 fontFamily: '"Open sans", sans-serif'
+				} );
+			} );
+		} );
 	}
 }
 
