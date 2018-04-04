@@ -722,16 +722,25 @@ body.page.cea {
 		padding-bottom: (@v-dflt-spcng / 5);
 	}
 
+	.builder-section-banner {
+		font-size: 1rem;
+
+		@media screen and (max-width: @v-rghtclmn-thrshld) {
+			font-size: .875rem;
+		}		
+	}
+
 	.builder-banner-content {
 		@media screen and (max-width: @v-rghtclmn-thrshld) {
 			margin-left: (-1 * @v-dflt-spcng);
 			margin-right: (-1 * @v-dflt-spcng);
-			margin-bottom: (-0.5 * @v-dflt-spcng);
+			border-bottom-width: (@v-dflt-spcng / 2);
 			font-size: (@v-p-sz * 7 / 8);
 		}
 	}
 
 	.builder-banner-inner-content {
+		font-size: 1em;
 		justify-content: flex-end;
 
 		& > * {
@@ -741,6 +750,9 @@ body.page.cea {
 
 	.builder-banner-slide-title {
 		.dark-slide-bg();
+		font-size: 1.5em;
+		line-height: 1.4em;
+		line-height: ~"calc(1.4em + .9rem)";
 	}
 
 	.cycle-prev,
