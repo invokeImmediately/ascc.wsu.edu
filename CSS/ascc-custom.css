@@ -2234,11 +2234,13 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_radio li {
   padding: 0.5rem;
   padding-bottom: 0.4rem;
 }
+.ascc-v2 .builder-banner-inner-title {
+  font-size: 1.5em;
+}
 .ascc-v2 .builder-banner-slide-title {
   background-color: rgba(0, 0, 0, 0.85);
   padding: 0.5rem;
   padding-bottom: 0.4rem;
-  font-size: 1.5em;
   line-height: 1.4em;
   line-height: calc(1.4em + .9rem);
 }
