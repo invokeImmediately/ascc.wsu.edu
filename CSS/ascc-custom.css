@@ -1005,6 +1005,9 @@ div#cssslider2 figure {
 /*!
 * dr-css-1.1: Site-wide sizing & spacing overrides
 */
+body {
+  font-size: 100%;
+}
 body.has-normal-line-spacing {
   font-size: 16px;
 }
