@@ -2209,14 +2209,40 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_radio li {
 /*! 
 * dr-css-1.13: ASCC version 2.0 slideshows
 */
+@media screen and (max-width: 693px) {
+  .ascc-v2 .builder-banner-content {
+    margin-left: -2rem;
+    margin-right: -2rem;
+    margin-bottom: -1rem;
+    font-size: 0.875em;
+  }
+}
 .ascc-v2 .builder-banner-inner-content {
   justify-content: flex-end;
 }
 .ascc-v2 .builder-banner-inner-content > * {
   background-color: rgba(0, 0, 0, 0.85);
-  padding: 1rem;
+  padding: 0.5rem;
+  padding-bottom: 0.4rem;
 }
 .ascc-v2 .builder-banner-slide-title {
   background-color: rgba(0, 0, 0, 0.85);
-  padding: 1rem;
+  padding: 0.5rem;
+  padding-bottom: 0.4rem;
+}
+.ascc-v2 .cycle-prev,
+.ascc-v2 .cycle-next {
+  opacity: 1.0;
+}
+.ascc-v2 .cycle-prev:before,
+.ascc-v2 .cycle-next:before {
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 1.7rem;
+  padding-bottom: 2px;
+}
+@media screen and (max-width: 693px) {
+  .ascc-v2 .cycle-prev:before,
+  .ascc-v2 .cycle-next:before {
+    border-radius: 15px;
+  }
 }
