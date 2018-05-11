@@ -1092,24 +1092,13 @@ div#cssslider2 figure {
 	border-left: 1px solid rgba(0,165,189,.2);
 }
 
-.drop-down-toggle+.toggled-panel {
-	opacity: 1;
-	overflow: hidden;
-	-webkit-transition: all .5s ease;
-	-moz-transition: all .5s ease;
-	transition: all .5s ease;
-}
-
-.drop-down-toggle:not(.activated)+.toggled-panel {
-	height: 0 !important;
-	padding: 0 !important;
-	border: none !important;
-	opacity: 0 !important;
-}
-
-/*! 
+/*!
 * dr-css-1.1: Site-wide sizing & spacing overrides
 */
+body {
+	font-size: 100%;
+}
+
 body.has-normal-line-spacing {
 	font-size: 16px;
 }
@@ -2040,7 +2029,7 @@ body.has-improved-contrast {
 	width: 1rem;
 	left: -3px;
 	height: .9rem;
-	background: url(https://s3.wp.wsu.edu/uploads/sites/167/2017/09/micon_returnKey_rotated-90-deg-cw_54x64.png) center center/auto 100% no-repeat;
+	background: url(https://s3.wp.wsu.edu/uploads/sites/167/2017/09/ micon_returnKey_rotated-90-deg-cw_54x64.png) center center/auto 100% no-repeat;
 }
 
 /*! 
@@ -2222,7 +2211,7 @@ body.page.cea #close-contact-form {
 	font-size: .9rem;
 	line-height: 1.4rem;
 	text-transform: uppercase;
-	background: #2a3033 url(/wp-content/uploads/sites/167/2017/10/button_close-form_crimson-and-white.jpg) left center/24px auto no-repeat;
+	background: #2a3033 url(/wp-content/uploads/sites/167/2017/10/ button_close-form_crimson-and-white.jpg) left center/24px auto no-repeat;
 	color: #fff;
 	cursor: pointer;
 	z-index: 99353;
@@ -2330,7 +2319,7 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_checkbox li,body.page.cea .
 }
 
 /*! 
-* dr-css-1.2: Gravity forms
+* dr-css-1.12: Gravity forms
 */
 .column li.gfield.uses-rich-editor .tmce-active .mce-menubar {
 	display: none;
@@ -2354,4 +2343,65 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_checkbox li,body.page.cea .
 
 .column li.gfield.uses-rich-editor span.gp-word-count-label {
 	margin-top: 0 !important;
+}
+
+/*! 
+* dr-css-1.13: ASCC version 2.0 slideshows
+*/
+.ascc-v2 .builder-section-banner {
+	font-size: 1rem;
+}
+
+@media screen and (max-width:693px) {
+	.ascc-v2 .builder-section-banner {
+		font-size: .875rem;
+	}
+}
+
+@media screen and (max-width:693px) {
+	.ascc-v2 .builder-banner-content {
+		margin-left: -2rem;
+		margin-right: -2rem;
+		border-bottom-width: 1rem;
+		font-size: .875em;
+	}
+}
+
+.ascc-v2 .builder-banner-inner-content {
+	font-size: 1em;
+	justify-content: flex-end;
+}
+
+.ascc-v2 .builder-banner-inner-content>* {
+	background-color: rgba(0,0,0,.85);
+	padding: .5rem;
+	padding-bottom: .4rem;
+}
+
+.ascc-v2 .builder-banner-inner-title {
+	font-size: 1.5em;
+}
+
+.ascc-v2 .builder-banner-slide-title {
+	background-color: rgba(0,0,0,.85);
+	padding: .5rem;
+	padding-bottom: .4rem;
+	line-height: 1.4em;
+	line-height: calc(1.4em + .9rem);
+}
+
+.ascc-v2 .cycle-next,.ascc-v2 .cycle-prev {
+	opacity: 1;
+}
+
+.ascc-v2 .cycle-next:before,.ascc-v2 .cycle-prev:before {
+	background-color: rgba(0,0,0,.85);
+	border-radius: 1.7rem;
+	padding-bottom: 2px;
+}
+
+@media screen and (max-width:693px) {
+	.ascc-v2 .cycle-next:before,.ascc-v2 .cycle-prev:before {
+		border-radius: 15px;
+	}
 }
