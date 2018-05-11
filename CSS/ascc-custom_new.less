@@ -786,5 +786,18 @@ body:not(.ascc-v2) {
 	.main-header {
 		margin: 0 -100%;
 		padding: .5em 100%;
-	}	
+
+		sup:not(.unset),
+		sup,
+		sub:not(.unset),
+		sub {
+			font-size: 200%;
+		}
+
+		sub:not(.unset) *,
+		sub:not(.unset) a, 
+		sup:not(.unset) a {
+			font-size: inherit;
+		}
+	}
 }
