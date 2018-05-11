@@ -2294,5 +2294,19 @@ body.ascc-v2 {
 }
 .ascc-v2 main {
   background: #fff;
-  border-left: 1px solid #5e6a71;
+  border-left: 1px solid #eff0f1;
+}
+/*!
+* dr-css-1.16: TO BE REMOVED: Temporarily copied from WSU-UE---CSS
+*/
+.ascc-v2 .for-screen-readers {
+  box-sizing: border-box !important;
+  height: 0 !important;
+  width: 0 !important;
+  border: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+}
+.ascc-v2 .for-screen-readers.row {
+  margin: 0 !important;
 }

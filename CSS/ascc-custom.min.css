@@ -53,4 +53,6 @@ your theme's stylesheet content.
 * dr-css-1.14: Legacy ASCC fixes
 */body:not(.ascc-v2) .main-header{margin:0 -100%;padding:.5em 100%}body:not(.ascc-v2) .main-header sub,body:not(.ascc-v2) .main-header sub:not(.unset),body:not(.ascc-v2) .main-header sup,body:not(.ascc-v2) .main-header sup:not(.unset){font-size:200%}body:not(.ascc-v2) .main-header sub:not(.unset) *,body:not(.ascc-v2) .main-header sub:not(.unset) a,body:not(.ascc-v2) .main-header sup:not(.unset) a{font-size:inherit}/*!
 * dr-css-1.15: ASCC version 2.0 body
-*/body.ascc-v2{background:#5e6a71 url(/wp-content/uploads/sites/167/2014/11/bright-squares.png) repeat fixed}.ascc-v2 .main-header{background:#981e32 url(/wp-content/uploads/sites/167/2018/05/background-art_main-header_ascc-v2_1187x142.jpg) right center/cover no-repeat}.ascc-v2 main{background:#fff;border-left:1px solid #5e6a71}
+*/body.ascc-v2{background:#5e6a71 url(/wp-content/uploads/sites/167/2014/11/bright-squares.png) repeat fixed}.ascc-v2 .main-header{background:#981e32 url(/wp-content/uploads/sites/167/2018/05/background-art_main-header_ascc-v2_1187x142.jpg) right center/cover no-repeat}.ascc-v2 main{background:#fff;border-left:1px solid #eff0f1}/*!
+* dr-css-1.16: TO BE REMOVED: Temporarily copied from WSU-UE---CSS
+*/.ascc-v2 .for-screen-readers{box-sizing:border-box!important;height:0!important;width:0!important;border:0!important;overflow:hidden!important;opacity:0!important}.ascc-v2 .for-screen-readers.row{margin:0!important}
