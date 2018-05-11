@@ -2272,3 +2272,14 @@ body:not(.ascc-v2) .main-header {
   margin: 0 -100%;
   padding: .5em 100%;
 }
+body:not(.ascc-v2) .main-header sup:not(.unset),
+body:not(.ascc-v2) .main-header sup,
+body:not(.ascc-v2) .main-header sub:not(.unset),
+body:not(.ascc-v2) .main-header sub {
+  font-size: 200%;
+}
+body:not(.ascc-v2) .main-header sub:not(.unset) *,
+body:not(.ascc-v2) .main-header sub:not(.unset) a,
+body:not(.ascc-v2) .main-header sup:not(.unset) a {
+  font-size: inherit;
+}
