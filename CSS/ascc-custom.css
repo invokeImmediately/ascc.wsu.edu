@@ -2211,7 +2211,7 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_radio li {
 .column li.gfield.uses-rich-editor span.gp-word-count-label {
   margin-top: 0 !important;
 }
-/*! 
+/*!
 * dr-css-1.13: ASCC version 2.0 slideshows
 */
 .ascc-v2 .builder-section-banner {
@@ -2282,4 +2282,17 @@ body:not(.ascc-v2) .main-header sub:not(.unset) *,
 body:not(.ascc-v2) .main-header sub:not(.unset) a,
 body:not(.ascc-v2) .main-header sup:not(.unset) a {
   font-size: inherit;
+}
+/*!
+* dr-css-1.15: ASCC version 2.0 body
+*/
+body.ascc-v2 {
+  background: #5e6a71 url(/wp-content/uploads/sites/167/2014/11/bright-squares.png) repeat fixed;
+}
+.ascc-v2 .main-header {
+  background: #981e32 url(/wp-content/uploads/sites/167/2018/05/background-art_main-header_ascc-v2_1187x142.jpg) right center / cover no-repeat;
+}
+.ascc-v2 main {
+  background: #fff;
+  border-left: 1px solid #5e6a71;
 }
