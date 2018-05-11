@@ -715,7 +715,7 @@ body.page.cea {
 	}
 }
 
-/*! 
+/*!
 * dr-css-1.13: ASCC version 2.0 slideshows
 */
 .ascc-v2 {
@@ -798,6 +798,41 @@ body:not(.ascc-v2) {
 		sub:not(.unset) a, 
 		sup:not(.unset) a {
 			font-size: inherit;
+		}
+	}
+}
+
+/*!
+* dr-css-1.15: ASCC version 2.0 body
+*/
+.ascc-v2 {
+	body& {
+		background: @hex-dark-gray url(/wp-content/uploads/sites/167/2014/11/bright-squares.png) repeat fixed;
+	}
+
+	.main-header {
+		background: @hex-crimson url(/wp-content/uploads/sites/167/2018/05/background-art_main-header_ascc-v2_1187x142.jpg) right center/cover no-repeat;
+	}
+
+	main {
+		background: @hex-white;
+		border-left: 1px solid @hex-bright-gray;
+	}
+}
+
+/*!
+* dr-css-1.16: TO BE REMOVED: Temporarily copied from WSU-UE---CSS
+*/
+.ascc-v2 {
+	.for-screen-readers {
+		box-sizing: border-box !important;
+		height: 0 !important;
+		width: 0 !important;
+		border: 0 !important;
+		overflow: hidden !important;
+		opacity: 0 !important;
+		&.row {
+			margin: 0 !important;
 		}
 	}
 }
