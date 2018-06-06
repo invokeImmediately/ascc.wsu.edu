@@ -1,0 +1,35 @@
+{
+  "name": "ascc.wsu.edu",
+  "version": "1.0.0",
+  "description": "Website of the WSU Academic Success and Career Center",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/invokeImmediately/ascc.wsu.edu.git"
+  },
+  "keywords": [
+    "WSU"
+  ],
+  "author": "Daniel Rieck <danielcrieck@gmail.com> (https://www.linkedin.com/in/danielcrieck/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/invokeImmediately/ascc.wsu.edu/issues"
+  },
+  "homepage": "https://github.com/invokeImmediately/ascc.wsu.edu#readme",
+  "devDependencies": {
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-dest": "^0.2.3",
+    "gulp-extname": "^0.2.2",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-insert": "^0.5.0",
+    "gulp-insert-lines": "0.0.4",
+    "gulp-less": "^3.5.0",
+    "gulp-regex-replace": "^0.2.3",
+    "gulp-replace": "^1.0.0"
+  }
+}
