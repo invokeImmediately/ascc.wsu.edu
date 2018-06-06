@@ -9,4 +9,3 @@ concat([
 ], './ascc-custom.js', function() {
 	console.log('Concatenation complete.');     
 });
- 
