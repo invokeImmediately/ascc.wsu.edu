@@ -27,9 +27,11 @@
     "gulp-extname": "^0.2.2",
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-insert": "^0.5.0",
-    "gulp-insert-lines": "0.0.4",
+    "gulp-insert-lines": "git+https://github.com/invokeImmediately/gulp-insert-lines.git",
     "gulp-less": "^3.5.0",
     "gulp-regex-replace": "^0.2.3",
-    "gulp-replace": "^1.0.0"
+    "gulp-replace": "^1.0.0",
+    "gulp-uglify": "^3.0.0",
+    "pump": "^3.0.0"
   }
 }
