@@ -13,54 +13,59 @@ which means that your rules can take precedence and override the theme CSS
 rules. Just write here what you want to change, you don't need to copy all
 your theme's stylesheet content.
 */
-body {
-	font-family: OpenSans, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+/*!
+* Legacy CSS written before 8/2017.
+* Note from DC Rieck: Should be eventually removed or incorporated into updated design files.
+*/
+body:not(.ascc-v2) {
 	background: url(/wp-content/uploads/sites/167/2015/02/campus.jpg) no-repeat center center;
 	background-attachment: fixed;
 	background-size: cover;
+	font-family: OpenSans, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	margin: 0;
 }
 
-a {
+body:not(.ascc-v2) a {
 	font-weight: inherit;
 }
 
-p {
+body:not(.ascc-v2) p {
 	line-height: 1.7em;
 }
 
-h2 {
+body:not(.ascc-v2) h2 {
 	font-size: 3em;
 	padding: 1em 0 .5em;
 }
 
-h2:first-child {
+body:not(.ascc-v2) h2:first-child {
 	padding: 0 0 .5em;
 }
 
-.column.two h2,h3 {
+body:not(.ascc-v2) .column.two h2,body:not(.ascc-v2) h3 {
 	color: #981e32;
 	font-size: 2em;
 	font-weight: 400;
 	padding: .5em 0 .3em;
 }
 
-.column.two h3,h4 {
+body:not(.ascc-v2) .column.two h3,body:not(.ascc-v2) h4 {
 	color: #5e6a71;
 	font-size: 1.5em;
 	font-weight: 700;
 	padding: .5em 0 .3em;
 }
 
-h3+h4 {
+body:not(.ascc-v2) h3+h4 {
 	padding-top: 0;
 }
 
-ol li,ul li {
+body:not(.ascc-v2) ol li,body:not(.ascc-v2) ul li {
 	line-height: 1.4em;
 	padding-bottom: 1em;
 }
 
-.main-header {
+body:not(.ascc-v2) .main-header {
 	background: #5e6a71 url(/wp-content/uploads/sites/167/2014/11/bright-squares.png) repeat center center;
 	border-bottom: 1px solid #fff;
 	height: auto;
@@ -70,61 +75,61 @@ ol li,ul li {
 	z-index: 2;
 }
 
-.home .main-header {
+body:not(.ascc-v2) .home .main-header {
 	margin-bottom: 0;
 }
 
-.main-header .header-group,.main-header .header-group:not(.unset) {
+body:not(.ascc-v2) .main-header .header-group,body:not(.ascc-v2) .main-header .header-group:not(.unset) {
 	padding: 0;
 	position: relative;
 	width: 100%;
 	max-width: 100%;
 }
 
-.main-header sub,.main-header sub:not(.unset),.main-header sup,.main-header sup:not(.unset) {
+body:not(.ascc-v2) .main-header sub,body:not(.ascc-v2) .main-header sub:not(.unset),body:not(.ascc-v2) .main-header sup,body:not(.ascc-v2) .main-header sup:not(.unset) {
 	color: #fff;
 	display: inline-block;
 	font-size: 1em;
 	padding: 1rem 2rem .9rem;
 }
 
-.home .main-header sub,.home .main-header sub:not(.unset),.home .main-header sup,.home .main-header sup:not(.unset) {
+body:not(.ascc-v2) .home .main-header sub,body:not(.ascc-v2) .home .main-header sub:not(.unset),body:not(.ascc-v2) .home .main-header sup,body:not(.ascc-v2) .home .main-header sup:not(.unset) {
 	font-size: 3.5em;
 	padding: 2rem 2rem 1.8rem;
 	text-transform: none;
 }
 
-.main-header sub,.main-header sub:not(.unset) {
+body:not(.ascc-v2) .main-header sub,body:not(.ascc-v2) .main-header sub:not(.unset) {
 	border-left: 1px solid #fff;
 	display: none;
 	text-transform: none;
 }
 
-.main-header sup:not(.unset) {
+body:not(.ascc-v2) .main-header sup:not(.unset) {
 	text-transform: none;
 }
 
-.main-header sub:not(.unset) *,.main-header sub:not(.unset) a,.main-header sup:not(.unset) a {
+body:not(.ascc-v2) .main-header sub:not(.unset) *,body:not(.ascc-v2) .main-header sub:not(.unset) a,body:not(.ascc-v2) .main-header sup:not(.unset) a {
 	font-size: 200%;
 }
 
-.main-header sub,.main-header sub a,.main-header sub:not(.unset),.main-header sub:not(.unset) a {
+body:not(.ascc-v2) .main-header sub,body:not(.ascc-v2) .main-header sub a,body:not(.ascc-v2) .main-header sub:not(.unset),body:not(.ascc-v2) .main-header sub:not(.unset) a {
 	color: #fff;
 }
 
-main {
+body:not(.ascc-v2) main {
 	padding-bottom: 100px;
 }
 
-.home .fluid .row.side-left .column.one,.home .fluid .row.side-right .column.two {
+body:not(.ascc-v2) .home .fluid .row.side-left .column.one,body:not(.ascc-v2) .home .fluid .row.side-right .column.two {
 	margin-top: 2.5%;
 }
 
-.home .fluid .row.side-left .column.two,.home .fluid .row.side-right .column.one {
+body:not(.ascc-v2) .home .fluid .row.side-left .column.two,body:not(.ascc-v2) .home .fluid .row.side-right .column.one {
 	margin-top: 2.5%;
 }
 
-.bgcover.row.unbound {
+body:not(.ascc-v2) .bgcover.row.unbound {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -133,32 +138,32 @@ main {
 	max-width: 100% !important;
 }
 
-section:not(.bgcover) .column {
+body:not(.ascc-v2) section:not(.bgcover) .column {
 	background: rgba(255,255,255,.95);
 	box-sizing: border-box;
 }
 
-.wrapbox {
+body:not(.ascc-v2) .wrapbox {
 	margin: 2%;
 }
 
-.fluid .row.side-left .column.one,.fluid .row.side-right .column.two {
+body:not(.ascc-v2) .fluid .row.side-left .column.one,body:not(.ascc-v2) .fluid .row.side-right .column.two {
 	padding: 2em;
 }
 
 @media all and (min-width:694px) {
-	.fluid .row.side-left .column.one,.fluid .row.side-right .column.two {
+	body:not(.ascc-v2) .fluid .row.side-left .column.one,body:not(.ascc-v2) .fluid .row.side-right .column.two {
 		width: 33%;
 		margin-top: 4%;
 	}
 }
 
-.fluid .row.side-left .column.two,.fluid .row.side-right .column.one {
+body:not(.ascc-v2) .fluid .row.side-left .column.two,body:not(.ascc-v2) .fluid .row.side-right .column.one {
 	padding: 2em;
 }
 
 @media all and (min-width:694px) {
-	.fluid .row.side-left .column.two,.fluid .row.side-right .column.one {
+	body:not(.ascc-v2) .fluid .row.side-left .column.two,body:not(.ascc-v2) .fluid .row.side-right .column.one {
 		width: 64%;
 		margin-right: 2%;
 	}
@@ -202,20 +207,16 @@ section:not(.bgcover) .column {
 	}
 }
 
-body {
-	margin: 0;
-}
-
-div#cssslider2 {
+body:not(.ascc-v2) div#cssslider2 {
 	overflow: hidden;
 }
 
-div#cssslider2 figure img {
+body:not(.ascc-v2) div#cssslider2 figure img {
 	width: 20%;
 	float: left;
 }
 
-div#cssslider2 figure {
+body:not(.ascc-v2) div#cssslider2 figure {
 	position: relative;
 	width: 500%;
 	margin: 0;
@@ -225,7 +226,7 @@ div#cssslider2 figure {
 	animation: 30s slidy infinite;
 }
 
-.btn {
+body:not(.ascc-v2) .btn {
 	-webkit-border-radius: 4;
 	-moz-border-radius: 4;
 	border-radius: 4px;
@@ -235,37 +236,37 @@ div#cssslider2 figure {
 	text-decoration: none;
 }
 
-.btn:hover {
+body:not(.ascc-v2) .btn:hover {
 	background: #b14254;
 	color: #fff;
 	text-decoration: none;
 }
 
-#col-wrap {
+body:not(.ascc-v2) #col-wrap {
 	overflow: hidden;
 }
 
-.col {
+body:not(.ascc-v2) .col {
 	padding: 10px;
 }
 
 @media all and (min-width:694px) {
-	.col {
+	body:not(.ascc-v2) .col {
 		width: 45%;
 		float: left;
 	}
 }
 
-#third-wrap {
+body:not(.ascc-v2) #third-wrap {
 	overflow: hidden;
 }
 
-.thirdcol {
+body:not(.ascc-v2) .thirdcol {
 	padding: 10px;
 }
 
 @media all and (min-width:694px) {
-	.thirdcol {
+	body:not(.ascc-v2) .thirdcol {
 		width: 30%;
 		float: left;
 	}
@@ -2345,7 +2346,7 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_checkbox li,body.page.cea .
 	margin-top: 0 !important;
 }
 
-/*! 
+/*!
 * dr-css-1.13: ASCC version 2.0 slideshows
 */
 .ascc-v2 .builder-section-banner {
@@ -2404,4 +2405,67 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_checkbox li,body.page.cea .
 	.ascc-v2 .cycle-next:before,.ascc-v2 .cycle-prev:before {
 		border-radius: 15px;
 	}
+}
+
+/*! 
+* dr-css-1.14: Legacy ASCC fixes
+*/
+body:not(.ascc-v2) .main-header {
+	margin: 0 -100%;
+	padding: .5em 100%;
+}
+
+body:not(.ascc-v2) .main-header sub,body:not(.ascc-v2) .main-header sub:not(.unset),body:not(.ascc-v2) .main-header sup,body:not(.ascc-v2) .main-header sup:not(.unset) {
+	font-size: 200%;
+}
+
+body:not(.ascc-v2) .main-header sub:not(.unset) *,body:not(.ascc-v2) .main-header sub:not(.unset) a,body:not(.ascc-v2) .main-header sup:not(.unset) a {
+	font-size: inherit;
+}
+
+/*!
+* dr-css-1.15: ASCC version 2.0 body
+*/
+body.ascc-v2 {
+	background: #5e6a71 url(/wp-content/uploads/sites/167/2014/11/bright-squares.png) repeat fixed;
+}
+
+.ascc-v2 .main-header {
+	background: #981e32 url(/wp-content/uploads/sites/167/2018/05/background-art_main-header_ascc-v2_1187x142.jpg) right center/cover no-repeat;
+}
+
+.ascc-v2 main {
+	background: #fff;
+	border-left: 1px solid #eff0f1;
+}
+
+/*!
+* dr-css-1.16: TO BE REMOVED: Temporarily copied from WSU-UE---CSS
+*/
+.ascc-v2 .for-screen-readers {
+	box-sizing: border-box !important;
+	height: 0 !important;
+	width: 0 !important;
+	border: 0 !important;
+	overflow: hidden !important;
+	opacity: 0 !important;
+}
+
+.ascc-v2 .for-screen-readers.row {
+	margin: 0 !important;
+}
+
+/*!
+* dr-css-1.17: ASCC version 2.0 sub-columns
+*/
+.ascc-v2 .sub-row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.ascc-v2 .sub-row.halves .sub-column {
+	width: 49%;
+	width: calc(50% - 2rem);
 }
