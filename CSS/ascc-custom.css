@@ -14,48 +14,13 @@ your theme's stylesheet content.
 * Legacy CSS written before 8/2017.
 * Note from DC Rieck: Should be eventually removed or incorporated into updated design files.
 */
-@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:300|Roboto+Condensed:400,700|Roboto+Slab|PT+Serif);
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300|Roboto+Condensed:400,700|Roboto+Slab|PT+Serif');
 body:not(.ascc-v2) {
   background: url('/wp-content/uploads/sites/167/2015/02/campus.jpg') no-repeat center center;
   background-attachment: fixed;
   background-size: cover;
   font-family: "OpenSans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
   margin: 0;
-}
-body:not(.ascc-v2) a {
-  font-weight: inherit;
-}
-body:not(.ascc-v2) p {
-  line-height: 1.7em;
-}
-body:not(.ascc-v2) h2 {
-  font-size: 3em;
-  padding: 1em 0 .5em;
-}
-body:not(.ascc-v2) h2:first-child {
-  padding: 0 0 .5em;
-}
-body:not(.ascc-v2) h3,
-body:not(.ascc-v2) .column.two h2 {
-  color: #981e32;
-  font-size: 2em;
-  font-weight: 400;
-  padding: .5em 0 .3em;
-}
-body:not(.ascc-v2) h4,
-body:not(.ascc-v2) .column.two h3 {
-  color: #5e6a71;
-  font-size: 1.5em;
-  font-weight: 700;
-  padding: .5em 0 .3em;
-}
-body:not(.ascc-v2) h3 + h4 {
-  padding-top: 0;
-}
-body:not(.ascc-v2) ol li,
-body:not(.ascc-v2) ul li {
-  line-height: 1.4em;
-  padding-bottom: 1em;
 }
 body:not(.ascc-v2) .main-header {
   background: #5e6a71 url('/wp-content/uploads/sites/167/2014/11/bright-squares.png') repeat center center;
@@ -124,21 +89,6 @@ body:not(.ascc-v2) .home .fluid .row.side-left .column.two,
 body:not(.ascc-v2) .home .fluid .row.side-right .column.one {
   margin-top: 2.5%;
 }
-body:not(.ascc-v2) .bgcover.row.unbound {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 900px;
-  width: 100%;
-  max-width: 100% !important;
-}
-body:not(.ascc-v2) section:not(.bgcover) .column {
-  background: rgba(255, 255, 255, 0.95);
-  box-sizing: border-box;
-}
-body:not(.ascc-v2) .wrapbox {
-  margin: 2%;
-}
 body:not(.ascc-v2) .fluid .row.side-left .column.one,
 body:not(.ascc-v2) .fluid .row.side-right .column.two {
   padding: 2em;
@@ -160,6 +110,56 @@ body:not(.ascc-v2) .fluid .row.side-right .column.one {
     width: 64%;
     margin-right: 2%;
   }
+}
+a {
+  font-weight: inherit;
+}
+p {
+  line-height: 1.7em;
+}
+h2 {
+  font-size: 3em;
+  padding: 1em 0 .5em;
+}
+h2:first-child {
+  padding: 0 0 .5em;
+}
+h3,
+.column.two h2 {
+  color: #981e32;
+  font-size: 2em;
+  font-weight: 400;
+  padding: .5em 0 .3em;
+}
+h4,
+.column.two h3 {
+  color: #5e6a71;
+  font-size: 1.5em;
+  font-weight: 700;
+  padding: .5em 0 .3em;
+}
+h3 + h4 {
+  padding-top: 0;
+}
+ol li,
+ul li {
+  line-height: 1.4em;
+  padding-bottom: 1em;
+}
+.bgcover.row.unbound {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 900px;
+  width: 100%;
+  max-width: 100% !important;
+}
+section:not(.bgcover) .column {
+  background: rgba(255, 255, 255, 0.95);
+  box-sizing: border-box;
+}
+.wrapbox {
+  margin: 2%;
 }
 @keyframes slidy {
   0% {
@@ -190,14 +190,14 @@ body:not(.ascc-v2) .fluid .row.side-right .column.one {
     left: -400%;
   }
 }
-body:not(.ascc-v2) div#cssslider2 {
+div#cssslider2 {
   overflow: hidden;
 }
-body:not(.ascc-v2) div#cssslider2 figure img {
+div#cssslider2 figure img {
   width: 20%;
   float: left;
 }
-body:not(.ascc-v2) div#cssslider2 figure {
+div#cssslider2 figure {
   position: relative;
   width: 500%;
   margin: 0;
@@ -206,7 +206,7 @@ body:not(.ascc-v2) div#cssslider2 figure {
   font-size: 0;
   animation: 30s slidy infinite;
 }
-body:not(.ascc-v2) .btn {
+.btn {
   -webkit-border-radius: 4;
   -moz-border-radius: 4;
   border-radius: 4px;
@@ -215,33 +215,33 @@ body:not(.ascc-v2) .btn {
   padding: 10px 20px;
   text-decoration: none;
 }
-body:not(.ascc-v2) .btn:hover {
+.btn:hover {
   background: #b14254;
   color: #ffffff;
   text-decoration: none;
 }
-body:not(.ascc-v2) #col-wrap {
+#col-wrap {
   /* overflow to handle inner floating block */
   overflow: hidden;
 }
-body:not(.ascc-v2) .col {
+.col {
   padding: 10px;
 }
 @media all and (min-width: 694px) {
-  body:not(.ascc-v2) .col {
+  .col {
     width: 45%;
     float: left;
   }
 }
-body:not(.ascc-v2) #third-wrap {
+#third-wrap {
   /* overflow to handle inner floating block */
   overflow: hidden;
 }
-body:not(.ascc-v2) .thirdcol {
+.thirdcol {
   padding: 10px;
 }
 @media all and (min-width: 694px) {
-  body:not(.ascc-v2) .thirdcol {
+  .thirdcol {
     width: 30%;
     float: left;
   }
@@ -275,6 +275,17 @@ body:not(.ascc-v2) .thirdcol {
 .initially-hidden,
 .column .initially-hidden {
   display: none;
+}
+.for-screen-readers {
+  box-sizing: border-box !important;
+  height: 0 !important;
+  width: 0 !important;
+  border: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+}
+.for-screen-readers.row {
+  margin: 0 !important;
 }
 .margin-centered,
 .column .margin-centered {
@@ -599,10 +610,6 @@ body:not(.ascc-v2) .thirdcol {
 .column .soft-gray-border {
   border: 1px solid rgba(42, 48, 51, 0.5);
 }
-/*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-*       │ ++++ ANIMATIONS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
-*       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-*/
 .fade-in-from-top {
   opacity: 0;
   -webkit-animation: anim-fade-in-from-top 1s linear 1;
@@ -830,10 +837,6 @@ body:not(.ascc-v2) .thirdcol {
     border-color: rgba(141, 203, 241, 0.5);
   }
 }
-/*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-*       │ DROP-DOWN TOGGLES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
-*       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-*/
 .drop-down-toggle {
   position: relative;
   -webkit-transition: all 0.3s ease;
@@ -1004,6 +1007,19 @@ body:not(.ascc-v2) .thirdcol {
   border-bottom: 1px solid rgba(0, 165, 189, 0.2);
   border-left: 1px solid rgba(0, 165, 189, 0.2);
 }
+.drop-down-toggle + .toggled-panel {
+  opacity: 1;
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.drop-down-toggle:not(.activated) + .toggled-panel {
+  height: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  opacity: 0 !important;
+}
 /*!
 * dr-css-1.1: Site-wide sizing & spacing overrides
 */
@@ -1014,12 +1030,12 @@ body.has-normal-line-spacing {
   font-size: 16px;
 }
 body.has-normal-line-spacing p {
-  line-height: 1.375em;
+  line-height: 1.5em;
   padding-bottom: 0;
 }
 body.has-normal-line-spacing ul:not(.gform_fields):not(.gfield_radio):not(.gfield_checkbox) li,
 body.has-normal-line-spacing ol li {
-  line-height: 1.375em;
+  line-height: 1.5em;
   padding-bottom: 0;
 }
 body.has-normal-line-spacing ul:not(.gform_fields):not(.gfield_radio):not(.gfield_checkbox) > li:not(:first-child),
@@ -1190,7 +1206,7 @@ body.has-improved-contrast {
 			width: 100%;
 			padding: 2rem 2rem 0;
 			@media all {
-				@media (max-width:@v-lg-mbl-thrshld) {
+				@media (max-width: @large-mobile-screen-width) {
 					padding-left: .5rem;
 				}
 			} 
@@ -1209,7 +1225,7 @@ body.has-improved-contrast {
 */
 @media all {
   .row.single:not(.mimic-multi-column-sections) .column .article-tagline {
-    line-height: 1.375em;
+    line-height: 1.5em;
   }
 }
 @media all and (min-width: 1073px) {
@@ -1244,7 +1260,7 @@ body.has-improved-contrast {
 }
 @media all {
   .row.single.mimic-two-column-sections .column .article-tagline {
-    line-height: 1.375em;
+    line-height: 1.5em;
   }
 }
 @media all and (min-width: 1073px) {
@@ -1281,7 +1297,7 @@ body.has-improved-contrast {
   .row.side-right .column .article-tagline,
   .row.side-left .column .article-tagline,
   .row.halves .column .article-tagline {
-    line-height: 1.375em;
+    line-height: 1.5em;
   }
 }
 @media all and (min-width: 1073px) {
@@ -1329,7 +1345,7 @@ body.has-improved-contrast {
 @media all {
   .row.thirds .column .article-tagline,
   .row.quarters .column .article-tagline {
-    line-height: 1.375em;
+    line-height: 1.5em;
   }
 }
 @media all and (min-width: 1073px) {
@@ -1370,7 +1386,7 @@ body.has-improved-contrast {
 }
 @media all {
   .row.single:not(.mimic-multi-column-sections) .column .article-tagline.home {
-    line-height: 1.375em;
+    line-height: 1.5em;
   }
 }
 @media all and (min-width: 1073px) {
@@ -1405,7 +1421,7 @@ body.has-improved-contrast {
 }
 @media all {
   .row.single.mimic-two-column-sections .column .article-tagline.home {
-    line-height: 1.375em;
+    line-height: 1.5em;
   }
 }
 @media all and (min-width: 1073px) {
@@ -1442,7 +1458,7 @@ body.has-improved-contrast {
   .row.side-right .column .article-tagline.home,
   .row.side-left .column .article-tagline.home,
   .row.halves .column .article-tagline.home {
-    line-height: 1.375em;
+    line-height: 1.5em;
   }
 }
 @media all and (min-width: 1073px) {
@@ -1490,7 +1506,7 @@ body.has-improved-contrast {
 @media all {
   .row.thirds .column .article-tagline.home,
   .row.quarters .column .article-tagline.home {
-    line-height: 1.375em;
+    line-height: 1.5em;
   }
 }
 @media all and (min-width: 1073px) {
@@ -1672,7 +1688,7 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
 }
 @media all {
   .row.single:not(.mimic-multi-column-sections) .column .intro-text {
-    line-height: 1.375em;
+    line-height: 1.5em;
   }
 }
 @media all and (min-width: 1073px) {
@@ -1707,7 +1723,7 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
 }
 @media all {
   .row.single.mimic-two-column-sections .column .intro-text {
-    line-height: 1.375em;
+    line-height: 1.5em;
   }
 }
 @media all and (min-width: 1073px) {
@@ -1744,7 +1760,7 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   .row.side-right .column .intro-text,
   .row.side-left .column .intro-text,
   .row.halves .column .intro-text {
-    line-height: 1.375em;
+    line-height: 1.5em;
   }
 }
 @media all and (min-width: 1073px) {
@@ -1792,7 +1808,7 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
 @media all {
   .row.thirds .column .intro-text,
   .row.quarters .column .intro-text {
-    line-height: 1.375em;
+    line-height: 1.5em;
   }
 }
 @media all and (min-width: 1073px) {
@@ -1919,8 +1935,7 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   width: 1rem;
   left: -3px;
   height: .9rem;
-  background: url(https://s3.wp.wsu.edu/uploads/sites/167/2017/09/
-			micon_returnKey_rotated-90-deg-cw_54x64.png) center center / auto 100% no-repeat;
+  background: url(https://s3.wp.wsu.edu/uploads/sites/167/2017/09/micon_returnKey_rotated-90-deg-cw_54x64.png) center center / auto 100% no-repeat;
 }
 /*! 
 * dr-css-1.7: Asides
@@ -2309,4 +2324,17 @@ body.ascc-v2 {
 }
 .ascc-v2 .for-screen-readers.row {
   margin: 0 !important;
+}
+/*!
+* dr-css-1.17: ASCC version 2.0 sub-columns
+*/
+.ascc-v2 .sub-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.ascc-v2 .sub-row.halves .sub-column {
+  width: 49%;
+  width: calc(50% - 2rem);
 }
