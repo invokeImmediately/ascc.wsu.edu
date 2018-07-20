@@ -22,52 +22,6 @@ body:not(.ascc-v2) {
 	font-family: "OpenSans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 	margin: 0;
 
-	a {
-		font-weight: inherit;
-	}
-
-	p {
-		line-height: 1.7em;
-	}
-
-	h2,h3,h4 {
-	}
-
-	h2 {
-		font-size: 3em;
-		padding: 1em 0 .5em;
-	}
-
-	h2:first-child {
-		padding: 0 0 .5em;
-	}
-
-	h3,.column.two h2 {
-		color: #981e32;
-		font-size: 2em;
-		font-weight: 400;
-		padding: .5em 0 .3em;
-	}
-
-	h4,.column.two h3 {
-		color: #5e6a71;
-		font-size: 1.5em;
-		font-weight: 700;
-		padding: .5em 0 .3em;
-	}
-
-	h3+h4 {
-		padding-top: 0;
-	}
-
-	ol li,ul li {
-		line-height: 1.4em;
-		padding-bottom: 1em;
-	}
-
-	b,strong {
-	}
-
 	.main-header {
 		background: #5e6a71 url('/wp-content/uploads/sites/167/2014/11/bright-squares.png') repeat center center;
 		border-bottom: 1px solid #fff;
@@ -132,27 +86,9 @@ body:not(.ascc-v2) {
 		margin-top: 2.5%;
 	}
 
-	.bgcover.row.unbound {
-		position: fixed;
-		top: 0;
-		left: 0;
-		height: 900px;
-		width: 100%;
-		max-width: 100% !important;
-	}
-
-	section:not(.bgcover) .column {
-		background: rgba(255,255,255,.95);
-		box-sizing: border-box;
-	}
-
-	.wrapbox {
-		margin: 2%;
-	}
-
 	.fluid .row.side-left .column.one,.fluid .row.side-right .column.two {
 		padding: 2em;
-		@media all and (min-width: (@v-rghtclmn-thrshld + 1)) {
+		@media all and (min-width: (@column-floating-threshold + 1)) {
 			width: 33%;
 			margin-top: 4%;
 		}
@@ -160,108 +96,173 @@ body:not(.ascc-v2) {
 
 	.fluid .row.side-left .column.two,.fluid .row.side-right .column.one {
 		padding: 2em;
-		@media all and (min-width: (@v-rghtclmn-thrshld + 1)) {
+		@media all and (min-width: (@column-floating-threshold + 1)) {
 			width: 64%;
 			margin-right: 2%;
 		}
 	}
+}
 
-	@keyframes slidy {
-		0% {
-			left: 0;
-		}
-		
-		20% {
-			left: 0;
-		}
-		
-		25% {
-			left: -100%;
-		}
-		
-		45% {
-			left: -100%;
-		}
-		
-		50% {
-			left: -200%;
-		}
-		
-		70% {
-			left: -200%;
-		}
-		
-		75% {
-			left: -300%;
-		}
-		
-		95% {
-			left: -300%;
-		}
-		
-		100% {
-			left: -400%;
-		}
-	}
+a {
+	font-weight: inherit;
+}
 
-	div#cssslider2 {
-		overflow: hidden;
-	}
+p {
+	line-height: 1.7em;
+}
 
-	div#cssslider2 figure img {
-		width: 20%;
-		float: left;
-	}
+h2,h3,h4 {
+}
 
-	div#cssslider2 figure {
-		position: relative;
-		width: 500%;
-		margin: 0;
+h2 {
+	font-size: 3em;
+	padding: 1em 0 .5em;
+}
+
+h2:first-child {
+	padding: 0 0 .5em;
+}
+
+h3,.column.two h2 {
+	color: #981e32;
+	font-size: 2em;
+	font-weight: 400;
+	padding: .5em 0 .3em;
+}
+
+h4,.column.two h3 {
+	color: #5e6a71;
+	font-size: 1.5em;
+	font-weight: 700;
+	padding: .5em 0 .3em;
+}
+
+h3+h4 {
+	padding-top: 0;
+}
+
+ol li,ul li {
+	line-height: 1.4em;
+	padding-bottom: 1em;
+}
+
+b,strong {
+}
+
+.bgcover.row.unbound {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 900px;
+	width: 100%;
+	max-width: 100% !important;
+}
+
+section:not(.bgcover) .column {
+	background: rgba(255,255,255,.95);
+	box-sizing: border-box;
+}
+
+.wrapbox {
+	margin: 2%;
+}
+
+@keyframes slidy {
+	0% {
 		left: 0;
-		text-align: left;
-		font-size: 0;
-		animation: 30s slidy infinite;
 	}
-
-	.btn {
-		-webkit-border-radius: 4;
-		-moz-border-radius: 4;
-		border-radius: 4px;
-		color: #ffffff;
-		background: #981e32;
-		padding: 10px 20px;
-		text-decoration: none;
+	
+	20% {
+		left: 0;
 	}
-
-	.btn:hover {
-		background: #b14254;
-		color: #ffffff;
-		text-decoration: none;
+	
+	25% {
+		left: -100%;
 	}
-
-	#col-wrap {
-	/* overflow to handle inner floating block */
-		overflow: hidden;
+	
+	45% {
+		left: -100%;
 	}
-
-	.col {
-		padding: 10px;
-		@media all and (min-width: (@v-rghtclmn-thrshld + 1)) {
-			width: 45%;
-			float: left;
-		}
+	
+	50% {
+		left: -200%;
 	}
-
-	#third-wrap {
-	/* overflow to handle inner floating block */
-		overflow: hidden;
+	
+	70% {
+		left: -200%;
 	}
-
-	.thirdcol {
-		padding: 10px;
-		@media all and (min-width: (@v-rghtclmn-thrshld + 1)) {
-			width: 30%;
-			float: left;
-		}
+	
+	75% {
+		left: -300%;
+	}
+	
+	95% {
+		left: -300%;
+	}
+	
+	100% {
+		left: -400%;
 	}
 }
+
+div#cssslider2 {
+	overflow: hidden;
+}
+
+div#cssslider2 figure img {
+	width: 20%;
+	float: left;
+}
+
+div#cssslider2 figure {
+	position: relative;
+	width: 500%;
+	margin: 0;
+	left: 0;
+	text-align: left;
+	font-size: 0;
+	animation: 30s slidy infinite;
+}
+
+.btn {
+	-webkit-border-radius: 4;
+	-moz-border-radius: 4;
+	border-radius: 4px;
+	color: #ffffff;
+	background: #981e32;
+	padding: 10px 20px;
+	text-decoration: none;
+}
+
+.btn:hover {
+	background: #b14254;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+#col-wrap {
+/* overflow to handle inner floating block */
+	overflow: hidden;
+}
+
+.col {
+	padding: 10px;
+	@media all and (min-width: (@column-floating-threshold + 1)) {
+		width: 45%;
+		float: left;
+	}
+}
+
+#third-wrap {
+/* overflow to handle inner floating block */
+	overflow: hidden;
+}
+
+.thirdcol {
+	padding: 10px;
+	@media all and (min-width: (@column-floating-threshold + 1)) {
+		width: 30%;
+		float: left;
+	}
+}
+
