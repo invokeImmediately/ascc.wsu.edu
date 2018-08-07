@@ -759,6 +759,20 @@ body.page.cea {
 		line-height: ~"calc(1.4em + .9rem)";
 	}
 
+	.column {
+		.builder-section-content.cycle-slideshow {
+			.builder-banner-content:hover {
+				& > div.builder-banner-inner-content {
+					background-color: transparent;
+				}
+			}
+		}
+
+		.builder-banner-inner-content {
+			background-color: transparent;	
+		}
+	}
+
 	.cycle-prev,
 	.cycle-next {
 		opacity: 1.0;
@@ -772,6 +786,10 @@ body.page.cea {
 			@media screen and (max-width: @column-floating-threshold) {
 				border-radius: 15px;
 			}
+		}
+		&:hover::before {
+			background-color: @rgba;
+			.getRgbaStr(@hex-gray, 0.85);
 		}
 	}
 }
@@ -849,4 +867,11 @@ body:not(.ascc-v2) {
 		width: 49%;
 		width: ~"calc(50% - 2rem)";
 	}
+}
+
+/*!
+* dr-css-1.18: Helpful links tables
+*/
+.helpful-links tr + tr td {
+	padding-top: 1em;
 }
