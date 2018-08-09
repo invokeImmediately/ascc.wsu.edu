@@ -577,18 +577,24 @@ body.page.cea {
 * dr-css-1.10: Styling of glass buttons
 */
 .column a {
+	@gb__border-radius: 7px;
 	&.recommend-button,
 	&.glass-button {
 		display:block;
 		position: relative;
 		padding: 1em;
-		border-radius: 7px;
+		border-radius: @gb__border-radius;
 		& {
 			@shadow-clr: returned;
 			.getRgbaForProp(@shadow-clr, @hex-black, 0.5);
 			box-shadow: 0 2px 2px @@shadow-clr;
 		}
-		.transition(~"all 0.3s ease");			
+		.transition(~"all 0.3s ease");
+
+		&:hover {
+			border-radius: @gb__border-radius;
+		}
+
 		&:before {
 			content: "";
 			position: absolute;
@@ -604,6 +610,7 @@ body.page.cea {
 				background: linear-gradient(@@color-top, @@color-btm);
 			}
 		}
+
 		&:after {
 			content: "";
 			position: absolute;
@@ -618,7 +625,8 @@ body.page.cea {
 				@color-btm: returned-2; .getRgbaForProp(@color-btm, @hex-black, 0.25);
 				background: linear-gradient(@@color-top, @@color-btm);
 			}
-		}			
+		}
+
 		&.crimson {
 			background-color: @hex-crimson;
 			color: white;
@@ -630,6 +638,7 @@ body.page.cea {
 				}
 			}
 		}
+
 		&.yellow {
 			background-color: @hex-accent-yellow;
 			color: @hex-black;
@@ -642,6 +651,7 @@ body.page.cea {
 				}
 			}
 		}
+
 		.icon {
 			&,
 			& + .label {

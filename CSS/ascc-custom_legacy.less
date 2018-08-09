@@ -101,52 +101,46 @@ body:not(.ascc-v2) {
 			margin-right: 2%;
 		}
 	}
-}
 
-a {
-	font-weight: inherit;
-}
+	a {
+		font-weight: inherit;
+	}
 
-p {
-	line-height: 1.7em;
-}
+	p {
+		line-height: 1.7em;
+	}
 
-h2,h3,h4 {
-}
+	h2 {
+		font-size: 3em;
+		padding: 1em 0 .5em;
+	}
 
-h2 {
-	font-size: 3em;
-	padding: 1em 0 .5em;
-}
+	h2:first-child {
+		padding: 0 0 .5em;
+	}
 
-h2:first-child {
-	padding: 0 0 .5em;
-}
+	h3,.column.two h2 {
+		color: #981e32;
+		font-size: 2em;
+		font-weight: 400;
+		padding: .5em 0 .3em;
+	}
 
-h3,.column.two h2 {
-	color: #981e32;
-	font-size: 2em;
-	font-weight: 400;
-	padding: .5em 0 .3em;
-}
+	h4,.column.two h3 {
+		color: #5e6a71;
+		font-size: 1.5em;
+		font-weight: 700;
+		padding: .5em 0 .3em;
+	}
 
-h4,.column.two h3 {
-	color: #5e6a71;
-	font-size: 1.5em;
-	font-weight: 700;
-	padding: .5em 0 .3em;
-}
+	h3+h4 {
+		padding-top: 0;
+	}
 
-h3+h4 {
-	padding-top: 0;
-}
-
-ol li,ul li {
-	line-height: 1.4em;
-	padding-bottom: 1em;
-}
-
-b,strong {
+	ol li,ul li {
+		line-height: 1.4em;
+		padding-bottom: 1em;
+	}
 }
 
 .bgcover.row.unbound {
@@ -159,7 +153,9 @@ b,strong {
 }
 
 section:not(.bgcover) .column {
-	background: rgba(255,255,255,.95);
+	body:not(.ascc-v2) & {
+		background: rgba(255,255,255,.95);
+	}
 	box-sizing: border-box;
 }
 
@@ -231,7 +227,7 @@ div#cssslider2 figure {
 	color: #ffffff;
 	background: #981e32;
 	padding: 10px 20px;
-	text-decoration: none;
+	text-decoration: none !important;
 }
 
 .btn:hover {
