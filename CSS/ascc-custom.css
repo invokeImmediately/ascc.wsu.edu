@@ -7321,6 +7321,10 @@ div.auto-scroller ul li {
   margin-left: auto;
   margin-right: auto;
 }
+.ascc-v2 .mh--auto {
+  margin-left: auto;
+  margin-right: auto;
+}
 .ascc-v2 .padding--0mx,
 .ascc-v2 .pa--0mx {
   padding: 0em;
