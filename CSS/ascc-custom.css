@@ -3760,29 +3760,23 @@ section.pad-top div.column.half-pad {
     max-width: 792px;
   }
 }
-.ascc-v2 body.home main > .page > .row:last-child > .column:last-child,
-.ascc-v2 body.page main > .page > .row:last-child > .column:last-child {
+.ascc-v2 main > .page > .row:last-child > .column:last-child {
   padding-bottom: 2rem;
 }
 @media all and (min-width: 694px) {
-  .ascc-v2 body.home main > .page > .row:last-child.halves > .column:first-child,
-  .ascc-v2 body.page main > .page > .row:last-child.halves > .column:first-child,
-  .ascc-v2 body.home main > .page > .row:last-child.side-right > .column:first-child,
-  .ascc-v2 body.page main > .page > .row:last-child.side-right > .column:first-child,
-  .ascc-v2 body.home main > .page > .row:last-child.side-left > .column:first-child,
-  .ascc-v2 body.page main > .page > .row:last-child.side-left > .column:first-child {
+  .ascc-v2 main > .page > .row:last-child.halves > .column:first-child,
+  .ascc-v2 main > .page > .row:last-child.side-right > .column:first-child,
+  .ascc-v2 main > .page > .row:last-child.side-left > .column:first-child {
     padding-bottom: 2rem;
   }
 }
 @media all and (min-width: 694px) {
-  .ascc-v2 body.home main > .page > .row:last-child.thirds > .column:first-child,
-  .ascc-v2 body.page main > .page > .row:last-child.thirds > .column:first-child {
+  .ascc-v2 main > .page > .row:last-child.thirds > .column:first-child {
     padding-bottom: 2rem;
   }
 }
 @media all and (min-width: 694px) {
-  .ascc-v2 body.home main > .page > .row:last-child.thirds > .column:nth-child(2),
-  .ascc-v2 body.page main > .page > .row:last-child.thirds > .column:nth-child(2) {
+  .ascc-v2 main > .page > .row:last-child.thirds > .column:nth-child(2) {
     padding-bottom: 2rem;
   }
 }
