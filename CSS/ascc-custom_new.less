@@ -782,26 +782,6 @@ body.page.cea {
 			background-color: transparent;	
 		}
 	}
-
-	.cycle-prev,
-	.cycle-next {
-		opacity: 1.0;
-
-		&:before {
-			background-color: @rgba;
-			.getRgbaStr(@hex-black, 0.85);
-			border-radius: 1.7rem;
-			padding-bottom:2px;
-
-			@media screen and (max-width: @column-floating-threshold) {
-				border-radius: 15px;
-			}
-		}
-		&:hover::before {
-			background-color: @rgba;
-			.getRgbaStr(@hex-gray, 0.85);
-		}
-	}
 }
 
 /*! 
