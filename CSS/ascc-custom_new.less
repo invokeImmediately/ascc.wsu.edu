@@ -427,6 +427,17 @@ body.has-improved-contrast {
 	}
 }
 
+.ascc-v2 .row.side-right.has-graphical-sidebar {
+	.column.two {
+		@media all {
+			@media (min-width: (@column-floating-threshold + 1)) {
+				width: 33%;
+				width: ~"calc(33% - 0.5rem)"
+			}
+		}
+	}
+}
+
 /*! 
 * dr-css-1.9: Styling specific to the Career Exploration Abroad page
 */
@@ -741,10 +752,10 @@ body.page.cea {
 		}		
 	}
 
-	.builder-banner-content {
+	.column .builder-banner-content {
 		@media screen and (max-width: @column-floating-threshold) {
-			margin-left: (-1 * @v-dflt-spcng);
-			margin-right: (-1 * @v-dflt-spcng);
+			//margin-left: (-1 * @v-dflt-spcng);
+			//margin-right: (-1 * @v-dflt-spcng);
 			border-bottom-width: (@v-dflt-spcng / 2);
 			font-size: (@v-p-sz * 7 / 8);
 		}
@@ -780,6 +791,58 @@ body.page.cea {
 
 		.builder-banner-inner-content {
 			background-color: transparent;	
+		}
+	}
+
+	@media screen and (max-width: 600px) {
+		#builder-section-1518023152923 .builder-banner-slide {
+			padding-bottom: 320px !important;
+		}
+	}
+
+	.column .builder-banner-slide {
+		&:hover {
+			.builder-banner-content {
+				font-size: 1.65rem;
+			}
+		}
+	}
+
+	@media all {
+		@media (max-width: (@background-width-threshold - 1)) and (min-width: (@spine-threshold + 1)) {
+			.column .builder-banner-content {
+				font-size: 2.1179vw;
+				line-height: 2.8592vw;
+			}
+
+			.column .builder-banner-slide:hover .builder-banner-content {
+				font-size: 2.8239vw;
+				line-height: 3.8122vw;
+			}
+		}
+
+		@media (max-width: @spine-threshold) and (min-width: (@large-mobile-screen-width + 1)) {
+			.column .builder-banner-content {
+				font-size: 2.5784vw;
+				line-height: 3.4808vw;
+			}
+
+			.column .builder-banner-slide:hover .builder-banner-content {
+				font-size: 2.83624vw;
+				line-height: 3.828924vw;
+			}
+		}
+
+		@media (max-width: @large-mobile-screen-width) {
+			.column .builder-banner-content {
+				font-size: 3.5vw;
+				line-height: 4.725vw;
+			}
+
+			.column .builder-banner-slide:hover .builder-banner-content {
+				font-size: 3.85vw;
+				line-height: 5.1975vw;
+			}
 		}
 	}
 }
