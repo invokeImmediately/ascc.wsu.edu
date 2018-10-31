@@ -1,6 +1,42 @@
-/*!
-* dr-css-1.1: Site-wide sizing & spacing overrides
-*/
+/*! ================================================================================================
+*** LEGACY CSS for the ASCC Website
+*** ================================================================================================
+***   AUTHORS: Unknown.
+***
+***   SUMMARY: CSS code that was written for version 1 of the ASCC website before contributions made
+***   by Daniel Rieck started on 8/2017. Should be eventually removed or incorporated into updated
+***   design files.
+*** ================================================================================================
+**/
+
+/**  ───────────────────────────────────────────────────────────────────────────────────────────────
+***  TABLE OF CONTENTS:
+***  ────────────────────────────────────────────────────────────────────────────────────────────
+***  §1: Site-wide sizing & spacing overrides..................................................37
+***  §2: Section overrides.....................................................................84
+***  §3: Sectional article headers............................................................144
+***  §4: Article taglines & intro text........................................................257
+***  §5: Article sidebars.....................................................................315
+***  §6: Tables of Conents....................................................................356
+***  §7: Asides...............................................................................423
+***  §8: Sidebar Right Sections...............................................................441
+***  §9: Styling specific to the Career Exploration Abroad page...............................485
+***  §10: Styling of glass buttons............................................................649
+***  §11: Styling of main header construct....................................................750
+***  §12: Gravity forms.......................................................................758
+***  §13: ASCC version 2.0 slideshows.........................................................806
+***  §14: Legacy ASCC fixes...................................................................921
+***  §15: ASCC version 2.0 body...............................................................945
+***  §16: TO BE REMOVED: Temporarily copied from WSU-UE---CSS.................................964
+***  §17: ASCC version 2.0 sub-columns........................................................982
+***  §18: Helpful links tables...............................................................1000
+***  ───────────────────────────────────────────────────────────────────────────────────────────────
+**/
+
+/** ================================================================================================
+*** §1: Site-wide sizing & spacing overrides
+**/
+
 body {
 	font-size: 100%;
 }
@@ -44,9 +80,10 @@ body.has-improved-contrast {
 	color: @hex-darker-gray;
 }
 
-/*! 
-* dr-css-1.2: Section overrides
-*/
+/** ================================================================================================
+*** §2: Section overrides
+**/
+
 .row {
 	&.single,
 	&.halves {
@@ -103,9 +140,10 @@ body.has-improved-contrast {
 	}
 }
 
-/*! 
-* dr-css-1.3: Sectional article headers
-*/
+/** ================================================================================================
+*** §3: Sectional article headers
+**/
+
 .row.halves.article-header,
 .row.single.article-header {
 	position: relative;
@@ -215,9 +253,10 @@ body.has-improved-contrast {
 	}
 }*/
 
-/*! 
-* dr-css-1.4: Article taglines & intro text
-*/
+/** ================================================================================================
+*** §4: Article taglines & intro text
+**/
+
 .article-tagline {
 	.has-sectionally-responsive-font(@v-artcl-tgln-sz, extract(@lHeight-array, @lHeight-1000mx));
 	&.home {
@@ -272,9 +311,10 @@ body.has-improved-contrast {
 	.has-sectionally-responsive-font((@v-artcl-tgln-sz * .85), extract(@lHeight-array, @lHeight-1000mx));
 }
 
-/*! 
-* dr-css-1.5: Article sidebars
-*/
+/** ================================================================================================
+*** §5: Article sidebars
+**/
+
 .sidebar {
 	@spacing: @v-dflt-spcng / 4;
 	@header-padding: 0.5em;
@@ -312,9 +352,10 @@ body.has-improved-contrast {
 //	}
 }
 
-/*! 
-* dr-css-1.6: Tables of Conents
-*/
+/** ================================================================================================
+*** §6: Tables of Conents
+**/
+
 #on-this-page {
 	@otp-background: #2f3438;
 	@highlight-color: #23272a;
@@ -378,9 +419,10 @@ body.has-improved-contrast {
 	}
 }
 
-/*! 
-* dr-css-1.7: Asides
-*/
+/** ================================================================================================
+*** §7: Asides
+**/
+
 .page.cea {
 	#experience-business {
 		float: right;
@@ -395,9 +437,10 @@ body.has-improved-contrast {
 	}
 }
 
-/*! 
-* dr-css-1.8: Sidebar Right Sections
-*/
+/** ================================================================================================
+*** §8: Sidebar Right Sections
+**/
+
 .row.side-right.has-graphical-sidebar {
 	.column.one {
 		@media all {
@@ -438,25 +481,29 @@ body.has-improved-contrast {
 	}
 }
 
-/*! 
-* dr-css-1.9: Styling specific to the Career Exploration Abroad page
-*/
+/** ================================================================================================
+*** §9: Styling specific to the Career Exploration Abroad page
+**/
+
 body.page.cea {
 	.row.article-header {
 		.column.one {
 			.wrapper {
 				font-size: 1.4rem;
 			}
+
 			.article-name {
 				font-size: 2em;
 			}
 		}
+
 		.column.two {
 			background-color: @hex-white;
 			background-size: auto 90%;
 			background-repeat: no-repeat;
 		}
 	}
+
 	#apply-now,
 	#contact-us {
 		margin-right: auto;
@@ -465,15 +512,18 @@ body.page.cea {
 		font-size: 1.5em;
 		font-weight: bold;
 	}
+
 	#apply-now {
 		max-width: 288px;
 		margin-bottom: 10px;
 	}
+
 	#cea-tagline {
 		.column.one {
 			padding-bottom: 0;
 		}
 	}
+
 	#wsu-staffing + .toggled-panel {
 		.staff-photo {
 			@media all {
@@ -483,12 +533,14 @@ body.page.cea {
 					margin-right: 1em;
 					margin-bottom: 4px;
 				}
+
 				@media (max-width: @column-floating-threshold) {
 					display: block;
 				}
 			}
 		}
 	}
+
 	#contact-form-wrapper {
 		position: fixed;
 		top: 10%;
@@ -502,6 +554,7 @@ body.page.cea {
 		overflow-y: scroll;
 		z-index: 99352;
 		.transition(~"opacity 0.3s ease");
+
 		@media all {
 			@media (min-width: (@spine-threshold + 1)) {
 				@spacing: (@v-dflt-spcng / 2 * 5);
@@ -509,36 +562,44 @@ body.page.cea {
 				left: @spacing;
 				left: ~"calc((100% - 990px) / 2 + 198px + @{spacing})";
 			}
+
 			@media (max-width: @column-floating-threshold) {
 				@spacing: (@v-dflt-spcng / 2 * 5);
 				right: @spacing;
 				left: @spacing;
 			}
+
 			@media (max-width: @large-mobile-screen-width) {
 				@spacing: @v-dflt-spcng;
 				right: @spacing;
 				left: @spacing;
 			}
 		}
+
 		&.shown {
 			max-height: none;
 			opacity: 1;
 			padding: @v-dflt-spcng;
 		}
+
 		.gform_wrapper {
 			margin: 0;
 		}
+
 		form {
 			padding: 0;
 		}
+
 		.gform_title {
 			margin-top: 0;
 			padding-top: 0;
 		}
+
 		.gform_footer {
 			padding-bottom: 0;
 		}
 	}
+
 	#close-contact-form {
 		@spacing: (@v-dflt-spcng / 2 * 5);
 		@size: (@v-dflt-spcng / 4 * 3);
@@ -557,12 +618,12 @@ body.page.cea {
 		font-size: .9rem;
 		line-height: 1.4rem;
 		text-transform: uppercase;
-		background: @hex-darkest-gray url(/wp-content/uploads/sites/167/2017/10/
-			button_close-form_crimson-and-white.jpg) left center/24px auto no-repeat;
+		background: @hex-darkest-gray url(/wp-content/uploads/sites/167/2017/10/button_close-form_crimson-and-white.jpg) left center/24px auto no-repeat;
 		color: @hex-white;
 		cursor: pointer;
 		z-index: 99353;
 	}
+
 	.gform_wrapper {
 		.top_label {
 			.gfield_description {
@@ -584,9 +645,10 @@ body.page.cea {
 	}
 }
 
-/*! 
-* dr-css-1.10: Styling of glass buttons
-*/
+/** ================================================================================================
+*** §10: Styling of glass buttons
+**/
+
 .column a {
 	@gb__border-radius: 7px;
 	&.recommend-button,
@@ -684,16 +746,18 @@ body.page.cea {
 	}
 }
 
-/*! 
-* dr-css-1.11: Styling of main header construct
-*/
+/** ================================================================================================
+*** §11: Styling of main header construct
+**/
+
 .main-header sup span {
 	line-height: 1.5em;
 }
 
-/*! 
-* dr-css-1.12: Gravity forms
-*/
+/** ================================================================================================
+*** §12: Gravity forms
+**/
+
 .column {
 	li.gfield {
 		&.uses-rich-editor {
@@ -701,6 +765,7 @@ body.page.cea {
 				.mce-menubar {
 					display: none;
 				}
+
 				.mce-toolbar-grp > .mce-stack-layout {
 					& > .mce-toolbar.mce-first {
 						.mce-btn {
@@ -715,17 +780,21 @@ body.page.cea {
 							}
 						}
 					}
+
 					& > .mce-toolbar.mce-last {
 						display: none;
 					}
 				}
+
 				.mce-statusbar {
 					display: none;
 				}
 			}
+
 			iframe {
 				width: 100% !important;
 			}
+
 			span.gp-word-count-label {
 				margin-top: 0 !important;
 			}
@@ -733,9 +802,10 @@ body.page.cea {
 	}
 }
 
-/*!
-* dr-css-1.13: ASCC version 2.0 slideshows
-*/
+/** ================================================================================================
+*** §13: ASCC version 2.0 slideshows
+**/
+
 .ascc-v2 {
 	.dark-slide-bg() {
 		background-color: @rgba;
@@ -847,9 +917,10 @@ body.page.cea {
 	}
 }
 
-/*! 
-* dr-css-1.14: Legacy ASCC fixes
-*/
+/** ================================================================================================
+*** §14: Legacy ASCC fixes
+**/
+
 body:not(.ascc-v2) {
 	.main-header {
 		margin: 0 -100%;
@@ -870,9 +941,10 @@ body:not(.ascc-v2) {
 	}
 }
 
-/*!
-* dr-css-1.15: ASCC version 2.0 body
-*/
+/** ================================================================================================
+*** §15: ASCC version 2.0 body
+**/
+
 .ascc-v2 {
 	body& {
 		background: @hex-dark-gray url(/wp-content/uploads/sites/167/2014/11/bright-squares.png) repeat fixed;
@@ -888,9 +960,10 @@ body:not(.ascc-v2) {
 	}
 }
 
-/*!
-* dr-css-1.16: TO BE REMOVED: Temporarily copied from WSU-UE---CSS
-*/
+/** ================================================================================================
+*** §16: TO BE REMOVED: Temporarily copied from WSU-UE---CSS
+**/
+
 .ascc-v2 {
 	.for-screen-readers {
 		box-sizing: border-box !important;
@@ -905,9 +978,10 @@ body:not(.ascc-v2) {
 	}
 }
 
-/*!
-* dr-css-1.17: ASCC version 2.0 sub-columns
-*/
+/** ================================================================================================
+*** §17: ASCC version 2.0 sub-columns
+**/
+
 .ascc-v2 {
 	.sub-row {
 		display: flex;
@@ -922,9 +996,10 @@ body:not(.ascc-v2) {
 	}
 }
 
-/*!
-* dr-css-1.18: Helpful links tables
-*/
+/** ================================================================================================
+*** §18: Helpful links tables
+**/
+
 .helpful-links tr + tr td {
 	padding-top: 1em;
 }
