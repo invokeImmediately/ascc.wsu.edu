@@ -16,29 +16,28 @@
 ***     (Please see above git repository for fully documented, precompiled source code.)
 *** ================================================================================================
 **/
-.has-mono-font {
-	font-family: 'Roboto Mono', monospace, sans-serif;
-	font-weight: 300;
-}
-
-.ascc-v2 .column,.column .ascc-v2 h1,.column .ascc-v2 h2,.column .ascc-v2 h3,.column .ascc-v2 h4,.has-dflt-font,body {
+.ascc-v2 .column,.column .ascc-v2 h1,.column .ascc-v2 h2,.column .ascc-v2 h3,.column .ascc-v2 h4,.ff--sans,.has-dflt-font,body {
 	font-family: 'Open Sans', 'Lucida Sans', sans-serif;
 }
 
-.has-dflt-font.serif {
+.ff--serif,.has-dflt-font.serif {
 	font-family: 'Roboto Slab', Palatino, serif;
 }
 
-.ascc-v2 .column p.article-tagline.article-tagline--sans,.ascc-v2 .column p.article-tagline.sans,.ascc-v2 span.accentuated-text,.column .article-tagline.sans,.has-alt-font {
+.ff--serif-2,.has-subst-font.serif {
+	font-family: 'PT Serif', Palatino, serif;
+}
+
+.ascc-v2 .column p.article-tagline.article-tagline--sans,.ascc-v2 .column p.article-tagline.sans,.ascc-v2 span.accentuated-text,.column .article-tagline.sans,.ff--condensed,.has-alt-font {
 	font-family: 'Open Sans Condensed', 'Lucida Sans', sans-serif;
 }
 
-.has-subst-font {
+.ff--condensed-2,.has-subst-font {
 	font-family: 'Roboto Condensed', 'Lucida Sans', sans-serif;
 }
 
-.has-subst-font.serif {
-	font-family: 'PT Serif', Palatino, serif;
+.ff--mono,.has-mono-font {
+	font-family: 'Roboto Mono', monospace, sans-serif;
 }
 
 .column .initially-hidden,.initially-hidden {
@@ -839,40 +838,33 @@ html {
 }
 
 .ascc-v2 section:not(.row).article-header {
+	background-size: auto 100% !important;
 	height: 120px;
 	margin-bottom: 1rem;
-	background-size: auto 100% !important;
+	max-width: 922px;
 }
 
-body.blog .ascc-v2 section:not(.row).article-header {
+body.blog .ascc-v2 section:not(.row).article-header,body.single-post .ascc-v2 section:not(.row).article-header {
 	margin-bottom: 0;
 }
 
 .ascc-v2 section:not(.row).article-header .header-content {
+	margin-left: 1rem;
+	margin-right: 1rem;
 	position: relative;
 	top: 50%;
-	margin-right: 1rem;
-	margin-left: 1rem;
 	transform: translateY(-50%);
 }
 
-.ascc-v2 section:not(.row).article-header .header-content h1 {
-	font-size: 4.118rem;
-	line-height: 1.071em;
-}
-
-.ascc-v2 section:not(.row).article-header .header-content h2 {
-	margin-bottom: .75rem;
+.ascc-v2 section:not(.row).article-header .header-content h1,.ascc-v2 section:not(.row).article-header .header-content h2,.ascc-v2 section:not(.row).article-header .header-content h3 {
 	font-size: 2.826rem;
 	line-height: .8em;
 	text-transform: uppercase;
 }
 
-.ascc-v2 section:not(.row).article-header .header-content h3 {
-	margin-top: 0;
-	margin-bottom: 0;
+.ascc-v2 section:not(.row).article-header .header-content h1+h2,.ascc-v2 section:not(.row).article-header .header-content h2+h3 {
 	font-size: 1.261rem;
-	text-transform: uppercase;
+	margin-top: .75rem;
 }
 
 .ascc-v2 section.halves .column p:not([class*=center]) {
@@ -911,11 +903,11 @@ body.blog .ascc-v2 section:not(.row).article-header {
 	color: #fff;
 }
 
-.ascc-v2 main section.row>.column table>tbody>tr>td>.gform_confirmation_wrapper p:not(:last-child),.ascc-v2 main section.row>.column table>tbody>tr>td>.gform_wrapper .gfield_html>p:not(:last-child),.ascc-v2 main section.row>.column table>tbody>tr>td>div>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column table>tbody>tr>td>div>ul:not(.no-btm-margin),.ascc-v2 main section.row>.column table>tbody>tr>td>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column table>tbody>tr>td>section>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column table>tbody>tr>td>section>ul:not(.no-btm-margin),.ascc-v2 main section.row>.column table>tbody>tr>td>ul:not(.no-btm-margin),.ascc-v2 main section.row>.column>.gform_confirmation_wrapper p:not(:last-child),.ascc-v2 main section.row>.column>.gform_wrapper .gfield_html>p:not(:last-child),.ascc-v2 main section.row>.column>article>.article-body>.gform_confirmation_wrapper p:not(:last-child),.ascc-v2 main section.row>.column>article>.article-body>.gform_wrapper .gfield_html>p:not(:last-child),.ascc-v2 main section.row>.column>article>.article-body>div>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-body>div>ul:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-body>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-body>section>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-body>section>ul:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-body>ul:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-summary>.gform_confirmation_wrapper p:not(:last-child),.ascc-v2 main section.row>.column>article>.article-summary>.gform_wrapper .gfield_html>p:not(:last-child),.ascc-v2 main section.row>.column>article>.article-summary>div>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-summary>div>ul:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-summary>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-summary>section>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-summary>section>ul:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-summary>ul:not(.no-btm-margin),.ascc-v2 main section.row>.column>div>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column>div>ul:not(.no-btm-margin),.ascc-v2 main section.row>.column>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column>section>.gform_confirmation_wrapper p:not(:last-child),.ascc-v2 main section.row>.column>section>.gform_wrapper .gfield_html>p:not(:last-child),.ascc-v2 main section.row>.column>section>div>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column>section>div>ul:not(.no-btm-margin),.ascc-v2 main section.row>.column>section>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column>section>section>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column>section>section>ul:not(.no-btm-margin),.ascc-v2 main section.row>.column>section>ul:not(.no-btm-margin),.ascc-v2 main section.row>.column>ul:not(.no-btm-margin) {
+.ascc-v2 main section.row>.column table>tbody>tr>td>.gform_confirmation_wrapper p:not(:last-child),.ascc-v2 main section.row>.column table>tbody>tr>td>.gform_wrapper .gfield_html>p:not(:last-child),.ascc-v2 main section.row>.column table>tbody>tr>td>div>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column table>tbody>tr>td>div>ul:not(.no-btm-margin),.ascc-v2 main section.row>.column table>tbody>tr>td>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column table>tbody>tr>td>section>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column table>tbody>tr>td>section>ul:not(.no-btm-margin),.ascc-v2 main section.row>.column table>tbody>tr>td>ul:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-body>.gform_confirmation_wrapper p:not(:last-child),.ascc-v2 main section.row>.column>article>.article-body>.gform_wrapper .gfield_html>p:not(:last-child),.ascc-v2 main section.row>.column>article>.article-body>div>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-body>div>ul:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-body>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-body>section>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-body>section>ul:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-body>ul:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-summary>.gform_confirmation_wrapper p:not(:last-child),.ascc-v2 main section.row>.column>article>.article-summary>.gform_wrapper .gfield_html>p:not(:last-child),.ascc-v2 main section.row>.column>article>.article-summary>div>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-summary>div>ul:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-summary>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-summary>section>ol:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-summary>section>ul:not(.no-btm-margin),.ascc-v2 main section.row>.column>article>.article-summary>ul:not(.no-btm-margin) {
 	margin-bottom: 1rem;
 }
 
-.ascc-v2 main section.row:last-child>.column>.column>article>.article-body>div>ol:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-body>div>ul:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-body>ol:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-body>section>ol:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-body>section>ul:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-body>ul:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-summary>div>ol:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-summary>div>ul:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-summary>ol:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-summary>section>ol:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-summary>section>ul:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-summary>ul:last-child,.ascc-v2 main section.row:last-child>.column>.column>section>div>ol:last-child,.ascc-v2 main section.row:last-child>.column>.column>section>div>ul:last-child,.ascc-v2 main section.row:last-child>.column>.column>section>ol:last-child,.ascc-v2 main section.row:last-child>.column>.column>section>section>ol:last-child,.ascc-v2 main section.row:last-child>.column>.column>section>section>ul:last-child,.ascc-v2 main section.row:last-child>.column>.column>section>ul:last-child,.ascc-v2 main section.row:last-child>.column>div>ol:last-child,.ascc-v2 main section.row:last-child>.column>div>ul:last-child,.ascc-v2 main section.row:last-child>.column>ol:last-child,.ascc-v2 main section.row:last-child>.column>section>ol:last-child,.ascc-v2 main section.row:last-child>.column>section>ul:last-child,.ascc-v2 main section.row:last-child>.column>ul:last-child {
+.ascc-v2 main section.row:last-child>.column>.column>article>.article-body>div>ol:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-body>div>ul:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-body>ol:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-body>section>ol:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-body>section>ul:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-body>ul:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-summary>div>ol:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-summary>div>ul:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-summary>ol:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-summary>section>ol:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-summary>section>ul:last-child,.ascc-v2 main section.row:last-child>.column>.column>article>.article-summary>ul:last-child {
 	margin-bottom: 0;
 }
 
@@ -1818,15 +1810,17 @@ p~p {
 
 .ascc-v2 ul.content-boxes>li>img {
 	left: 10px;
+	left: calc(.5rem + 10px);
 	position: absolute;
-	top: 10px;
+	top: 24px;
+	top: calc(1rem + 7px);
 	width: 106px;
 }
 
 .ascc-v2 ul.content-boxes>li>.content {
 	left: 121px;
 	min-width: 189px;
-	padding: 10px 10px 10px 5px;
+	padding: 0 0 10px;
 	position: relative;
 	width: calc(100% - 136px);
 }
@@ -2045,7 +2039,6 @@ p~p {
 	border: 1px solid #afb5b7;
 	background-color: #d7dadb;
 	font-family: 'Roboto Mono', monospace, sans-serif;
-	font-weight: 300;
 	cursor: pointer;
 	-webkit-transform: translateY(-100%) translateY(-5px);
 	-moz-transform: translateY(-100%) translateY(-5px);
@@ -2181,14 +2174,11 @@ p~p {
 
 .ascc-v2 .wsuwp-json--headlines .content-item-thumbnail {
 	float: right;
+	margin-bottom: .5em;
+	margin-left: .5em;
 	max-width: 136px;
 	min-width: 96px;
 	width: 28.5%;
-}
-
-.ascc-v2 .wsuwp-json--headlines .content-item-thumbnail img {
-	margin-bottom: .5em;
-	margin-left: .5em;
 }
 
 .ascc-v2 .wsuwp-json--headlines .wsuwp-content-syndicate-item {
@@ -2206,6 +2196,8 @@ p~p {
 }
 
 .ascc-v2 .wsuwp-json--headlines.layout--2-columns .wsuwp-content-syndicate-item {
+	padding-bottom: 2em;
+	padding-right: 2em;
 	width: 50%;
 }
 
@@ -2316,7 +2308,7 @@ section.pad-top div.column.half-pad,section.pad-top.half-pad {
 
 .ascc-v2 .column {
 	font-size: 1rem;
-	color: #464e54;
+	color: #2a3033;
 }
 
 .ascc-v2 .column:nth-child(1) {
@@ -4162,7 +4154,6 @@ cite.article-author {
 	font-size: 18px;
 	line-height: 16px;
 	font-family: 'Roboto Mono', monospace, sans-serif;
-	font-weight: 300;
 	text-align: center;
 	background-color: #981e32;
 	color: #fff;
@@ -4866,9 +4857,12 @@ div.auto-scroller ul li {
 	height: 450px;
 }
 
+.ascc-v2 .page-header--h-auto {
+	height: auto;
+}
+
 .ascc-v2 .page-header__column-1 {
 	background-color: rgba(0,0,0,.9);
-	top: 50%;
 	box-sizing: border-box;
 	color: #fff;
 	display: block;
@@ -4876,6 +4870,7 @@ div.auto-scroller ul li {
 	margin: 0;
 	padding: 1rem;
 	right: 2rem;
+	top: 50%;
 	text-shadow: 1px 1px 8px rgba(0,0,0,.9);
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
@@ -4884,45 +4879,30 @@ div.auto-scroller ul li {
 
 .ascc-v2 .page-header__column-1--tx-bottom {
 	top: 100%;
-	-webkit-transform: translateY(-100%) translateY(-2rem);
-	-moz-transform: translateY(-100%) translateY(-2rem);
-	transform: translateY(-100%) translateY(-2rem);
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	transform: translateY(-100%);
 }
 
 .ascc-v2 .page-header .page-header__column-1 {
 	position: absolute;
 }
 
-.ascc-v2 .fluid .row.single .column.page-header__column-1 {
-	width: auto;
+.ascc-v2 .page-header .page-header__column-1--p-static {
+	position: static;
+	top: 0;
+	-webkit-transform: none;
+	-moz-transform: none;
+	transform: none;
 }
 
-.ascc-v2 .page-header__text-breadcrumb,.ascc-v2 .page-header__text-subtitle,.ascc-v2 .page-header__text-title {
+.ascc-v2 .fluid .row.single .column.page-header__column-1--p-static {
+	width: 100%;
+}
+
+.ascc-v2 .fluid .row.single .page-header__text-breadcrumb,.ascc-v2 .page-header__text-subtitle,.ascc-v2 .page-header__text-title {
 	color: inherit;
 	text-shadow: inherit;
-}
-
-.ascc-v2 {
-/*!     ····························································································
-***     >>> §2.2: Typograhy: Line heights
-***
-***     NOTES:
-***     * See line 24 for explanation of "mx" units.
-***     * Depends on the utiltiy mixin .set-lHeight(...) and the Less variable @lHeight-array, 
-***       which are both defined in utility-mixins.less.
-**/
-/*!     ····························································································
-***     >>> §2.3: Typograhy: Bolding
-**/
-/*!     ····························································································
-***     >>> §2.4: Typograhy: Text transformation
-**/
-/*!     ····························································································
-***     >>> §2.5: Typograhy: Text alignment
-**/
-/*!     ····························································································
-***     >>> §4.1: Clearing
-**/
 }
 
 .ascc-v2 .w--5pct,.ascc-v2 .width--5pct {
@@ -5331,6 +5311,42 @@ div.auto-scroller ul li {
 
 .ascc-v2 .display--none,.ascc-v2 .dy--none {
 	display: none;
+}
+
+.ascc-v2 .dy--flex {
+	display: flex;
+}
+
+.ascc-v2 .fw--no-wrap {
+	flex-wrap: nowrap;
+}
+
+.ascc-v2 .fw--wrap {
+	flex-wrap: wrap;
+}
+
+.ascc-v2 .fw--wrap-reverse {
+	flex-wrap: wrap;
+}
+
+.ascc-v2 .jc--start {
+	justify-content: start;
+}
+
+.ascc-v2 .jc--center {
+	justify-content: center;
+}
+
+.ascc-v2 .jc--space-between {
+	justify-content: space-between;
+}
+
+.ascc-v2 .jc--space-around {
+	justify-content: space-around;
+}
+
+.ascc-v2 .jc--space-evenly {
+	justify-content: space-evenly;
 }
 
 .ascc-v2 .ma--0mx,.ascc-v2 .margin--0mx {
@@ -6371,22 +6387,27 @@ div.auto-scroller ul li {
 	background-color: #feefe2;
 }
 
-/*!
-Welcome to Custom CSS!
-
-CSS (Cascading Style Sheets) is a kind of code that tells the browser how
-to render a web page. You may delete these comments and get started with
-your customizations.
-
-By default, your stylesheet will be loaded after the theme stylesheets,
-which means that your rules can take precedence and override the theme CSS
-rules. Just write here what you want to change, you don't need to copy all
-your theme's stylesheet content.
-*/
-/*!
-* Legacy CSS written before 8/2017.
-* Note from DC Rieck: Should be eventually removed or incorporated into updated design files.
-*/
+/*! ================================================================================================
+*** CUSTOM STYLE SHEET for the WSU Academic Services and Career Center (ASCC)
+*** ================================================================================================
+***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)            
+***
+***   CONTENTS: CSS compiled from Less language extension of CSS; only used on the ASCC website.
+***
+***   GIT REPOSITORY: https://github.com/invokeImmediately/ascc.wsu.edu
+***     See git repository for fully documented, precompiled source code.
+*** ================================================================================================
+**/
+/*! ================================================================================================
+*** LEGACY CSS for the ASCC Website
+*** ================================================================================================
+***   AUTHORS: Unknown.
+***
+***   SUMMARY: CSS code that was written for version 1 of the ASCC website before contributions made
+***   by Daniel Rieck started on 8/2017. Should be eventually removed or incorporated into updated
+***   design files.
+*** ================================================================================================
+**/
 body:not(.ascc-v2) {
 	background: url(/wp-content/uploads/sites/167/2015/02/campus.jpg) no-repeat center center;
 	background-attachment: fixed;
@@ -6617,9 +6638,16 @@ div#cssslider2 figure {
 	padding: 10px;
 }
 
-/*!
-* dr-css-1.1: Site-wide sizing & spacing overrides
-*/
+/*! ================================================================================================
+*** LEGACY CSS for the ASCC Website
+*** ================================================================================================
+***   AUTHORS: Unknown.
+***
+***   SUMMARY: CSS code that was written for version 1 of the ASCC website before contributions made
+***   by Daniel Rieck started on 8/2017. Should be eventually removed or incorporated into updated
+***   design files.
+*** ================================================================================================
+**/
 body {
 	font-size: 100%;
 }
@@ -6658,9 +6686,6 @@ body.has-improved-contrast {
 	color: #464e54;
 }
 
-/*! 
-* dr-css-1.2: Section overrides
-*/
 .row.halves:last-child .column,.row.single:last-child .column {
 	padding-bottom: 2rem;
 }
@@ -6679,9 +6704,6 @@ body.has-improved-contrast {
 	background: 0 0;
 }
 
-/*! 
-* dr-css-1.3: Sectional article headers
-*/
 .row.halves.article-header,.row.single.article-header {
 	position: relative;
 }
@@ -6746,9 +6768,6 @@ body.has-improved-contrast {
 	background-size: cover;
 }
 
-/*! 
-* dr-css-1.4: Article taglines & intro text
-*/
 .column .article-tagline {
 	font-family: 'PT Serif', Palatino, serif;
 	font-size: 1.305em;
@@ -6907,9 +6926,6 @@ body.has-improved-contrast {
 	margin-top: 1rem;
 }
 
-/*! 
-* dr-css-1.5: Article sidebars
-*/
 .sidebar {
 	padding: .5rem;
 	border-left: 4px solid #8d959a;
@@ -6929,9 +6945,6 @@ body.has-improved-contrast {
 	color: #fff;
 }
 
-/*! 
-* dr-css-1.6: Tables of Conents
-*/
 #on-this-page {
 	background-color: #2f3438;
 }
@@ -6997,9 +7010,6 @@ body.has-improved-contrast {
 	background: url(https://s3.wp.wsu.edu/uploads/sites/167/2017/09/micon_returnKey_rotated-90-deg-cw_54x64.png) center center/auto 100% no-repeat;
 }
 
-/*! 
-* dr-css-1.7: Asides
-*/
 .page.cea #experience-business {
 	float: right;
 	width: 33%;
@@ -7009,17 +7019,11 @@ body.has-improved-contrast {
 	font-size: .9rem;
 }
 
-/*! 
-* dr-css-1.8: Sidebar Right Sections
-*/
 .row.side-right.has-graphical-sidebar .column.two {
 	margin-top: 0;
 	background-size: cover;
 }
 
-/*! 
-* dr-css-1.9: Styling specific to the Career Exploration Abroad page
-*/
 body.page.cea .row.article-header .column.one .wrapper {
 	font-size: 1.4rem;
 }
@@ -7101,11 +7105,10 @@ body.page.cea #close-contact-form {
 	padding-left: calc(1.5rem + .25rem);
 	padding-right: .25rem;
 	font-family: 'Roboto Mono', monospace, sans-serif;
-	font-weight: 300;
 	font-size: .9rem;
 	line-height: 1.4rem;
 	text-transform: uppercase;
-	background: #2a3033 url('/wp-content/uploads/sites/167/2017/10/			button_close-form_crimson-and-white.jpg') left center/24px auto no-repeat;
+	background: #2a3033 url(/wp-content/uploads/sites/167/2017/10/button_close-form_crimson-and-white.jpg) left center/24px auto no-repeat;
 	color: #fff;
 	cursor: pointer;
 	z-index: 99353;
@@ -7127,9 +7130,6 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_checkbox li,body.page.cea .
 	margin: 0 !important;
 }
 
-/*! 
-* dr-css-1.10: Styling of glass buttons
-*/
 .column a.glass-button,.column a.recommend-button {
 	display: block;
 	position: relative;
@@ -7209,16 +7209,10 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_checkbox li,body.page.cea .
 	width: calc(100% - 55px - 1em);
 }
 
-/*! 
-* dr-css-1.11: Styling of main header construct
-*/
 .main-header sup span {
 	line-height: 1.5em;
 }
 
-/*! 
-* dr-css-1.12: Gravity forms
-*/
 .column li.gfield.uses-rich-editor .tmce-active .mce-menubar {
 	display: none;
 }
@@ -7243,9 +7237,6 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_checkbox li,body.page.cea .
 	margin-top: 0 !important;
 }
 
-/*!
-* dr-css-1.13: ASCC version 2.0 slideshows
-*/
 .ascc-v2 .builder-section-banner {
 	font-size: 1rem;
 }
@@ -7285,9 +7276,6 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_checkbox li,body.page.cea .
 	font-size: 1.65rem;
 }
 
-/*! 
-* dr-css-1.14: Legacy ASCC fixes
-*/
 body:not(.ascc-v2) .main-header {
 	margin: 0 -100%;
 	padding: .5em 100%;
@@ -7301,9 +7289,6 @@ body:not(.ascc-v2) .main-header sub:not(.unset) *,body:not(.ascc-v2) .main-heade
 	font-size: inherit;
 }
 
-/*!
-* dr-css-1.15: ASCC version 2.0 body
-*/
 body.ascc-v2 {
 	background: #5e6a71 url(/wp-content/uploads/sites/167/2014/11/bright-squares.png) repeat fixed;
 }
@@ -7317,9 +7302,6 @@ body.ascc-v2 {
 	border-left: 1px solid #eff0f1;
 }
 
-/*!
-* dr-css-1.16: TO BE REMOVED: Temporarily copied from WSU-UE---CSS
-*/
 .ascc-v2 .for-screen-readers {
 	box-sizing: border-box !important;
 	height: 0 !important;
@@ -7333,9 +7315,6 @@ body.ascc-v2 {
 	margin: 0 !important;
 }
 
-/*!
-* dr-css-1.17: ASCC version 2.0 sub-columns
-*/
 .ascc-v2 .sub-row {
 	display: flex;
 	flex-direction: row;
@@ -7348,19 +7327,14 @@ body.ascc-v2 {
 	width: calc(50% - 2rem);
 }
 
-/*!
-* dr-css-1.18: Helpful links tables
-*/
 .helpful-links tr+tr td {
 	padding-top: 1em;
 }
 
-/*!
-* --------------------------------------------------------------------------------------------------
-* dr-css-1.0: CSS Authored by Daniel Rieck
-* 
-* Adjustments to and extensions of Builder template's style rule-sets and responsive behavior.
-*/
+.fluid .row.side-left.our-services--sub-desktop .column {
+	background: extract(colors--grays__hex,9);
+}
+
 /*! ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
 *   ║ MEDIA QUERIES ####################################################################################################### ║
 *   ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
@@ -7388,7 +7362,7 @@ body.ascc-v2 {
 		-webkit-transition-timing-function: linear;
 	}
 	
-	.ascc-v2 img.show-on-mobile {
+	.ascc-v2 .show-on-mobile {
 		display: none;
 	}
 }
@@ -7497,6 +7471,10 @@ body.ascc-v2 {
 		margin-top: 4px;
 		margin-right: 1em;
 		margin-bottom: 4px;
+	}
+	
+	.ascc-v2 .sub-row.our-services__button-arrangement--mobile {
+		display: none;
 	}
 }
 
@@ -7712,6 +7690,24 @@ body.ascc-v2 {
 	}
 }
 
+@media all and (min-width:1165px) {
+	.fluid .row.thirds.our-services--desktop .column.one {
+		width: 265px;
+	}
+	
+	.fluid .row.thirds.our-services--desktop .column.two {
+		width: calc(100% - 265px - 195px);
+	}
+	
+	.fluid .row.thirds.our-services--desktop .column.three {
+		width: 195px;
+	}
+	
+	.fluid .row.side-left.our-services--sub-desktop {
+		display: none;
+	}
+}
+
 @media all and (max-width:1205px) {
 	.ascc-v2 ul.content-boxes>li {
 		overflow-x: auto;
@@ -7719,6 +7715,12 @@ body.ascc-v2 {
 	
 	.ascc-v2 ul.cascaded-layout.blank>li {
 		overflow-x: visible;
+	}
+}
+
+@media all and (max-width:1164px) {
+	.fluid .row.thirds.our-services--desktop {
+		display: none;
 	}
 }
 
@@ -7819,6 +7821,21 @@ body.ascc-v2 {
 	
 	#on-this-page li a {
 		padding: 8px 10px;
+	}
+}
+
+@media screen and (max-width:693px) {
+	.ascc-v2 .column .cycle-next:before,.ascc-v2 .column .cycle-prev:before {
+		border-radius: 15px;
+	}
+	
+	.ascc-v2 .builder-section-banner {
+		font-size: .875rem;
+	}
+	
+	.ascc-v2 .column .builder-banner-content {
+		border-bottom-width: 1rem;
+		font-size: .875em;
 	}
 }
 
@@ -7924,20 +7941,9 @@ body.ascc-v2 {
 		right: 5rem;
 		left: 5rem;
 	}
-}
-
-@media screen and (max-width:693px) {
-	.ascc-v2 .column .cycle-next:before,.ascc-v2 .column .cycle-prev:before {
-		border-radius: 15px;
-	}
 	
-	.ascc-v2 .builder-section-banner {
-		font-size: .875rem;
-	}
-	
-	.ascc-v2 .column .builder-banner-content {
-		border-bottom-width: 1rem;
-		font-size: .875em;
+	.our-services__button-arrangement--normal {
+		display: none;
 	}
 }
 
@@ -7967,6 +7973,15 @@ body.ascc-v2 {
 }
 
 @media all and (max-width:480px) {
+	.ascc-v2 ul.content-boxes>li>img {
+		left: calc(.5rem + 7px);
+		width: 84px;
+	}
+	
+	.ascc-v2 ul.content-boxes>li>.content {
+		left: 99px;
+	}
+	
 	.ascc-v2 .column .builder-banner-content {
 		font-size: 5.1568vw;
 		line-height: 6.9616vw;
@@ -8057,15 +8072,15 @@ body.ascc-v2 {
 		font-size: .9em;
 	}
 	
-	.ascc-v2 img.hide-on-mobile {
-		display: none;
-	}
-	
 	.ascc-v2 .column .decoration {
 		float: none;
 		margin-left: 0;
 		padding-bottom: 40%;
 		width: 100%;
+	}
+	
+	.ascc-v2 .hide-on-mobile {
+		display: none;
 	}
 	
 	body.page.cea #contact-form-wrapper {
@@ -9075,10 +9090,10 @@ body.ascc-v2 {
 	}
 	
 	.ascc-v2 section:not(.row).article-header .header-content h3 {
-		padding: .1rem .2rem .2rem;
-		background-color: rgba(152,30,50,.95);
 		border: 1px solid #fff;
+		background-color: rgba(152,30,50,.95);
 		color: #fff;
+		padding: .1rem .2rem .2rem;
 		text-shadow: 0 .3333px 0 #afafaf, 0 .6667px 0 #989898, 0 1px 0 #7f7f7f, 0 1.3333px 0 #686868, 0 1.6667px 0 #4f4f4f, 0 2px .3333px rgba(0,0,0,.1), 0 0 1.6667px rgba(0,0,0,.1), 0 .3333px 1px rgba(0,0,0,.3), 0 1px 1.6667px rgba(0,0,0,.2), 0 1.6667px 3.3333px rgba(0,0,0,.25), 0 3.3333px 3.3333px rgba(0,0,0,.2), 0 6.6667px 6.6667px rgba(0,0,0,.15);
 	}
 	
