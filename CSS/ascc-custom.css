@@ -819,35 +819,33 @@ html {
   margin-bottom: 2rem;
 }
 .ascc-v2 section:not(.row).article-header {
+  background-size: auto 100% !important;
   height: 120px;
   margin-bottom: 1rem;
-  background-size: auto 100% !important;
+  max-width: 922px;
 }
-body.blog .ascc-v2 section:not(.row).article-header {
+body.blog .ascc-v2 section:not(.row).article-header,
+body.single-post .ascc-v2 section:not(.row).article-header {
   margin-bottom: 0;
 }
 .ascc-v2 section:not(.row).article-header .header-content {
+  margin-left: 1rem;
+  margin-right: 1rem;
   position: relative;
   top: 50%;
-  margin-right: 1rem;
-  margin-left: 1rem;
   transform: translateY(-50%);
 }
-.ascc-v2 section:not(.row).article-header .header-content h1 {
-  font-size: 4.118rem;
-  line-height: 1.071em;
-}
-.ascc-v2 section:not(.row).article-header .header-content h2 {
-  margin-bottom: .75rem;
+.ascc-v2 section:not(.row).article-header .header-content h1,
+.ascc-v2 section:not(.row).article-header .header-content h2,
+.ascc-v2 section:not(.row).article-header .header-content h3 {
   font-size: 2.826rem;
   line-height: 0.8em;
   text-transform: uppercase;
 }
-.ascc-v2 section:not(.row).article-header .header-content h3 {
-  margin-top: 0;
-  margin-bottom: 0;
+.ascc-v2 section:not(.row).article-header .header-content h1 + h2,
+.ascc-v2 section:not(.row).article-header .header-content h2 + h3 {
   font-size: 1.261rem;
-  text-transform: uppercase;
+  margin-top: 0.75rem;
 }
 @media all {
   .ascc-v2 section:not(.row).article-header .header-content h1,
@@ -861,10 +859,10 @@ body.blog .ascc-v2 section:not(.row).article-header {
     text-shadow: 0 0.6667px 0 #afafaf, 0 1.3333px 0 #989898, 0 2px 0 #7f7f7f, 0 2.6667px 0 #686868, 0 3.3333px 0 #4f4f4f, 0 4px 0.6667px rgba(0, 0, 0, 0.1), 0 0 3.3333px rgba(0, 0, 0, 0.1), 0 0.6667px 2px rgba(0, 0, 0, 0.3), 0 2px 3.3333px rgba(0, 0, 0, 0.2), 0 3.3333px 6.6667px rgba(0, 0, 0, 0.25), 0 6.6667px 6.6667px rgba(0, 0, 0, 0.2), 0 13.3333px 13.3333px rgba(0, 0, 0, 0.15);
   }
   .ascc-v2 section:not(.row).article-header .header-content h3 {
-    padding: .1rem .2rem .2rem;
-    background-color: rgba(152, 30, 50, 0.95);
     border: 1px solid white;
+    background-color: rgba(152, 30, 50, 0.95);
     color: #fff;
+    padding: 0.1rem 0.2rem 0.2rem;
     text-shadow: 0 0.3333px 0 #afafaf, 0 0.6667px 0 #989898, 0 1px 0 #7f7f7f, 0 1.3333px 0 #686868, 0 1.6667px 0 #4f4f4f, 0 2px 0.3333px rgba(0, 0, 0, 0.1), 0 0 1.6667px rgba(0, 0, 0, 0.1), 0 0.3333px 1px rgba(0, 0, 0, 0.3), 0 1px 1.6667px rgba(0, 0, 0, 0.2), 0 1.6667px 3.3333px rgba(0, 0, 0, 0.25), 0 3.3333px 3.3333px rgba(0, 0, 0, 0.2), 0 6.6667px 6.6667px rgba(0, 0, 0, 0.15);
   }
   .ascc-v2 section:not(.row).article-header .header-content h3 > mark.highlight {
@@ -931,72 +929,44 @@ body.blog .ascc-v2 section:not(.row).article-header {
 .ascc-v2 .row.has-blue-background .column {
   color: #fff;
 }
-.ascc-v2 main section.row > .column > ul:not(.no-btm-margin),
 .ascc-v2 main section.row > .column > article > .article-body > ul:not(.no-btm-margin),
 .ascc-v2 main section.row > .column > article > .article-summary > ul:not(.no-btm-margin),
-.ascc-v2 main section.row > .column > section > ul:not(.no-btm-margin),
 .ascc-v2 main section.row > .column table > tbody > tr > td > ul:not(.no-btm-margin),
-.ascc-v2 main section.row > .column > section > ul:not(.no-btm-margin),
 .ascc-v2 main section.row > .column > article > .article-body > section > ul:not(.no-btm-margin),
 .ascc-v2 main section.row > .column > article > .article-summary > section > ul:not(.no-btm-margin),
-.ascc-v2 main section.row > .column > section > section > ul:not(.no-btm-margin),
 .ascc-v2 main section.row > .column table > tbody > tr > td > section > ul:not(.no-btm-margin),
-.ascc-v2 main section.row > .column > div > ul:not(.no-btm-margin),
 .ascc-v2 main section.row > .column > article > .article-body > div > ul:not(.no-btm-margin),
 .ascc-v2 main section.row > .column > article > .article-summary > div > ul:not(.no-btm-margin),
-.ascc-v2 main section.row > .column > section > div > ul:not(.no-btm-margin),
 .ascc-v2 main section.row > .column table > tbody > tr > td > div > ul:not(.no-btm-margin),
-.ascc-v2 main section.row > .column > ol:not(.no-btm-margin),
 .ascc-v2 main section.row > .column > article > .article-body > ol:not(.no-btm-margin),
 .ascc-v2 main section.row > .column > article > .article-summary > ol:not(.no-btm-margin),
-.ascc-v2 main section.row > .column > section > ol:not(.no-btm-margin),
 .ascc-v2 main section.row > .column table > tbody > tr > td > ol:not(.no-btm-margin),
-.ascc-v2 main section.row > .column > section > ol:not(.no-btm-margin),
 .ascc-v2 main section.row > .column > article > .article-body > section > ol:not(.no-btm-margin),
 .ascc-v2 main section.row > .column > article > .article-summary > section > ol:not(.no-btm-margin),
-.ascc-v2 main section.row > .column > section > section > ol:not(.no-btm-margin),
 .ascc-v2 main section.row > .column table > tbody > tr > td > section > ol:not(.no-btm-margin),
-.ascc-v2 main section.row > .column > div > ol:not(.no-btm-margin),
 .ascc-v2 main section.row > .column > article > .article-body > div > ol:not(.no-btm-margin),
 .ascc-v2 main section.row > .column > article > .article-summary > div > ol:not(.no-btm-margin),
-.ascc-v2 main section.row > .column > section > div > ol:not(.no-btm-margin),
 .ascc-v2 main section.row > .column table > tbody > tr > td > div > ol:not(.no-btm-margin),
-.ascc-v2 main section.row > .column > .gform_wrapper .gfield_html > p:not(:last-child),
 .ascc-v2 main section.row > .column > article > .article-body > .gform_wrapper .gfield_html > p:not(:last-child),
 .ascc-v2 main section.row > .column > article > .article-summary > .gform_wrapper .gfield_html > p:not(:last-child),
-.ascc-v2 main section.row > .column > section > .gform_wrapper .gfield_html > p:not(:last-child),
 .ascc-v2 main section.row > .column table > tbody > tr > td > .gform_wrapper .gfield_html > p:not(:last-child),
-.ascc-v2 main section.row > .column > .gform_confirmation_wrapper p:not(:last-child),
 .ascc-v2 main section.row > .column > article > .article-body > .gform_confirmation_wrapper p:not(:last-child),
 .ascc-v2 main section.row > .column > article > .article-summary > .gform_confirmation_wrapper p:not(:last-child),
-.ascc-v2 main section.row > .column > section > .gform_confirmation_wrapper p:not(:last-child),
 .ascc-v2 main section.row > .column table > tbody > tr > td > .gform_confirmation_wrapper p:not(:last-child) {
   margin-bottom: 1rem;
 }
-.ascc-v2 main section.row:last-child > .column > ul:last-child,
 .ascc-v2 main section.row:last-child > .column > .column > article > .article-body > ul:last-child,
 .ascc-v2 main section.row:last-child > .column > .column > article > .article-summary > ul:last-child,
-.ascc-v2 main section.row:last-child > .column > .column > section > ul:last-child,
-.ascc-v2 main section.row:last-child > .column > section > ul:last-child,
 .ascc-v2 main section.row:last-child > .column > .column > article > .article-body > section > ul:last-child,
 .ascc-v2 main section.row:last-child > .column > .column > article > .article-summary > section > ul:last-child,
-.ascc-v2 main section.row:last-child > .column > .column > section > section > ul:last-child,
-.ascc-v2 main section.row:last-child > .column > div > ul:last-child,
 .ascc-v2 main section.row:last-child > .column > .column > article > .article-body > div > ul:last-child,
 .ascc-v2 main section.row:last-child > .column > .column > article > .article-summary > div > ul:last-child,
-.ascc-v2 main section.row:last-child > .column > .column > section > div > ul:last-child,
-.ascc-v2 main section.row:last-child > .column > ol:last-child,
 .ascc-v2 main section.row:last-child > .column > .column > article > .article-body > ol:last-child,
 .ascc-v2 main section.row:last-child > .column > .column > article > .article-summary > ol:last-child,
-.ascc-v2 main section.row:last-child > .column > .column > section > ol:last-child,
-.ascc-v2 main section.row:last-child > .column > section > ol:last-child,
 .ascc-v2 main section.row:last-child > .column > .column > article > .article-body > section > ol:last-child,
 .ascc-v2 main section.row:last-child > .column > .column > article > .article-summary > section > ol:last-child,
-.ascc-v2 main section.row:last-child > .column > .column > section > section > ol:last-child,
-.ascc-v2 main section.row:last-child > .column > div > ol:last-child,
 .ascc-v2 main section.row:last-child > .column > .column > article > .article-body > div > ol:last-child,
-.ascc-v2 main section.row:last-child > .column > .column > article > .article-summary > div > ol:last-child,
-.ascc-v2 main section.row:last-child > .column > .column > section > div > ol:last-child {
+.ascc-v2 main section.row:last-child > .column > .column > article > .article-summary > div > ol:last-child {
   margin-bottom: 0;
 }
 @media all and (max-width: 693px) {
@@ -1341,13 +1311,13 @@ body.blog .ascc-v2 section:not(.row).article-header {
   float: right;
   width: 33%;
   min-width: 230px;
-  padding: .8rem;
+  padding: 0.8rem;
   margin-bottom: 1rem;
   margin-left: 1rem;
   border: 1px solid #6d441f;
   background: #f8f1eb;
   color: #464e54;
-  font-size: .8rem;
+  font-size: 0.8rem;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 .column .ascc-v2 aside.article-sidebar:first-child + h1,
@@ -1373,7 +1343,7 @@ body.blog .ascc-v2 section:not(.row).article-header {
   padding-bottom: 0;
 }
 .column .ascc-v2 aside.article-sidebar h2 + hr {
-  margin-top: .25rem;
+  margin-top: 0.25rem;
   background-color: rgba(70, 78, 84, 0.75);
 }
 .column .ascc-v2 aside.article-sidebar h3 {
@@ -1773,7 +1743,7 @@ body.blog .column .ascc-v2 header.article-header + * {
 .ascc-v2 h4.solid,
 .ascc-v2 h5.solid,
 .ascc-v2 h6.solid {
-  padding: .1em .25em .11em;
+  padding: 0.1em 0.25em 0.11em;
   position: relative;
 }
 .ascc-v2 h1.solid::before,
@@ -1928,7 +1898,7 @@ body.blog .column .ascc-v2 header.article-header + * {
 .ascc-v2 {
 }
 .ascc-v2 header.main-header .sup-header-default {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 @media all {
   .ascc-v2 header.main-header .sup-header-default {
@@ -3547,13 +3517,11 @@ p ~ p {
 }
 .ascc-v2 .wsuwp-json--headlines .content-item-thumbnail {
   float: right;
+  margin-bottom: 0.5em;
+  margin-left: 0.5em;
   max-width: 136px;
   min-width: 96px;
   width: 28.5%;
-}
-.ascc-v2 .wsuwp-json--headlines .content-item-thumbnail img {
-  margin-bottom: 0.5em;
-  margin-left: 0.5em;
 }
 .ascc-v2 .wsuwp-json--headlines .wsuwp-content-syndicate-item {
   box-sizing: border-box;
@@ -3658,7 +3626,7 @@ p ~ p {
 }
 .ascc-v2 .column .cycle-next,
 .ascc-v2 .column .cycle-prev {
-  opacity: 1.0;
+  opacity: 1;
 }
 .ascc-v2 .column .cycle-next:before,
 .ascc-v2 .column .cycle-prev:before {
@@ -3688,10 +3656,10 @@ p ~ p {
     line-height: 3.8122vw;
   }
   .ascc-v2 .column .builder-banner-inner-content p {
-    padding: 1.0vw;
+    padding: 1vw;
   }
   .ascc-v2 .column .builder-banner-inner-content p:last-child:not(.no-bottom-pad) {
-    padding-bottom: 1.0vw;
+    padding-bottom: 1vw;
   }
 }
 @media all and (max-width: 989px) and (min-width: 481px) {
@@ -4597,7 +4565,7 @@ div.callout.top:after,
 }
 .ascc-v2 .column a.dark-red-button {
   display: block;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   border-radius: 0;
   color: #fff;
   background-color: #981e32;
@@ -4659,16 +4627,16 @@ div.callout.top:after,
   -webkit-box-shadow: 2px 2px 2px rgba(146, 91, 41, 0.5);
   -moz-box-shadow: 2px 2px 2px rgba(146, 91, 41, 0.5);
   font-family: inherit;
-  font-size: .9em;
+  font-size: 0.9em;
   font-style: normal;
   transition-property: opacity, margin-top, visibility, margin-left;
   -webkit-transition-property: opacity, margin-top, visibility, margin-left;
   -moz-transition-property: opacity, margin-top, visibility, margin-left;
   -o-transition-property: opacity, margin-top, visibility, margin-left;
-  transition-duration: 0.4s, 0.3s, 0.4s, .3s;
-  -webkit-transition-duration: 0.4s, 0.3s, 0.4s, .3s;
-  -moz-transition-duration: 0.4s, 0.3s, 0.4s, .3s;
-  -o-transition-duration: 0.4s, 0.3s, 0.4s, .3s;
+  transition-duration: 0.4s, 0.3s, 0.4s, 0.3s;
+  -webkit-transition-duration: 0.4s, 0.3s, 0.4s, 0.3s;
+  -moz-transition-duration: 0.4s, 0.3s, 0.4s, 0.3s;
+  -o-transition-duration: 0.4s, 0.3s, 0.4s, 0.3s;
   transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
   -webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
   -moz-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
@@ -4860,8 +4828,8 @@ mark.highlight {
   color: #00a5bd;
   transition-property: color, background, border-color;
   -webkit-transition-property: color, background, border-color;
-  transition-duration: .3s, .3s, .3s;
-  -webkit-transition-duration: .3s, .3s, .3s;
+  transition-duration: 0.3s, 0.3s, 0.3s;
+  -webkit-transition-duration: 0.3s, 0.3s, 0.3s;
   transition-timing-function: ease, ease, ease;
   -webkit-transition-timing-function: ease, ease, ease;
 }
@@ -5026,17 +4994,17 @@ cite.article-author {
   border-bottom: 1px solid #5e6a71;
 }
 .ascc-v2 .column table.plain thead tr th {
-  padding-top: .25rem;
-  padding-left: .25rem;
-  padding-bottom: .25rem;
+  padding-top: 0.25rem;
+  padding-left: 0.25rem;
+  padding-bottom: 0.25rem;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #B6BCBF;
   text-align: inherit;
 }
 .ascc-v2 .column table.plain tbody tr td {
-  padding-top: .25rem;
-  padding-left: .25rem;
-  padding-bottom: .25rem;
+  padding-top: 0.25rem;
+  padding-left: 0.25rem;
+  padding-bottom: 0.25rem;
   background-color: #eff0f1;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #b5babe;
@@ -5044,9 +5012,9 @@ cite.article-author {
   vertical-align: top;
 }
 .ascc-v2 .column table.plain tbody tr:nth-of-type(2n) td {
-  padding-top: .25rem;
-  padding-left: .25rem;
-  padding-bottom: .25rem;
+  padding-top: 0.25rem;
+  padding-left: 0.25rem;
+  padding-bottom: 0.25rem;
   background-color: #fff;
   border-top: 1px solid #eff0f1;
   border-bottom: 1px solid #d7dadb;
@@ -5222,13 +5190,13 @@ cite.article-author {
   animation: orange-glow 5s linear infinite;
   background-color: rgba(255, 184, 28, 0.25);
   border: 1px solid #2a3033;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   color: #5e6a71;
   cursor: pointer;
   display: inline-block;
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 2;
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
   position: relative;
   -webkit-transition: all 0.3333s ease;
   -moz-transition: all 0.3333s ease;
@@ -5303,7 +5271,7 @@ cite.article-author {
 }
 .ascc-v2 div.read-more-target {
   height: 0;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   opacity: 0;
   overflow: hidden;
   -webkit-transition: all .333s ease;
@@ -6047,7 +6015,7 @@ cite.article-author {
   -ms-filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#4a4a4a, EndColorStr=#000000);
   filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#4a4a4a, EndColorStr=#000000);
   font: 12px arial, sans-serif;
-  padding: .75em;
+  padding: 0.75em;
 }
 .qtip-youtube .qtip-icon {
   border-color: #222;
@@ -6218,7 +6186,7 @@ cite.article-author {
   font-weight: 700;
   height: auto;
   line-height: 18px;
-  opacity: .2;
+  opacity: 0.2;
   text-shadow: 0 1px 0 #fff;
   width: auto;
 }
@@ -6226,7 +6194,7 @@ cite.article-author {
   color: #000;
   cursor: pointer;
   filter: alpha(opacity=40);
-  opacity: .4;
+  opacity: 0.4;
   text-decoration: none;
 }
 .qtip:not(.ie9haxors) div.qtip-content,
@@ -6275,7 +6243,7 @@ x:-o-prefocus {
   filter: alpha(opacity=70);
   height: 100%;
   left: 0;
-  opacity: .7;
+  opacity: 0.7;
   position: absolute;
   top: 0;
   width: 100%;
@@ -6362,9 +6330,11 @@ div.auto-scroller ul li {
 .ascc-v2 .page-header--h-450px {
   height: 450px;
 }
+.ascc-v2 .page-header--h-auto {
+  height: auto;
+}
 .ascc-v2 .page-header__column-1 {
   background-color: rgba(0, 0, 0, 0.9);
-  top: 50%;
   box-sizing: border-box;
   color: #ffffff;
   display: block;
@@ -6372,6 +6342,7 @@ div.auto-scroller ul li {
   margin: 0;
   padding: 1rem;
   right: 2rem;
+  top: 50%;
   text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.9);
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -6398,36 +6369,23 @@ div.auto-scroller ul li {
 .ascc-v2 .page-header .page-header__column-1 {
   position: absolute;
 }
-.ascc-v2 .fluid .row.single .column.page-header__column-1 {
-  width: auto;
+.ascc-v2 .page-header .page-header__column-1--p-static {
+  position: static;
+  top: 0;
+  -webkit-transform: none;
+  -moz-transform: none;
+  transform: none;
 }
-.ascc-v2 .page-header__text-breadcrumb,
+.ascc-v2 .fluid .row.single .column.page-header__column-1--p-static {
+  width: 100%;
+}
+.ascc-v2 .fluid .row.single .page-header__text-breadcrumb,
 .ascc-v2 .page-header__text-title,
 .ascc-v2 .page-header__text-subtitle {
   color: inherit;
   text-shadow: inherit;
 }
 .ascc-v2 {
-  /*!     ····························································································
-***     >>> §2.2: Typograhy: Line heights
-***
-***     NOTES:
-***     * See line 24 for explanation of "mx" units.
-***     * Depends on the utiltiy mixin .set-lHeight(...) and the Less variable @lHeight-array, 
-***       which are both defined in utility-mixins.less.
-**/
-  /*!     ····························································································
-***     >>> §2.3: Typograhy: Bolding
-**/
-  /*!     ····························································································
-***     >>> §2.4: Typograhy: Text transformation
-**/
-  /*!     ····························································································
-***     >>> §2.5: Typograhy: Text alignment
-**/
-  /*!     ····························································································
-***     >>> §4.1: Clearing
-**/
 }
 .ascc-v2 .width--5pct,
 .ascc-v2 .w--5pct {
@@ -6845,6 +6803,33 @@ div.auto-scroller ul li {
   .ascc-v2 .hide-on-mobile {
     display: none;
   }
+}
+.ascc-v2 .dy--flex {
+  display: flex;
+}
+.ascc-v2 .fw--no-wrap {
+  flex-wrap: nowrap;
+}
+.ascc-v2 .fw--wrap {
+  flex-wrap: wrap;
+}
+.ascc-v2 .fw--wrap-reverse {
+  flex-wrap: wrap;
+}
+.ascc-v2 .jc--start {
+  justify-content: start;
+}
+.ascc-v2 .jc--center {
+  justify-content: center;
+}
+.ascc-v2 .jc--space-between {
+  justify-content: space-between;
+}
+.ascc-v2 .jc--space-around {
+  justify-content: space-around;
+}
+.ascc-v2 .jc--space-evenly {
+  justify-content: space-evenly;
 }
 .ascc-v2 .margin--0mx,
 .ascc-v2 .ma--0mx {
@@ -7910,7 +7895,7 @@ body:not(.ascc-v2) .main-header {
   border-bottom: 1px solid #fff;
   height: auto;
   margin: 0 0 0 -100%;
-  padding: .5em 0 .5em 100%;
+  padding: 0.5em 0 0.5em 100%;
   box-sizing: content-box;
   z-index: 2;
 }
@@ -7931,7 +7916,7 @@ body:not(.ascc-v2) .main-header sub {
   color: #fff;
   display: inline-block;
   font-size: 1em;
-  padding: 1rem 2rem .9rem;
+  padding: 1rem 2rem 0.9rem;
 }
 body:not(.ascc-v2) .home .main-header sup:not(.unset),
 body:not(.ascc-v2) .home .main-header sup,
@@ -8002,24 +7987,24 @@ body:not(.ascc-v2) p {
 }
 body:not(.ascc-v2) h2 {
   font-size: 3em;
-  padding: 1em 0 .5em;
+  padding: 1em 0 0.5em;
 }
 body:not(.ascc-v2) h2:first-child {
-  padding: 0 0 .5em;
+  padding: 0 0 0.5em;
 }
 body:not(.ascc-v2) h3,
 body:not(.ascc-v2) .column.two h2 {
   color: #981e32;
   font-size: 2em;
   font-weight: 400;
-  padding: .5em 0 .3em;
+  padding: 0.5em 0 0.3em;
 }
 body:not(.ascc-v2) h4,
 body:not(.ascc-v2) .column.two h3 {
   color: #5e6a71;
   font-size: 1.5em;
   font-weight: 700;
-  padding: .5em 0 .3em;
+  padding: 0.5em 0 0.3em;
 }
 body:not(.ascc-v2) h3 + h4 {
   padding-top: 0;
@@ -9046,7 +9031,7 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   position: absolute;
   width: 1rem;
   left: -3px;
-  height: .9rem;
+  height: 0.9rem;
   background: url(https://s3.wp.wsu.edu/uploads/sites/167/2017/09/micon_returnKey_rotated-90-deg-cw_54x64.png) center center / auto 100% no-repeat;
 }
 /*! 
@@ -9207,7 +9192,7 @@ body.page.cea #close-contact-form {
   padding-left: calc(1.5rem + 0.25rem);
   padding-right: 0.25rem;
   font-family: 'Roboto Mono', monospace, sans-serif;
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 1.4rem;
   text-transform: uppercase;
   background: #2a3033 url(/wp-content/uploads/sites/167/2017/10/
@@ -9355,7 +9340,7 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_radio li {
 }
 @media screen and (max-width: 693px) {
   .ascc-v2 .builder-section-banner {
-    font-size: .875rem;
+    font-size: 0.875rem;
   }
 }
 @media screen and (max-width: 693px) {
@@ -9432,7 +9417,7 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_radio li {
 */
 body:not(.ascc-v2) .main-header {
   margin: 0 -100%;
-  padding: .5em 100%;
+  padding: 0.5em 100%;
 }
 body:not(.ascc-v2) .main-header sup:not(.unset),
 body:not(.ascc-v2) .main-header sup,
