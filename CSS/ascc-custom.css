@@ -7867,22 +7867,27 @@ div.auto-scroller ul li {
 .ascc-v2 .bgc--orange--tint {
   background-color: #feefe2;
 }
-/*!
-Welcome to Custom CSS!
-
-CSS (Cascading Style Sheets) is a kind of code that tells the browser how
-to render a web page. You may delete these comments and get started with
-your customizations.
-
-By default, your stylesheet will be loaded after the theme stylesheets,
-which means that your rules can take precedence and override the theme CSS
-rules. Just write here what you want to change, you don't need to copy all
-your theme's stylesheet content.
-*/
-/*!
-* Legacy CSS written before 8/2017.
-* Note from DC Rieck: Should be eventually removed or incorporated into updated design files.
-*/
+/*! ================================================================================================
+*** CUSTOM STYLE SHEET for the WSU Academic Services and Career Center (ASCC)
+*** ================================================================================================
+***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)            
+***
+***   CONTENTS: CSS compiled from Less language extension of CSS; only used on the ASCC website.
+***
+***   GIT REPOSITORY: https://github.com/invokeImmediately/ascc.wsu.edu
+***     See git repository for fully documented, precompiled source code.
+*** ================================================================================================
+**/
+/*! ================================================================================================
+*** LEGACY CSS for the ASCC Website
+*** ================================================================================================
+***   AUTHORS: Unknown.
+***
+***   SUMMARY: CSS code that was written for version 1 of the ASCC website before contributions made
+***   by Daniel Rieck started on 8/2017. Should be eventually removed or incorporated into updated
+***   design files.
+*** ================================================================================================
+**/
 body:not(.ascc-v2) {
   background: url('/wp-content/uploads/sites/167/2015/02/campus.jpg') no-repeat center center;
   background-attachment: fixed;
@@ -8116,9 +8121,16 @@ div#cssslider2 figure {
     float: left;
   }
 }
-/*!
-* dr-css-1.1: Site-wide sizing & spacing overrides
-*/
+/*! ================================================================================================
+*** LEGACY CSS for the ASCC Website
+*** ================================================================================================
+***   AUTHORS: Unknown.
+***
+***   SUMMARY: CSS code that was written for version 1 of the ASCC website before contributions made
+***   by Daniel Rieck started on 8/2017. Should be eventually removed or incorporated into updated
+***   design files.
+*** ================================================================================================
+**/
 body {
   font-size: 100%;
 }
@@ -8156,9 +8168,6 @@ body.has-normal-line-spacing :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) + 
 body.has-improved-contrast {
   color: #464e54;
 }
-/*! 
-* dr-css-1.2: Section overrides
-*/
 .row.single:last-child .column,
 .row.halves:last-child .column {
   padding-bottom: 2rem;
@@ -8196,9 +8205,6 @@ body.has-improved-contrast {
     padding-left: 1rem;
   }
 }
-/*! 
-* dr-css-1.3: Sectional article headers
-*/
 .row.halves.article-header,
 .row.single.article-header {
   position: relative;
@@ -8316,9 +8322,6 @@ body.has-improved-contrast {
 		}
 	}
 }*/
-/*! 
-* dr-css-1.4: Article taglines & intro text
-*/
 @media all {
   .row.single:not(.mimic-multi-column-sections) .column .article-tagline {
     line-height: 1.5em;
@@ -8944,9 +8947,6 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
     font-size: 0.97596696em;
   }
 }
-/*! 
-* dr-css-1.5: Article sidebars
-*/
 .sidebar {
   padding: 0.5rem;
   border-left: 4px solid #8d959a;
@@ -8970,9 +8970,6 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   background-color: #981e32;
   color: #fff;
 }
-/*! 
-* dr-css-1.6: Tables of Conents
-*/
 #on-this-page {
   background-color: #2f3438;
 }
@@ -9034,9 +9031,6 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   height: 0.9rem;
   background: url(https://s3.wp.wsu.edu/uploads/sites/167/2017/09/micon_returnKey_rotated-90-deg-cw_54x64.png) center center / auto 100% no-repeat;
 }
-/*! 
-* dr-css-1.7: Asides
-*/
 .page.cea #experience-business {
   float: right;
   width: 33%;
@@ -9050,9 +9044,6 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
     width: 100%;
   }
 }
-/*! 
-* dr-css-1.8: Sidebar Right Sections
-*/
 @media all and (min-width: 694px) {
   .row.side-right.has-graphical-sidebar .column.one {
     margin-right: 0;
@@ -9087,9 +9078,6 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
     width: calc(33% - 0.5rem);
   }
 }
-/*! 
-* dr-css-1.9: Styling specific to the Career Exploration Abroad page
-*/
 body.page.cea .row.article-header .column.one .wrapper {
   font-size: 1.4rem;
 }
@@ -9195,8 +9183,7 @@ body.page.cea #close-contact-form {
   font-size: 0.9rem;
   line-height: 1.4rem;
   text-transform: uppercase;
-  background: #2a3033 url(/wp-content/uploads/sites/167/2017/10/
-			button_close-form_crimson-and-white.jpg) left center / 24px auto no-repeat;
+  background: #2a3033 url(/wp-content/uploads/sites/167/2017/10/button_close-form_crimson-and-white.jpg) left center / 24px auto no-repeat;
   color: #fff;
   cursor: pointer;
   z-index: 99353;
@@ -9215,9 +9202,6 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_checkbox li,
 body.page.cea .gform_wrapper .top_label li ul.gfield_radio li {
   margin: 0 !important;
 }
-/*! 
-* dr-css-1.10: Styling of glass buttons
-*/
 .column a.recommend-button,
 .column a.glass-button {
   display: block;
@@ -9299,15 +9283,9 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_radio li {
   width: 100%;
   width: calc(100% - 55px - 1em);
 }
-/*! 
-* dr-css-1.11: Styling of main header construct
-*/
 .main-header sup span {
   line-height: 1.5em;
 }
-/*! 
-* dr-css-1.12: Gravity forms
-*/
 .column li.gfield.uses-rich-editor .tmce-active .mce-menubar {
   display: none;
 }
@@ -9332,9 +9310,6 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_radio li {
 .column li.gfield.uses-rich-editor span.gp-word-count-label {
   margin-top: 0 !important;
 }
-/*!
-* dr-css-1.13: ASCC version 2.0 slideshows
-*/
 .ascc-v2 .builder-section-banner {
   font-size: 1rem;
 }
@@ -9412,9 +9387,6 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_radio li {
     line-height: 5.1975vw;
   }
 }
-/*! 
-* dr-css-1.14: Legacy ASCC fixes
-*/
 body:not(.ascc-v2) .main-header {
   margin: 0 -100%;
   padding: 0.5em 100%;
@@ -9430,9 +9402,6 @@ body:not(.ascc-v2) .main-header sub:not(.unset) a,
 body:not(.ascc-v2) .main-header sup:not(.unset) a {
   font-size: inherit;
 }
-/*!
-* dr-css-1.15: ASCC version 2.0 body
-*/
 body.ascc-v2 {
   background: #5e6a71 url(/wp-content/uploads/sites/167/2014/11/bright-squares.png) repeat fixed;
 }
@@ -9443,9 +9412,6 @@ body.ascc-v2 {
   background: #fff;
   border-left: 1px solid #eff0f1;
 }
-/*!
-* dr-css-1.16: TO BE REMOVED: Temporarily copied from WSU-UE---CSS
-*/
 .ascc-v2 .for-screen-readers {
   box-sizing: border-box !important;
   height: 0 !important;
@@ -9457,9 +9423,6 @@ body.ascc-v2 {
 .ascc-v2 .for-screen-readers.row {
   margin: 0 !important;
 }
-/*!
-* dr-css-1.17: ASCC version 2.0 sub-columns
-*/
 .ascc-v2 .sub-row {
   display: flex;
   flex-direction: row;
@@ -9470,15 +9433,48 @@ body.ascc-v2 {
   width: 49%;
   width: calc(50% - 2rem);
 }
-/*!
-* dr-css-1.18: Helpful links tables
-*/
 .helpful-links tr + tr td {
   padding-top: 1em;
 }
-/*!
-* --------------------------------------------------------------------------------------------------
-* dr-css-1.0: CSS Authored by Daniel Rieck
-* 
-* Adjustments to and extensions of Builder template's style rule-sets and responsive behavior.
-*/
+@media all and (min-width: 1165px) {
+  .fluid .row.thirds.our-services--desktop .column.one {
+    width: 265px;
+  }
+  .fluid .row.thirds.our-services--desktop .column.two {
+    width: calc(100% - 265px - 195px);
+  }
+  .fluid .row.thirds.our-services--desktop .column.three {
+    width: 195px;
+  }
+}
+@media all and (max-width: 1164px) {
+  .fluid .row.thirds.our-services--desktop {
+    display: none;
+  }
+}
+@media all and (min-width: 1165px) {
+  .fluid .row.side-left.our-services--sub-desktop {
+    display: none;
+  }
+}
+@media all and (min-width: 694px) {
+  .fluid .row.side-left.our-services--sub-desktop {
+    background: url(/wp-content/uploads/sites/167/2018/10/background-art_academic-and-career-symbols-pattern_72x72.png) repeat;
+  }
+  .fluid .row.side-left.our-services--sub-desktop .column.two {
+    padding-bottom: 1em;
+  }
+}
+.fluid .row.side-left.our-services--sub-desktop .column {
+  background: #ffffff;
+}
+@media all and (max-width: 693px) {
+  .our-services__button-arrangement--normal {
+    display: none;
+  }
+}
+@media all and (min-width: 694px) {
+  .ascc-v2 .sub-row.our-services__button-arrangement--mobile {
+    display: none;
+  }
+}
