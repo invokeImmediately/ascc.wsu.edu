@@ -7332,7 +7332,7 @@ body.ascc-v2 {
 }
 
 .fluid .row.side-left.our-services--sub-desktop .column {
-	background: extract(colors--grays__hex,9);
+	background: #fff;
 }
 
 /*! ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
@@ -7471,6 +7471,14 @@ body.ascc-v2 {
 		margin-top: 4px;
 		margin-right: 1em;
 		margin-bottom: 4px;
+	}
+	
+	.fluid .row.side-left.our-services--sub-desktop {
+		background: url(/wp-content/uploads/sites/167/2018/10/background-art_academic-and-career-symbols-pattern_72x72.png) repeat;
+	}
+	
+	.fluid .row.side-left.our-services--sub-desktop .column.two {
+		padding-bottom: 1em;
 	}
 	
 	.ascc-v2 .sub-row.our-services__button-arrangement--mobile {
