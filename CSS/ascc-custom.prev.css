@@ -1,4 +1,6 @@
-﻿/*! Built with the Less CSS preprocessor [http://lesscss.org/]. Please see [https://github.com/invokeImmediately/ascc.wsu.edu] for a repository of source code. */
+﻿@import  "https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto+Condensed:400,700|Roboto+Slab|PT+Serif";
+
+/*! Built with the Less CSS preprocessor [http://lesscss.org/]. Please see [https://github.com/invokeImmediately/ascc.wsu.edu] for a repository of source code. */
 /*! ================================================================================================
 *** MASTER STYLE SHEET for WSU Office of Undergraduate Education (OUE) Websites
 *** ================================================================================================
@@ -639,143 +641,143 @@
 	}
 }
 
-:target:not(.no-anchor-highlighting) {
+:target:not(.no-anchor-highlighting):not(.gform_anchor) {
 	position: relative;
 }
 
-:target:not(.no-anchor-highlighting):before {
-	content: "";
-	position: absolute;
-	top: -1rem;
-	right: -1rem;
-	bottom: -1rem;
-	left: -1rem;
-	background-color: rgba(219,120,121,0);
-	border: 1px solid rgba(219,120,121,0);
-	z-index: -1;
+:target:not(.no-anchor-highlighting):not(.gform_anchor)::before {
 	-webkit-animation: animFlashHighlight 1.325s linear 1;
 	-moz-animation: animFlashHighlight 1.325s linear 1;
 	animation: animFlashHighlight 1.325s linear 1;
 	-webkit-animation-delay: 175ms;
 	-moz-animation-delay: 175ms;
 	animation-delay: 175ms;
+	background-color: rgba(219,120,121,0);
+	border: 2px solid rgba(255,0,0,0);
+	bottom: -1rem;
+	content: "";
+	left: -1rem;
+	position: absolute;
+	right: -1rem;
+	top: -1rem;
+	z-index: -1;
 }
 
 @-webkit-keyframes animFlashHighlight {
 	0% {
 		background-color: rgba(219,120,121,0);
-		border-color: rgba(219,120,121,0);
+		border-color: rgba(255,0,0,0);
 		z-index: 10;
 	}
 	
 	10% {
 		background-color: rgba(219,120,121,.1);
-		border-color: rgba(219,120,121,.5);
+		border-color: rgba(255,0,0,.5);
 	}
 	
 	20% {
 		background-color: rgba(219,120,121,0);
-		border-color: rgba(219,120,121,0);
+		border-color: rgba(255,0,0,0);
 	}
 	
 	31% {
 		background-color: rgba(219,120,121,.1);
-		border-color: rgba(219,120,121,.5);
+		border-color: rgba(255,0,0,.5);
 	}
 	
 	41% {
 		background-color: rgba(219,120,121,0);
-		border-color: rgba(219,120,121,0);
+		border-color: rgba(255,0,0,0);
 	}
 	
 	51% {
 		background-color: rgba(219,120,121,.1);
-		border-color: rgba(219,120,121,.5);
+		border-color: rgba(255,0,0,.5);
 	}
 	
 	100% {
 		background-color: rgba(219,120,121,0);
-		border-color: rgba(219,120,121,0);
+		border-color: rgba(255,0,0,0);
 	}
 }
 
 @-moz-keyframes animFlashHighlight {
 	0% {
 		background-color: rgba(219,120,121,0);
-		border-color: rgba(219,120,121,0);
+		border-color: rgba(255,0,0,0);
 		z-index: 10;
 	}
 	
 	10% {
 		background-color: rgba(219,120,121,.1);
-		border-color: rgba(219,120,121,.5);
+		border-color: rgba(255,0,0,.5);
 	}
 	
 	20% {
 		background-color: rgba(219,120,121,0);
-		border-color: rgba(219,120,121,0);
+		border-color: rgba(255,0,0,0);
 	}
 	
 	31% {
 		background-color: rgba(219,120,121,.1);
-		border-color: rgba(219,120,121,.5);
+		border-color: rgba(255,0,0,.5);
 	}
 	
 	41% {
 		background-color: rgba(219,120,121,0);
-		border-color: rgba(219,120,121,0);
+		border-color: rgba(255,0,0,0);
 	}
 	
 	51% {
 		background-color: rgba(219,120,121,.1);
-		border-color: rgba(219,120,121,.5);
+		border-color: rgba(255,0,0,.5);
 	}
 	
 	100% {
 		background-color: rgba(219,120,121,0);
-		border-color: rgba(219,120,121,0);
+		border-color: rgba(255,0,0,0);
 	}
 }
 
 @keyframes animFlashHighlight {
 	0% {
 		background-color: rgba(219,120,121,0);
-		border-color: rgba(219,120,121,0);
+		border-color: rgba(255,0,0,0);
 		z-index: 10;
 	}
 	
 	10% {
 		background-color: rgba(219,120,121,.1);
-		border-color: rgba(219,120,121,.5);
+		border-color: rgba(255,0,0,.5);
 	}
 	
 	20% {
 		background-color: rgba(219,120,121,0);
-		border-color: rgba(219,120,121,0);
+		border-color: rgba(255,0,0,0);
 	}
 	
 	31% {
 		background-color: rgba(219,120,121,.1);
-		border-color: rgba(219,120,121,.5);
+		border-color: rgba(255,0,0,.5);
 	}
 	
 	41% {
 		background-color: rgba(219,120,121,0);
-		border-color: rgba(219,120,121,0);
+		border-color: rgba(255,0,0,0);
 	}
 	
 	51% {
 		background-color: rgba(219,120,121,.1);
-		border-color: rgba(219,120,121,.5);
+		border-color: rgba(255,0,0,.5);
 	}
 	
 	100% {
 		background-color: rgba(219,120,121,0);
-		border-color: rgba(219,120,121,0);
+		border-color: rgba(255,0,0,0);
 	}
 }
 
-.row:not(.clear-none):target:not(.no-anchor-highlighting):before {
+.row:not(.clear-none):target:not(.no-anchor-highlighting):not(.gform_anchor)::before {
 	content: "";
 	width: auto;
 	height: auto;
@@ -3212,6 +3214,10 @@ section.pad-top div.column.half-pad,section.pad-top.half-pad {
 	text-shadow: 1px 1px 2px rgba(152,30,50,.3);
 }
 
+.ascc-v2 .column a.gform_anchor {
+	border: none;
+}
+
 .ascc-v2 body.user-is-tabbing a:focus {
 	border: 2px dotted #fff;
 	outline: 2px dotted #00f;
@@ -3776,6 +3782,14 @@ cite.article-author {
 	font-weight: 400;
 }
 
+.ascc-v2 .column .gform_wrapper .gfield_checkbox li input,.ascc-v2 .column .gform_wrapper .gfield_checkbox li input[type=checkbox],.ascc-v2 .column .gform_wrapper .gfield_radio li input[type=radio] {
+	vertical-align: top;
+}
+
+.ascc-v2 .column .gform_wrapper.gf_browser_chrome .gfield_checkbox li input,.ascc-v2 .column .gform_wrapper.gf_browser_chrome .gfield_checkbox li input[type=checkbox],.ascc-v2 .column .gform_wrapper.gf_browser_chrome .gfield_radio li input[type=radio] {
+	margin-top: 8px;
+}
+
 .ascc-v2 .column .gform_wrapper .gfield_description {
 	max-width: 80ch;
 }
@@ -3804,6 +3818,10 @@ cite.article-author {
 .ascc-v2 .column .gform_wrapper .gsection {
 	margin-bottom: 0;
 	margin-top: 2rem;
+}
+
+.ascc-v2 .column .gform_wrapper .percentbar_blue {
+	background-color: #981e32;
 }
 
 .ascc-v2 .column .gform_wrapper h2.fancy {
@@ -4875,6 +4893,7 @@ div.auto-scroller ul li {
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
 	transform: translateY(-50%);
+	width: auto !important;
 }
 
 .ascc-v2 .page-header__column-1--tx-bottom {
@@ -4889,7 +4908,9 @@ div.auto-scroller ul li {
 }
 
 .ascc-v2 .page-header .page-header__column-1--p-static {
+	left: 0;
 	position: static;
+	right: 0;
 	top: 0;
 	-webkit-transform: none;
 	-moz-transform: none;
@@ -4903,6 +4924,109 @@ div.auto-scroller ul li {
 .ascc-v2 .fluid .row.single .page-header__text-breadcrumb,.ascc-v2 .page-header__text-subtitle,.ascc-v2 .page-header__text-title {
 	color: inherit;
 	text-shadow: inherit;
+}
+
+.ascc-v2 .on-this-page {
+	background-color: #2f3438;
+}
+
+.ascc-v2 .on-this-page .column {
+	background-color: inherit;
+}
+
+.ascc-v2 .on-this-page .on-this-page__heading {
+	color: #fff;
+	font-size: 1.7rem;
+	padding-left: 2rem;
+	padding-bottom: .66666667rem;
+}
+
+.ascc-v2 .on-this-page .on-this-page__menu {
+	background-color: inherit;
+	border-top: 1px solid #2f3438;
+	border-left: 1px solid #2f3438;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.ascc-v2 .on-this-page .on-this-page__menu-item {
+	float: left;
+	list-style-image: none;
+	margin-bottom: .75em !important;
+	margin-right: -1px !important;
+	margin-top: 0 !important;
+	padding: 0;
+}
+
+.ascc-v2 .on-this-page .on-this-page__menu-item a {
+	background-color: #2a3033;
+	border: 1px solid #8d959a;
+	border-radius: 0;
+	box-shadow: none;
+	color: #fff;
+	display: inline-block;
+	padding: 14px 16px;
+	text-align: center;
+}
+
+.ascc-v2 .on-this-page .on-this-page__menu-item a:hover {
+	background-color: #23272a;
+	text-decoration: underline;
+}
+
+.ascc-v2 .on-this-page .on-this-page__menu-item.--crimson a {
+	background-color: #54464e;
+}
+
+.ascc-v2 .on-this-page .on-this-page__menu-item.--crimson a:hover {
+	background-color: #58111d;
+}
+
+.ascc-v2 .on-this-page .on-this-page__menu-item.--related a {
+	position: relative;
+}
+
+.ascc-v2 .on-this-page .on-this-page__menu-item.--related a::before {
+	content: "";
+	border-bottom: 1px solid #8d959a;
+	border-top: 1px solid #8d959a;
+	bottom: -1px;
+	left: -8px;
+	position: absolute;
+	right: -8px;
+	top: -1px;
+}
+
+.ascc-v2 .on-this-page .on-this-page__menu-item.--related.--start a::before {
+	left: 0;
+}
+
+.ascc-v2 .on-this-page .on-this-page__menu-item.--related.--end a::before {
+	right: 0;
+}
+
+.ascc-v2 .on-this-page .on-this-page__menu-item.--shifted {
+	margin-left: 14px;
+}
+
+.ascc-v2 .on-this-page .on-this-page__menu-item.--shifts-next {
+	margin-right: 14px !important;
+}
+
+.ascc-v2 .on-this-page__back {
+	position: relative;
+	padding-left: 1rem;
+	font-size: .9em;
+}
+
+.ascc-v2 .on-this-page__back::before {
+	content: "";
+	position: absolute;
+	width: 1rem;
+	left: -3px;
+	height: .9rem;
+	background: url(https://s3.wp.wsu.edu/uploads/sites/50/2017/10/micon_returnKey_rotated-90-deg-cw_54x64.png) center center/auto 100% no-repeat;
 }
 
 .ascc-v2 .w--5pct,.ascc-v2 .width--5pct {
@@ -7827,6 +7951,11 @@ body.ascc-v2 {
 		font-size: .9em;
 	}
 	
+	.ascc-v2 .on-this-page .on-this-page__menu-item a {
+		padding: 8px 10px;
+		font-size: .85em;
+	}
+	
 	#on-this-page li a {
 		padding: 8px 10px;
 	}
@@ -9290,4 +9419,12 @@ body.ascc-v2 {
 	.ascc-v2 .column .decoration {
 		display: none;
 	}
+}
+
+/*! ================================================================================================
+*** Additional CSS rules added by ASCC staff below:
+*** ================================================================================================
+*/
+#builder-section-1517533104411 .builder-banner-slide {
+	background-position: top center;
 }
