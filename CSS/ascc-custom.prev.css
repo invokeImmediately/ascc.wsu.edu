@@ -9421,10 +9421,52 @@ body.ascc-v2 {
 	}
 }
 
+/* New print styles added 2019-05-23. */
+@media print {
+	#fund-announcement {
+		display: none;
+	}
+	
+	body.blog .row.side-right .column.one {
+		width: 100% !important;
+	}
+	
+	body.blog .row.side-right .column.two {
+		width: 100% !important;
+	}
+	
+	body.blog .row.side-right p {
+		max-width: none;
+	}
+	
+	body.blog .row.side-right .article-thumbnail {
+		margin-left: 1em;
+	}
+	
+	body.home #wsuwp-main {
+		width: calc(100% - 198px) !important;
+		margin-left: 198px;
+	}
+	
+	body.home #spine {
+		display: block !important;
+	}
+	
+	body.home #spine nav ul ul li {
+		display: block !important;
+	}
+}
+
 /*! ================================================================================================
 *** Additional CSS rules added by ASCC staff below:
 *** ================================================================================================
 */
 #builder-section-1517533104411 .builder-banner-slide {
 	background-position: top center;
+}
+
+#builder-section-1518023152923 .builder-banner-slide:nth-child(6),
+#builder-section-1518023152923 .builder-banner-slide:nth-child(7) {
+	background-color: white;
+	background-size: contain;
 }
