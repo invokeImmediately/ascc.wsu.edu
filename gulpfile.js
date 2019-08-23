@@ -34,11 +34,12 @@ Roboto+Condensed:400,700|Roboto+Slab|PT+Serif\');\r\n';
 	var minCssFileExtension = '.min.css';
 	var minCssFileHeaderStr = '/*! Built with the Less CSS preprocessor [http://lesscss.org/]. Plea\
 se see [https://github.com/invokeImmediately/ascc.wsu.edu] for a repository of source code. */\r\n';
- 	var sourceFile = './CSS/ascc-custom.less';
+	var sourceFile = './CSS/ascc-custom.less';
+	var staffAddinsFile = './CSS/ascc-custom_staff-addins.css';
 
 	return new gulpBuilder.CssBuildSettings(commentRemovalNeedle, dependenciesPath,
- 		destFolder, fontImportStr, insertingMediaQuerySectionHeader, minCssFileExtension,
- 		minCssFileHeaderStr, sourceFile);
+		destFolder, fontImportStr, insertingMediaQuerySectionHeader, minCssFileExtension,
+		minCssFileHeaderStr, sourceFile, staffAddinsFile);
 }
 
 /**
