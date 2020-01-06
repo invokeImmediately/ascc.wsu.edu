@@ -871,6 +871,10 @@ body.page.cea {
 	}
 
 	.column .builder-banner-slide {
+		a {
+			border-color: transparent;
+		}
+
 		&:hover {
 			.builder-banner-content {
 				font-size: 1.65rem;
@@ -921,7 +925,7 @@ body.page.cea {
 *** §14: Legacy ASCC fixes
 **/
 
-body:not(.ascc-v2) {
+body.ascc-v1-legacy {
 	.main-header {
 		margin: 0 -100%;
 		padding: .5em 100%;
@@ -945,13 +949,16 @@ body:not(.ascc-v2) {
 *** §15: ASCC version 2.0 body
 **/
 
-.ascc-v2 {
-	body& {
-		background: @hex-dark-gray url(/wp-content/uploads/sites/167/2014/11/bright-squares.png) repeat fixed;
-	}
+body:not(.ascc-v1-legacy) {
+	background: @hex-dark-gray url(/wp-content/uploads/sites/167/2014/11/bright-squares.png) repeat fixed;
 
 	.main-header {
 		background: @hex-crimson url(/wp-content/uploads/sites/167/2018/05/background-art_main-header_ascc-v2_1187x142.jpg) right center/cover no-repeat;
+		min-height: 140px;
+
+		.header-group {
+			position: absolute;
+		}
 	}
 
 	main {
@@ -964,7 +971,7 @@ body:not(.ascc-v2) {
 *** §16: TO BE REMOVED: Temporarily copied from WSU-UE---CSS
 **/
 
-.ascc-v2 {
+body {
 	.for-screen-readers {
 		box-sizing: border-box !important;
 		height: 0 !important;
@@ -982,7 +989,7 @@ body:not(.ascc-v2) {
 *** §17: ASCC version 2.0 sub-columns
 **/
 
-.ascc-v2 {
+body:not(.ascc-v1-legacy) {
 	.sub-row {
 		display: flex;
 		flex-direction: row;

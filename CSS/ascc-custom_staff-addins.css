@@ -2,21 +2,27 @@
 *** Additional CSS rules added by ASCC staff below:
 *** ================================================================================================
 */
+
 #builder-section-1517533104411 .builder-banner-slide {
 	background-position: top center;
 }
 
 #builder-section-1518023152923 .builder-banner-slide:nth-child(6),
 #builder-section-1518023152923 .builder-banner-slide:nth-child(7) {
-	background-color: white;
+	background-color: #fff;
 	background-size: contain;
 }
 
 .wsus-business-network .featured-image {
-	background-color: #d7d7d7;
 	background-size: contain;
+	height: 0;
+	padding-bottom: 30.7%;
 }
 
 .row.halves.wsus-business-network-div {
+	background-color: #d7d7d7;
+}
+
+.row.single.wsus-business-network-div {
 	background-color: #d7d7d7;
 }

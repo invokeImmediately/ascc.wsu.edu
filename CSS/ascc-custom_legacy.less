@@ -1,15 +1,47 @@
+/** ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+*** │ FILENAME: ascc-custom_legacy.less                                                            │
+*** │                                                                                              │
+*** │ See persistent section header comment below (§2) for additional information and license.     │
+*** └──────────────────────────────────────────────────────────────────────────────────────────────┘
+***  TABLE OF CONTENTS:
+***  ────────────────────────────────────────────────────────────────────────────────────────────
+***  §1: Build entry point from DAESA's CSS development project................................33
+***  §2: Persistent section header comment for unit specific styling...........................44
+***  §3: Distinguished Scholarships website backgrounds........................................61
+***  ───────────────────────────────────────────────────────────────────────────────────────────────
+**/
+
 /*! ================================================================================================
 *** LEGACY CSS for the ASCC Website
 *** ================================================================================================
-***   AUTHORS: Unknown.
+*** SUMMARY: The CSS code in the following section is based on what was written for the initial
+***   version of the ASCC website after it was moved to WSUWP.
 ***
-***   SUMMARY: CSS code that was written for version 1 of the ASCC website before contributions made
-***   by Daniel Rieck started on 8/2017. Should be eventually removed or incorporated into updated
-***   design files.
+*** DESCRIPTION: The code below has largely been kept in the form in which it was found by Daniel
+***   Rieck when his own contributions to the ASCC website began on 8/2017. TODO: The code should
+***   eventually be either removed or incorporated into updated design files at some point in the
+***   future.
+***
+*** AUTHORS: Authorship has been inherited by Daniel Rieck [daniel.rieck@wsu.edu]
+***   (https://github.com/invokeImmediately). Original authors are uncertain; my current
+***   speculation is it was John Walter and/or his colleagues.
+***
+*** LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck.
+***
+***   Permission to use, copy, modify, and/or distribute this software for any purpose with or
+***   without fee is hereby granted, provided that the above copyright notice and this permission
+***   notice appear in all copies.
+***
+***   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
+***   SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
+***   DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY
+***   DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+***   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+***   PERFORMANCE OF THIS SOFTWARE.
 *** ================================================================================================
 **/
 
-body:not(.ascc-v2) {
+body.ascc-v1-legacy {
 	background: url('/wp-content/uploads/sites/167/2015/02/campus.jpg') no-repeat center center;
 	background-attachment: fixed;
 	background-size: cover;
