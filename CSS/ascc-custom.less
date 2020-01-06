@@ -6,10 +6,10 @@
 ***  TABLE OF CONTENTS:
 ***  ────────────────────────────────────────────────────────────────────────────────────────────
 ***  §1: Build entry point from DAESA's CSS development project................................17
-***  §2: Persistent section-header comment for unit specific styling...........................26
-***  §3: Import dependencies for unit specific styling.........................................45
-***    >>> §3.1: Legacy styling still in use on the site.......................................49
-***    >>> §3.2: New styling associated with move to WSUWP.....................................55
+***  §2: Import dependencies for unit specific styling.........................................26
+***    >>> §2.1: Legacy styling still in use on the site.......................................30
+***    >>> §2.2: Persistent section-header comment for unit specific styling...................36
+***    >>> §2.3: New styling associated with DAESA era.........................................70
 ***  ───────────────────────────────────────────────────────────────────────────────────────────────
 **/
 
@@ -23,7 +23,17 @@
 @import "..\WSU-UE---CSS\css-build-entry-point.less";
 
 /** ================================================================================================
-*** §2: Persistent section-header comment for unit specific styling
+*** §2: Import dependencies for unit specific styling
+**/
+
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §2.1: Legacy styling still in use on the site
+**/
+
+@import "ascc-custom_legacy.less";
+
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §2.2: Persistent section-header comment for unit specific styling
 **/
 
 /*! ================================================================================================
@@ -56,18 +66,8 @@
 *** ================================================================================================
 **/
 
-/** ================================================================================================
-*** §3: Import dependencies for unit specific styling
-**/
-
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §3.1: Legacy styling still in use on the site
-**/
-
-@import "ascc-custom_legacy.less";
-
-/**   ----------------------------------------------------------------------------------------------
-***   >>> §3.2: New styling associated with move to WSUWP
+***   >>> §2.3: New styling associated with DAESA era
 **/
 
 @import "ascc-custom_new.less";
