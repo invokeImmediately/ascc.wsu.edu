@@ -72,8 +72,7 @@ function getCssBuildSettings() {
 			'stopAfterFirstMatch': true
 		};
 	var minCssFileExtension = '.min.css';
-	var minCssFileHeaderStr = '/*! Built with the Less CSS preprocessor [http://lesscss.org/]. Plea\
-se see [https://github.com/invokeImmediately/ascc.wsu.edu] for a repository of source code. */\r\n';
+	var minCssFileHeaderStr = '';
 	var sourceFile = './CSS/ascc-custom.less';
 	var staffAddinsFile = './CSS/ascc-custom_staff-addins.css';
 
