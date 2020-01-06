@@ -74,7 +74,7 @@ ully documented, precompiled source code from which this section of the custom\r
  was built is developed and maintained on the following two GitHub projects:\r\n***    https://gith\
 ub.com/invokeImmediately/WSU-UE---CSS/\r\n***    https://github.com/invokeImmediately/ascc.wsu.edu/\
 \r\n***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)\r\n***\
-\r\n***   LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.\r\n***\r\n***     Permission to use, c\
+\r\n***   LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck.\r\n***\r\n***     Permission to use, c\
 opy, modify, and/or distribute this software for any purpose with or\r\n***     without fee is here\
 by granted, provided that the above copyright notice and this permission\r\n***     notice appear i\
 n all copies.\r\n***\r\n***     THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WAR\
