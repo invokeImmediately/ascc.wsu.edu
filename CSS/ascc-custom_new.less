@@ -1,40 +1,69 @@
-/*! ================================================================================================
-*** LEGACY CSS for the ASCC Website
-*** ================================================================================================
-***   AUTHORS: Unknown.
-***
-***   SUMMARY: CSS code that was written for version 1 of the ASCC website before contributions made
-***   by Daniel Rieck started on 8/2017. Should be eventually removed or incorporated into updated
-***   design files.
-*** ================================================================================================
-**/
-
-/**  ───────────────────────────────────────────────────────────────────────────────────────────────
+/** ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+*** │ FILENAME: ascc-custom.less                                                                   │
+*** │                                                                                              │
+*** │ See persistent section header comment below (§1) for additional information and license.     │
+*** └──────────────────────────────────────────────────────────────────────────────────────────────┘
 ***  TABLE OF CONTENTS:
 ***  ────────────────────────────────────────────────────────────────────────────────────────────
-***  §1: Site-wide sizing & spacing overrides..................................................37
-***  §2: Section overrides.....................................................................84
-***  §3: Sectional article headers............................................................144
-***  §4: Article taglines & intro text........................................................257
-***  §5: Article sidebars.....................................................................315
-***  §6: Tables of Conents....................................................................356
-***  §7: Asides...............................................................................423
-***  §8: Sidebar Right Sections...............................................................441
-***  §9: Styling specific to the Career Exploration Abroad page...............................485
-***  §10: Styling of glass buttons............................................................649
-***  §11: Styling of main header construct....................................................750
-***  §12: Gravity forms.......................................................................758
-***  §13: ASCC version 2.0 slideshows.........................................................806
-***  §14: Legacy ASCC fixes...................................................................921
-***  §15: ASCC version 2.0 body...............................................................945
-***  §16: TO BE REMOVED: Temporarily copied from WSU-UE---CSS.................................964
-***  §17: ASCC version 2.0 sub-columns........................................................982
-***  §18: Helpful links tables...............................................................1000
+***  §1: Persistent section header comment for unit specific styling...........................54
+***  §2: Site-wide sizing & spacing overrides..................................................54
+***  §3: Section overrides.....................................................................101
+***  §4: Sectional article headers............................................................161
+***  §5: Article taglines & intro text........................................................274
+***  §6: Article sidebars.....................................................................332
+***  §7: Tables of Conents....................................................................373
+***  §8: Asides...............................................................................440
+***  §9: Sidebar Right Sections...............................................................458
+***  §10: Styling specific to the Career Exploration Abroad page...............................502
+***  §11: Styling of glass buttons............................................................666
+***  §12: Styling of main header construct....................................................767
+***  §13: Gravity forms.......................................................................775
+***  §14: ASCC version 2.0 slideshows.........................................................823
+***  §15: Legacy ASCC fixes...................................................................942
+***  §16: ASCC version 2.0 body...............................................................966
+***  §17: TO BE REMOVED: Temporarily copied from WSU-UE---CSS.................................988
+***  §18: ASCC version 2.0 sub-columns.......................................................1006
+***  §19: Helpful links tables...............................................................1024
+***  §20: Candid Career Widget on Homepage...................................................1032
 ***  ───────────────────────────────────────────────────────────────────────────────────────────────
 **/
 
 /** ================================================================================================
-*** §1: Site-wide sizing & spacing overrides
+*** §1: Persistent section header comment for unit specific styling
+**/
+
+/*! ================================================================================================
+*** CUSTOM STYLE SHEET for the WSU Academic Services and Career Center (ASCC)
+*** ================================================================================================
+*** SUMMARY: CSS compiled from Less language extension of CSS. Code in the following section is only
+***   used on the ASCC website.
+***
+*** DESCRIPTION: Fully documented, precompiled source code from which this section of the custom
+***   stylesheet was built is developed and maintained on the following GitHub project:
+***   https://github.com/invokeImmediately/ascc.wsu.edu/
+***
+*** AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+***
+*** GIT REPOSITORY: https://github.com/invokeImmediately/ascc.wsu.edu
+***     See git repository for fully documented, precompiled source code.
+***
+*** LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck.
+***
+***   Permission to use, copy, modify, and/or distribute this software for any purpose with or
+***   without fee is hereby granted, provided that the above copyright notice and this permission
+***   notice appear in all copies.
+***
+***   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
+***   SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
+***   DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY
+***   DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+***   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+***   PERFORMANCE OF THIS SOFTWARE.
+*** ================================================================================================
+**/
+
+/** ================================================================================================
+*** §2: Site-wide sizing & spacing overrides
 **/
 
 body {
@@ -81,7 +110,7 @@ body.has-improved-contrast {
 }
 
 /** ================================================================================================
-*** §2: Section overrides
+*** §3: Section overrides
 **/
 
 .row {
@@ -141,7 +170,7 @@ body.has-improved-contrast {
 }
 
 /** ================================================================================================
-*** §3: Sectional article headers
+*** §4: Sectional article headers
 **/
 
 .row.halves.article-header,
@@ -163,9 +192,9 @@ body.has-improved-contrast {
 			right: 40%;
 			left: 0;
 			width: auto;
-			height: 100%;			
+			height: 100%;
 			padding-left: 0;
-			padding-right: 0;			
+			padding-right: 0;
 			background: @hex-accent-blue;
 			header,
 			.article-name,
@@ -241,7 +270,7 @@ body.has-improved-contrast {
 				@media (max-width: @large-mobile-screen-width) {
 					padding-left: .5rem;
 				}
-			} 
+			}
 			& > * {
 				@v-fnt-sclng-hdr: 1.0, 1.0, 1.0, 1.0, 0.814286, 0.714286;
 				color: @hex-white;
@@ -254,7 +283,7 @@ body.has-improved-contrast {
 }*/
 
 /** ================================================================================================
-*** §4: Article taglines & intro text
+*** §5: Article taglines & intro text
 **/
 
 .article-tagline {
@@ -276,7 +305,7 @@ body.has-improved-contrast {
 		& > span.lead-in {
 			color: @hex-dark-blue;
 			font-weight: 700;
-			letter-spacing: normal;                    
+			letter-spacing: normal;
 		}
 	}
 	&:not(.has-no-bordering) {
@@ -312,7 +341,7 @@ body.has-improved-contrast {
 }
 
 /** ================================================================================================
-*** §5: Article sidebars
+*** §6: Article sidebars
 **/
 
 .sidebar {
@@ -353,7 +382,7 @@ body.has-improved-contrast {
 }
 
 /** ================================================================================================
-*** §6: Tables of Conents
+*** §7: Tables of Conents
 **/
 
 #on-this-page {
@@ -420,7 +449,7 @@ body.has-improved-contrast {
 }
 
 /** ================================================================================================
-*** §7: Asides
+*** §8: Asides
 **/
 
 .page.cea {
@@ -438,7 +467,7 @@ body.has-improved-contrast {
 }
 
 /** ================================================================================================
-*** §8: Sidebar Right Sections
+*** §9: Sidebar Right Sections
 **/
 
 .row.side-right.has-graphical-sidebar {
@@ -482,7 +511,7 @@ body.has-improved-contrast {
 }
 
 /** ================================================================================================
-*** §9: Styling specific to the Career Exploration Abroad page
+*** §10: Styling specific to the Career Exploration Abroad page
 **/
 
 body.page.cea {
@@ -646,7 +675,7 @@ body.page.cea {
 }
 
 /** ================================================================================================
-*** §10: Styling of glass buttons
+*** §11: Styling of glass buttons
 **/
 
 .column a {
@@ -747,7 +776,7 @@ body.page.cea {
 }
 
 /** ================================================================================================
-*** §11: Styling of main header construct
+*** §12: Styling of main header construct
 **/
 
 .main-header sup span {
@@ -755,7 +784,7 @@ body.page.cea {
 }
 
 /** ================================================================================================
-*** §12: Gravity forms
+*** §13: Gravity forms
 **/
 
 .column {
@@ -803,7 +832,7 @@ body.page.cea {
 }
 
 /** ================================================================================================
-*** §13: ASCC version 2.0 slideshows
+*** §14: ASCC version 2.0 slideshows
 **/
 
 .ascc-v2 {
@@ -819,7 +848,7 @@ body.page.cea {
 
 		@media screen and (max-width: @column-floating-threshold) {
 			font-size: .875rem;
-		}		
+		}
 	}
 
 	.column .builder-banner-content {
@@ -860,7 +889,7 @@ body.page.cea {
 		}
 
 		.builder-banner-inner-content {
-			background-color: transparent;	
+			background-color: transparent;
 		}
 	}
 
@@ -922,7 +951,7 @@ body.page.cea {
 }
 
 /** ================================================================================================
-*** §14: Legacy ASCC fixes
+*** §15: Legacy ASCC fixes
 **/
 
 body.ascc-v1-legacy {
@@ -938,7 +967,7 @@ body.ascc-v1-legacy {
 		}
 
 		sub:not(.unset) *,
-		sub:not(.unset) a, 
+		sub:not(.unset) a,
 		sup:not(.unset) a {
 			font-size: inherit;
 		}
@@ -946,7 +975,7 @@ body.ascc-v1-legacy {
 }
 
 /** ================================================================================================
-*** §15: ASCC version 2.0 body
+*** §16: ASCC version 2.0 body
 **/
 
 body:not(.ascc-v1-legacy) {
@@ -968,7 +997,7 @@ body:not(.ascc-v1-legacy) {
 }
 
 /** ================================================================================================
-*** §16: TO BE REMOVED: Temporarily copied from WSU-UE---CSS
+*** §17: TO BE REMOVED: Temporarily copied from WSU-UE---CSS
 **/
 
 body {
@@ -986,7 +1015,7 @@ body {
 }
 
 /** ================================================================================================
-*** §17: ASCC version 2.0 sub-columns
+*** §18: ASCC version 2.0 sub-columns
 **/
 
 body:not(.ascc-v1-legacy) {
@@ -1004,7 +1033,7 @@ body:not(.ascc-v1-legacy) {
 }
 
 /** ================================================================================================
-*** §18: Helpful links tables
+*** §19: Helpful links tables
 **/
 
 .helpful-links tr + tr td {
@@ -1012,7 +1041,7 @@ body:not(.ascc-v1-legacy) {
 }
 
 /** ================================================================================================
-*** §19: Candid Career Widget on Homepage
+*** §20: Candid Career Widget on Homepage
 **/
 
 // At what screen widths does responsive behavior occur? Need to test using original version of the

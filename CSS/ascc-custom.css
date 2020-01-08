@@ -6691,7 +6691,7 @@ div#cssslider2 figure {
 ***   stylesheet was built is developed and maintained on the following GitHub project:
 ***   https://github.com/invokeImmediately/ascc.wsu.edu/
 ***
-*** AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)            
+*** AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
 ***
 *** GIT REPOSITORY: https://github.com/invokeImmediately/ascc.wsu.edu
 ***     See git repository for fully documented, precompiled source code.
@@ -6708,17 +6708,6 @@ div#cssslider2 figure {
 ***   DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
 ***   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 ***   PERFORMANCE OF THIS SOFTWARE.
-*** ================================================================================================
-**/
-
-/*! ================================================================================================
-*** LEGACY CSS for the ASCC Website
-*** ================================================================================================
-***   AUTHORS: Unknown.
-***
-***   SUMMARY: CSS code that was written for version 1 of the ASCC website before contributions made
-***   by Daniel Rieck started on 8/2017. Should be eventually removed or incorporated into updated
-***   design files.
 *** ================================================================================================
 **/
 
@@ -6876,7 +6865,7 @@ body.has-improved-contrast {
 				@media (max-width: @large-mobile-screen-width) {
 					padding-left: .5rem;
 				}
-			} 
+			}
 			& > * {
 				@v-fnt-sclng-hdr: 1.0, 1.0, 1.0, 1.0, 0.814286, 0.714286;
 				color: @hex-white;
@@ -7505,10 +7494,35 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
   background: #ffffff;
 }
 
-/*! ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
-*   ║ MEDIA QUERIES ####################################################################################################### ║
-*   ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-*/
+/*! ================================================================================================
+*** Media queries section
+*** ================================================================================================
+***   SUMMARY: Media queries built from precompiled CSS written in the Less language extension of
+***    CSS. Queries in this section are a combination of those designed for use on DAESA websites
+***    and those intended specifically for use on the Academic Success and Career Center website.
+***
+***   DESCRIPTION: Fully documented, precompiled source code from which this section of the custom
+***    stylesheet was built is developed and maintained on the following two GitHub projects:
+***    https://github.com/invokeImmediately/WSU-UE---CSS/
+***    https://github.com/invokeImmediately/ascc.wsu.edu/
+***
+***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+***
+***   LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck.
+***
+***     Permission to use, copy, modify, and/or distribute this software for any purpose with or
+***     without fee is hereby granted, provided that the above copyright notice and this permission
+***     notice appear in all copies.
+***
+***     THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO
+***     THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT
+***     SHALL DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR
+***     ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+***     CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE
+***     OR PERFORMANCE OF THIS SOFTWARE.
+*** ================================================================================================
+**/
+
 @media all and (min-width: 481px) {
   .interactively-flipped-panels .container .panel-wrapper:hover .panel .front {
     transition-property: opacity, z-index;
