@@ -1,17 +1,19 @@
 /** ───────────────────────────────────────────────────────────────────────────────────────────────
 *** CUSTOM STYLE SHEET for the WSU Academic Services and Career Center (ASCC)
 *** ───────────────────────────────────────────────────────────────────────────────────────────────
-*** SUMMARY: CSS compiled from Less language extension of CSS. Code in the following section is only
-***   used on the ASCC website.
+*** SUMMARY: CSS compiled from Less language extension of CSS and designed to be applied to the
+***   ASCC website via the CSS Stylesheet Editor in WSUWP.
 ***
-*** DESCRIPTION: Fully documented, precompiled source code from which this section of the custom
-***   stylesheet was built is developed and maintained on the following GitHub project:
-***   https://github.com/invokeImmediately/ascc.wsu.edu/
+*** DESCRIPTION: This CSS build entry point is used to produce the custom stylesheet in use on the
+***   by combining legacy code written by former ASCC staff members, code from the DAESA-wide CSS
+***   development project, and code specific to the ASCC website that has been written by Daniel
+***   Rieck and current ASCC staff members.
 ***
-*** AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)            
+***   This file and is developed and maintained on the following GitHub project:
+***   https://github.com/invokeImmediately/lsamp.wsu.edu/
 ***
-*** GIT REPOSITORY: https://github.com/invokeImmediately/ascc.wsu.edu
-***     See git repository for fully documented, precompiled source code.
+*** AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately) is the
+***   corresponding author for this code.
 ***
 *** LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck.
 ***
@@ -28,11 +30,10 @@
 ***  ───────────────────────────────────────────────────────────────────────────────────────────────
 ***  TABLE OF CONTENTS:
 ***  ────────────────────────────────────────────────────────────────────────────────────────────
-***  §1: Build entry point from DAESA's CSS development project................................17
-***  §2: Import dependencies for unit specific styling.........................................26
-***    >>> §2.1: Legacy styling still in use on the site.......................................30
-***    >>> §2.2: Persistent section-header comment for unit specific styling...................36
-***    >>> §2.3: New styling associated with DAESA era.........................................70
+***  §1: Build entry point from DAESA's CSS development project................................36
+***  §2: Import dependencies for unit specific styling.........................................45
+***    >>> §2.1: Legacy styling still in use on the site.......................................49
+***    >>> §2.3: New styling associated with DAESA era.........................................55
 ***  ───────────────────────────────────────────────────────────────────────────────────────────────
 **/
 
@@ -54,10 +55,6 @@
 **/
 
 @import "ascc-custom_legacy.less";
-
-/**   ----------------------------------------------------------------------------------------------
-***   >>> §2.2: Persistent section-header comment for unit specific styling
-**/
 
 /**   ----------------------------------------------------------------------------------------------
 ***   >>> §2.2: New styling associated with DAESA era
