@@ -3,31 +3,31 @@
 /*! ================================================================================================
 *** WSU DAESA Styling Section
 *** ================================================================================================
-***   SUMMARY: The following section of this stylesheet contains CSS code written for use on all
-***    websites designed, built, and maintained by the Divsion of Academic Engagement and Student
-***    Achievement (DAESA) in the Office of the Provost at Washington State University (WSU).
+*** SUMMARY: The following section of this stylesheet contains CSS code written for use on all
+***   websites designed, built, and maintained by the Divsion of Academic Engagement and Student
+***   Achievement (DAESA) in the Office of the Provost at Washington State University (WSU).
 ***
-***   DESCRIPTION: The CSS code in the following section was generated from precompiled CSS written
-***     in the Less language extension of CSS. It is designed to be applied via the WSUWP CSS
-***     Stylesheet Editor functioning in add-on mode.
+*** DESCRIPTION: The CSS code in the following section was generated from precompiled CSS written in
+***   the Less language extension of CSS. It is designed to be applied via the WSUWP CSS Stylesheet
+***   Editor functioning in add-on mode.
 ***
-***     Please refer to the GitHub proejct at https://github.com/invokeImmediately/WSU-UE---CSS/
-***     for fully documented, precompiled source code.  
+***   Please refer to the GitHub proejct at https://github.com/invokeImmediately/WSU-UE---CSS/ for
+***   fully documented, precompiled source code.  
 ***     
-***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+*** AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
 ***
-***   LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck.
+*** LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck.
 ***
-***     Permission to use, copy, modify, and/or distribute this software for any purpose with or
-***     without fee is hereby granted, provided that the above copyright notice and this permission
-***     notice appear in all copies.
+***   Permission to use, copy, modify, and/or distribute this software for any purpose with or
+***   without fee is hereby granted, provided that the above copyright notice and this permission
+***   notice appear in all copies.
 ***
-***     THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO
-***     THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT
-***     SHALL DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR
-***     ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
-***     CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE
-***     OR PERFORMANCE OF THIS SOFTWARE.
+***   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL C. RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO
+***   THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT
+***   SHALL DANIEL C. RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR
+***   ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+***   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE
+***   OR PERFORMANCE OF THIS SOFTWARE.
 *** ================================================================================================
 **/
 
@@ -802,7 +802,7 @@ h3.solid,
 h4.solid,
 h5.solid,
 h6.solid {
-  padding: 0.15em 0.25em 0.2em 5px;
+  padding: 0.28em 0.25em 0.2em 5px;
   position: relative;
 }
 
@@ -1327,7 +1327,14 @@ ul {
   margin-top: 1em;
 }
 
-.column p + ul {
+.column ol ul,
+.column ul ul {
+  padding-top: 0;
+}
+
+.column p + ul,
+.column ol ul,
+.column ul ul {
   margin-top: 0.5em;
 }
 
@@ -1367,7 +1374,14 @@ ol {
   margin-top: 1em;
 }
 
-.column p + ol {
+.column ol ol,
+.column ul ol {
+  padding-top: 0;
+}
+
+.column p + ol,
+.column ol ol,
+.column ul ol {
   margin-top: 0.5em;
 }
 
@@ -1381,7 +1395,7 @@ ul li {
 }
 
 .column dl.faq dt {
-  background-color: #d7dadb;
+  background-color: #e4e6e7;
   border: 1px solid #afb5b7;
   cursor: pointer;
   font-size: 1em;
@@ -1422,7 +1436,7 @@ ul li {
 }
 
 .column dl.faq dt.activated {
-  background-color: #d3b0b8;
+  background-color: #e7d4d9;
   color: #3b4042;
   border-color: #b87f8c;
 }
@@ -1447,7 +1461,7 @@ ul li {
 }
 
 .column dl.faq.blue dt {
-  background-color: #d8ecf3;
+  background-color: #ecf6f9;
   border-color: #9ed0e1;
 }
 
@@ -1456,7 +1470,7 @@ ul li {
 }
 
 .column dl.faq.blue dt.activated {
-  background-color: #d3b0b8;
+  background-color: #e7d4d9;
   border-color: #b87f8c;
 }
 
@@ -1497,7 +1511,7 @@ ul li {
   top: 0;
   padding: 5px;
   border: 1px solid #afb5b7;
-  background-color: #d7dadb;
+  background-color: #e4e6e7;
   font-family: 'Roboto Mono', monospace, sans-serif;
   cursor: pointer;
   transform: translateY(-100%) translateY(-5px);
@@ -1512,7 +1526,7 @@ ul li {
 
 .column dl.faq.blue > .expand-all-button,
 .column dl.faq.blue > .collapse-all-button {
-  background-color: #d8ecf3;
+  background-color: #ecf6f9;
   border-color: #9ed0e1;
 }
 
@@ -1606,8 +1620,13 @@ ul.cascaded-layout.blank > li.gutter-sizer {
 
 .column .article-header .article-title,
 .column .article-header .article-title {
-  font-size: 1.5em;
+  font-size: 2em;
   line-height: 1.1em;
+}
+
+.column .article-header .article-title a,
+.column .article-header .article-title a {
+  font-weight: bold;
 }
 
 .article-summary {
@@ -2625,10 +2644,20 @@ main > .page > .row:last-child > .column:last-child {
 .column h5 a:not(.non-text-link),
 .column h6 a:not(.non-text-link),
 .gform_heading h3.gform_title a:not(.non-text-link) {
-  border-bottom: 1px solid transparent;
-  box-shadow: none;
   line-height: 1.4em;
   line-height: calc(1.4em + 1px);
+}
+
+.column h1 a:not(.non-text-link),
+.column h2 a:not(.non-text-link),
+.column h3 a:not(.non-text-link),
+.column h4 a:not(.non-text-link),
+.column h5 a:not(.non-text-link),
+.column h6 a:not(.non-text-link),
+.column .article-footer a,
+.gform_heading h3.gform_title a:not(.non-text-link) {
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
   text-decoration: underline;
 }
 
@@ -2638,6 +2667,7 @@ main > .page > .row:last-child > .column:last-child {
 .column h4 a:not(.non-text-link):hover,
 .column h5 a:not(.non-text-link):hover,
 .column h6 a:not(.non-text-link):hover,
+.column .article-footer a:hover,
 .gform_heading h3.gform_title a:not(.non-text-link):hover {
   border-bottom: 4px solid #c60c30;
   text-decoration: none;
@@ -3155,6 +3185,10 @@ div.read-more-target {
 .column .gform_wrapper h2.fancy {
   margin-right: 0;
   margin-left: 0;
+}
+
+.column .gform_wrapper h2.gsection_title {
+  font-size: 1.6em;
 }
 
 .column .gform_wrapper label.gfield_label {
@@ -4356,6 +4390,7 @@ div.auto-scroller ul li {
 .on-this-page__menu-item a:hover {
   background-color: #23272a;
   border-color: #ffffff;
+  border-width: 1px;
   text-decoration: underline;
 }
 
@@ -4897,6 +4932,10 @@ div.auto-scroller ul li {
 
 .h--400px {
   height: 400px;
+}
+
+.h--auto {
+  height: auto;
 }
 
 .font-size--400mx,
@@ -7511,9 +7550,9 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
 ***     without fee is hereby granted, provided that the above copyright notice and this permission
 ***     notice appear in all copies.
 ***
-***     THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO
+***     THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL C. RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO
 ***     THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT
-***     SHALL DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR
+***     SHALL DANIEL C. RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR
 ***     ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
 ***     CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE
 ***     OR PERFORMANCE OF THIS SOFTWARE.
@@ -7677,15 +7716,15 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
   }
 }
 
-@media all and (min-width: 792px) {
-  .show-on-tablet {
-    display: none !important;
-  }
-}
-
 @media only screen and (min-width: 792px) {
   .column li.gfield.has-label-spacer > div.ginput_container {
     margin-top: 23px;
+  }
+}
+
+@media all and (min-width: 792px) {
+  .show-on-tablet {
+    display: none !important;
   }
 }
 
@@ -7722,12 +7761,6 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
     right: 5rem;
     left: 5rem;
     left: calc((100% - 990px) / 2 + 198px + 5rem);
-  }
-}
-
-@media only screen and (min-width: 1073px) {
-  .column li.gfield.has-label-spacer > div.ginput_container {
-    margin-top: 23px;
   }
 }
 
@@ -7839,6 +7872,12 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
 
   .quarters .intro-text {
     font-size: 1.04380425em;
+  }
+}
+
+@media only screen and (min-width: 1073px) {
+  .column li.gfield.has-label-spacer > div.ginput_container {
+    margin-top: 23px;
   }
 }
 
@@ -8210,6 +8249,54 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
   }
 }
 
+@media only screen and (max-width: 360px) {
+  .side-left .one.new-article-section header,
+  .side-left .two.new-article-section header,
+  .side-right .one.new-article-section header,
+  .side-right .two.new-article-section header {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+
+  .single.gutter .column.one:not(.gutterless),
+  .halves.gutter .column.one:not(.gutterless),
+  .halves.gutter .column.two:not(.gutterless),
+  .side-left.gutter .column.one:not(.gutterless),
+  .side-left.gutter .column.two:not(.gutterless),
+  .side-right.gutter .column.one:not(.gutterless),
+  .side-right.gutter .column.two:not(.gutterless),
+  .thirds.gutter .column.one:not(.gutterless),
+  .thirds.gutter .column.two:not(.gutterless),
+  .thirds.gutter .column.three:not(.gutterless) {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .quarters.gutter .column.one:not(.gutterless),
+  .quarters.gutter .column.three:not(.gutterless) {
+    padding-left: 0.5rem;
+    padding-right: 0.25rem;
+  }
+
+  .quarters.gutter .column.two:not(.gutterless),
+  .quarters.gutter .column.four:not(.gutterless) {
+    padding-left: 0.25rem;
+    padding-right: 0.5rem;
+  }
+
+  section.gutter > header {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .page-header__column-1 {
+    left: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
 @media all and (max-width: 360px) {
   .main-header .sup-header-default {
     font-size: 0.7938rem;
@@ -8331,54 +8418,6 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
 
   .quarters .intro-text {
     font-size: 0.914022em;
-  }
-}
-
-@media only screen and (max-width: 360px) {
-  .side-left .one.new-article-section header,
-  .side-left .two.new-article-section header,
-  .side-right .one.new-article-section header,
-  .side-right .two.new-article-section header {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    margin-left: -0.5rem;
-    margin-right: -0.5rem;
-  }
-
-  .single.gutter .column.one:not(.gutterless),
-  .halves.gutter .column.one:not(.gutterless),
-  .halves.gutter .column.two:not(.gutterless),
-  .side-left.gutter .column.one:not(.gutterless),
-  .side-left.gutter .column.two:not(.gutterless),
-  .side-right.gutter .column.one:not(.gutterless),
-  .side-right.gutter .column.two:not(.gutterless),
-  .thirds.gutter .column.one:not(.gutterless),
-  .thirds.gutter .column.two:not(.gutterless),
-  .thirds.gutter .column.three:not(.gutterless) {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-
-  .quarters.gutter .column.one:not(.gutterless),
-  .quarters.gutter .column.three:not(.gutterless) {
-    padding-left: 0.5rem;
-    padding-right: 0.25rem;
-  }
-
-  .quarters.gutter .column.two:not(.gutterless),
-  .quarters.gutter .column.four:not(.gutterless) {
-    padding-left: 0.25rem;
-    padding-right: 0.5rem;
-  }
-
-  section.gutter > header {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-
-  .page-header__column-1 {
-    left: 0.5rem;
-    right: 0.5rem;
   }
 }
 
