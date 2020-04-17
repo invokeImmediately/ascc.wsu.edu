@@ -7118,10 +7118,9 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_radio li {
 
 .column a.recommend-button,
 .column a.glass-button {
-  display: block;
-  position: relative;
   padding: 1em;
   border-radius: 7px;
+  border-bottom: none;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
 }
@@ -7131,30 +7130,17 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_radio li {
   border-radius: 7px;
 }
 
-.column a.recommend-button:before,
-.column a.glass-button:before {
+.column a.recommend-button::before,
+.column a.glass-button::before {
   content: "";
   position: absolute;
   top: 2px;
   right: 2px;
   left: 2px;
-  height: 50%;
+  bottom: 2px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  background: linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.025));
-}
-
-.column a.recommend-button:after,
-.column a.glass-button:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 2px;
-  left: 2px;
-  height: 50%;
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.025) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.25));
 }
 
 .column a.recommend-button.crimson,
@@ -7181,6 +7167,18 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_radio li {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25), 0 0 18px rgba(255, 222, 28, 0.8);
 }
 
+.column a.recommend-button.gray,
+.column a.glass-button.gray {
+  background-color: #2a3033;
+  color: white;
+}
+
+.column a.recommend-button.gray:hover,
+.column a.glass-button.gray:hover {
+  background-color: #8d959a;
+  box-shadow: 0 0 18px rgba(42, 48, 51, 0.3333);
+}
+
 .column a.recommend-button .icon,
 .column a.glass-button .icon {
   width: 55px;
@@ -7204,6 +7202,12 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_radio li {
   box-sizing: border-box;
   width: 100%;
   width: calc(100% - 55px - 1em);
+}
+
+.recommend-button,
+.glass-button {
+  display: block;
+  position: relative;
 }
 
 .main-header sup span {
@@ -7350,6 +7354,25 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
 
 .fluid .row.side-left.our-services--sub-desktop .column {
   background: #ffffff;
+}
+
+#covid-19-resources {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: none;
+  padding-left: 0;
+}
+
+#covid-19-resources hr {
+  background-color: #e5e5e5;
+  border: 0;
+  margin-bottom: 0.75em;
+  margin-top: 0;
+}
+
+#covid-19-resources > li {
+  box-sizing: border-box;
 }
 
 /*! ================================================================================================
@@ -7535,6 +7558,20 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
 
   .ascc-v2 .sub-row.our-services__button-arrangement--mobile {
     display: none;
+  }
+}
+
+@media screen and (min-width: 791px) {
+  #covid-19-resources > li {
+    width: 50%;
+  }
+
+  #covid-19-resources > li:nth-child(2n) {
+    padding-left: 1em;
+  }
+
+  #covid-19-resources > li:nth-child(2n + 1) {
+    padding-right: 1em;
   }
 }
 

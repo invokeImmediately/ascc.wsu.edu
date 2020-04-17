@@ -5,26 +5,27 @@
 *** └──────────────────────────────────────────────────────────────────────────────────────────────┘
 ***  TABLE OF CONTENTS:
 ***  ────────────────────────────────────────────────────────────────────────────────────────────
-***  §1: Persistent section header comment for unit specific styling...........................54
-***  §2: Site-wide sizing & spacing overrides..................................................54
-***  §3: Section overrides.....................................................................101
-***  §4: Sectional article headers............................................................161
-***  §5: Article taglines & intro text........................................................274
-***  §6: Article sidebars.....................................................................332
-***  §7: Tables of Conents....................................................................373
-***  §8: Asides...............................................................................440
-***  §9: Sidebar Right Sections...............................................................458
-***  §10: Styling specific to the Career Exploration Abroad page...............................502
-***  §11: Styling of glass buttons............................................................666
-***  §12: Styling of main header construct....................................................767
-***  §13: Gravity forms.......................................................................775
-***  §14: ASCC version 2.0 slideshows.........................................................823
-***  §15: Legacy ASCC fixes...................................................................942
-***  §16: ASCC version 2.0 body...............................................................966
-***  §17: TO BE REMOVED: Temporarily copied from WSU-UE---CSS.................................988
-***  §18: ASCC version 2.0 sub-columns.......................................................1006
-***  §19: Helpful links tables...............................................................1024
-***  §20: Candid Career Widget on Homepage...................................................1032
+***  §1: Persistent section header comment for unit specific styling...........................33
+***  §2: Site-wide sizing & spacing overrides..................................................64
+***  §3: Section overrides....................................................................111
+***  §4: Sectional article headers............................................................171
+***  §5: Article taglines & intro text........................................................284
+***  §6: Article sidebars.....................................................................342
+***  §7: Tables of Conents....................................................................383
+***  §8: Asides...............................................................................450
+***  §9: Sidebar Right Sections...............................................................468
+***  §10: Styling specific to the Career Exploration Abroad page..............................512
+***  §11: Styling of glass buttons............................................................676
+***  §12: Styling of main header construct....................................................682
+***  §13: Gravity forms.......................................................................690
+***  §14: ASCC version 2.0 slideshows.........................................................738
+***  §15: Legacy ASCC fixes...................................................................857
+***  §16: ASCC version 2.0 body...............................................................881
+***  §17: TO BE REMOVED: Temporarily copied from WSU-UE---CSS.................................903
+***  §18: ASCC version 2.0 sub-columns........................................................921
+***  §19: Helpful links tables................................................................939
+***  §20: Candid Career Widget on Homepage....................................................947
+***  §21: Covid-19 resources list............................................................1011
 ***  ───────────────────────────────────────────────────────────────────────────────────────────────
 **/
 
@@ -675,102 +676,7 @@ body.page.cea {
 *** §11: Styling of glass buttons
 **/
 
-.column a {
-	@gb__border-radius: 7px;
-	&.recommend-button,
-	&.glass-button {
-		display:block;
-		position: relative;
-		padding: 1em;
-		border-radius: @gb__border-radius;
-		& {
-			@shadow-clr: returned;
-			.getRgbaForProp(@shadow-clr, @hex-black, 0.5);
-			box-shadow: 0 2px 2px @@shadow-clr;
-		}
-		.transition(~"all 0.3s ease");
-
-		&:hover {
-			border-radius: @gb__border-radius;
-		}
-
-		&:before {
-			content: "";
-			position: absolute;
-			top: 2px;
-			right: 2px;
-			left: 2px;
-			height: 50%;
-			border-top-left-radius: 5px;
-			border-top-right-radius: 5px;
-			& {
-				@color-top: returned; .getRgbaForProp(@color-top, @hex-white, 0.35);
-				@color-btm: returned-2; .getRgbaForProp(@color-btm, @hex-white, 0.025);
-				background: linear-gradient(@@color-top, @@color-btm);
-			}
-		}
-
-		&:after {
-			content: "";
-			position: absolute;
-			bottom: 0;
-			right: 2px;
-			left: 2px;
-			height: 50%;
-			border-bottom-left-radius: 7px;
-			 border-bottom-right-radius: 7px;
-			& {
-				@color-top: returned; .getRgbaForProp(@color-top, @hex-black, 0);
-				@color-btm: returned-2; .getRgbaForProp(@color-btm, @hex-black, 0.25);
-				background: linear-gradient(@@color-top, @@color-btm);
-			}
-		}
-
-		&.crimson {
-			background-color: @hex-crimson;
-			color: white;
-			&:hover {
-				background-color: @hex-light-crimson;
-				& {
-					@glow-clr: returned-2; .getRgbaForProp(@glow-clr, @hex-light-crimson, 0.3333);
-					box-shadow: 0 0 18px @@glow-clr;
-				}
-			}
-		}
-
-		&.yellow {
-			background-color: @hex-accent-yellow;
-			color: @hex-black;
-			&:hover {
-				background-color: #ffde1c;
-				& {
-					@shadow-clr: returned; .getRgbaForProp(@shadow-clr, @hex-black, 0.25);
-					@glow-clr: returned-2; .getRgbaForProp(@glow-clr, #ffde1c, 0.8);
-					box-shadow: 0 2px 2px @@shadow-clr, 0 0 18px @@glow-clr;
-				}
-			}
-		}
-
-		.icon {
-			&,
-			& + .label {
-				display: inline-block;
-				box-sizing: border-box;
-				vertical-align: middle;
-			}
-			width: 55px;
-			padding-right: 1em;
-			border: 0;
-			box-shadow: none;
-			& + .label {
-				display: inline-block;
-				box-sizing: border-box;
-				width: 100%;
-				width: ~"calc(100% - 55px - 1em)";
-			}
-		}
-	}
-}
+.use-glass-button-layout();
 
 /** ================================================================================================
 *** §12: Styling of main header construct
@@ -1098,5 +1004,40 @@ body:not(.ascc-v1-legacy) {
 				display: none;
 			}
 		}
+	}
+}
+
+/** ================================================================================================
+*** §21: Candid Career Widget on Homepage
+**/
+
+#covid-19-resources {
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+	max-width: none;
+	padding-left: 0;
+
+	hr {
+		background-color: #e5e5e5;
+		border: 0;
+		margin-bottom: 0.75em;
+		margin-top: 0;
+	}
+
+	& > li {
+		box-sizing: border-box;
+
+		@media screen and (min-width: @tablet-screen-width) {
+			width: 50%;
+
+			&:nth-child(2n) {
+				padding-left: 1em;
+			}
+
+			&:nth-child(2n + 1) {
+				padding-right: 1em;
+			}
+		}		
 	}
 }
