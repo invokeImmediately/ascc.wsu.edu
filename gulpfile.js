@@ -60,8 +60,8 @@ function getCssBuildSettings() {
 	var dependenciesPath = './WSU-UE---CSS/';
 	var destFolder = './CSS/';
 	var fontImportStr = '@import url(\'https://fonts.googleapis.com/css?family=Open+Sans:300,300i' +
-		'00,400i,700,700i|Roboto+Condensed:400,400i,700,700i|PT+Serif:400,400i,700,700i|Roboto+Mo' +
-		'no:400,400i,700,700i&display=swap\');\r\n';
+		',400,400i,700,700i|Roboto+Condensed:400,400i,700,700i|PT+Serif:400,400i,700,700i|Roboto+' +
+		'Mono:400,400i,700,700i&display=swap\');\r\n';
 	var insertingMediaQuerySectionHeader = {
 			'before': /^@media/,
 			'lineBefore': '/*! ==================================================================' +
