@@ -1,0 +1,214 @@
+/*!*************************************
+█▀▀▀▐▄ ▄▌▐▀█▀▌█▀▀▄ ▄▀▀▄   ▄▀▀▀ ▄▀▀▀ ▄▀▀▀
+█▀▀   █    █  █▄▄▀ █▄▄█   █    ▀▀▀█ ▀▀▀█
+▀▀▀▀▐▀ ▀▌  █  ▀  ▀▄█  ▀    ▀▀▀ ▀▀▀  ▀▀▀ 
+FOR THE ASCC WEBSITE
+--------------------
+@version 1.0.0
+@author Daniel Rieck
+  [daniel.rieck@wsu.edu]
+  (https://github.com/invokeImmediately)
+@license MIT - Copyright © 2021
+  Washington State University
+  https://mit-license.org/
+***************************************/
+
+.home .column .wsuwp-content-syndicate-list {
+	padding-left: 1.5em;
+}
+
+/*!*************************************
+ * STYLESHEET CONTENTS:
+ * - Simple button design
+ * - Events Calendar styling enhancements
+ * - Homepage layout tweaks
+ * - Homepage slideshow tweaks
+ * - Article deck hotfix
+ * - Spine navigation menu fix
+ ***************************************/
+
+
+/*!*************************************
+ * SIMPLE BUTTON DESIGN
+ * Specification of my simple button design for use on ASCC website.
+ * @author Daniel Rieck
+ **************************************/
+.simple-button {
+	border-radius: 4px;
+	display: inline-block;
+	margin-bottom: 9px;
+	padding: .5rem 1rem;
+}
+
+.simple-button:not(:hover) {
+	background-color: #eff0f1;
+	border: 1px solid #a60f2d;
+	box-shadow: 0 12px 16px 2px rgba(0,0,0,.03), 0 5px 22px 4px rgba(0,0,0,.03), 0 6px 13px 0 rgba(0,0,0,.02);
+}
+
+.simple-button:hover {
+	background-color: #eff0f1;
+	border: 1px solid #ca1237;
+	box-shadow: 0 12px 16px 2px rgba(202,18,55,.05), 0 5px 22px 4px rgba(202,18,55,.05), 0 6px 13px 0 rgba(202,18,55,.02);
+}
+
+.column .simple-button:hover {
+	border-bottom-width: 1px;
+	text-shadow: none;
+}
+
+/*!*************************************
+ * EVENTS CALENDAR STYLING ENHANCEMENTS
+ * Tweak some layout issues with Events Calendar plugin pages.
+ * @author Daniel Rieck
+ **************************************/
+
+.tribe-events-sub-nav {
+	max-width: none;
+}
+
+.events-archive .article-header,
+.single-tribe_events .article-header {
+	display: none;
+}
+
+.events-archive .tribe-bar-submit {
+	margin-left: 0;
+}
+
+.events-archive .tribe-events-title-bar {
+	margin-bottom: 2rem;
+}
+
+.events-archive a.tribe-events-ical {
+	margin-top: 0;
+}
+
+.events-archive #tribe-events {
+	margin-top: 2rem;
+}
+
+.tribe-events-calendar .tribe-events-tooltip,
+.tribe-events-week .tribe-events-tooltip,
+.tribe-events-shortcode.view-week .tribe-events-tooltip,
+.recurring-info-tooltip {
+	padding-bottom: .75em;
+}
+
+#tribe-events-footer {
+	margin-bottom: 2rem;
+}
+
+/*!*************************************
+ * HOMEPAGE LAYOUT TWEAKS
+ * Improve the responsive behavior of content sections on the home page.
+ * @author Daniel Rieck
+ **************************************/
+
+#ascc-services-and-news.row .column.two,
+#contact-info-and-resources.row .column.two {
+	background-color: #fff7f4;
+}
+
+#ascc-services-and-news .more-on-services-link,
+#ascc-services-and-news  .more-headlines-link {
+	margin-top: 2rem;
+}
+
+@media (min-width: 694px) {
+	#ascc-services-and-news.row,
+	#contact-info-and-resources.row {
+		display: flex;
+	}
+
+	#ascc-services-and-news .column.one {
+		padding-top: 0;
+		padding-right: 0;
+	}
+
+#ascc-services-and-news .column.two {
+		padding-top: 0;
+	padding-left: 2rem;
+	}
+	
+	#ascc-services-and-news .more-on-services-link {
+		margin-left: 1.33rem;
+	}
+
+	#contact-info-and-resources .sub-row {
+		height: 100%;
+	}
+	
+	#contact-info-and-resources .sub-column {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+	
+	#contact-info-and-resources #campus-location-details p:nth-child(2),
+	#contact-info-and-resources #drop-ins-details p:nth-child(2) {
+		margin-bottom: 1.5em;
+	}
+}
+
+@media (max-width: 693px) {
+	#ascc-services-and-news .sub-column,
+	#contact-info-and-resources .sub-column {
+		width: calc(100% - 2rem) !important;
+	}
+	#ascc-services-and-news .sub-column + .sub-column,
+	#contact-info-and-resources				 .sub-column + .sub-column {
+		margin-top: 2rem;
+	}
+	
+	#contact-info-details,
+	#drop-ins-details {
+		margin-top: 2rem;
+	}
+}
+
+/*!*************************************
+ * HOMEPAGE SLIDESHOW TWEAKS
+ * Add a default background color to slides and prevent clipping of slides that do not have an ideal aspect ratio.
+ * @author Daniel Rieck
+ **************************************/
+
+.homepage-announcements.builder-section-banner,
+.homepage-announcements.builder-section-banner .builder-banner-slide {
+	background-color: #eff0f1 !important;	
+}
+
+.homepage-announcements.builder-section-banner .builder-banner-slide {
+	background-size: contain !important;
+}
+
+@media (min-width: 694px) {
+	.homepage-announcements.builder-section-banner .builder-banner-inner-title {
+		margin-left: 2rem;
+	}
+}
+
+/*!*************************************
+ * ARTICLE DECK HOTFIX
+ * Use a simple increased font sizing for the introductory article deck on the page.
+ * @author Daniel Rieck
+ * @todo Fix colliding style rules coming from custom stylesheet
+ **************************************/
+
+.article-deck {
+	color: inherit;
+	font-size: 1.33em !important;
+}
+
+/*!*************************************
+ * SPINE NAVIGATION MENU FIX
+ * Visually show which menu items in the spine can be expanded; the default design provides no visual indicator.
+ * @author Daniel Rieck
+ **************************************/
+#spine nav li.parent>a:not(:hover):after {
+  display:block;
+}
+
+#spine nav li.parent:not(.opened)>a:not(:hover):after {
+  color:rgba(117, 117, 117, 0.5);
+}
