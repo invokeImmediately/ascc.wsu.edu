@@ -1,53 +1,173 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i00,400i,700,700i|Roboto+Condensed:400,400i,700,700i|PT+Serif:400,400i,700,700i|Roboto+Mono:400,400i,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/** ────────────────────────────────────────────────────────────────────────────────────────────────
+ *  █▀▀▄ █  █ ▀█▀ █    █▀▀▄    █▀▀▀ ▐▀▀▄▐▀█▀▌█▀▀▄ █  █    █▀▀▄ ▄▀▀▄ ▀█▀ ▐▀▀▄▐▀█▀▌
+ *  █▀▀▄ █  █  █  █  ▄ █  █ ▀▀ █▀▀  █  ▐  █  █▄▄▀ ▀▄▄█ ▀▀ █▄▄▀ █  █  █  █  ▐  █ 
+ *  ▀▀▀   ▀▀  ▀▀▀ ▀▀▀  ▀▀▀     ▀▀▀▀ ▀  ▐  █  ▀  ▀▄▄▄▄▀    █     ▀▀  ▀▀▀ ▀  ▐  █ 
+ *
+ *       █    █▀▀▀ ▄▀▀▀ ▄▀▀▀
+ *       █  ▄ █▀▀  ▀▀▀█ ▀▀▀█
+ *     ▀ ▀▀▀  ▀▀▀▀ ▀▀▀  ▀▀▀
+ *
+ *  Entry point for including dependencies utilized in building custom stylesheets that are common
+ *    to all websites designed, built, and maintained by the Division of Academic Engagement and
+ *    Student Achievement (DAESA) in the Office of the Provost at Washington State University (WSU).
+ *
+ *  See §1 for a full description of the contents of this file.
+ *
+ *  @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+ *  @license MIT — Copyright (c) 2021 Washington State University. (See §1 for full license.)
+ *  ────────────────────────────────────────────────────────────────────────────────────────────────
+ *   TABLE OF CONTENTS:
+ *   ────────────────────────────────────────────────────────────────────────────────────────────
+ *   §1: Persistent comment for documenting general DAESA styling section of stylesheet........78
+ *   §2:  Global Less variables and Less mixins/utility classes...............................143
+ *     >>> §2.1: Additional fonts.............................................................147
+ *     >>> §2.2: Color variables and mixins...................................................153
+ *     >>> §2.3: Miscellaneous mixins.........................................................159
+ *     >>> §2.4: Utility mixins...............................................................165
+ *     >>> §2.5: Animation utility classes....................................................171
+ *   §3: Redesigning of the WSUWP Spine Theme.................................................177
+ *     >>> §3.1: Anchor pseudo-class..........................................................181
+ *     >>> §3.2: Document section nodes.......................................................187
+ *        └> §3.2.1: HTML element.............................................................191
+ *        └> §3.2.2: Body.....................................................................199
+ *        └> §3.2.3: Nav......................................................................217
+ *        └> §3.2.4: Article..................................................................217
+ *        └> §3.2.5: Section..................................................................223
+ *        └> §3.2.6: Aside....................................................................231
+ *        └> §3.2.7: Heading..................................................................237
+ *        └> §3.2.8: Header...................................................................243
+ *        └> §3.2.9: Footer...................................................................249
+ *     >>> §3.3: Content grouping nodes.......................................................261
+ *        └> §3.3.1: Paragraph elements.......................................................265
+ *        └> §3.3.2: Hr elements..............................................................271
+ *        └> §3.3.3: List elements............................................................277
+ *        └> §3.3.4: Div elements.............................................................283
+ *        └> §3.3.5: Banner slideshows........................................................297
+ *        └> §3.3.6: Columns..................................................................303
+ *        └> §3.3.7: Flippable content panels.................................................309
+ *        └> §3.3.8: Page covering notices....................................................315
+ *        └> §3.3.9: Recent updates...........................................................321
+ *        └> §3.3.10: Main element............................................................327
+ *     >>> §3.4: Text-level nodes.............................................................333
+ *        └> §3.4.1: Hyperlink elements.......................................................337
+ *        └> §3.4.2: Strong elements..........................................................343
+ *        └> §3.4.3: Mark elements............................................................362
+ *        └> §3.4.4: Span elements............................................................372
+ *        └> §3.4.5: Cite elements............................................................378
+ *     >>> §3.5: Embedded content nodes.......................................................386
+ *        └> §3.5.1: Image elements...........................................................390
+ *        └> §3.5.2: Iframe elements..........................................................396
+ *     >>> §3.6: Tabular data nodes...........................................................402
+ *     >>> §3.7: Form nodes...................................................................408
+ *     >>> §3.8: Scripted elements............................................................414
+ *        └> §3.8.1: Toggled drop-down panels.................................................418
+ *        └> §3.8.2: Subtle panels............................................................424
+ *        └> §3.8.3: Flippable content panels.................................................465
+ *        └> §3.8.4: QTip driven tooltips.....................................................474
+ *        └> §3.8.5: Quick-tabs panels........................................................480
+ *        └> §3.8.6: Tribe Events Calendars...................................................486
+ *        └> §3.8.7: Auto-scrolling image panels..............................................492
+ *   §4: Component-based CSS..................................................................520
+ *     >>> §4.1: Website notices..............................................................524
+ *     >>> §4.2: News posts...................................................................530
+ *     >>> §4.3: Other components.............................................................541
+ *   §5: Atomic CSS...........................................................................547
+ *  ────────────────────────────────────────────────────────────────────────────────────────────────
+ */
+
+/** ================================================================================================
+ *  §1: Persistent comment for documenting general DAESA styling section of stylesheet
+ */
 
 /*! ================================================================================================
-*** WSU DAESA Styling Section
-*** ================================================================================================
-*** SUMMARY: The following section of this stylesheet contains CSS code written for use on all
-***   websites designed, built, and maintained by the Divsion of Academic Engagement and Student
-***   Achievement (DAESA) in the Office of the Provost at Washington State University (WSU).
-***
-*** DESCRIPTION: The CSS code in the following section was generated from precompiled CSS written in
-***   the Less language extension of CSS. It is designed to be applied via the WSUWP CSS Stylesheet
-***   Editor functioning in add-on mode.
-***
-***   Please refer to the GitHub proejct at https://github.com/invokeImmediately/WSU-UE---CSS/ for
-***   fully documented, precompiled source code.  
-***     
-*** AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
-***
-*** LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck.
-***
-***   Permission to use, copy, modify, and/or distribute this software for any purpose with or
-***   without fee is hereby granted, provided that the above copyright notice and this permission
-***   notice appear in all copies.
-***
-***   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL C. RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO
-***   THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT
-***   SHALL DANIEL C. RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR
-***   ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
-***   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-***   PERFORMANCE OF THIS SOFTWARE.
-*** ================================================================================================
-**/
+ *  █▀▀▄ ▄▀▀▄ █▀▀▀ ▄▀▀▀ ▄▀▀▄   ▄▀▀▀ █  █ ▄▀▀▀▐▀█▀▌▄▀▀▄ ▐▀▄▀▌   ▄▀▀▀▐▀█▀▌█  █ █    ▀█▀ ▐▀▀▄ █▀▀▀
+ *  █  █ █▄▄█ █▀▀  ▀▀▀█ █▄▄█   █    █  █ ▀▀▀█  █  █  █ █ ▀ ▌   ▀▀▀█  █  ▀▄▄█ █  ▄  █  █  ▐ █ ▀▄
+ *  ▀▀▀  █  ▀ ▀▀▀▀ ▀▀▀  █  ▀    ▀▀▀  ▀▀  ▀▀▀   █   ▀▀  █   ▀   ▀▀▀   █  ▄▄▄▀ ▀▀▀  ▀▀▀ ▀  ▐ ▀▀▀▀
+ *  ================================================================================================
+ *  The following section of this stylesheet contains CSS code written for use on all websites
+ *    designed, built, and maintained by the Division of Academic Engagement and Student Achievement
+ *    (DAESA) in the Office of the Provost at Washington State University (WSU).
+ *
+ *  The CSS code in the following section was generated from precompiled CSS written in the Less
+ *    language extension of CSS. It is designed to be applied via the WSUWP CSS Stylesheet Editor
+ *    functioning in add-on mode.
+ *
+ *  Please refer to the linked GitHub project for fully documented, precompiled source code.
+ *
+ *  @version 1.1.0-rc0.1.2
+ *
+ *  @link https://github.com/invokeImmediately/WSU-DAESA-CSS
+ *  @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+ *  @license MIT Copyright (c) 2021 Washington State University
+ *    Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ *      and associated documentation files (the "Software"), to deal in the Software without
+ *      restriction, including without limitation the rights to use, copy, modify, merge, publish,
+ *      distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom
+ *      the Software is furnished to do so, subject to the following conditions:
+ *    The above copyright notice and this permission notice shall be included in all copies or
+ *      substantial portions of the Software.
+ *    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ *      BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *      NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ *      DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ *      FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *      SOFTWARE.
+ *  ================================================================================================
+ */
+
+/** ────────────────────────────────────────────────────────────────────────────────────────────────
+ *  ADDITIONAL DESIGN COMMENTS
+ *  ──────────────────────────────────────────────────────────────────────────────────────────────
+ *  DESIGN PHILOSOPHY: This stylesheet mixes semantic with functional CSS. The Spine Theme for WSUWP
+ *    takes a semantic approach to styling; thus, this add-on style sheet necessarily contains some
+ *    semantic styling of its own. Specifically, semantic CSS is utilized to override or minimally
+ *    build upon the default design imposed by the Spine Builder theme.
+ *
+ *    Functional CSS is utilized to maximally build upon the Spine builder theme by further
+ *    extending its design flexibility. Content authors are enabled more options for tweaking the
+ *    basal design to suit their needs without needing to touch CSS, while the CSS is made more
+ *    reusable and easier to maintain.
+ *
+ *  ORGANIZATION OF STYLESHEET: This stylesheet is organized such that semantic CSS precedes
+ *    functional CSS. This is done to ensure that utility classes associated with functional CSS
+ *    override all other behaviors.
+ *
+ *    The semantic styling section of this stylesheet is laid out according to the W3C HTML5
+ *    language specification (please see https://www.w3.org/TR/html5/ for more information). Style
+ *    rules are generally declared in the same sequence as their matching elements appear in the
+ *    HTML5 spec. Moreover, property settings are generally made in alphabetical order within a
+ *    declaration to make the code more predictable an thereby easier to read.
+ *  ────────────────────────────────────────────────────────────────────────────────────────────────
+ */
+
+/** ================================================================================================
+ *  §2:  Global Less variables and Less mixins/utility classes
+ */
+
+/**   --------------------------------------------------------------------------------------------
+ *    >>> §2.1: Additional fonts
+ */
 
 .has-dflt-font,
 .ff--sans,
 body {
-  font-family: 'Open Sans', 'Lucida Sans', 'Lucida Grande', sans-serif;
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
+}
+
+.ff--sans-2 {
+  font-family: 'Open Sans', sans-serif;
 }
 
 .has-dflt-font.serif,
 .ff--serif,
 .has-subst-font.serif,
 .ff--serif-2 {
-  font-family: 'PT Serif', 'Palatino Linotype', 'Palatino', serif;
+  font-family: 'Cormorant Garamond', 'Palatino', serif;
 }
 
 .has-alt-font,
 .ff--condensed,
-.has-subst-font,
-.ff--condensed-2,
 span.accentuated-text,
 .column .article-tagline.sans {
   font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
@@ -57,6 +177,14 @@ span.accentuated-text,
 .ff--mono {
   font-family: 'Roboto Mono', monospace, sans-serif;
 }
+
+/**   --------------------------------------------------------------------------------------------
+ *    >>> §2.2: Color variables and mixins
+ */
+
+/**   --------------------------------------------------------------------------------------------
+ *    >>> §2.3: Miscellaneous mixins
+ */
 
 .initially-hidden,
 .column .initially-hidden {
@@ -133,6 +261,162 @@ span.accentuated-text,
 .column .soft-gray-border {
   border: 1px solid rgba(42, 48, 51, 0.5);
 }
+
+/**   --------------------------------------------------------------------------------------------
+ *    >>> §2.4: Utility mixins
+ */
+
+/** ────────────────────────────────────────────────────────────────────────────────────────────────
+ *  █  █▐▀█▀▌▀█▀ █    ▀█▀▐▀█▀▌█  █    ▐▀▄▀▌▀█▀▐▄ ▄▌▀█▀ ▐▀▀▄ ▄▀▀▀   █    █▀▀▀ ▄▀▀▀ ▄▀▀▀
+ *  █  █  █   █  █  ▄  █   █  ▀▄▄█ ▀▀ █ ▀ ▌ █   █   █  █  ▐ ▀▀▀█   █  ▄ █▀▀  ▀▀▀█ ▀▀▀█
+ *   ▀▀   █  ▀▀▀ ▀▀▀  ▀▀▀  █  ▄▄▄▀    █   ▀▀▀▀▐▀ ▀▌▀▀▀ ▀  ▐ ▀▀▀  ▀ ▀▀▀  ▀▀▀▀ ▀▀▀  ▀▀▀
+ *
+ *  Less import that defines a variety of utility mixins to be utilized in making focused,
+ *    functional style declarations and creating utility classes. Designed as a dependency to be
+ *    imported upstream of other Less files in the final stylesheet build.
+ *
+ *  @version 1.0.0
+ *
+ *  @link https://github.com/invokeImmediately/WSU-DAESA-CSS/
+ *  @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+ *  @license MIT Copyright (c) 2021 Washington State University
+ *    Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ *      and associated documentation files (the "Software"), to deal in the Software without
+ *      restriction, including without limitation the rights to use, copy, modify, merge, publish,
+ *      distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom
+ *      the Software is furnished to do so, subject to the following conditions:
+ *    The above copyright notice and this permission notice shall be included in all copies or
+ *      substantial portions of the Software.
+ *    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ *      BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *      NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ *      CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ *      ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *      SOFTWARE.
+ *  ────────────────────────────────────────────────────────────────────────────────────────────────
+ *   TABLE OF CONTENTS:
+ *   ────────────────────────────────────────────────────────────────────────────────────────────
+ *   §1: Display...............................................................................58
+ *   §2: Widths................................................................................72
+ *       >>> §2.1: In units of percentages.....................................................76
+ *       >>> §2.2: Pixels.....................................................................113
+ *       >>> §2.3: Em.........................................................................154
+ *   §3: Heights..............................................................................189
+ *       >>> §3.1: In units of pixels.........................................................193
+ *       >>> §3.2: Em.........................................................................230
+ *   §4: Margins..............................................................................272
+ *       >>> §4.1: In units of "em"...........................................................276
+ *       >>> §4.2: In units of "rem"..........................................................365
+ *   §5: Spacing..............................................................................454
+ *       >>> §5.1: In units of "em"...........................................................458
+ *       >>> §5.2: In units of "rem"..........................................................489
+ *   §6: Padding..............................................................................520
+ *       >>> §6.1: In units of "em"...........................................................524
+ *       >>> §6.2: In units of "rem"..........................................................613
+ *   §7: Typography...........................................................................702
+ *       >>> §7.1: Typograhy: Font Sizing.....................................................706
+ *       >>> §7.2: Line heights...............................................................909
+ *       >>> §7.3: Bolding....................................................................974
+ *   §8: Functional CSS.......................................................................989
+ *       >>> §8.1: Card styling...............................................................993
+ *   ───────────────────────────────────────────────────────────────────────────────────────────────
+ */
+
+/** ================================================================================================
+ *  §1: Display
+ */
+
+/** ================================================================================================
+ *  §2: Widths
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §2.1: In units of percentagess
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §2.2: Pixels
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §2.3: Em
+ */
+
+/** ================================================================================================
+ *  §3: Heights
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §3.1: In units of pixels
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §3.2: Em
+ */
+
+/** ================================================================================================
+ *  §4: Margins
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §4.1: In units of "em"
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §4.2: In units of "rem"
+ */
+
+/** ================================================================================================
+ *  §5: Spacing
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §5.1: In units of "em"
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §5.2: In units of "rem"
+ */
+
+/** ================================================================================================
+ *  §6: Padding
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §6.1: In units of "em"
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §6.2: In units of "rem"
+ */
+
+/** ================================================================================================
+ *  §7: Typography
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §7.1: Font Sizing
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §7.2: Line heights
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §7.3: Bolding
+ */
+
+/** ================================================================================================
+ *  §8: Functional CSS
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §8.1: Card styling
+ */
+
+/**   --------------------------------------------------------------------------------------------
+ *    >>> §2.5: Animation utility classes
+ */
 
 .fade-in {
   animation: anim-fade-in 1s linear 1;
@@ -262,6 +546,14 @@ span.accentuated-text,
   }
 }
 
+/** ================================================================================================
+ *  §3: Redesigning of the WSUWP Spine Theme
+ */
+
+/**   --------------------------------------------------------------------------------------------
+ *    >>> §3.1: Anchor pseudo-class
+ */
+
 :target:not(.no-anchor-highlighting):not(.gform_anchor) {
   position: relative;
 }
@@ -325,9 +617,73 @@ span.accentuated-text,
   visibility: visible;
 }
 
+/**   --------------------------------------------------------------------------------------------
+ *    >>> §3.2: Document section nodes
+ */
+
+/**     ························································································
+ *       └> §3.2.1: HTML element
+ */
+
 html {
   font-size: 100%;
 }
+
+/**     ························································································
+ *       └> §3.2.2: Body
+ */
+
+/**     ························································································
+ *       └> §3.2.3: Nav
+ */
+
+/** ────────────────────────────────────────────────────────────────────────────────────────────────
+ *  ▐▀▀▄ ▄▀▀▄▐   ▌  █    █▀▀▀ ▄▀▀▀ ▄▀▀▀
+ *  █  ▐ █▄▄█ █ █   █  ▄ █▀▀  ▀▀▀█ ▀▀▀█
+ *  ▀  ▐ █  ▀  █  ▀ ▀▀▀  ▀▀▀▀ ▀▀▀  ▀▀▀
+ *  
+ *  Contains styles for paragraph elements of WSU Division of Academic Engagement and Student 
+ *    Achievement websites created using the the Spine parent theme of WSUWP. Styles are designed to
+ *    accompany or supersede the theme's stylesheet via application to the site using the CSS
+ *    Stylesheet Editor, set to add-on mode, in the WordPress administration area.
+ *  
+ *  @version 1.0.0
+ *  
+ *  @link https://github.com/invokeImmediately/WSU-DAESA-CSS/blob/master/Spine-Theme/nav.less
+ *  @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+ *  @license MIT Copyright (c) 2021 Washington State University
+ *    Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ *      and associated documentation files (the "Software"), to deal in the Software without
+ *      restriction, including without limitation the rights to use, copy, modify, merge, publish,
+ *      distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom
+ *      the Software is furnished to do so, subject to the following conditions:
+ *    The above copyright notice and this permission notice shall be included in all copies or
+ *      substantial portions of the Software.
+ *    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ *      BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *      NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ *      CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ *      ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *      SOFTWARE.
+ *  ────────────────────────────────────────────────────────────────────────────────────────────────
+ */
+
+#spine-sitenav,
+#spine-offsitenav {
+  font-family: 'Open Sans', sans-serif;
+}
+
+#spine nav li.parent > a:not(:hover):after {
+  display: block;
+}
+
+#spine nav li.parent:not(.opened) > a:not(:hover):after {
+  color: rgba(117, 117, 117, 0.5);
+}
+
+/**     ························································································
+ *       └> §3.2.4: Article
+ */
 
 .column article.post {
   background-color: #fff;
@@ -389,6 +745,10 @@ html {
   text-align: center;
 }
 
+/**     ························································································
+ *       └> §3.2.5: Section
+ */
+
 
 
 section.column-one-with-bottom-margin > .column.one {
@@ -408,7 +768,7 @@ section.column-one-with-bottom-margin > .column.one {
 }
 
 .row.has-crimson-background {
-  background-color: #981e32;
+  background-color: #a60f2d;
 }
 
 .row.has-crimson-background .column {
@@ -439,6 +799,10 @@ main .row {
   padding-top: 4rem;
 }
 
+/**     ························································································
+ *       └> §3.2.6: Aside
+ */
+
 aside.shield-themed {
   padding: 0.5rem;
   border-left: 4px solid #8d959a;
@@ -468,7 +832,7 @@ aside.shield-themed > header:first-child > * {
   margin-top: -0.5rem;
   margin-left: -0.5rem;
   margin-bottom: 0.5rem;
-  background-color: #981e32;
+  background-color: #a60f2d;
   color: #fff;
 }
 
@@ -582,7 +946,7 @@ body.single-post #wsuwp-main .row .column.one aside > h4:first-child,
 .column > aside.quote > h4:first-child {
   padding: 0.5rem;
   margin: -0.5rem;
-  background-color: #981e32;
+  background-color: #a60f2d;
   color: #fff;
 }
 
@@ -599,40 +963,13 @@ body.blog .article-summary aside {
   display: none;
 }
 
+/**     ························································································
+ *       └> §3.2.7: Heading
+ */
+
 .column h2.article-title {
-  font-size: 0.82823529em;
+  font-size: 0.84rem;
   line-height: 1.1em;
-}
-
-.column.show-header.has-fancy-header > header:first-child > h2 {
-  background-color: rgba(94, 94, 94, 0.2);
-  background: linear-gradient(to right, transparent, rgba(94, 94, 94, 0.075) 5%, rgba(94, 94, 94, 0.075) 50%, rgba(94, 94, 94, 0.225));
-  border-bottom: 2px solid rgba(94, 94, 94, 0.075);
-  margin-bottom: 1rem;
-  margin-left: -0.5rem;
-  margin-right: -0.5rem;
-  padding: 0.33333333rem 0.5rem 0.55rem;
-  position: relative;
-}
-
-.column.show-header.has-fancy-header > header:first-child > h2 {
-  padding-top: 0.5rem;
-}
-
-.column.show-header.has-fancy-header > header:first-child > h2:not(:first-child) {
-  margin-top: 2rem;
-}
-
-.column.show-header.has-fancy-header > header:first-child > h2::before {
-  border-bottom: 1px solid rgba(59, 64, 66, 0.3333);
-  border-top-width: 2px;
-  border-top: 1px solid rgba(59, 64, 66, 0.6667);
-  content: "";
-  height: 0;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
 }
 
 .column h1 + h2 {
@@ -651,40 +988,10 @@ h2.article-title a {
   text-transform: none;
 }
 
-.column.show-header.has-fancy-header > header:first-child > h3 {
-  background-color: rgba(198, 12, 48, 0.075);
-  background: linear-gradient(to right, transparent, rgba(219, 120, 121, 0.075) 5%, rgba(219, 120, 121, 0.075) 50%, rgba(219, 120, 121, 0.225));
-  border-bottom: 2px solid rgba(198, 12, 48, 0.075);
-  margin-bottom: 1rem;
-  margin-left: 0;
-  margin-right: 0;
-  padding: 0.33333333rem 0.5rem 0.45rem 0;
-  position: relative;
-}
-
-.column.show-header.has-fancy-header > header:first-child > h3 {
-  padding-top: 0.4375rem;
-}
-
-.column.show-header.has-fancy-header > header:first-child > h3:not(:first-child) {
-  margin-top: 2rem;
-}
-
-.column.show-header.has-fancy-header > header:first-child > h3::before {
-  border-bottom: 1px solid rgba(152, 30, 50, 0.375);
-  border-top: 1px solid rgba(152, 30, 50, 0.67);
-  content: "";
-  height: 0;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
 .hN--subtitle {
   display: block;
   font-size: 0.6em;
-  line-height: 1.375em;
+  line-height: 1.4em;
 }
 
 h1,
@@ -693,8 +1000,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
-  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
   margin: 0;
   padding: 0;
 }
@@ -705,31 +1012,39 @@ h6 {
 * + h4,
 * + h5,
 * + h6 {
-  margin-top: 1em;
+  margin-top: 2rem;
 }
 
 h1 {
-  font-size: 2.4em;
+  font-weight: 800;
 }
 
 h2 {
-  font-size: 2.1em;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2.1rem;
 }
 
 h3 {
-  font-size: 1.8em;
+  font-size: 1.8rem;
 }
 
 h4 {
-  font-size: 1.6em;
+  font-size: 1.5rem;
 }
 
 h5 {
-  font-size: 1.5em;
+  font-size: 1.25rem;
 }
 
 h6 {
-  font-size: 1.4em;
+  font-size: 1rem;
 }
 
 h1,
@@ -747,7 +1062,7 @@ h3.linked-text,
 h4.linked-text,
 h5.linked-text,
 h6.linked-text {
-  line-height: 1.375em;
+  line-height: 1.4em;
 }
 
 h1,
@@ -756,7 +1071,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #981e32;
+  color: #2a3033;
 }
 
 h1.solid {
@@ -772,8 +1087,8 @@ h1.solid::before {
 }
 
 h2.solid {
-  background-color: rgba(152, 30, 50, 0.9);
-  background: linear-gradient(to right, #981e32 50%, #4f101a);
+  background-color: rgba(166, 15, 45, 0.9);
+  background: linear-gradient(to right, #a60f2d 50%, #4f101a);
   border-bottom: 2px solid rgba(79, 16, 26, 0.5);
   color: #fff;
 }
@@ -784,10 +1099,10 @@ h2.solid::before {
 }
 
 h3.solid {
-  background-color: rgba(198, 12, 48, 0.075);
+  background-color: rgba(202, 18, 55, 0.075);
   background: linear-gradient(to right, transparent, rgba(219, 120, 121, 0.075) 5%, rgba(219, 120, 121, 0.075) 50%, rgba(219, 120, 121, 0.225));
-  border-bottom: 2px solid rgba(198, 12, 48, 0.075);
-  color: #981e32;
+  border-bottom: 2px solid rgba(202, 18, 55, 0.075);
+  color: #a60f2d;
 }
 
 h3.solid::before {
@@ -900,8 +1215,8 @@ h3.white-text.solid.crimson-background,
 h4.white-text.solid.crimson-background,
 h5.white-text.solid.crimson-background,
 h6.white-text.solid.crimson-background {
-  background-color: rgba(152, 30, 50, 0.9);
-  background: linear-gradient(to right, #981e32 50%, #4f101a);
+  background-color: rgba(166, 15, 45, 0.9);
+  background: linear-gradient(to right, #a60f2d 50%, #4f101a);
   border-bottom: 2px solid rgba(79, 16, 26, 0.5);
 }
 
@@ -951,7 +1266,7 @@ h3.crimson-text,
 h4.crimson-text,
 h5.crimson-text,
 h6.crimson-text {
-  color: #981e32;
+  color: #a60f2d;
 }
 
 h1.crimson-text.solid,
@@ -960,9 +1275,9 @@ h3.crimson-text.solid,
 h4.crimson-text.solid,
 h5.crimson-text.solid,
 h6.crimson-text.solid {
-  background-color: rgba(198, 12, 48, 0.075);
+  background-color: rgba(202, 18, 55, 0.075);
   background: linear-gradient(to right, transparent, rgba(219, 120, 121, 0.075) 5%, rgba(219, 120, 121, 0.075) 50%, rgba(219, 120, 121, 0.225));
-  border-bottom: 2px solid rgba(198, 12, 48, 0.075);
+  border-bottom: 2px solid rgba(202, 18, 55, 0.075);
 }
 
 h1.crimson-text.solid::before,
@@ -986,6 +1301,10 @@ h6.crimson-text.solid::before {
 .hX--indent-3 {
   max-width: calc(100% - 6rem);
 }
+
+/**     ························································································
+ *       └> §3.2.8: Header
+ */
 
 .main-header {
   height: auto;
@@ -1062,9 +1381,21 @@ h6.crimson-text.solid::before {
   display: block;
 }
 
+/**     ························································································
+ *       └> §3.2.9: Footer
+ */
+
 footer.article-footer div.author-info {
   display: none;
 }
+
+/**   --------------------------------------------------------------------------------------------
+ *    >>> §3.3: Content Grouping Nodes
+ */
+
+/**     ························································································
+ *       └> §3.3.1: Paragraph elements
+ */
 
 .article-deck {
   color: #72652a;
@@ -1096,9 +1427,13 @@ p ~ p {
   padding-bottom: 0;
 }
 
-.column * + p {
+.row * + p:not([class*="margined-top"]):not([class*="mt--"]):not([class*="sv--"]) {
   margin-top: 1em;
 }
+
+/**     ························································································
+ *       └> §3.3.2: Hr elements
+ */
 
 hr {
   background-color: #d7dadb;
@@ -1134,6 +1469,10 @@ hr.thicker {
   border-top-width: 2px;
 }
 
+/**     ························································································
+ *       └> §3.3.3: List elements
+ */
+
 ul {
   font-size: 1em;
   line-height: 1.5em;
@@ -1144,32 +1483,32 @@ ul {
   max-width: none;
 }
 
-.column ul {
+.row ul {
   padding-bottom: 0;
   padding-right: 0;
 }
 
-.column ul ol,
-.column ul ul {
+.row ul ol,
+.row ul ul {
   font-size: inherit  !important;
 }
 
-.column ul li {
+.row ul li {
   line-height: inherit;
 }
 
-.column * + ul {
+.row * + ul:not([class*="margined-top"]):not([class*="mt--"]):not([class*="sv--"]) {
   margin-top: 1em;
 }
 
-.column ol ul,
-.column ul ul {
+.row ol ul,
+.row ul ul {
   padding-top: 0;
 }
 
-.column p + ul,
-.column ol ul,
-.column ul ul {
+.row p + ul:not([class*="margined-top"]):not([class*="mt--"]):not([class*="sv--"]),
+.row ol ul,
+.row ul ul {
   margin-top: 0.5em;
 }
 
@@ -1183,40 +1522,40 @@ ol {
   max-width: none;
 }
 
-.column ol {
+.row ol {
   padding-right: 0;
   padding-bottom: 0;
 }
 
-.column ol li {
+.row ol li {
   line-height: inherit;
 }
 
-.column ol ol,
-.column ol ul {
+.row ol ol,
+.row ol ul {
   font-size: inherit !important;
 }
 
-.column ol ol {
+.row ol ol {
   list-style-type: lower-alpha;
 }
 
-.column ol ol ol {
+.row ol ol ol {
   list-style-type: lower-roman;
 }
 
-.column * + ol {
+.row * + ol:not([class*="margined-top"]):not([class*="mt--"]):not([class*="sv--"]) {
   margin-top: 1em;
 }
 
-.column ol ol,
-.column ul ol {
+.row ol ol,
+.row ul ol {
   padding-top: 0;
 }
 
-.column p + ol,
-.column ol ol,
-.column ul ol {
+.row p + ol:not([class*="margined-top"]):not([class*="mt--"]):not([class*="sv--"]),
+.row ol ol,
+.row ul ol {
   margin-top: 0.5em;
 }
 
@@ -1225,11 +1564,11 @@ ul li {
   padding: 0 0 0.5em 0;
 }
 
-.column dl.faq {
+.row dl.faq {
   position: relative;
 }
 
-.column dl.faq dt {
+.row dl.faq dt {
   background-color: #e4e6e7;
   border: 1px solid #afb5b7;
   cursor: pointer;
@@ -1243,7 +1582,7 @@ ul li {
   transition: all 0.25s linear;
 }
 
-.column dl.faq dt:after {
+.row dl.faq dt:after {
   border-bottom: none;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
@@ -1258,62 +1597,62 @@ ul li {
   transition: all 0.3s ease;
 }
 
-.column dl.faq dt:hover {
+.row dl.faq dt:hover {
   background-color: #5e5e5e;
   color: #fff;
 }
 
-.column dl.faq dt:hover:after {
+.row dl.faq dt:hover:after {
   border-top: 8px solid #fff;
   border-right: 8px solid transparent;
   border-bottom: none;
   border-left: 8px solid transparent;
 }
 
-.column dl.faq dt.activated {
+.row dl.faq dt.activated {
   background-color: #e7d4d9;
   color: #3b4042;
   border-color: #b87f8c;
 }
 
-.column dl.faq dt.activated:after {
+.row dl.faq dt.activated:after {
   border-top: none;
   border-right: 8px solid transparent;
   border-bottom: 8px solid #5e5e5e;
   border-left: 8px solid transparent;
 }
 
-.column dl.faq dt.activated:hover {
+.row dl.faq dt.activated:hover {
   background-color: #725764;
   color: #fff;
 }
 
-.column dl.faq dt.activated:hover:after {
+.row dl.faq dt.activated:hover:after {
   border-top: none;
   border-right: 8px solid transparent;
   border-bottom: 8px solid #fff;
   border-left: 8px solid transparent;
 }
 
-.column dl.faq.blue dt {
+.row dl.faq.blue dt {
   background-color: #ecf6f9;
   border-color: #9ed0e1;
 }
 
-.column dl.faq.blue dt:hover {
+.row dl.faq.blue dt:hover {
   background-color: #3f6b72;
 }
 
-.column dl.faq.blue dt.activated {
+.row dl.faq.blue dt.activated {
   background-color: #e7d4d9;
   border-color: #b87f8c;
 }
 
-.column dl.faq.blue dt.activated:hover {
+.row dl.faq.blue dt.activated:hover {
   background-color: #725764;
 }
 
-.column dl.faq dd {
+.row dl.faq dd {
   display: block;
   margin-top: 0;
   max-height: 0;
@@ -1324,23 +1663,23 @@ ul li {
   transition: margin 0.4s cubic-bezier(.02, .01, .47, 1), opacity 0.4s cubic-bezier(.02, .01, .47, 1);
 }
 
-.column dl.faq dd.revealed {
+.row dl.faq dd.revealed {
   margin-top: 0.25rem;
   margin-bottom: 1rem;
   opacity: 1;
 }
 
-.column dl.faq dd > p + p {
+.row dl.faq dd > p + p {
   margin-top: 1rem;
 }
 
-.column dl.faq dd > p + ul,
-.column dl.faq dd > p + ol {
+.row dl.faq dd > p + ul,
+.row dl.faq dd > p + ol {
   margin-top: 0.5rem;
 }
 
-.column dl.faq > .expand-all-button,
-.column dl.faq > .collapse-all-button {
+.row dl.faq > .expand-all-button,
+.row dl.faq > .collapse-all-button {
   display: none;
   position: absolute;
   top: 0;
@@ -1353,28 +1692,28 @@ ul li {
   transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
 }
 
-.column dl.faq > .expand-all-button:hover,
-.column dl.faq > .collapse-all-button:hover {
+.row dl.faq > .expand-all-button:hover,
+.row dl.faq > .collapse-all-button:hover {
   background-color: #5e5e5e;
   color: #fff;
 }
 
-.column dl.faq.blue > .expand-all-button,
-.column dl.faq.blue > .collapse-all-button {
+.row dl.faq.blue > .expand-all-button,
+.row dl.faq.blue > .collapse-all-button {
   background-color: #ecf6f9;
   border-color: #9ed0e1;
 }
 
-.column dl.faq.blue > .expand-all-button:hover,
-.column dl.faq.blue > .collapse-all-button:hover {
+.row dl.faq.blue > .expand-all-button:hover,
+.row dl.faq.blue > .collapse-all-button:hover {
   background-color: #3f6b72;
 }
 
-.column dl.faq > .expand-all-button {
+.row dl.faq > .expand-all-button {
   left: 0;
 }
 
-.column dl.faq > .collapse-all-button {
+.row dl.faq > .collapse-all-button {
   right: 0;
 }
 
@@ -1421,246 +1760,17 @@ ul.cascaded-layout.blank > li.gutter-sizer {
   width: 3% !important;
 }
 
+/**     ························································································
+ *       └> §3.3.4: Div elements
+ */
+
 .column > * + div {
   margin-top: 1em;
 }
 
-.article-body {
-  position: relative;
-  line-height: 1.5em;
-}
-
-.article-footer {
-  border-top: 1px solid #d7dadb;
-}
-
-.blog .article-header,
-.archive.category .article-header,
-.archive.tag .article-header,
-.single-post.post-template-default .article-header {
-  background-color: #eff0f1;
-  border-bottom: 1px solid rgba(127, 127, 127, 0.2);
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  margin-left: -1em;
-  margin-right: -1em;
-  margin-top: -1em;
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-top: 1em;
-}
-
-.blog .article-header + *,
-.archive.category .article-header + *,
-.archive.tag .article-header + *,
-.single-post.post-template-default .article-header + * {
-  margin-top: 1em;
-}
-
-.column .article-header .article-title,
-.column .article-header .article-title {
-  font-size: 2em;
-  line-height: 1.1em;
-}
-
-.column .article-header .article-title a,
-.column .article-header .article-title a {
-  font-weight: bold;
-}
-
-.article-summary {
-  line-height: 1.5em;
-}
-
-.article-summary .article-media-contacts,
-.article-summary .article-sidebar,
-.article-summary img,
-.article-summary object,
-.article-summary > h3,
-.article-summary .photo-caption {
-  display: none;
-}
-
-.article-summary .attachment-spine-thumbnail_size {
-  display: block;
-}
-
-.column .article-summary .article-media-contacts + :not(.article-media-contacts) {
-  margin-top: 0;
-}
-
-.single-post .article-media-contacts {
-  font-size: 0.9em;
-}
-
-.single-post .column .article-media-contacts + :not(.article-media-contacts) {
-  border-top: 1px solid rgba(127, 127, 127, 0.2);
-  padding-top: 15px;
-}
-
-.single-post .main-header + .featured-image {
-  display: none;
-}
-
-.single-post .article-header,
-.summary-divided .article-header,
-.single-post .article-header .article-title,
-.summary-divided .article-header .article-title {
-  margin-bottom: 15px;
-}
-
-.single-post .article-footer,
-.summary-divided .article-footer {
-  margin-top: 15px;
-}
-
-.widget {
-  background-color: #eff0f1;
-  border-radius: 5px;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 0 2px rgba(0, 0, 0, 0.2), 3px 4px 4px rgba(0, 0, 0, 0.25) !important;
-  padding: 1em;
-  overflow: hidden;
-}
-
-.widget.widget_recent_entries ul {
-  padding: 0;
-}
-
-.widget.widget_recent_entries ul li {
-  padding-bottom: 0.5em;
-}
-
-.widget.widget_recent_entries .post-date:before {
-  font-weight: bold;
-  content: "/ ";
-}
-
-.widget.widget_tag_cloud a {
-  border-bottom: none;
-  box-shadow: none;
-}
-
-.widget + .widget {
-  margin-top: 2rem;
-}
-
-.widget header {
-  background-color: #d7dadb;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom: 1px solid rgba(103, 103, 103, 0.2);
-  font-size: 1rem;
-  font-weight: bold;
-  margin: -1rem -1rem 0.5rem;
-  padding: 0.5rem 1rem;
-}
-
-.widget ul li {
-  list-style: disc inside none;
-}
-
-.widget_archive label.screen-reader-text {
-  display: none;
-}
-
-.wsuwp-json--headlines .content-item-byline-author {
-  display: none;
-}
-
-.wsuwp-json--headlines .content-item-byline-date {
-  display: block;
-  padding-bottom: 0.25em;
-  margin-top: 0.5em;
-  margin-bottom: 0.75em;
-  color: #737373;
-  text-transform: uppercase;
-}
-
-.wsuwp-json--headlines .content-item-byline-date:before {
-  content: "Posted on ";
-}
-
-.wsuwp-json--headlines .content-item-excerpt .article-media-contacts,
-.wsuwp-json--headlines .content-item-excerpt .article-sidebar,
-.wsuwp-json--headlines .content-item-excerpt .photo-caption,
-.wsuwp-json--headlines .content-item-excerpt .more-link,
-.wsuwp-json--headlines .content-item-excerpt img,
-.wsuwp-json--headlines .content-item-excerpt object,
-.wsuwp-json--headlines .content-item-excerpt > h3 {
-  display: none;
-}
-
-.wsuwp-json--headlines .content-item-excerpt .content-item-read-story {
-  display: inline-block;
-}
-
-.wsuwp-json--headlines .content-item-excerpt > * + *,
-.wsuwp-json--headlines .content-item-excerpt .content-item-read-story {
-  margin-top: 1em;
-}
-
-.wsuwp-json--headlines .content-item-title {
-  font-size: 1.325em;
-  font-weight: bold;
-  line-height: 1.4em;
-  line-height: calc(1.4em + 1px);
-}
-
-.wsuwp-json--headlines .content-item-title a {
-  border-bottom-color: transparent;
-  box-shadow: none;
-  text-decoration: underline;
-}
-
-.wsuwp-json--headlines .content-item-title a:hover {
-  text-decoration: none;
-}
-
-.wsuwp-json--headlines .content-item-thumbnail {
-  float: right;
-  margin-bottom: 0.5em;
-  margin-left: 0.5em;
-  max-width: 136px;
-  min-width: 96px;
-  width: 28.5%;
-}
-
-.wsuwp-json--headlines .wsuwp-content-syndicate-item {
-  box-sizing: border-box;
-  line-height: 1.5em;
-  list-style-image: none !important;
-}
-
-.wsuwp-json--headlines * + .wsuwp-content-syndicate-item {
-  margin-top: 1em;
-}
-
-.wsuwp-json--headlines .wsuwp-content-syndicate-list {
-  display: flex;
-  flex-wrap: wrap;
-  list-style-type: none;
-  padding: 0;
-}
-
-.wsuwp-json--headlines.layout--2-columns .wsuwp-content-syndicate-list {
-  font-size: 0.9em;
-  max-width: none !important;
-}
-
-.wsuwp-json--headlines.layout--2-columns .wsuwp-content-syndicate-item {
-  padding-bottom: 2em;
-  padding-right: 2em;
-  width: 50%;
-}
-
-.wsuwp-json--headlines.layout--2-columns * + .wsuwp-content-syndicate-item {
-  margin-top: 0;
-}
-
-.award-banner {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
+/**     ························································································
+ *       └> §3.3.5: Banner slideshows
+ */
 
 .builder-banner-content {
   border: 0;
@@ -1770,9 +1880,13 @@ ul.cascaded-layout.blank > li.gutter-sizer {
   left: 0.4rem;
 }
 
+/**     ························································································
+ *       └> §3.3.6: Columns
+ */
+
 .column {
-  color: #2a3033;
-  font-family: 'Open Sans', 'Lucida Sans', 'Lucida Grande', sans-serif;
+  color: #000000;
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
   font-weight: 300;
 }
 
@@ -1804,6 +1918,10 @@ ul.cascaded-layout.blank > li.gutter-sizer {
 main > .page > .row:last-child > .column:last-child {
   padding-bottom: 2rem;
 }
+
+/**     ························································································
+ *       └> §3.3.7: Flippable content panels
+ */
 
 .interactively-flipped-panels {
   position: relative;
@@ -1990,12 +2108,12 @@ main > .page > .row:last-child > .column:last-child {
 }
 
 .interactively-flipped-panels .container .panel-wrapper .panel.crimson div.rear {
-  background-color: #981e32;
+  background-color: #a60f2d;
   color: #fff;
 }
 
 .interactively-flipped-panels .container .panel-wrapper .panel.crimson div.front {
-  background-color: #c60c30;
+  background-color: #ca1237;
   color: #000;
 }
 
@@ -2026,6 +2144,10 @@ main > .page > .row:last-child > .column:last-child {
   padding-bottom: calc((50% * 0.8 - 2em) * 2 + 2em);
   transition: width linear 0.25s, padding linear 0.25s;
 }
+
+/**     ····························································································
+ *       └> §3.3.8: Page covering notices
+ */
 
 .page-covering-notice-css3 {
   position: fixed;
@@ -2143,6 +2265,10 @@ main > .page > .row:last-child > .column:last-child {
 .page-covering-notice-js .notice-content p + p {
   margin-top: 1em !important;
 }
+
+/**     ····························································································
+ *       └> §3.3.9: Recent updates
+ */
 
 .has-recent-updates {
   background-color: #eff0f1;
@@ -2390,28 +2516,49 @@ main > .page > .row:last-child > .column:last-child {
   }
 }
 
+/**     ························································································
+ *       └> §3.3.10: Main element
+ */
+
+/**   --------------------------------------------------------------------------------------------
+ *    >>> §3.4: Text-level nodes
+ */
+
+/**     ························································································
+ *       └> §3.4.1: Hyperlink elements
+ */
+
 .column a {
-  border: 1px solid transparent;
-  border-bottom-color: #981e32;
-  border-left: 0;
-  border-right: 0;
+  border-bottom: 1px solid #a60f2d;
+  color: #a60f2d;
   text-decoration: none;
-  transition: color .4s, background 0.4s, border 0.1s;
+  transition: color .2s bezier-curve(0,0,.03,1), background 0.2s bezier-curve(0,0,.03,1), border-width .1s bezier-curve(0,0,.03,1);
 }
 
+.column a:focus,
 .column a:hover {
-  background-color: rgba(198, 12, 48, 0.15);
+  background-color: rgba(0, 0, 0, 0.08);
   border-bottom-width: 3px;
-  border-color: #c60c30;
-  text-shadow: 1px 1px 2px rgba(152, 30, 50, 0.3);
+  border-color: #ca1237;
 }
 
 .column a.gform_anchor {
   border: none;
 }
 
-.column strong a {
-  font-weight: bold;
+.column h1 a:not([class*="fw--"]),
+.column h2 a:not([class*="fw--"]),
+.column h3 a:not([class*="fw--"]),
+.column h4 a:not([class*="fw--"]),
+.column h5 a:not([class*="fw--"]),
+.column h6 a:not([class*="fw--"]),
+.gform_heading h3.gform_title a:not([class*="fw--"]) {
+  font-weight: inherit;
+}
+
+.column strong a:not([class*="fw--"]),
+.column b a:not([class*="fw--"]) {
+  font-weight: 700;
 }
 
 .column a.pop-out-link {
@@ -2445,7 +2592,7 @@ main > .page > .row:last-child > .column:last-child {
 .column a.non-text-link img,
 .column .article-thumbnail a img {
   border-bottom: 3px solid #e1e3e5;
-  box-shadow: 0 3px #981e32;
+  box-shadow: 0 3px #a60f2d;
   transition: all .25s ease;
 }
 
@@ -2473,6 +2620,46 @@ main > .page > .row:last-child > .column:last-child {
 .non-text-link,
 .column .article-thumbnail a {
   display: inline-block;
+}
+
+.overlay-link {
+  display: block;
+}
+
+.column a.overlay-link {
+  border: none;
+  box-shadow: none;
+  position: relative;
+}
+
+.overlay-link:after,
+.overlay-link:before {
+  content: "";
+  position: absolute;
+  transition: opacity .4s;
+}
+
+.overlay-link:after {
+  background: rgba(202,18,55,.33) url(https://s3.wp.wsu.edu/uploads/sites/57/2020/07/overlay-link_open-sans-0xbb.svg) center/8rem no-repeat;
+  background-position-y: calc(50% - 1.2rem);
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  top: 0;
+  width: 100%;
+}
+
+.overlay-link:before {
+  background: url(https://s3.wp.wsu.edu/uploads/sites/57/2020/07/link-icon_with-shadow_v3.svg) center/contain no-repeat;
+  bottom: 2rem;
+  height: 4rem;
+  right: 2rem;
+  width: 4rem;
+}
+
+.overlay-link:hover:after,
+.overlay-link:focus:after {
+  opacity: 1;
 }
 
 .column h1 a:not(.non-text-link),
@@ -2507,9 +2694,136 @@ main > .page > .row:last-child > .column:last-child {
 .column h6 a:not(.non-text-link):hover,
 .column .article-footer a:hover,
 .gform_heading h3.gform_title a:not(.non-text-link):hover {
-  border-bottom: 4px solid #c60c30;
+  border-bottom: 4px solid #ca1237;
   text-decoration: none;
 }
+
+.simple-button {
+  border-radius: 2px;
+  display: inline-block;
+  margin-bottom: 9px;
+  padding: 0.5rem 1rem;
+}
+
+.simple-button:not(:hover):not(:focus) {
+  background-color: #fef1f4;
+  border: 1px solid #820c23;
+  box-shadow: 0 12px 16px 2px rgba(0, 0, 0, 0.03), 0 5px 22px 4px rgba(0, 0, 0, 0.03), 0 6px 13px 0 rgba(0, 0, 0, 0.02);
+  color: #820c23;
+}
+
+.column .simple-button:hover,
+.column .simple-button:focus {
+  background-color: #a60f2d;
+  border: 1px solid #a60f2d;
+  box-shadow: 0 0 1.5rem 0.5rem rgba(166, 15, 45, 0.15), 0 0 2px 2px rgba(166, 15, 45, 0.15);
+  color: white;
+}
+
+.column .column .simple-button:hover,
+.column .column .simple-button:focus {
+  border-bottom-width: 1px;
+  text-shadow: none;
+}
+
+.simple-button.simple-button--crimson:not(:hover):not(:focus) {
+  background-color: #a60f2d;
+  border: 0;
+  color: white;
+}
+
+.column .simple-button.simple-button--crimson:hover,
+.column .simple-button.simple-button--crimson:focus {
+  background-color: #ca1237;
+  border: 0;
+  box-shadow: 0 5px 18px rgba(202, 18, 55, 0.4);
+  color: white;
+}
+
+.column .column .simple-button.simple-button--crimson:hover,
+.column .column .simple-button.simple-button--crimson:focus {
+  border-bottom-width: 0;
+}
+
+.simple-button.simple-button--blue:not(:hover):not(:focus) {
+  background-color: #f3f9fd;
+  border: 1px solid #185777;
+  color: #185777;
+}
+
+.column .simple-button.simple-button--blue:hover,
+.column .simple-button.simple-button--blue:focus {
+  background-color: #1e6f98;
+  border-color: #1e6f98;
+  box-shadow: 0 0 1.5rem 0.5rem rgba(30, 111, 152, 0.15), 0 0 2px 2px rgba(30, 111, 152, 0.15);
+  color: white;
+}
+
+.column .column .simple-button.simple-button--blue:hover,
+.column .column .simple-button.simple-button--blue:focus {
+  border-bottom-width: 0;
+}
+
+.simple-button.simple-button--yellow:not(:hover):not(:focus) {
+  background-color: #fdfbf3;
+  border: 1px solid #776818;
+  color: #776818;
+}
+
+.column .simple-button.simple-button--yellow:hover,
+.column .simple-button.simple-button--yellow:focus {
+  background-color: #98841e;
+  border-color: #98841e;
+  box-shadow: 0 0 1.5rem 0.5rem rgba(152, 132, 30, 0.15), 0 0 2px 2px rgba(152, 132, 30, 0.15);
+  color: black;
+}
+
+.column .column .simple-button.simple-button--yellow:hover,
+.column .column .simple-button.simple-button--yellow:focus {
+  border-bottom-width: 0;
+}
+
+.simple-button.simple-button--teal:not(:hover):not(:focus) {
+  background-color: #f3fdfb;
+  border: 1px solid #187768;
+  color: #187768;
+}
+
+.column .simple-button.simple-button--teal:hover,
+.column .simple-button.simple-button--teal:focus {
+  background-color: #1e9884;
+  border-color: #1e9884;
+  box-shadow: 0 0 1.5rem 0.5rem rgba(30, 152, 132, 0.15), 0 0 2px 2px rgba(30, 152, 132, 0.15);
+  color: black;
+}
+
+.column .column .simple-button.simple-button--teal:hover,
+.column .column .simple-button.simple-button--teal:focus {
+  border-bottom-width: 0;
+}
+
+.simple-button.simple-button--orange:not(:hover):not(:focus) {
+  background-color: #fdf6f3;
+  border: 1px solid #773818;
+  color: #773818;
+}
+
+.column .simple-button.simple-button--orange:hover,
+.column .simple-button.simple-button--orange:focus {
+  background-color: #98471e;
+  border-color: #98471e;
+  box-shadow: 0 0 1.5rem 0.5rem rgba(152, 71, 30, 0.15), 0 0 2px 2px rgba(152, 71, 30, 0.15);
+  color: white;
+}
+
+.column .column .simple-button.simple-button--orange:hover,
+.column .column .simple-button.simple-button--orange:focus {
+  border-bottom-width: 0;
+}
+
+/**     ························································································
+ *       └> §3.4.2: Strong elements
+ */
 
 strong.opening-line {
   font-size: 1.0625em;
@@ -2526,11 +2840,19 @@ strong:not([class*="fw--"]) {
   font-weight: 600;
 }
 
+/**     ························································································
+ *       └> §3.4.3: Mark elements
+ */
+
 mark.highlight {
   background-color: transparent;
   font-style: normal;
   color: #AEC7CB;
 }
+
+/**     ························································································
+ *       └> §3.4.4: Span elements
+ */
 
 span.accentuated-text {
   font-weight: 700;
@@ -2576,9 +2898,21 @@ span.has-tooltip:hover {
   color: #5895ff;
 }
 
+/**     ························································································
+ *       └> §3.4.5: Cite elements
+ */
+
 cite.article-author {
   display: none;
 }
+
+/**   --------------------------------------------------------------------------------------------
+ *    >>> §3.5: Embedded content nodes
+ */
+
+/**     ························································································
+ *       └> §3.5.1: Image elements
+ */
 
 img {
   height: auto;
@@ -2643,6 +2977,10 @@ figure figcaption {
   font-size: 0.85em;
 }
 
+/**     ························································································
+ *       └> §3.5.2: Iframe elements
+ */
+
 .column .pdf-wrapper,
 .column .youtube-wrapper,
 .column .video-wrapper {
@@ -2681,6 +3019,10 @@ figure figcaption {
   padding-bottom: 56.25%;
 }
 
+/**   --------------------------------------------------------------------------------------------
+ *    >>> §3.6: Tabular data nodes
+ */
+
 .tablepress tfoot th,
 .tablepress thead th {
   font-weight: 600;
@@ -2708,86 +3050,9 @@ figure figcaption {
   background-color: #049cdb;
 }
 
-input.read-more-state {
-  display: none;
-}
-
-input.read-more-state:checked ~ .read-more-target {
-  margin-top: 0;
-  height: auto;
-  opacity: 1;
-}
-
-input.read-more-state ~ p label.read-more-trigger:before {
-  content: 'Show more';
-}
-
-label.read-more-trigger {
-  animation: orange-glow 5s linear infinite;
-  background-color: rgba(255, 184, 28, 0.25);
-  border: 1px solid #2a3033;
-  border-radius: 0.25rem;
-  color: #5e5e5e;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 0.9rem;
-  line-height: 2;
-  padding: 0 0.5rem;
-  position: relative;
-  transition: all 0.3333s ease;
-}
-
-@keyframes orange-glow {
-  0% {
-    background-color: rgba(255, 184, 28, 0.25);
-    box-shadow: 0 0 9px rgba(255, 184, 28, 0);
-    color: #5e5e5e;
-  }
-
-  50% {
-    background-color: rgba(255, 184, 28, 0.5);
-    box-shadow: 0 0 18px rgba(255, 184, 28, 0.5);
-    color: #2a3033;
-  }
-
-  100% {
-    background-color: rgba(255, 184, 28, 0.25);
-    box-shadow: 0 0 9px rgba(255, 184, 28, 0);
-  }
-}
-
-label.read-more-trigger:after {
-  border-radius: 0.25rem;
-  bottom: 0;
-  content: "";
-  left: 2px;
-  position: absolute;
-  right: 2px;
-  top: 2px;
-  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.1));
-}
-
-label.read-more-trigger:hover {
-  animation: none;
-  background-color: #ffb81c;
-  border: 1px solid #2a3033;
-  box-shadow: 0 0 18px rgba(255, 184, 28, 0.6667);
-  color: #2a3033;
-}
-
-div.read-more-target {
-  height: 0;
-  margin-top: 0.5rem;
-  opacity: 0;
-  overflow: hidden;
-  transition: all .333s ease;
-}
-
-.read-more-state:checked ~ p label.read-more-trigger:before {
-  content: 'Show less';
-}
-
-
+/**   --------------------------------------------------------------------------------------------
+ *    >>> §3.7: Form nodes
+ */
 
 .column .gform_wrapper {
   max-width: 990px;
@@ -2860,7 +3125,7 @@ div.read-more-target {
 }
 
 .column .gform_wrapper .percentbar_blue {
-  background-color: #981e32;
+  background-color: #a60f2d;
 }
 
 .column .gform_wrapper h2.fancy {
@@ -2876,6 +3141,10 @@ div.read-more-target {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 1.125em;
+}
+
+.column .gform_wrapper table.gfield_list thead th {
+  font-weight: 600;
 }
 
 .column .gform_wrapper ul:last-child {
@@ -2902,15 +3171,26 @@ div.read-more-target {
   display: none;
 }
 
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar.mce-first .mce-btn[aria-label="Insert/edit image (Shift+Alt+M)"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar.mce-first .mce-btn[aria-label="Align left (Shift+Alt+L)"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar.mce-first .mce-btn[aria-label="Align center (Shift+Alt+C)"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar.mce-first .mce-btn[aria-label="Align right (Shift+Alt+R)"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar.mce-first .mce-btn[aria-label="Align left (Shift+Alt+L)"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar.mce-first .mce-btn[aria-label="Table"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar.mce-first .mce-btn[aria-label="Show blocks"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar.mce-first .mce-btn[aria-label="Source code"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar.mce-first .mce-btn[aria-label="Toolbar Toggle (Shift+Alt+Z)"] {
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar .mce-btn[aria-label="Insert/edit image (Shift+Alt+M)"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp .mce-btn[aria-label="Insert/edit image (Shift+Alt+M)"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar .mce-btn[aria-label="Align left (Shift+Alt+L)"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp .mce-btn[aria-label="Align left (Shift+Alt+L)"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar .mce-btn[aria-label="Align center (Shift+Alt+C)"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp .mce-btn[aria-label="Align center (Shift+Alt+C)"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar .mce-btn[aria-label="Align right (Shift+Alt+R)"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp .mce-btn[aria-label="Align right (Shift+Alt+R)"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar .mce-btn[aria-label="Align left (Shift+Alt+L)"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp .mce-btn[aria-label="Align left (Shift+Alt+L)"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar .mce-btn[aria-label="Table"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp .mce-btn[aria-label="Table"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar .mce-btn[aria-label="Show blocks"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp .mce-btn[aria-label="Show blocks"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar .mce-btn[aria-label="Source code"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp .mce-btn[aria-label="Source code"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar .mce-btn[aria-label="Text color"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp .mce-btn[aria-label="Text color"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar .mce-btn[aria-label="Toolbar Toggle (Shift+Alt+Z)"],
+.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp .mce-btn[aria-label="Toolbar Toggle (Shift+Alt+Z)"] {
   display: none;
 }
 
@@ -2996,11 +3276,11 @@ div.read-more-target {
 }
 
 .column .gform_fields > .gfield.gfield_contains_required > .ginput_container_select > .gfield_select:not(.gf-value-entered) + .chosen-container-single:not(.chosen-with-drop) > .chosen-single {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.038) 50%, rgba(0, 0, 0, 0.07) 52%, rgba(0, 0, 0, 0.045) 100%), linear-gradient(to bottom, rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.1)), linear-gradient(to bottom, #fff, #fff);
+  background: linear-gradient(to bottom, rgba(255, 0, 0, 0.1) 0, rgba(255, 0, 0, 0) 0.6em);
 }
 
 .column .gform_fields > .gfield.gfield_contains_required > .ginput_container_select > .gfield_select + .chosen-container-single.chosen-with-drop > .chosen-single {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.038) 50%, rgba(0, 0, 0, 0.07) 52%, rgba(0, 0, 0, 0.045) 100%), linear-gradient(to bottom, #edf3f4, #edf3f4);
+  background: linear-gradient(to bottom, rgba(0, 0, 255, 0.1) 0, transparent 0.3em);
 }
 
 .column .gform_fields > .gfield.gfield_contains_required input,
@@ -3012,139 +3292,39 @@ div.read-more-target {
 .column .gform_fields > .gfield.gfield_contains_required input:focus,
 .column .gform_fields > .gfield.gfield_contains_required select:focus,
 .column .gform_fields > .gfield.gfield_contains_required textarea:focus {
-  background-color: #edf3f4 !important;
+  background: linear-gradient(to bottom, rgba(0, 0, 255, 0.1) 0, transparent 0.3em);
 }
 
 .column .gform_fields > .gfield.gfield_contains_required input:not(.gf-value-entered):not(:focus),
 .column .gform_fields > .gfield.gfield_contains_required select:not(.gf-value-entered):not(:focus),
 .column .gform_fields > .gfield.gfield_contains_required textarea:not(.gf-value-entered):not(:focus) {
   background-color: rgba(255, 0, 0, 0.1);
+  background: linear-gradient(to bottom, rgba(255, 0, 0, 0.1) 0, rgba(255, 0, 0, 0) 0.6em);
 }
 
 .column .gform_fields > .gfield.gfield_contains_required .gfield_checkbox,
 .column .gform_fields > .gfield.gfield_contains_required .gfield_radio {
+  border: 1px solid #767676;
+  padding: 0.25em 0.5em 0.1em !important;
   transition: background 0.3s ease;
 }
 
 .column .gform_fields > .gfield.gfield_contains_required .gfield_checkbox:not(.gf-value-entered),
 .column .gform_fields > .gfield.gfield_contains_required .gfield_radio:not(.gf-value-entered) {
   background-color: rgba(255, 0, 0, 0.1);
+  background: linear-gradient(to bottom, rgba(255, 0, 0, 0.1) 0, rgba(255, 0, 0, 0) 0.6em);
 }
 
-.column .gform_fields > .gfield.gfield_contains_required .address_line_2 input {
-  background-color: #fff !important;
+.column .gform_fields > .gfield.gfield_contains_required .address_line_2 input,
+.column .gform_fields > .gfield.gfield_contains_required .name_middle input,
+.column .gform_fields > .gfield.gfield_contains_required .name_suffix input {
+  background: #fff !important;
 }
 
-.column .gform_fields > .gfield.gfield_contains_required .address_line_2 input:focus {
+.column .gform_fields > .gfield.gfield_contains_required .address_line_2 input:focus,
+.column .gform_fields > .gfield.gfield_contains_required .name_middle input:focus,
+.column .gform_fields > .gfield.gfield_contains_required .name_suffix input:focus {
   background-color: #edf3f4 !important;
-}
-
-.oue-gf-rqrd-input input,
-.oue-gf-rqrd-select input,
-.oue-gf-hghlghts-rqrd-input input,
-.oue-gf-hghlghts-rqrd-select input,
-.oue-gf-rqrd-input select,
-.oue-gf-rqrd-select select,
-.oue-gf-hghlghts-rqrd-input select,
-.oue-gf-hghlghts-rqrd-select select {
-  transition: background 0.3s ease;
-}
-
-.oue-gf-rqrd-input input:focus,
-.oue-gf-rqrd-select input:focus,
-.oue-gf-hghlghts-rqrd-input input:focus,
-.oue-gf-hghlghts-rqrd-select input:focus,
-.oue-gf-rqrd-input select:focus,
-.oue-gf-rqrd-select select:focus,
-.oue-gf-hghlghts-rqrd-input select:focus,
-.oue-gf-hghlghts-rqrd-select select:focus {
-  background-color: #edf3f4 !important;
-}
-
-.oue-gf-rqrd-input.gfield_contains_required input:not(.gf-value-entered):not(:focus),
-.oue-gf-rqrd-select.gfield_contains_required input:not(.gf-value-entered):not(:focus),
-.oue-gf-hghlghts-rqrd-input.gfield_contains_required input:not(.gf-value-entered):not(:focus),
-.oue-gf-hghlghts-rqrd-select.gfield_contains_required input:not(.gf-value-entered):not(:focus),
-.oue-gf-rqrd-input.gfield_contains_required select:not(.gf-value-entered):not(:focus),
-.oue-gf-rqrd-select.gfield_contains_required select:not(.gf-value-entered):not(:focus),
-.oue-gf-hghlghts-rqrd-input.gfield_contains_required select:not(.gf-value-entered):not(:focus),
-.oue-gf-hghlghts-rqrd-select.gfield_contains_required select:not(.gf-value-entered):not(:focus) {
-  background-color: rgba(255, 0, 0, 0.1);
-}
-
-.oue-gf-rqrd-checkbox.gfield_contains_required ul.gfield_checkbox,
-.oue-gf-hghlghts-rqrd-checkbox.gfield_contains_required ul.gfield_checkbox,
-.oue-gf-rqrd-checkbox.gfield_contains_required ul.gfield_radio,
-.oue-gf-hghlghts-rqrd-checkbox.gfield_contains_required ul.gfield_radio {
-  transition: background 0.3s ease;
-}
-
-.oue-gf-rqrd-checkbox.gfield_contains_required ul.gfield_checkbox:not(.gf-value-entered),
-.oue-gf-hghlghts-rqrd-checkbox.gfield_contains_required ul.gfield_checkbox:not(.gf-value-entered),
-.oue-gf-rqrd-checkbox.gfield_contains_required ul.gfield_radio:not(.gf-value-entered),
-.oue-gf-hghlghts-rqrd-checkbox.gfield_contains_required ul.gfield_radio:not(.gf-value-entered) {
-  background-color: rgba(255, 0, 0, 0.1);
-}
-
-.oue-gf-rqrd-txtarea textarea,
-.oue-gf-hghlghts-rqrd-txtarea textarea {
-  transition: background 0.3s ease;
-}
-
-.oue-gf-rqrd-txtarea textarea:focus,
-.oue-gf-hghlghts-rqrd-txtarea textarea:focus {
-  background-color: #edf3f4;
-}
-
-.oue-gf-rqrd-txtarea.gfield_contains_required textarea:not(.gf-value-entered):not(:focus),
-.oue-gf-hghlghts-rqrd-txtarea.gfield_contains_required textarea:not(.gf-value-entered):not(:focus) {
-  background-color: rgba(255, 0, 0, 0.1);
-}
-
-.oue-gf-actvtr-checkbox {
-  transition: background 0.3s ease;
-}
-
-.oue-gf-actvtr-checkbox.gf-activated {
-  display: none !important;
-}
-
-.oue-gf-actvtr-chain {
-  transition: all 0.3s ease;
-}
-
-.oue-gf-actvtr-chain.gf-hidden {
-  display: none !important;
-}
-
-.oue-gf-upload-chain input {
-  transition: background 0.3s ease;
-}
-
-.oue-gf-upload-chain input:focus {
-  background-color: #edf3f4;
-}
-
-.oue-gf-upload-chain.gfield_contains_required input:not(.gf-value-entered):not(:focus) {
-  background-color: rgba(255, 0, 0, 0.1);
-}
-
-.oue-gf-upload-chain.gf-hidden {
-  display: none !important;
-}
-
-.oue-gf-revealed {
-  animation: gf-fades-in 0.5s linear 1;
-}
-
-@keyframes gf-fades-in {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
 }
 
 .post-password-required {
@@ -3152,12 +3332,22 @@ div.read-more-target {
   padding-top: 2rem;
 }
 
-.drop-down-toggle {
+/**   --------------------------------------------------------------------------------------------
+ *    >>> §3.8: Scripted elements
+ */
+
+/**     ························································································
+ *       └> §3.8.1: Toggled drop-down panels
+ */
+
+.drop-down-toggle,
+.accordion-toggle {
   position: relative;
   transition: all 0.3s ease;
 }
 
-.drop-down-toggle:after {
+.drop-down-toggle:after,
+.accordion-toggle:after {
   content: "";
   position: absolute;
   right: 10px;
@@ -3166,18 +3356,19 @@ div.read-more-target {
   height: 0;
   border-top: none;
   border-right: 8px solid transparent;
-  border-bottom: 8px solid #981e32;
+  border-bottom: 8px solid #a60f2d;
   border-left: 8px solid transparent;
   transform: translateY(-50%);
   transition: all 0.3s ease;
 }
 
-.drop-down-toggle:before {
+.drop-down-toggle:before,
+.accordion-toggle:before {
   content: "Click to expand";
   position: absolute;
   top: 50%;
   right: 0;
-  color: #981e32;
+  color: #a60f2d;
   font-size: 12px;
   text-transform: none;
   opacity: 0;
@@ -3185,56 +3376,66 @@ div.read-more-target {
   transition: all 0.3s ease;
 }
 
-.drop-down-toggle:hover {
+.drop-down-toggle:hover,
+.accordion-toggle:hover {
   background-color: rgba(219, 120, 121, 0.3);
 }
 
-.drop-down-toggle:hover:after {
+.drop-down-toggle:hover:after,
+.accordion-toggle:hover:after {
   border-top: none;
   border-right: 8px solid transparent;
-  border-bottom: 8px solid #c60c30;
+  border-bottom: 8px solid #ca1237;
   border-left: 8px solid transparent;
 }
 
-.drop-down-toggle:hover:before {
+.drop-down-toggle:hover:before,
+.accordion-toggle:hover:before {
   opacity: 0.5;
 }
 
-.drop-down-toggle.activated {
+.drop-down-toggle.activated,
+.accordion-toggle.activated {
   background-color: rgba(219, 120, 121, 0.15);
 }
 
-.drop-down-toggle.activated:after {
-  border-top: 8px solid #981e32;
+.drop-down-toggle.activated:after,
+.accordion-toggle.activated:after {
+  border-top: 8px solid #a60f2d;
   border-right: 8px solid transparent;
   border-bottom: none;
   border-left: 8px solid transparent;
 }
 
-.drop-down-toggle.activated:before {
+.drop-down-toggle.activated:before,
+.accordion-toggle.activated:before {
   content: "Click to collapse";
 }
 
-.drop-down-toggle.activated:hover:after {
-  border-top: 8px solid #c60c30;
+.drop-down-toggle.activated:hover:after,
+.accordion-toggle.activated:hover:after {
+  border-top: 8px solid #ca1237;
   border-right: 8px solid transparent;
   border-bottom: none;
   border-left: 8px solid transparent;
 }
 
-.drop-down-toggle.boxed {
+.drop-down-toggle.boxed,
+.accordion-toggle.boxed {
   padding-left: 44px;
   padding-top: 5px;
   padding-bottom: 5px;
   margin-left: 0 !important;
   margin-right: 0 !important;
   margin-bottom: 0 !important;
-  background-color: rgba(198, 12, 48, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .drop-down-toggle.boxed:after,
-.drop-down-toggle.boxed:before {
-  background-color: #981e32;
+.accordion-toggle.boxed:after,
+.drop-down-toggle.boxed:before,
+.accordion-toggle.boxed:before {
+  background-color: #a60f2d;
   border-radius: 4px;
   border: none;
   color: #fff;
@@ -3250,113 +3451,154 @@ div.read-more-target {
   transform: translate(-50%, -50%);
 }
 
-.drop-down-toggle.boxed:after {
+.drop-down-toggle.boxed:after,
+.accordion-toggle.boxed:after {
   content: "+";
   opacity: 1;
 }
 
-.drop-down-toggle.boxed:before {
+.drop-down-toggle.boxed:before,
+.accordion-toggle.boxed:before {
   content: "-";
   opacity: 0;
 }
 
-.drop-down-toggle.boxed:hover {
-  background-color: rgba(198, 12, 48, 0.3);
+.drop-down-toggle.boxed:hover,
+.accordion-toggle.boxed:hover {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .drop-down-toggle.boxed:hover:after,
-.drop-down-toggle.boxed:hover:before {
-  background-color: #b35a69;
+.accordion-toggle.boxed:hover:after,
+.drop-down-toggle.boxed:hover:before,
+.accordion-toggle.boxed:hover:before {
+  background-color: #be4f65;
 }
 
-.drop-down-toggle.boxed.activated {
-  background-color: rgba(198, 12, 48, 0.2);
+.drop-down-toggle.boxed.activated,
+.accordion-toggle.boxed.activated {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
-.drop-down-toggle.boxed.activated:hover {
-  background-color: rgba(198, 12, 48, 0.3);
+.drop-down-toggle.boxed.activated:hover,
+.accordion-toggle.boxed.activated:hover {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-.drop-down-toggle.boxed.activated:after {
+.drop-down-toggle.boxed.activated:after,
+.accordion-toggle.boxed.activated:after {
   opacity: 0;
 }
 
-.drop-down-toggle.boxed.activated:before {
+.drop-down-toggle.boxed.activated:before,
+.accordion-toggle.boxed.activated:before {
   opacity: 1;
 }
 
-.drop-down-toggle.boxed + .toggled-panel {
+.drop-down-toggle.boxed + .toggled-panel,
+.accordion-toggle.boxed + .toggled-panel {
   padding: 0.5rem;
-  border-right: 1px solid rgba(198, 12, 48, 0.2);
-  border-bottom: 1px solid rgba(198, 12, 48, 0.2);
-  border-left: 1px solid rgba(198, 12, 48, 0.2);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
   margin-top: 0 !important;
   padding-top: 1rem !important;
 }
 
-.drop-down-toggle.boxed + .toggled-panel > :last-child {
+.drop-down-toggle.boxed + .toggled-panel > :last-child,
+.accordion-toggle.boxed + .toggled-panel > :last-child {
   padding-bottom: 0.5rem;
 }
 
 .drop-down-toggle.boxed + .drop-down-toggle.boxed,
-.drop-down-toggle.boxed + .toggled-panel + .drop-down-toggle.boxed {
+.drop-down-toggle.boxed + .accordion-toggle.boxed,
+.accordion-toggle.boxed + .drop-down-toggle.boxed,
+.accordion-toggle.boxed + .accordion-toggle.boxed,
+.drop-down-toggle.boxed + .toggled-panel + .drop-down-toggle.boxed,
+.drop-down-toggle.boxed + .toggled-panel + .accordion-toggle.boxed,
+.accordion-toggle.boxed + .toggled-panel + .drop-down-toggle.boxed,
+.accordion-toggle.boxed + .toggled-panel + .accordion-toggle.boxed {
   margin-top: 0.5rem;
 }
 
-.drop-down-toggle.boxed + .toggled-panel + :not(.drop-down-toggle) {
+.drop-down-toggle.boxed + .toggled-panel + :not(.drop-down-toggle),
+.accordion-toggle.boxed + .toggled-panel + :not(.drop-down-toggle) {
   margin-top: 1rem;
 }
 
-.drop-down-toggle.boxed.blue {
+.drop-down-toggle.boxed.blue,
+.accordion-toggle.boxed.blue {
   background-color: rgba(0, 165, 189, 0.1);
   color: #0076bd;
 }
 
 .drop-down-toggle.boxed.blue:after,
-.drop-down-toggle.boxed.blue:before {
+.accordion-toggle.boxed.blue:after,
+.drop-down-toggle.boxed.blue:before,
+.accordion-toggle.boxed.blue:before {
   background-color: #0076bd;
 }
 
-.drop-down-toggle.boxed.blue:hover {
+.drop-down-toggle.boxed.blue:hover,
+.accordion-toggle.boxed.blue:hover {
   background-color: rgba(0, 165, 189, 0.3);
 }
 
 .drop-down-toggle.boxed.blue:hover:after,
-.drop-down-toggle.boxed.blue:hover:before {
+.accordion-toggle.boxed.blue:hover:after,
+.drop-down-toggle.boxed.blue:hover:before,
+.accordion-toggle.boxed.blue:hover:before {
   background-color: #449bcf;
 }
 
-.drop-down-toggle.boxed.blue.activated {
+.drop-down-toggle.boxed.blue.activated,
+.accordion-toggle.boxed.blue.activated {
   background-color: rgba(0, 165, 189, 0.2);
 }
 
-.drop-down-toggle.boxed.blue.activated:hover {
+.drop-down-toggle.boxed.blue.activated:hover,
+.accordion-toggle.boxed.blue.activated:hover {
   background-color: rgba(0, 165, 189, 0.3);
 }
 
-.drop-down-toggle.boxed.blue + .toggled-panel {
+.drop-down-toggle.boxed.blue + .toggled-panel,
+.accordion-toggle.boxed.blue + .toggled-panel {
   border-right: 1px solid rgba(0, 165, 189, 0.2);
   border-bottom: 1px solid rgba(0, 165, 189, 0.2);
   border-left: 1px solid rgba(0, 165, 189, 0.2);
 }
 
-.drop-down-toggle + .toggled-panel {
+.drop-down-toggle + .toggled-panel,
+.accordion-toggle + .toggled-panel {
   opacity: 1;
   overflow: hidden;
   transition: all 0.5s ease;
 }
 
-.drop-down-toggle:not(.activated) + .toggled-panel {
+.drop-down-toggle:not(.activated) + .toggled-panel,
+.accordion-toggle:not(.activated) + .toggled-panel {
   height: 0 !important;
   padding: 0 !important;
   border: none !important;
   opacity: 0 !important;
 }
 
+/**     ························································································
+ *       └> §3.8.2: Subtle panels
+ */
+
+/**     ························································································
+ *       └> §3.8.3: Flippable content panels
+ */
+
 .flipped-content-back {
   display: none;
   width: 100%;
 }
+
+/**     ························································································
+ *       └> §3.8.4: QTip driven tooltips
+ */
 
 .is-qtip {
   display: none;
@@ -3884,6 +4126,18 @@ x:-o-prefocus {
   position: absolute !important;
 }
 
+/**     ························································································
+ *       └> §3.8.5: Quick-tabs panels
+ */
+
+/**     ························································································
+ *       └> §3.8.6: Tribe Events Calendars
+ */
+
+/**     ························································································
+ *       └> §3.8.7: Auto-scrolling image panels
+ */
+
 div.auto-scroller {
   position: relative;
 }
@@ -3911,35 +4165,305 @@ div.auto-scroller ul li {
   list-style-image: none;
 }
 
-.style--card {
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 2px 0 rgba(0, 0, 0, 0.22);
-  border-radius: 4px;
-  box-sizing: border-box;
-  padding: 1rem;
+/** ================================================================================================
+ *  §4: Component-based CSS
+ */
+
+/**   --------------------------------------------------------------------------------------------
+ *    >>> §4.1: Website notices
+ */
+
+/**   --------------------------------------------------------------------------------------------
+ *    >>> §4.2: News posts
+ */
+
+.article-body {
+  position: relative;
+  line-height: 1.5em;
 }
 
-.style--card--raised {
-  border: 1px solid #3b4042;
-  box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.22);
-  border-radius: 4px;
-  box-sizing: border-box;
-  padding: 1rem;
+.article-footer {
+  border-top: 1px solid #d7dadb;
 }
 
-.style--card__title {
-  color: #2a3033;
-  margin-left: -1rem;
-  margin-right: -1rem;
+.blog .article-header:not(.row),
+.archive.category .article-header:not(.row),
+.archive.tag .article-header:not(.row),
+.single-post.post-template-default .article-header:not(.row) {
+  background-color: #eff0f1;
+  border-bottom: 1px solid rgba(127, 127, 127, 0.2);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-left: -1em;
+  margin-right: -1em;
+  margin-top: -1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 1em;
+}
+
+.blog .article-header:not(.row) + *,
+.archive.category .article-header:not(.row) + *,
+.archive.tag .article-header:not(.row) + *,
+.single-post.post-template-default .article-header:not(.row) + * {
+  margin-top: 1em;
+}
+
+.column .article-header:not(.row) .article-title,
+.column .article-header:not(.row) .article-title {
+  font-size: 2em;
+  line-height: 1.1em;
+}
+
+.column .article-header:not(.row) .article-title a,
+.column .article-header:not(.row) .article-title a {
+  font-weight: bold;
+}
+
+.article-sub-heading {
+  border-bottom: 1px solid rgba(127, 127, 127, 0.2);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.article-summary {
+  line-height: 1.5em;
+}
+
+.article-summary .article-media-contacts,
+.article-summary .article-sidebar,
+.article-summary .article-sub-heading,
+.article-summary figure:not(.article-thumbnail),
+.article-summary img,
+.article-summary object,
+.article-summary > h3,
+.article-summary .photo-caption {
+  display: none;
+}
+
+.article-summary .attachment-spine-thumbnail_size {
+  display: block;
+}
+
+.column .article-summary .article-media-contacts + :not(.article-media-contacts) {
+  margin-top: 0;
+}
+
+.single-post .article-media-contacts {
+  font-size: 0.9em;
+}
+
+* + .single-post .article-media-contacts {
+  margin-top: 1em;
+}
+
+.single-post .column .article-media-contacts + :not(.article-media-contacts) {
+  border-top: 1px solid rgba(127, 127, 127, 0.2);
+  padding-top: 15px;
+}
+
+.single-post .main-header + .featured-image {
+  display: none;
+}
+
+.single-post .article-header:not(.row),
+.summary-divided .article-header:not(.row),
+.single-post .article-header .article-title,
+.summary-divided .article-header .article-title {
+  margin-bottom: 15px;
+}
+
+.single-post .article-footer,
+.summary-divided .article-footer {
+  margin-top: 15px;
+}
+
+.widget {
+  background-color: #eff0f1;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 0 2px rgba(0, 0, 0, 0.2), 3px 4px 4px rgba(0, 0, 0, 0.25) !important;
+  padding: 1em;
+  overflow: hidden;
+}
+
+.widget.widget_recent_entries ul {
+  padding: 0;
+}
+
+.widget.widget_recent_entries ul li {
+  padding-bottom: 1em;
+}
+
+.widget.widget_recent_entries .post-date:before {
+  font-weight: bold;
+  content: "/ ";
+}
+
+.widget.widget_tag_cloud a {
+  border-bottom: none;
+  box-shadow: none;
+}
+
+.widget + .widget {
+  margin-top: 2rem;
+}
+
+.widget header {
+  background-color: #d7dadb;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 1px solid rgba(103, 103, 103, 0.2);
+  font-size: 1rem;
+  font-weight: bold;
+  margin: -1rem -1rem 0.5rem;
   padding: 0.5rem 1rem;
 }
 
-.style--card__title:first-child {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  margin-top: -1rem;
+.widget ul li {
+  list-style: disc inside none;
 }
 
-.style--card__sub-title {
+.widget_archive label.screen-reader-text {
+  display: none;
+}
+
+.wsuwp-json--headlines .content-item-byline-author {
+  display: none;
+}
+
+.wsuwp-json--headlines .content-item-byline-date {
+  display: block;
+  padding-bottom: 0.25em;
+  margin-top: 0.5em;
+  margin-bottom: 0.75em;
+  color: #737373;
+  text-transform: uppercase;
+}
+
+.wsuwp-json--headlines .content-item-byline-date:before {
+  content: "Posted on ";
+}
+
+.wsuwp-json--headlines .content-item-excerpt .article-media-contacts,
+.wsuwp-json--headlines .content-item-excerpt .article-sidebar,
+.wsuwp-json--headlines .content-item-excerpt .photo-caption,
+.wsuwp-json--headlines .content-item-excerpt .more-link,
+.wsuwp-json--headlines .content-item-excerpt img,
+.wsuwp-json--headlines .content-item-excerpt object,
+.wsuwp-json--headlines .content-item-excerpt > h3 {
+  display: none;
+}
+
+.wsuwp-json--headlines .content-item-excerpt .content-item-read-story {
+  display: inline-block;
+}
+
+.wsuwp-json--headlines .content-item-excerpt > * + *,
+.wsuwp-json--headlines .content-item-excerpt .content-item-read-story {
+  margin-top: 1em;
+}
+
+.wsuwp-json--headlines .content-item-title {
+  font-size: 1.325em;
+  font-weight: bold;
+  line-height: 1.4em;
+  line-height: calc(1.4em + 1px);
+}
+
+.wsuwp-json--headlines .content-item-title a {
+  border-bottom-color: transparent;
+  box-shadow: none;
+  text-decoration: underline;
+}
+
+.wsuwp-json--headlines .content-item-title a:hover {
+  text-decoration: none;
+}
+
+.wsuwp-json--headlines .content-item-thumbnail {
+  float: right;
+  margin-bottom: 0.5em;
+  margin-left: 0.5em;
+  max-width: 136px;
+  min-width: 96px;
+  width: 28.5%;
+}
+
+.wsuwp-json--headlines .wsuwp-content-syndicate-item {
+  box-sizing: border-box;
+  line-height: 1.5em;
+  list-style-image: none !important;
+}
+
+.wsuwp-json--headlines * + .wsuwp-content-syndicate-item {
+  margin-top: 1em;
+}
+
+.wsuwp-json--headlines .wsuwp-content-syndicate-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+
+.wsuwp-json--headlines.layout--2-columns .wsuwp-content-syndicate-list {
+  font-size: 0.9em;
+  max-width: none !important;
+}
+
+.wsuwp-json--headlines.layout--2-columns .wsuwp-content-syndicate-item {
+  padding-bottom: 2em;
+  padding-right: 2em;
+  width: 50%;
+}
+
+.wsuwp-json--headlines.layout--2-columns * + .wsuwp-content-syndicate-item {
+  margin-top: 0;
+}
+
+.award-banner {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/**   --------------------------------------------------------------------------------------------
+ *    >>> §4.3: Other components
+ */
+
+.style--card,
+.daesa-card {
+  box-shadow: 0 12px 16px 2px rgba(0, 0, 0, 0.03), 0 5px 22px 4px rgba(0, 0, 0, 0.03), 0 6px 13px 0 rgba(0, 0, 0, 0.02);
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 0.5rem;
+}
+
+.style--card--raised,
+.daesa-card--raised {
+  border: 1px solid rgba(59, 64, 66, 0.15);
+  box-shadow: 0 12px 16px 2px rgba(0, 0, 0, 0.03), 0 5px 22px 4px rgba(0, 0, 0, 0.03), 0 6px 13px 0 rgba(0, 0, 0, 0.02);
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 0.5rem;
+}
+
+.style--card__title,
+.daesa-card__title {
+  color: #2a3033;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.style--card__title:first-child,
+.daesa-card__title:first-child {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  margin-top: -0.5rem;
+}
+
+.style--card__sub-title,
+.daesa-card__sub-title {
   background-color: #5e5e5e;
   color: #ffffff;
   font-size: 1.1em;
@@ -3947,14 +4471,15 @@ div.auto-scroller ul li {
   font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
   margin-bottom: 0em;
   margin-top: 0em;
-  margin-left: -1rem;
-  margin-right: -1rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
   letter-spacing: 1px;
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.5rem;
   word-spacing: 1px;
 }
 
-.style--card__title + .style--card__sub-title {
+.style--card__title + .style--card__sub-title,
+.daesa-card__title + .daesa-card__sub-title {
   margin-top: 0em;
 }
 
@@ -3979,10 +4504,10 @@ div.auto-scroller ul li {
   box-sizing: border-box;
   color: #ffffff;
   display: block;
-  left: 2rem;
+  left: 1rem;
   margin: 0;
-  padding: 1rem;
-  right: 2rem;
+  padding: 0.5rem;
+  right: 1rem;
   top: 50%;
   text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.9);
   transform: translateY(-50%);
@@ -4062,7 +4587,7 @@ div.auto-scroller ul li {
 .on-this-page__menu-item a {
   background-color: #3b4042;
   border: 1px solid #8d959a;
-  border-radius: 0;
+  border-radius: 3px;
   box-shadow: none;
   color: white;
   display: inline-block;
@@ -4070,6 +4595,7 @@ div.auto-scroller ul li {
   text-align: center;
 }
 
+.on-this-page__menu-item a:focus,
 .on-this-page__menu-item a:hover {
   background-color: #23272a;
   border-color: #ffffff;
@@ -4077,15 +4603,13 @@ div.auto-scroller ul li {
   text-decoration: underline;
 }
 
-.on-this-page__menu-item a:not(:focus) {
-  outline: 1px solid black;
-}
-
 .on-this-page__menu-item.--crimson a,
 .on-this-page__menu-item.menu-item--crimson a {
   background-color: #54464e;
 }
 
+.on-this-page__menu-item.--crimson a:focus,
+.on-this-page__menu-item.menu-item--crimson a:focus,
 .on-this-page__menu-item.--crimson a:hover,
 .on-this-page__menu-item.menu-item--crimson a:hover {
   background-color: #58111d;
@@ -4280,6 +4804,117 @@ div.auto-scroller ul li {
   transform: translateX(-100%) translateX(-.5em);
 }
 
+.text-list--double-spaced .text-list__item {
+  padding: 0 0 0.9em 0;
+}
+
+.text-list--double-spaced .text-list__item:last-child {
+  padding: 0 0 0.3em 0;
+}
+
+.text-list--flush-left {
+  padding-left: 1.5em;
+}
+
+/** ================================================================================================
+ *  §5: Atomic CSS
+ */
+
+/** ────────────────────────────────────────────────────────────────────────────────────────────────
+ *    █  █▐▀█▀▌▀█▀ █    ▀█▀▐▀█▀▌█  █    ▄▀▀▀ █    ▄▀▀▄ ▄▀▀▀ ▄▀▀▀ █▀▀▀ ▄▀▀▀   █    █▀▀▀ ▄▀▀▀ ▄▀▀▀
+ *    █  █  █   █  █  ▄  █   █  ▀▄▄█ ▀▀ █    █  ▄ █▄▄█ ▀▀▀█ ▀▀▀█ █▀▀  ▀▀▀█   █  ▄ █▀▀  ▀▀▀█ ▀▀▀█
+ *     ▀▀   █  ▀▀▀ ▀▀▀  ▀▀▀  █  ▄▄▄▀     ▀▀▀ ▀▀▀  █  ▀ ▀▀▀  ▀▀▀  ▀▀▀▀ ▀▀▀  ▀ ▀▀▀  ▀▀▀▀ ▀▀▀  ▀▀▀
+ *
+ *  Less import that declares a variety of utility classes for use in functional/atomic styling of
+ *    WSU Division of Academic Engagement and Student Achievement websites.
+ *
+ *  Designed to be imported downstream of other Less files in the final stylesheet build so its
+ *    rules will have the greatest possible weight in style conflict resolution.
+ *
+ *  @version 1.0.4
+ *
+ *  @author Daniel Rieck <daniel.rieck@wsu.edu> (https://github.com/invokeImmediately)
+ *  @link https://github.com/invokeImmediately/WSU-DAESA-CSS/blob/master/…→
+ *    ←…/Atomic-CSS/utility-classes.less
+ *  @license MIT Copyright (c) 2021 Washington State University
+ *    Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ *      and associated documentation files (the "Software"), to deal in the Software without
+ *      restriction, including without limitation the rights to use, copy, modify, merge, publish,
+ *      distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom
+ *      the Software is furnished to do so, subject to the following conditions:
+ *    The above copyright notice and this permission notice shall be included in all copies or
+ *      substantial portions of the Software.
+ *    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ *      BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *      NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ *      CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ *      ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *      SOFTWARE.
+ *  ────────────────────────────────────────────────────────────────────────────────────────────────
+ *   TABLE OF CONTENTS:
+ *   ────────────────────────────────────────────────────────────────────────────────────────────
+ *   §1: Box-sizing............................................................................79
+ *   §2: Widths................................................................................91
+ *       >>> §2.1: Percent widths..............................................................95
+ *       >>> §2.2: Pixel widths...............................................................133
+ *       >>> §2.3: Additional widths..........................................................182
+ *   §3: Heights..............................................................................213
+ *       >>> §3.1: Pixel heights..............................................................217
+ *       >>> §3.2: Em heights.................................................................255
+ *       >>> §3.3: Additional heights.........................................................296
+ *   §4: Typography...........................................................................304
+ *       >>> §4.1: Font Sizing................................................................308
+ *       >>> §4.2: Line Heights...............................................................366
+ *       >>> §4.3: Bolding....................................................................408
+ *       >>> §4.4: Text transformation........................................................435
+ *       >>> §4.5: Text alignment.............................................................447
+ *   §5: Spacing..............................................................................467
+ *   §6: Floating.............................................................................483
+ *       >>> §6.1: Clearing...................................................................499
+ *   §7: Display..............................................................................516
+ *       >>> §7.1: Flex-box...................................................................584
+ *          └> §7.5.1: Flex direction.........................................................592
+ *          └> §7.5.2: Flex wrapping..........................................................612
+ *          └> §7.5.3: Content justification..................................................628
+ *          └> §7.5.4: Item alignment.........................................................652
+ *          └> §7.5.5: Content alignment......................................................672
+ *          └> §7.5.6: Basis..................................................................696
+ *          └> §7.5.6: Growth.................................................................712
+ *          └> §7.5.6: Shrinking..............................................................724
+ *   §8: Margins..............................................................................736
+ *       >>> §8.1: General margins............................................................740
+ *       >>> §8.2: In units of "em"...........................................................750
+ *       >>> §8.3: In units of "rem"..........................................................780
+ *   §9: Padding..............................................................................813
+ *       >>> §9.1: In units of "em"...........................................................817
+ *       >>> §9.2: In units of "rem"..........................................................849
+ *   §10: Vertical alignment..................................................................881
+ *   §11: Colors..............................................................................917
+ *       >>> §11.1: General...................................................................970
+ *       >>> §11.2: WSU Crimsons..............................................................978
+ *  ────────────────────────────────────────────────────────────────────────────────────────────────
+ */
+
+/** ================================================================================================
+ *  §1: Box-sizing
+ */
+
+.bs--border-box {
+  box-sizing: border-box;
+}
+
+.bs--content-box {
+  box-sizing: content-box;
+}
+
+/** ================================================================================================
+ *  §2: Widths
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §2.1: Percent widths
+ */
+
 .w--5pct {
   width: 5%;
 }
@@ -4300,8 +4935,12 @@ div.auto-scroller ul li {
   width: 25%;
 }
 
-.w--30pct {
+.w--33pct {
   width: 30%;
+}
+
+.w--35pct {
+  width: 33.33%;
 }
 
 .w--35pct {
@@ -4332,6 +4971,10 @@ div.auto-scroller ul li {
   width: 65%;
 }
 
+.w--66pct {
+  width: 66.66%;
+}
+
 .w--70pct {
   width: 70%;
 }
@@ -4360,6 +5003,10 @@ div.auto-scroller ul li {
   width: 100%;
 }
 
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §2.2: Pixel widths
+ */
+
 .w--64px {
   width: 64px;
 }
@@ -4369,7 +5016,7 @@ div.auto-scroller ul li {
 }
 
 .mw--64px {
-  max-width: 64px !important;
+  max-width: 64px;
 }
 
 .w--80px {
@@ -4381,7 +5028,7 @@ div.auto-scroller ul li {
 }
 
 .mw--80px {
-  max-width: 80px !important;
+  max-width: 80px;
 }
 
 .w--96px {
@@ -4393,7 +5040,7 @@ div.auto-scroller ul li {
 }
 
 .mw--96px {
-  max-width: 96px !important;
+  max-width: 96px;
 }
 
 .w--112px {
@@ -4405,7 +5052,7 @@ div.auto-scroller ul li {
 }
 
 .mw--112px {
-  max-width: 112px !important;
+  max-width: 112px;
 }
 
 .w--128px {
@@ -4417,7 +5064,7 @@ div.auto-scroller ul li {
 }
 
 .mw--128px {
-  max-width: 128px !important;
+  max-width: 128px;
 }
 
 .w--144px {
@@ -4429,7 +5076,7 @@ div.auto-scroller ul li {
 }
 
 .mw--144px {
-  max-width: 144px !important;
+  max-width: 144px;
 }
 
 .w--160px {
@@ -4441,7 +5088,7 @@ div.auto-scroller ul li {
 }
 
 .mw--160px {
-  max-width: 160px !important;
+  max-width: 160px;
 }
 
 .w--176px {
@@ -4453,7 +5100,7 @@ div.auto-scroller ul li {
 }
 
 .mw--176px {
-  max-width: 176px !important;
+  max-width: 176px;
 }
 
 .w--192px {
@@ -4465,7 +5112,7 @@ div.auto-scroller ul li {
 }
 
 .mw--192px {
-  max-width: 192px !important;
+  max-width: 192px;
 }
 
 .w--208px {
@@ -4477,7 +5124,7 @@ div.auto-scroller ul li {
 }
 
 .mw--208px {
-  max-width: 208px !important;
+  max-width: 208px;
 }
 
 .w--224px {
@@ -4489,7 +5136,7 @@ div.auto-scroller ul li {
 }
 
 .mw--224px {
-  max-width: 224px !important;
+  max-width: 224px;
 }
 
 .w--240px {
@@ -4501,7 +5148,7 @@ div.auto-scroller ul li {
 }
 
 .mw--240px {
-  max-width: 240px !important;
+  max-width: 240px;
 }
 
 .w--256px {
@@ -4513,7 +5160,7 @@ div.auto-scroller ul li {
 }
 
 .mw--256px {
-  max-width: 256px !important;
+  max-width: 256px;
 }
 
 .w--288px {
@@ -4525,7 +5172,7 @@ div.auto-scroller ul li {
 }
 
 .mw--288px {
-  max-width: 288px !important;
+  max-width: 288px;
 }
 
 .w--320px {
@@ -4537,7 +5184,7 @@ div.auto-scroller ul li {
 }
 
 .mw--320px {
-  max-width: 320px !important;
+  max-width: 320px;
 }
 
 .w--384px {
@@ -4549,7 +5196,7 @@ div.auto-scroller ul li {
 }
 
 .mw--384px {
-  max-width: 384px !important;
+  max-width: 384px;
 }
 
 .w--448px {
@@ -4561,7 +5208,7 @@ div.auto-scroller ul li {
 }
 
 .mw--448px {
-  max-width: 448px !important;
+  max-width: 448px;
 }
 
 .w--512px {
@@ -4573,7 +5220,7 @@ div.auto-scroller ul li {
 }
 
 .mw--512px {
-  max-width: 512px !important;
+  max-width: 512px;
 }
 
 .w--576px {
@@ -4585,7 +5232,7 @@ div.auto-scroller ul li {
 }
 
 .mw--576px {
-  max-width: 576px !important;
+  max-width: 576px;
 }
 
 .w--640px {
@@ -4597,7 +5244,19 @@ div.auto-scroller ul li {
 }
 
 .mw--640px {
-  max-width: 640px !important;
+  max-width: 640px;
+}
+
+.w--704px {
+  width: 704px;
+}
+
+.mnw--704px {
+  min-width: 704px;
+}
+
+.mw--704px {
+  max-width: 704px;
 }
 
 .w--768px {
@@ -4609,7 +5268,7 @@ div.auto-scroller ul li {
 }
 
 .mw--768px {
-  max-width: 768px !important;
+  max-width: 768px;
 }
 
 .w--832px {
@@ -4621,7 +5280,7 @@ div.auto-scroller ul li {
 }
 
 .mw--832px {
-  max-width: 832px !important;
+  max-width: 832px;
 }
 
 .w--896px {
@@ -4633,7 +5292,7 @@ div.auto-scroller ul li {
 }
 
 .mw--896px {
-  max-width: 896px !important;
+  max-width: 896px;
 }
 
 .w--960px {
@@ -4645,20 +5304,48 @@ div.auto-scroller ul li {
 }
 
 .mw--960px {
-  max-width: 960px !important;
+  max-width: 960px;
 }
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §2.3: Additional widths
+ */
 
 .mw--none {
   max-width: none;
 }
 
 .mw--80ch {
-  max-width: 80ch !important;
+  max-width: 80ch;
+}
+
+.mw--75ch {
+  max-width: 75ch;
+}
+
+.mw--70ch {
+  max-width: 70ch;
+}
+
+.mw--65ch {
+  max-width: 65ch;
+}
+
+.mw--60ch {
+  max-width: 60ch;
 }
 
 .w--auto {
-  width: auto !important;
+  width: auto;
 }
+
+/** ================================================================================================
+ *  §3: Heights
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §3.1: Pixel heights
+ */
 
 .h--64px {
   height: 64px;
@@ -4748,9 +5435,133 @@ div.auto-scroller ul li {
   height: 400px;
 }
 
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §3.2: Em heights
+ */
+
+.h--250mem {
+  height: 64px;
+}
+
+.h--333mem {
+  height: 80px;
+}
+
+.h--500mem {
+  height: 96px;
+}
+
+.h--667mem {
+  height: 112px;
+}
+
+.h--750mem {
+  height: 128px;
+}
+
+.h--1em {
+  height: 144px;
+}
+
+.h--1250mem {
+  height: 160px;
+}
+
+.h--1333mem {
+  height: 176px;
+}
+
+.h--1500mem {
+  height: 192px;
+}
+
+.h--1667mem {
+  height: 208px;
+}
+
+.h--1750mem {
+  height: 224px;
+}
+
+.h--2em {
+  height: 240px;
+}
+
+.h--3em {
+  height: 256px;
+}
+
+.h--45dem {
+  height: 272px;
+}
+
+.h--6em {
+  height: 288px;
+}
+
+.h--75dem {
+  height: 304px;
+}
+
+.h--9em {
+  height: 320px;
+}
+
+.h--105dem {
+  height: 336px;
+}
+
+.h--12em {
+  height: 352px;
+}
+
+.h--135dem {
+  height: 368px;
+}
+
+.h--15em {
+  height: 384px;
+}
+
+.h--165dem {
+  height: 400px;
+}
+
+.h--18em {
+  height: extract(64px, 80px, 96px, 112px, 128px, 144px, 160px, 176px, 192px, 208px, 224px, 240px, 256px, 272px, 288px, 304px, 320px, 336px, 352px, 368px, 384px, 400px, 23);
+}
+
+.h--195dem {
+  height: extract(64px, 80px, 96px, 112px, 128px, 144px, 160px, 176px, 192px, 208px, 224px, 240px, 256px, 272px, 288px, 304px, 320px, 336px, 352px, 368px, 384px, 400px, 24);
+}
+
+.h--21em {
+  height: extract(64px, 80px, 96px, 112px, 128px, 144px, 160px, 176px, 192px, 208px, 224px, 240px, 256px, 272px, 288px, 304px, 320px, 336px, 352px, 368px, 384px, 400px, 25);
+}
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §3.3: Additional heights
+ */
+
 .h--auto {
   height: auto;
 }
+
+/** ================================================================================================
+ *  §4: Typography
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §4.1: Font Sizing
+ *
+ *      NOTES:
+ *      • Units of "mx" stand for "milli-fold" and function similar to magnification units. Thus,
+ *        1000mx = 1x, where x is the standard font-size for body-text. Thus, 1000mx means the same
+ *        font-size as the default font-size for body text. 2000mx would be twice the size of body
+ *        text.
+ *      • Depends on the utiltiy mixin .font-size(...) and the Less variable @fSize-array, which
+ *        are both defined in utility-mixins.less.
+ */
 
 .font-size--400mx,
 .fs--400mx {
@@ -4887,97 +5698,102 @@ div.auto-scroller ul li {
   font-size: 1.4em;
 }
 
-.lh--1000mx {
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §4.2: Line heights
+**
+ *      NOTES:
+ *      * See line 24 for explanation of "mx" units.
+ *      * Depends on the utiltiy mixin .set-lHeight(...) and the Less variable @lHeight-array,
+ *        which are both defined in utility-mixins.less.
+ */
+
+.lh--667mx {
   line-height: 1em;
 }
 
-.lh--1025mx {
-  line-height: 1.025em;
-}
-
-.lh--1050mx {
+.lh--700mx {
   line-height: 1.05em;
 }
 
-.lh--1075mx {
-  line-height: 1.075em;
-}
-
-.lh--1100mx {
+.lh--733mx {
   line-height: 1.1em;
 }
 
-.lh--1125mx {
-  line-height: 1.125em;
-}
-
-.lh--1150mx {
+.lh--767mx {
   line-height: 1.15em;
 }
 
-.lh--1175mx {
-  line-height: 1.175em;
-}
-
-.lh--1200mx {
+.lh--800mx {
   line-height: 1.2em;
 }
 
-.lh--1225mx {
-  line-height: 1.225em;
-}
-
-.lh--1250mx {
+.lh--833mx {
   line-height: 1.25em;
 }
 
-.lh--1275mx {
-  line-height: 1.275em;
-}
-
-.lh--1300mx {
+.lh--867mx {
   line-height: 1.3em;
 }
 
-.lh--1325mx {
-  line-height: 1.325em;
-}
-
-.lh--1350mx {
+.lh--900mx {
   line-height: 1.35em;
 }
 
-.lh--1375mx {
-  line-height: 1.375em;
-}
-
-.lh--1400mx {
+.lh--933mx {
   line-height: 1.4em;
 }
 
-.lh--1425mx {
-  line-height: 1.425em;
-}
-
-.lh--1450mx {
+.lh--967mx {
   line-height: 1.45em;
 }
 
-.lh--1475mx {
-  line-height: 1.475em;
-}
-
-.lh--1500mx {
+.lh--1000mx {
   line-height: 1.5em;
 }
 
-.lh--1750mx {
+.lh--1033mx {
+  line-height: 1.55em;
+}
+
+.lh--1067mx {
+  line-height: 1.6em;
+}
+
+.lh--1100mx {
+  line-height: 1.65em;
+}
+
+.lh--1133mx {
+  line-height: 1.7em;
+}
+
+.lh--1167mx {
   line-height: 1.75em;
 }
 
-.lh--2000mx {
+.lh--1200mx {
+  line-height: 1.8em;
+}
+
+.lh--1233mx {
+  line-height: 1.85em;
+}
+
+.lh--1267mx {
+  line-height: 1.9em;
+}
+
+.lh--1300mx {
+  line-height: 1.95em;
+}
+
+.lh--1333mx {
   line-height: 2em;
 }
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §4.3: Bolding
+ */
 
 .fw--light {
   font-weight: 300;
@@ -4999,6 +5815,10 @@ div.auto-scroller ul li {
   font-weight: 800;
 }
 
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §4.4: Text transformation
+ */
+
 .tt--none {
   text-transform: none;
 }
@@ -5006,6 +5826,10 @@ div.auto-scroller ul li {
 .tt--uppercase {
   text-transform: uppercase;
 }
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §4.5: Text alignment
+ */
 
 .ta--center {
   text-align: center;
@@ -5022,6 +5846,10 @@ div.auto-scroller ul li {
 .ta--right {
   text-align: left;
 }
+
+/**   ----------------------------------------------------------------------------------------------
+ *    §5: Spacing
+ */
 
 .column * + .sv--0mx {
   margin-top: 0em;
@@ -5043,8 +5871,16 @@ div.auto-scroller ul li {
   margin-top: 1em;
 }
 
+.column * + .sv--1250mx {
+  margin-top: 1.25em;
+}
+
 .column * + .sv--1500mx {
   margin-top: 1.5em;
+}
+
+.column * + .sv--1750mx {
+  margin-top: 1.75em;
 }
 
 .column * + .sv--2000mx {
@@ -5067,6 +5903,10 @@ div.auto-scroller ul li {
   margin-top: 4em;
 }
 
+/** ================================================================================================
+ *  §6: Floating
+ */
+
 .flt--none {
   float: none;
 }
@@ -5079,6 +5919,10 @@ div.auto-scroller ul li {
   float: left;
 }
 
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §6.1: Clearing
+ */
+
 .clr--left {
   clear: left;
 }
@@ -5090,6 +5934,10 @@ div.auto-scroller ul li {
 .clr--both {
   clear: both;
 }
+
+/** ================================================================================================
+ *  §7: Display
+ */
 
 .dy--block {
   display: block;
@@ -5107,9 +5955,17 @@ div.auto-scroller ul li {
   display: none;
 }
 
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §7.1: Flex-box
+ */
+
 .dy--flex {
   display: flex;
 }
+
+/**     ····························································································
+ *       └> §7.5.1: Flex direction
+ */
 
 .flxd--row {
   flex-direction: row;
@@ -5127,6 +5983,10 @@ div.auto-scroller ul li {
   flex-direction: column;
 }
 
+/**     ····························································································
+ *       └> §7.5.2: Flex wrapping
+ */
+
 .flxw--no-wrap {
   flex-wrap: nowrap;
 }
@@ -5138,6 +5998,10 @@ div.auto-scroller ul li {
 .flxw--wrap-reverse {
   flex-wrap: wrap;
 }
+
+/**     ····························································································
+ *       └> §7.5.3: Content justification
+ */
 
 .flxjc--start {
   justify-content: start;
@@ -5159,6 +6023,10 @@ div.auto-scroller ul li {
   justify-content: space-evenly;
 }
 
+/**     ····························································································
+ *       └> §7.5.4: Item alignment
+ */
+
 .flxai--flex-start {
   align-items: flex-start;
 }
@@ -5174,6 +6042,10 @@ div.auto-scroller ul li {
 .flxai--center {
   align-items: center;
 }
+
+/**     ····························································································
+ *       └> §7.5.5: Content alignment
+ */
 
 .flxac--flex-start {
   align-content: flex-start;
@@ -5195,6 +6067,10 @@ div.auto-scroller ul li {
   align-content: space-around;
 }
 
+/**     ····························································································
+ *       └> §7.5.6: Basis
+ */
+
 .flxb--0 {
   flex-basis: 0;
 }
@@ -5207,6 +6083,10 @@ div.auto-scroller ul li {
   flex-basis: content;
 }
 
+/**     ····························································································
+ *       └> §7.5.7: Growth
+ */
+
 .flxg--0 {
   flex-grow: 0;
 }
@@ -5214,6 +6094,10 @@ div.auto-scroller ul li {
 .flxg--1 {
   flex-grow: 1;
 }
+
+/**     ····························································································
+ *       └> §7.5.8: Shrinking
+ */
 
 .flxs--0 {
   flex-shrink: 0;
@@ -5223,10 +6107,22 @@ div.auto-scroller ul li {
   flex-shrink: 1;
 }
 
+/** ================================================================================================
+ *  §8: Margins
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §8.1: General margins
+ */
+
 .mh--auto {
   margin-left: auto;
   margin-right: auto;
 }
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §8.2: In units of "em"
+ */
 
 .ma--0mx {
   margin: 0em;
@@ -5328,6 +6224,26 @@ div.auto-scroller ul li {
   margin-top: 1em;
 }
 
+.ma--1250mx {
+  margin: 1.25em;
+}
+
+.mb--1250mx {
+  margin-bottom: 1.25em;
+}
+
+.ml--1250mx {
+  margin-left: 1.25em;
+}
+
+.mr--1250mx {
+  margin-right: 1.25em;
+}
+
+.mt--1250mx {
+  margin-top: 1.25em;
+}
+
 .ma--1500mx {
   margin: 1.5em;
 }
@@ -5346,6 +6262,26 @@ div.auto-scroller ul li {
 
 .mt--1500mx {
   margin-top: 1.5em;
+}
+
+.ma--1750mx {
+  margin: 1.75em;
+}
+
+.mb--1750mx {
+  margin-bottom: 1.75em;
+}
+
+.ml--1750mx {
+  margin-left: 1.75em;
+}
+
+.mr--1750mx {
+  margin-right: 1.75em;
+}
+
+.mt--1750mx {
+  margin-top: 1.75em;
 }
 
 .ma--2000mx {
@@ -5447,6 +6383,10 @@ div.auto-scroller ul li {
 .mt--4000mx {
   margin-top: 4em;
 }
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §8.3: In units of "rem"
+ */
 
 .ma--rem--0mx {
   margin: 0rem;
@@ -5628,6 +6568,174 @@ div.auto-scroller ul li {
   margin-top: 2rem;
 }
 
+.ma--rem--2250mx {
+  margin: 2.25rem;
+}
+
+.mb--rem--2250mx {
+  margin-bottom: 2.25rem;
+}
+
+.ml--rem--2250mx {
+  margin-left: 2.25rem;
+}
+
+.mr--rem--2250mx {
+  margin-right: 2.25rem;
+}
+
+.mt--rem--2250mx {
+  margin-top: 2.25rem;
+}
+
+.ma--rem--2500mx {
+  margin: 2.5rem;
+}
+
+.mb--rem--2500mx {
+  margin-bottom: 2.5rem;
+}
+
+.ml--rem--2500mx {
+  margin-left: 2.5rem;
+}
+
+.mr--rem--2500mx {
+  margin-right: 2.5rem;
+}
+
+.mt--rem--2500mx {
+  margin-top: 2.5rem;
+}
+
+.ma--rem--2750mx {
+  margin: 2.75rem;
+}
+
+.mb--rem--2750mx {
+  margin-bottom: 2.75rem;
+}
+
+.ml--rem--2750mx {
+  margin-left: 2.75rem;
+}
+
+.mr--rem--2750mx {
+  margin-right: 2.75rem;
+}
+
+.mt--rem--2750mx {
+  margin-top: 2.75rem;
+}
+
+.ma--rem--3000mx {
+  margin: 3rem;
+}
+
+.mb--rem--3000mx {
+  margin-bottom: 3rem;
+}
+
+.ml--rem--3000mx {
+  margin-left: 3rem;
+}
+
+.mr--rem--3000mx {
+  margin-right: 3rem;
+}
+
+.mt--rem--3000mx {
+  margin-top: 3rem;
+}
+
+.ma--rem--3250mx {
+  margin: 3.25rem;
+}
+
+.mb--rem--3250mx {
+  margin-bottom: 3.25rem;
+}
+
+.ml--rem--3250mx {
+  margin-left: 3.25rem;
+}
+
+.mr--rem--3250mx {
+  margin-right: 3.25rem;
+}
+
+.mt--rem--3250mx {
+  margin-top: 3.25rem;
+}
+
+.ma--rem--3500mx {
+  margin: 3.5rem;
+}
+
+.mb--rem--3500mx {
+  margin-bottom: 3.5rem;
+}
+
+.ml--rem--3500mx {
+  margin-left: 3.5rem;
+}
+
+.mr--rem--3500mx {
+  margin-right: 3.5rem;
+}
+
+.mt--rem--3500mx {
+  margin-top: 3.5rem;
+}
+
+.ma--rem--3750mx {
+  margin: 3.75rem;
+}
+
+.mb--rem--3750mx {
+  margin-bottom: 3.75rem;
+}
+
+.ml--rem--3750mx {
+  margin-left: 3.75rem;
+}
+
+.mr--rem--3750mx {
+  margin-right: 3.75rem;
+}
+
+.mt--rem--3750mx {
+  margin-top: 3.75rem;
+}
+
+.ma--rem--4000mx {
+  margin: 4rem;
+}
+
+.mb--rem--4000mx {
+  margin-bottom: 4rem;
+}
+
+.ml--rem--4000mx {
+  margin-left: 4rem;
+}
+
+.mr--rem--4000mx {
+  margin-right: 4rem;
+}
+
+.mt--rem--4000mx {
+  margin-top: 4rem;
+}
+
+/** ================================================================================================
+ *  §9: Padding
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §9.1: In units of "em"
+ */
+
 .pa--0mx {
   padding: 0em;
 }
@@ -5649,344 +6757,172 @@ div.auto-scroller ul li {
 }
 
 .pa--250mx {
-  padding: 0.5em;
+  padding: 0.25em;
 }
 
 .pb--250mx {
-  padding-bottom: 0.5em;
+  padding-bottom: 0.25em;
 }
 
 .pl--250mx {
-  padding-left: 0.5em;
+  padding-left: 0.25em;
 }
 
 .pr--250mx {
-  padding-right: 0.5em;
+  padding-right: 0.25em;
 }
 
 .pt--250mx {
-  padding-top: 0.5em;
+  padding-top: 0.25em;
 }
 
 .pa--500mx {
-  padding: 1em;
+  padding: 0.5em;
 }
 
 .pb--500mx {
-  padding-bottom: 1em;
+  padding-bottom: 0.5em;
 }
 
 .pl--500mx {
-  padding-left: 1em;
+  padding-left: 0.5em;
 }
 
 .pr--500mx {
-  padding-right: 1em;
+  padding-right: 0.5em;
 }
 
 .pt--500mx {
-  padding-top: 1em;
+  padding-top: 0.5em;
 }
 
 .pa--750mx {
-  padding: 1.5em;
+  padding: 0.75em;
 }
 
 .pb--750mx {
-  padding-bottom: 1.5em;
+  padding-bottom: 0.75em;
 }
 
 .pl--750mx {
-  padding-left: 1.5em;
+  padding-left: 0.75em;
 }
 
 .pr--750mx {
-  padding-right: 1.5em;
+  padding-right: 0.75em;
 }
 
 .pt--750mx {
-  padding-top: 1.5em;
+  padding-top: 0.75em;
 }
 
 .pa--1000mx {
-  padding: 2em;
+  padding: 1em;
 }
 
 .pb--1000mx {
-  padding-bottom: 2em;
+  padding-bottom: 1em;
 }
 
 .pl--1000mx {
-  padding-left: 2em;
+  padding-left: 1em;
 }
 
 .pr--1000mx {
-  padding-right: 2em;
+  padding-right: 1em;
 }
 
 .pt--1000mx {
-  padding-top: 2em;
+  padding-top: 1em;
 }
 
 .pa--1250mx {
-  padding: 2.5em;
+  padding: 1.25em;
 }
 
 .pb--1250mx {
-  padding-bottom: 2.5em;
+  padding-bottom: 1.25em;
 }
 
 .pl--1250mx {
-  padding-left: 2.5em;
+  padding-left: 1.25em;
 }
 
 .pr--1250mx {
-  padding-right: 2.5em;
+  padding-right: 1.25em;
 }
 
 .pt--1250mx {
-  padding-top: 2.5em;
+  padding-top: 1.25em;
 }
 
 .pa--1500mx {
-  padding: 3em;
+  padding: 1.5em;
 }
 
 .pb--1500mx {
-  padding-bottom: 3em;
+  padding-bottom: 1.5em;
 }
 
 .pl--1500mx {
-  padding-left: 3em;
+  padding-left: 1.5em;
 }
 
 .pr--1500mx {
-  padding-right: 3em;
+  padding-right: 1.5em;
 }
 
 .pt--1500mx {
-  padding-top: 3em;
+  padding-top: 1.5em;
 }
 
 .pa--1750mx {
-  padding: 3.5em;
+  padding: 1.75em;
 }
 
 .pb--1750mx {
-  padding-bottom: 3.5em;
+  padding-bottom: 1.75em;
 }
 
 .pl--1750mx {
-  padding-left: 3.5em;
+  padding-left: 1.75em;
 }
 
 .pr--1750mx {
-  padding-right: 3.5em;
+  padding-right: 1.75em;
 }
 
 .pt--1750mx {
-  padding-top: 3.5em;
+  padding-top: 1.75em;
 }
 
 .pa--2000mx {
-  padding: 4em;
+  padding: 2em;
 }
 
 .pb--2000mx {
-  padding-bottom: 4em;
+  padding-bottom: 2em;
 }
 
 .pl--2000mx {
-  padding-left: 4em;
+  padding-left: 2em;
 }
 
 .pr--2000mx {
-  padding-right: 4em;
+  padding-right: 2em;
 }
 
 .pt--2000mx {
-  padding-top: 4em;
+  padding-top: 2em;
 }
 
-.pa--rem--0mx {
-  padding: 0;
-}
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §9.2: In units of "rem"
+ */
 
-.pb--rem--0mx {
-  padding-bottom: 0;
-}
-
-.pl--rem--0mx {
-  padding-left: 0;
-}
-
-.pr--rem--0mx {
-  padding-right: 0;
-}
-
-.pt--rem--0mx {
-  padding-top: 0;
-}
-
-.pa--rem--250mx {
-  padding: 0.5rem;
-}
-
-.pb--rem--250mx {
-  padding-bottom: 0.5rem;
-}
-
-.pl--rem--250mx {
-  padding-left: 0.5rem;
-}
-
-.pr--rem--250mx {
-  padding-right: 0.5rem;
-}
-
-.pt--rem--250mx {
-  padding-top: 0.5rem;
-}
-
-.pa--rem--500mx {
-  padding: 1rem;
-}
-
-.pb--rem--500mx {
-  padding-bottom: 1rem;
-}
-
-.pl--rem--500mx {
-  padding-left: 1rem;
-}
-
-.pr--rem--500mx {
-  padding-right: 1rem;
-}
-
-.pt--rem--500mx {
-  padding-top: 1rem;
-}
-
-.pa--rem--750mx {
-  padding: 1.5rem;
-}
-
-.pb--rem--750mx {
-  padding-bottom: 1.5rem;
-}
-
-.pl--rem--750mx {
-  padding-left: 1.5rem;
-}
-
-.pr--rem--750mx {
-  padding-right: 1.5rem;
-}
-
-.pt--rem--750mx {
-  padding-top: 1.5rem;
-}
-
-.pa--rem--1000mx {
-  padding: 2rem;
-}
-
-.pb--rem--1000mx {
-  padding-bottom: 2rem;
-}
-
-.pl--rem--1000mx {
-  padding-left: 2rem;
-}
-
-.pr--rem--1000mx {
-  padding-right: 2rem;
-}
-
-.pt--rem--1000mx {
-  padding-top: 2rem;
-}
-
-.pa--rem--1250mx {
-  padding: 2.5rem;
-}
-
-.pb--rem--1250mx {
-  padding-bottom: 2.5rem;
-}
-
-.pl--rem--1250mx {
-  padding-left: 2.5rem;
-}
-
-.pr--rem--1250mx {
-  padding-right: 2.5rem;
-}
-
-.pt--rem--1250mx {
-  padding-top: 2.5rem;
-}
-
-.pa--rem--1500mx {
-  padding: 3rem;
-}
-
-.pb--rem--1500mx {
-  padding-bottom: 3rem;
-}
-
-.pl--rem--1500mx {
-  padding-left: 3rem;
-}
-
-.pr--rem--1500mx {
-  padding-right: 3rem;
-}
-
-.pt--rem--1500mx {
-  padding-top: 3rem;
-}
-
-.pa--rem--1750mx {
-  padding: 3.5rem;
-}
-
-.pb--rem--1750mx {
-  padding-bottom: 3.5rem;
-}
-
-.pl--rem--1750mx {
-  padding-left: 3.5rem;
-}
-
-.pr--rem--1750mx {
-  padding-right: 3.5rem;
-}
-
-.pt--rem--1750mx {
-  padding-top: 3.5rem;
-}
-
-.pa--rem--2000mx {
-  padding: 4rem;
-}
-
-.pb--rem--2000mx {
-  padding-bottom: 4rem;
-}
-
-.pl--rem--2000mx {
-  padding-left: 4rem;
-}
-
-.pr--rem--2000mx {
-  padding-right: 4rem;
-}
-
-.pt--rem--2000mx {
-  padding-top: 4rem;
-}
+/** ================================================================================================
+ *  §10: Vertical alignment
+ */
 
 .va--baseline {
   vertical-align: baseline;
@@ -6020,117 +6956,21 @@ div.auto-scroller ul li {
   vertical-align: top;
 }
 
+/** ================================================================================================
+ *  §11: Colors
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §11.1: General
+ */
+
 .bgc--transparent {
   background-color: transparent;
 }
 
-.c--gray--lightest {
-  color: #eff0f1;
-}
-
-.c--gray--lighter {
-  color: #d7dadb;
-}
-
-.c--gray--light {
-  color: #b5babe;
-}
-
-.c--gray--lightish {
-  color: #8d959a;
-}
-
-.c--gray--darkish {
-  color: #5e5e5e;
-}
-
-.c--gray--dark {
-  color: #3b4042;
-}
-
-.c--gray--darker {
-  color: #2a3033;
-}
-
-.c--gray--darkest {
-  color: #000000;
-}
-
-.c--gray--accent {
-  color: #ffffff;
-}
-
-.bgc--gray--lightest {
-  background-color: #eff0f1;
-}
-
-.bgc--gray--lightest--25pct {
-  background-color: rgba(239, 240, 241, 0.25);
-}
-
-.bgc--gray--lighter {
-  background-color: #d7dadb;
-}
-
-.bgc--gray--lighter--25pct {
-  background-color: rgba(215, 218, 219, 0.25);
-}
-
-.bgc--gray--light {
-  background-color: #b5babe;
-}
-
-.bgc--gray--light--25pct {
-  background-color: rgba(181, 186, 190, 0.25);
-}
-
-.bgc--gray--lightish {
-  background-color: #8d959a;
-}
-
-.bgc--gray--lightish--25pct {
-  background-color: rgba(141, 149, 154, 0.25);
-}
-
-.bgc--gray--darkish {
-  background-color: #5e5e5e;
-}
-
-.bgc--gray--darkish--25pct {
-  background-color: rgba(94, 94, 94, 0.25);
-}
-
-.bgc--gray--dark {
-  background-color: #3b4042;
-}
-
-.bgc--gray--dark--25pct {
-  background-color: rgba(59, 64, 66, 0.25);
-}
-
-.bgc--gray--darker {
-  background-color: #2a3033;
-}
-
-.bgc--gray--darker--25pct {
-  background-color: rgba(42, 48, 51, 0.25);
-}
-
-.bgc--gray--darkest {
-  background-color: #000000;
-}
-
-.bgc--gray--darkest--25pct {
-  background-color: rgba(0, 0, 0, 0.25);
-}
-
-.bgc--gray--accent {
-  background-color: #ffffff;
-}
-
-.bgc--gray--accent--25pct {
-  background-color: rgba(255, 255, 255, 0.25);
-}
+/**   ----------------------------------------------------------------------------------------------
+ *    >>> §11.2: WSU Crimsons
+ */
 
 .c--crimson--lightest {
   color: #dc4e65;
@@ -6149,7 +6989,7 @@ div.auto-scroller ul li {
 }
 
 .c--crimson--darkish {
-  color: #981e32;
+  color: #a60f2d;
 }
 
 .c--crimson--dark {
@@ -6201,11 +7041,11 @@ div.auto-scroller ul li {
 }
 
 .bgc--crimson--darkish {
-  background-color: #981e32;
+  background-color: #a60f2d;
 }
 
 .bgc--crimson--darkish--25pct {
-  background-color: rgba(152, 30, 50, 0.25);
+  background-color: rgba(166, 15, 45, 0.25);
 }
 
 .bgc--crimson--dark {
@@ -6241,23 +7081,7 @@ div.auto-scroller ul li {
 }
 
 .bgc--crimson--tint {
-  background-color: #f2e2e4;
-}
-
-.bgc--green--tint {
-  background-color: #f4f3de;
-}
-
-.bgc--yellow--tint {
-  background-color: #fff6e1;
-}
-
-.bgc--blue--tint {
-  background-color: #def3f6;
-}
-
-.bgc--orange--tint {
-  background-color: #feefe2;
+  background-color: #f3e0e4;
 }
 
 /*! ================================================================================================
@@ -6736,7 +7560,7 @@ body.has-improved-contrast {
 }*/
 
 .column .article-tagline {
-  font-family: 'PT Serif', 'Palatino Linotype', 'Palatino', serif;
+  font-family: 'Cormorant Garamond', 'Palatino', serif;
   font-size: 1.43em;
   line-height: 1.313em;
   font-weight: 300;
@@ -6827,7 +7651,7 @@ header:first-child + .article-tagline:not(.has-no-bordering):not(.alt) {
 }
 
 .article-tagline:not(.has-no-bordering).crimson {
-  color: #981e32;
+  color: #a60f2d;
 }
 
 .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
@@ -6856,22 +7680,22 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
 .article-tagline:not(.has-no-bordering).crimson:not(.alt):before {
   top: -0.33333333rem;
   height: 5px;
-  border-top: 5px solid #981e32;
+  border-top: 5px solid #a60f2d;
 }
 
 .article-tagline:not(.has-no-bordering).crimson:not(.alt):after {
   bottom: -0.33333333rem;
   height: 1px;
   width: 33%;
-  border-top: 1px solid rgba(152, 30, 50, 0.75757576);
+  border-top: 1px solid rgba(166, 15, 45, 0.75757576);
 }
 
 .article-tagline:not(.has-no-bordering).crimson.alt {
   position: relative;
   padding-left: 0.75rem !important;
   padding-right: 0.75rem !important;
-  border-right: 1px solid rgba(152, 30, 50, 0.18939394);
-  border-left: 5px solid #981e32;
+  border-right: 1px solid rgba(166, 15, 45, 0.18939394);
+  border-left: 5px solid #a60f2d;
 }
 
 .article-tagline:not(.has-no-bordering).crimson.alt:before,
@@ -6885,12 +7709,12 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
 
 .article-tagline:not(.has-no-bordering).crimson.alt:before {
   right: 1px;
-  background-color: rgba(152, 30, 50, 0.37878788);
+  background-color: rgba(166, 15, 45, 0.37878788);
 }
 
 .article-tagline:not(.has-no-bordering).crimson.alt:after {
   right: 3px;
-  background-color: rgba(152, 30, 50, 0.37878788);
+  background-color: rgba(166, 15, 45, 0.37878788);
 }
 
 .article-tagline:not(.has-no-bordering).crimson .has-gray-text {
@@ -6926,7 +7750,7 @@ header:first-child + .article-tagline:not(.has-no-bordering).crimson:not(.alt) {
   margin-top: -0.5rem;
   margin-left: -0.5rem;
   margin-bottom: 0.5rem;
-  background-color: #981e32;
+  background-color: #a60f2d;
   color: #fff;
 }
 
@@ -7145,20 +7969,20 @@ body.page.cea .gform_wrapper .top_label li ul.gfield_radio li {
 
 .column a.recommend-button.crimson,
 .column a.glass-button.crimson {
-  background-color: #981e32;
+  background-color: #a60f2d;
   color: white;
 }
 
 .column a.recommend-button.crimson:hover,
 .column a.glass-button.crimson:hover {
-  background-color: #c60c30;
-  box-shadow: 0 0 18px rgba(198, 12, 48, 0.3333);
+  background-color: #ca1237;
+  box-shadow: 0 0 18px rgba(202, 18, 55, 0.3333);
 }
 
 .column a.recommend-button.yellow,
 .column a.glass-button.yellow {
   background-color: #ffb81c;
-  color: #000;
+  0color: #000;
 }
 
 .column a.recommend-button.yellow:hover,
@@ -7310,7 +8134,7 @@ body:not(.ascc-v1-legacy) {
 }
 
 body:not(.ascc-v1-legacy) .main-header {
-  background: #981e32 url(/wp-content/uploads/sites/167/2018/05/background-art_main-header_ascc-v2_1187x142.jpg) right center / cover no-repeat;
+  background: #a60f2d url(/wp-content/uploads/sites/167/2018/05/background-art_main-header_ascc-v2_1187x142.jpg) right center / cover no-repeat;
   min-height: 140px;
 }
 
@@ -7376,34 +8200,36 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
 }
 
 /*! ================================================================================================
-*** Media queries section
-*** ================================================================================================
-***   SUMMARY: Media queries built from precompiled CSS written in the Less language extension of
-***    CSS. Queries in this section are a combination of those designed for use on DAESA websites
-***    and those intended specifically for use on the Academic Success and Career Center website.
-***
-***   DESCRIPTION: Fully documented, precompiled source code from which this section of the custom
-***    stylesheet was built is developed and maintained on the following two GitHub projects:
-***    https://github.com/invokeImmediately/WSU-UE---CSS/
-***    https://github.com/invokeImmediately/ascc.wsu.edu/
-***
-***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
-***
-***   LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck.
-***
-***     Permission to use, copy, modify, and/or distribute this software for any purpose with or
-***     without fee is hereby granted, provided that the above copyright notice and this permission
-***     notice appear in all copies.
-***
-***     THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL C. RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO
-***     THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT
-***     SHALL DANIEL C. RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR
-***     ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
-***     CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE
-***     OR PERFORMANCE OF THIS SOFTWARE.
-*** ================================================================================================
-**/
-
+ *  ▐▀▄▀▌█▀▀▀ █▀▀▄ ▀█▀ ▄▀▀▄   ▄▀▀▄ █  █ █▀▀▀ █▀▀▄ ▀█▀ █▀▀▀ ▄▀▀▀
+ *  █ ▀ ▌█▀▀  █  █  █  █▄▄█   █  █ █  █ █▀▀  █▄▄▀  █  █▀▀  ▀▀▀█
+ *  █   ▀▀▀▀▀ ▀▀▀  ▀▀▀ █  ▀    ▀█▄  ▀▀  ▀▀▀▀ ▀  ▀▄▀▀▀ ▀▀▀▀ ▀▀▀
+ *  ================================================================================================
+ *  Media queries built from precompiled CSS written in the Less language extension of CSS. Queries
+ *    in this section are a combination of those designed for use on DAESA websites and those
+ *    intended specifically for use on the ASCC website.
+ *
+ *  Fully documented, precompiled source code from which this section of the stylesheet was
+ *    developed is maintained on the following two GitHub projects:
+ *    - https://github.com/invokeImmediately/WSU-DAESA-CSS/
+ *    - https://github.com/invokeImmediately/ascc.wsu.edu/
+ *
+ *  @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+ *  @license: MIT - Copyright (c) 2021 Washington State University
+ *    Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ *      and associated documentation files (the "Software"), to deal in the Software without
+ *      restriction, including without limitation the rights to use, copy, modify, merge, publish,
+ *      distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom
+ *      the Software is furnished to do so, subject to the following conditions:
+ *    The above copyright notice and this permission notice shall be included in all copies or
+ *      substantial portions of the Software.
+ *    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ *      BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *      NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ *      CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ *      ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *      SOFTWARE.
+ *  ================================================================================================
+ */
 @media all and (min-width: 481px) {
   .interactively-flipped-panels .container .panel-wrapper:hover .panel .front {
     transition-property: opacity, z-index;
@@ -7493,6 +8319,10 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
     display: none;
   }
 
+  .hide-when-floating-columns {
+    display: none !important;
+  }
+
   body.ascc-v1-legacy .fluid .row.side-left .column.one,
   body.ascc-v1-legacy .fluid .row.side-right .column.two {
     width: 33%;
@@ -7553,7 +8383,7 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
   }
 
   .fluid .row.side-left.our-services--sub-desktop .column.two {
-    padding-bottom: 1em;
+    padding-bottom: 0.5em;
   }
 
   .ascc-v2 .sub-row.our-services__button-arrangement--mobile {
@@ -7623,46 +8453,54 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
     font-size: 2.35294118rem;
   }
 
-  .single .article-deck {
+  .row.single .article-deck,
+  .row.side-right .article-deck.one,
+  .row.side-left .article-deck.two {
     font-size: 1.3416em;
   }
 
-  .mimic-two-column-sections .article-deck,
-  .side-right .article-deck,
-  .side-left .article-deck,
-  .halves .article-deck {
+  .row.mimic-two-column-sections .article-deck,
+  .row.side-right .article-deck.two,
+  .row.side-right .article-deck.one.mimic-sidebar,
+  .row.side-left .article-deck.one,
+  .row.side-left .article-deck.two.mimic-sidebar,
+  .row.halves .article-deck {
     font-size: 1.2em;
   }
 
-  .thirds .article-deck {
+  .row.thirds .article-deck {
     font-size: 1.2em;
   }
 
-  .quarters .article-deck {
+  .row.quarters .article-deck {
     font-size: 1.1292em;
   }
 
-  .column dl.faq > .expand-all-button,
-  .column dl.faq > .collapse-all-button {
+  .row dl.faq > .expand-all-button,
+  .row dl.faq > .collapse-all-button {
     font-size: 13.416px;
   }
 
-  .single .column {
+  .row.single .column,
+  .row.side-right .column.one,
+  .row.side-left .column.two {
     font-size: 1.118em;
   }
 
-  .mimic-two-column-sections .column,
-  .side-right .column,
-  .side-left .column,
-  .halves .column {
+  .row.mimic-two-column-sections .column,
+  .row.side-right .column.two,
+  .row.side-right .column.one.mimic-sidebar,
+  .row.side-left .column.one,
+  .row.side-left .column.two.mimic-sidebar,
+  .row.halves .column {
     font-size: 1em;
   }
 
-  .thirds .column {
+  .row.thirds .column {
     font-size: 1em;
   }
 
-  .quarters .column {
+  .row.quarters .column {
     font-size: 0.941em;
   }
 
@@ -7670,60 +8508,72 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
     font-size: 0.98384em;
   }
 
-  .single .article-tagline {
+  .row.single .article-tagline,
+  .row.side-right .article-tagline.one,
+  .row.side-left .article-tagline.two {
     font-size: 1.59874em;
   }
 
-  .mimic-two-column-sections .article-tagline,
-  .side-right .article-tagline,
-  .side-left .article-tagline,
-  .halves .article-tagline {
+  .row.mimic-two-column-sections .article-tagline,
+  .row.side-right .article-tagline.two,
+  .row.side-right .article-tagline.one.mimic-sidebar,
+  .row.side-left .article-tagline.one,
+  .row.side-left .article-tagline.two.mimic-sidebar,
+  .row.halves .article-tagline {
     font-size: 1.43em;
   }
 
-  .thirds .article-tagline {
+  .row.thirds .article-tagline {
     font-size: 1.43em;
   }
 
-  .quarters .article-tagline {
+  .row.quarters .article-tagline {
     font-size: 1.34563em;
   }
 
-  .single .article-tagline.home {
+  .row.single .article-tagline.home,
+  .row.side-right .article-tagline.home.one,
+  .row.side-left .article-tagline.home.two {
     font-size: 2.09490097em;
   }
 
-  .mimic-two-column-sections .article-tagline.home,
-  .side-right .article-tagline.home,
-  .side-left .article-tagline.home,
-  .halves .article-tagline.home {
+  .row.mimic-two-column-sections .article-tagline.home,
+  .row.side-right .article-tagline.home.two,
+  .row.side-right .article-tagline.home.one.mimic-sidebar,
+  .row.side-left .article-tagline.home.one,
+  .row.side-left .article-tagline.home.two.mimic-sidebar,
+  .row.halves .article-tagline.home {
     font-size: 1.87379335em;
   }
 
-  .thirds .article-tagline.home {
+  .row.thirds .article-tagline.home {
     font-size: 1.87379335em;
   }
 
-  .quarters .article-tagline.home {
+  .row.quarters .article-tagline.home {
     font-size: 1.76323954em;
   }
 
-  .single .intro-text {
+  .row.single .intro-text,
+  .row.side-right .intro-text.one,
+  .row.side-left .intro-text.two {
     font-size: 1.358929em;
   }
 
-  .mimic-two-column-sections .intro-text,
-  .side-right .intro-text,
-  .side-left .intro-text,
-  .halves .intro-text {
+  .row.mimic-two-column-sections .intro-text,
+  .row.side-right .intro-text.two,
+  .row.side-right .intro-text.one.mimic-sidebar,
+  .row.side-left .intro-text.one,
+  .row.side-left .intro-text.two.mimic-sidebar,
+  .row.halves .intro-text {
     font-size: 1.2155em;
   }
 
-  .thirds .intro-text {
+  .row.thirds .intro-text {
     font-size: 1.2155em;
   }
 
-  .quarters .intro-text {
+  .row.quarters .intro-text {
     font-size: 1.1437855em;
   }
 }
@@ -7752,13 +8602,13 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
   }
 }
 
-@media all and (min-width: 1205px) {
+@media all and (min-width: 1386px) {
   .builder-banner-slide:hover .builder-banner-content {
     font-size: 2rem;
   }
 }
 
-@media all and (max-width: 1205px) {
+@media all and (max-width: 1386px) {
   ul.cascaded-layout.blank > li {
     overflow-x: visible;
   }
@@ -7870,6 +8720,10 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
     display: none;
   }
 
+  .show-when-floating-columns {
+    display: none !important;
+  }
+
   .fluid .row .sub-row.row .column {
     width: 100%;
   }
@@ -7964,14 +8818,6 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
 }
 
 @media all and (max-width: 480px) {
-  .article-summary .article-thumbnail img {
-    width: 96px;
-  }
-
-  .wsuwp-json--headlines.layout--2-columns .wsuwp-content-syndicate-item {
-    width: 100%;
-  }
-
   .builder-banner-content {
     font-size: 5.1568vw;
     line-height: 6.9616vw;
@@ -8072,6 +8918,14 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
     width: 100%;
   }
 
+  .article-summary .article-thumbnail img {
+    width: 96px;
+  }
+
+  .wsuwp-json--headlines.layout--2-columns .wsuwp-content-syndicate-item {
+    width: 100%;
+  }
+
   .hide-on-mobile {
     display: none !important;
   }
@@ -8134,9 +8988,14 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
     padding-right: 0.5rem;
   }
 
+  .main-header .header-group.guttered {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
   .page-header__column-1 {
-    left: 0.5rem;
-    right: 0.5rem;
+    left: 0.25rem;
+    right: 0.25rem;
   }
 }
 
@@ -8147,30 +9006,34 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
 
   .main-header .sub-header-default,
   .main-header .sub-header {
-    font-size: 2.07529412rem;
+    font-size: 1.6rem;
   }
 
-  .single .article-deck {
+  .row.single .article-deck,
+  .row.side-right .article-deck.one,
+  .row.side-left .article-deck.two {
     font-size: 1.0584em;
   }
 
-  .mimic-two-column-sections .article-deck,
-  .side-right .article-deck,
-  .side-left .article-deck,
-  .halves .article-deck {
+  .row.mimic-two-column-sections .article-deck,
+  .row.side-right .article-deck.two,
+  .row.side-right .article-deck.one.mimic-sidebar,
+  .row.side-left .article-deck.one,
+  .row.side-left .article-deck.two.mimic-sidebar,
+  .row.halves .article-deck {
     font-size: 1.0584em;
   }
 
-  .thirds .article-deck {
+  .row.thirds .article-deck {
     font-size: 1.0584em;
   }
 
-  .quarters .article-deck {
+  .row.quarters .article-deck {
     font-size: 0.9888em;
   }
 
-  .column dl.faq > .expand-all-button,
-  .column dl.faq > .collapse-all-button {
+  .row dl.faq > .expand-all-button,
+  .row dl.faq > .collapse-all-button {
     font-size: 10.584px;
   }
 
@@ -8187,22 +9050,26 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
     margin-left: 0.5rem;
   }
 
-  .single .column {
+  .row.single .column,
+  .row.side-right .column.one,
+  .row.side-left .column.two {
     font-size: 0.882em;
   }
 
-  .mimic-two-column-sections .column,
-  .side-right .column,
-  .side-left .column,
-  .halves .column {
+  .row.mimic-two-column-sections .column,
+  .row.side-right .column.two,
+  .row.side-right .column.one.mimic-sidebar,
+  .row.side-left .column.one,
+  .row.side-left .column.two.mimic-sidebar,
+  .row.halves .column {
     font-size: 0.882em;
   }
 
-  .thirds .column {
+  .row.thirds .column {
     font-size: 0.882em;
   }
 
-  .quarters .column {
+  .row.quarters .column {
     font-size: 0.824em;
   }
 
@@ -8210,60 +9077,72 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
     font-size: 0.77616em;
   }
 
-  .single .article-tagline {
+  .row.single .article-tagline,
+  .row.side-right .article-tagline.one,
+  .row.side-left .article-tagline.two {
     font-size: 1.26126em;
   }
 
-  .mimic-two-column-sections .article-tagline,
-  .side-right .article-tagline,
-  .side-left .article-tagline,
-  .halves .article-tagline {
+  .row.mimic-two-column-sections .article-tagline,
+  .row.side-right .article-tagline.two,
+  .row.side-right .article-tagline.one.mimic-sidebar,
+  .row.side-left .article-tagline.one,
+  .row.side-left .article-tagline.two.mimic-sidebar,
+  .row.halves .article-tagline {
     font-size: 1.26126em;
   }
 
-  .thirds .article-tagline {
+  .row.thirds .article-tagline {
     font-size: 1.26126em;
   }
 
-  .quarters .article-tagline {
+  .row.quarters .article-tagline {
     font-size: 1.17832em;
   }
 
-  .single .article-tagline.home {
+  .row.single .article-tagline.home,
+  .row.side-right .article-tagline.home.one,
+  .row.side-left .article-tagline.home.two {
     font-size: 1.65268573em;
   }
 
-  .mimic-two-column-sections .article-tagline.home,
-  .side-right .article-tagline.home,
-  .side-left .article-tagline.home,
-  .halves .article-tagline.home {
+  .row.mimic-two-column-sections .article-tagline.home,
+  .row.side-right .article-tagline.home.two,
+  .row.side-right .article-tagline.home.one.mimic-sidebar,
+  .row.side-left .article-tagline.home.one,
+  .row.side-left .article-tagline.home.two.mimic-sidebar,
+  .row.halves .article-tagline.home {
     font-size: 1.65268573em;
   }
 
-  .thirds .article-tagline.home {
+  .row.thirds .article-tagline.home {
     font-size: 1.65268573em;
   }
 
-  .quarters .article-tagline.home {
+  .row.quarters .article-tagline.home {
     font-size: 1.54400572em;
   }
 
-  .single .intro-text {
+  .row.single .intro-text,
+  .row.side-right .intro-text.one,
+  .row.side-left .intro-text.two {
     font-size: 1.072071em;
   }
 
-  .mimic-two-column-sections .intro-text,
-  .side-right .intro-text,
-  .side-left .intro-text,
-  .halves .intro-text {
+  .row.mimic-two-column-sections .intro-text,
+  .row.side-right .intro-text.two,
+  .row.side-right .intro-text.one.mimic-sidebar,
+  .row.side-left .intro-text.one,
+  .row.side-left .intro-text.two.mimic-sidebar,
+  .row.halves .intro-text {
     font-size: 1.072071em;
   }
 
-  .thirds .intro-text {
+  .row.thirds .intro-text {
     font-size: 1.072071em;
   }
 
-  .quarters .intro-text {
+  .row.quarters .intro-text {
     font-size: 1.001572em;
   }
 }
@@ -8310,9 +9189,14 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
     padding-right: 1rem;
   }
 
+  .main-header .header-group.guttered {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .page-header__column-1 {
-    left: 1rem;
-    right: 1rem;
+    left: 0.5rem;
+    right: 0.5rem;
   }
 }
 
@@ -8323,49 +9207,57 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
 
   .main-header .sub-header-default,
   .main-header .sub-header {
-    font-size: 2.21411765rem;
+    font-size: 2.11764706rem;
   }
 
-  .single .article-deck {
+  .row.single .article-deck,
+  .row.side-right .article-deck.one,
+  .row.side-left .article-deck.two {
     font-size: 1.2em;
   }
 
-  .mimic-two-column-sections .article-deck,
-  .side-right .article-deck,
-  .side-left .article-deck,
-  .halves .article-deck {
+  .row.mimic-two-column-sections .article-deck,
+  .row.side-right .article-deck.two,
+  .row.side-right .article-deck.one.mimic-sidebar,
+  .row.side-left .article-deck.one,
+  .row.side-left .article-deck.two.mimic-sidebar,
+  .row.halves .article-deck {
     font-size: 1.1292em;
   }
 
-  .thirds .article-deck {
+  .row.thirds .article-deck {
     font-size: 1.0584em;
   }
 
-  .quarters .article-deck {
+  .row.quarters .article-deck {
     font-size: 1.0584em;
   }
 
-  .column dl.faq > .expand-all-button,
-  .column dl.faq > .collapse-all-button {
+  .row dl.faq > .expand-all-button,
+  .row dl.faq > .collapse-all-button {
     font-size: 12px;
   }
 
-  .single .column {
+  .row.single .column,
+  .row.side-right .column.one,
+  .row.side-left .column.two {
     font-size: 1em;
   }
 
-  .mimic-two-column-sections .column,
-  .side-right .column,
-  .side-left .column,
-  .halves .column {
+  .row.mimic-two-column-sections .column,
+  .row.side-right .column.two,
+  .row.side-right .column.one.mimic-sidebar,
+  .row.side-left .column.one,
+  .row.side-left .column.two.mimic-sidebar,
+  .row.halves .column {
     font-size: 0.941em;
   }
 
-  .thirds .column {
+  .row.thirds .column {
     font-size: 0.882em;
   }
 
-  .quarters .column {
+  .row.quarters .column {
     font-size: 0.882em;
   }
 
@@ -8373,60 +9265,72 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
     font-size: 0.88em;
   }
 
-  .single .article-tagline {
+  .row.single .article-tagline,
+  .row.side-right .article-tagline.one,
+  .row.side-left .article-tagline.two {
     font-size: 1.43em;
   }
 
-  .mimic-two-column-sections .article-tagline,
-  .side-right .article-tagline,
-  .side-left .article-tagline,
-  .halves .article-tagline {
+  .row.mimic-two-column-sections .article-tagline,
+  .row.side-right .article-tagline.two,
+  .row.side-right .article-tagline.one.mimic-sidebar,
+  .row.side-left .article-tagline.one,
+  .row.side-left .article-tagline.two.mimic-sidebar,
+  .row.halves .article-tagline {
     font-size: 1.34563em;
   }
 
-  .thirds .article-tagline {
+  .row.thirds .article-tagline {
     font-size: 1.26126em;
   }
 
-  .quarters .article-tagline {
+  .row.quarters .article-tagline {
     font-size: 1.26126em;
   }
 
-  .single .article-tagline.home {
+  .row.single .article-tagline.home,
+  .row.side-right .article-tagline.home.one,
+  .row.side-left .article-tagline.home.two {
     font-size: 1.87379335em;
   }
 
-  .mimic-two-column-sections .article-tagline.home,
-  .side-right .article-tagline.home,
-  .side-left .article-tagline.home,
-  .halves .article-tagline.home {
+  .row.mimic-two-column-sections .article-tagline.home,
+  .row.side-right .article-tagline.home.two,
+  .row.side-right .article-tagline.home.one.mimic-sidebar,
+  .row.side-left .article-tagline.home.one,
+  .row.side-left .article-tagline.home.two.mimic-sidebar,
+  .row.halves .article-tagline.home {
     font-size: 1.76323954em;
   }
 
-  .thirds .article-tagline.home {
+  .row.thirds .article-tagline.home {
     font-size: 1.65268573em;
   }
 
-  .quarters .article-tagline.home {
+  .row.quarters .article-tagline.home {
     font-size: 1.65268573em;
   }
 
-  .single .intro-text {
+  .row.single .intro-text,
+  .row.side-right .intro-text.one,
+  .row.side-left .intro-text.two {
     font-size: 1.2155em;
   }
 
-  .mimic-two-column-sections .intro-text,
-  .side-right .intro-text,
-  .side-left .intro-text,
-  .halves .intro-text {
+  .row.mimic-two-column-sections .intro-text,
+  .row.side-right .intro-text.two,
+  .row.side-right .intro-text.one.mimic-sidebar,
+  .row.side-left .intro-text.one,
+  .row.side-left .intro-text.two.mimic-sidebar,
+  .row.halves .intro-text {
     font-size: 1.1437855em;
   }
 
-  .thirds .intro-text {
+  .row.thirds .intro-text {
     font-size: 1.072071em;
   }
 
-  .quarters .intro-text {
+  .row.quarters .intro-text {
     font-size: 1.072071em;
   }
 }
@@ -8438,49 +9342,57 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
 
   .main-header .sub-header-default,
   .main-header .sub-header {
-    font-size: 2.21411765rem;
+    font-size: 2.11764706rem;
   }
 
-  .single .article-deck {
+  .row.single .article-deck,
+  .row.side-right .article-deck.one,
+  .row.side-left .article-deck.two {
     font-size: 1.3416em;
   }
 
-  .mimic-two-column-sections .article-deck,
-  .side-right .article-deck,
-  .side-left .article-deck,
-  .halves .article-deck {
+  .row.mimic-two-column-sections .article-deck,
+  .row.side-right .article-deck.two,
+  .row.side-right .article-deck.one.mimic-sidebar,
+  .row.side-left .article-deck.one,
+  .row.side-left .article-deck.two.mimic-sidebar,
+  .row.halves .article-deck {
     font-size: 1.1292em;
   }
 
-  .thirds .article-deck {
+  .row.thirds .article-deck {
     font-size: 1.0584em;
   }
 
-  .quarters .article-deck {
+  .row.quarters .article-deck {
     font-size: 1.0584em;
   }
 
-  .column dl.faq > .expand-all-button,
-  .column dl.faq > .collapse-all-button {
+  .row dl.faq > .expand-all-button,
+  .row dl.faq > .collapse-all-button {
     font-size: 13.416px;
   }
 
-  .single .column {
+  .row.single .column,
+  .row.side-right .column.one,
+  .row.side-left .column.two {
     font-size: 1.118em;
   }
 
-  .mimic-two-column-sections .column,
-  .side-right .column,
-  .side-left .column,
-  .halves .column {
+  .row.mimic-two-column-sections .column,
+  .row.side-right .column.two,
+  .row.side-right .column.one.mimic-sidebar,
+  .row.side-left .column.one,
+  .row.side-left .column.two.mimic-sidebar,
+  .row.halves .column {
     font-size: 0.941em;
   }
 
-  .thirds .column {
+  .row.thirds .column {
     font-size: 0.882em;
   }
 
-  .quarters .column {
+  .row.quarters .column {
     font-size: 0.882em;
   }
 
@@ -8488,60 +9400,72 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
     font-size: 0.98384em;
   }
 
-  .single .article-tagline {
+  .row.single .article-tagline,
+  .row.side-right .article-tagline.one,
+  .row.side-left .article-tagline.two {
     font-size: 1.59874em;
   }
 
-  .mimic-two-column-sections .article-tagline,
-  .side-right .article-tagline,
-  .side-left .article-tagline,
-  .halves .article-tagline {
+  .row.mimic-two-column-sections .article-tagline,
+  .row.side-right .article-tagline.two,
+  .row.side-right .article-tagline.one.mimic-sidebar,
+  .row.side-left .article-tagline.one,
+  .row.side-left .article-tagline.two.mimic-sidebar,
+  .row.halves .article-tagline {
     font-size: 1.34563em;
   }
 
-  .thirds .article-tagline {
+  .row.thirds .article-tagline {
     font-size: 1.26126em;
   }
 
-  .quarters .article-tagline {
+  .row.quarters .article-tagline {
     font-size: 1.26126em;
   }
 
-  .single .article-tagline.home {
+  .row.single .article-tagline.home,
+  .row.side-right .article-tagline.home.one,
+  .row.side-left .article-tagline.home.two {
     font-size: 2.09490097em;
   }
 
-  .mimic-two-column-sections .article-tagline.home,
-  .side-right .article-tagline.home,
-  .side-left .article-tagline.home,
-  .halves .article-tagline.home {
+  .row.mimic-two-column-sections .article-tagline.home,
+  .row.side-right .article-tagline.home.two,
+  .row.side-right .article-tagline.home.one.mimic-sidebar,
+  .row.side-left .article-tagline.home.one,
+  .row.side-left .article-tagline.home.two.mimic-sidebar,
+  .row.halves .article-tagline.home {
     font-size: 1.76323954em;
   }
 
-  .thirds .article-tagline.home {
+  .row.thirds .article-tagline.home {
     font-size: 1.65268573em;
   }
 
-  .quarters .article-tagline.home {
+  .row.quarters .article-tagline.home {
     font-size: 1.65268573em;
   }
 
-  .single .intro-text {
+  .row.single .intro-text,
+  .row.side-right .intro-text.one,
+  .row.side-left .intro-text.two {
     font-size: 1.358929em;
   }
 
-  .mimic-two-column-sections .intro-text,
-  .side-right .intro-text,
-  .side-left .intro-text,
-  .halves .intro-text {
+  .row.mimic-two-column-sections .intro-text,
+  .row.side-right .intro-text.two,
+  .row.side-right .intro-text.one.mimic-sidebar,
+  .row.side-left .intro-text.one,
+  .row.side-left .intro-text.two.mimic-sidebar,
+  .row.halves .intro-text {
     font-size: 1.1437855em;
   }
 
-  .thirds .intro-text {
+  .row.thirds .intro-text {
     font-size: 1.072071em;
   }
 
-  .quarters .intro-text {
+  .row.quarters .intro-text {
     font-size: 1.072071em;
   }
 }
@@ -8556,46 +9480,54 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
     font-size: 2.35294118rem;
   }
 
-  .single .article-deck {
+  .row.single .article-deck,
+  .row.side-right .article-deck.one,
+  .row.side-left .article-deck.two {
     font-size: 1.2em;
   }
 
-  .mimic-two-column-sections .article-deck,
-  .side-right .article-deck,
-  .side-left .article-deck,
-  .halves .article-deck {
+  .row.mimic-two-column-sections .article-deck,
+  .row.side-right .article-deck.two,
+  .row.side-right .article-deck.one.mimic-sidebar,
+  .row.side-left .article-deck.one,
+  .row.side-left .article-deck.two.mimic-sidebar,
+  .row.halves .article-deck {
     font-size: 1.2em;
   }
 
-  .thirds .article-deck {
+  .row.thirds .article-deck {
     font-size: 1.2em;
   }
 
-  .quarters .article-deck {
+  .row.quarters .article-deck {
     font-size: 1.1292em;
   }
 
-  .column dl.faq > .expand-all-button,
-  .column dl.faq > .collapse-all-button {
+  .row dl.faq > .expand-all-button,
+  .row dl.faq > .collapse-all-button {
     font-size: 12px;
   }
 
-  .single .column {
+  .row.single .column,
+  .row.side-right .column.one,
+  .row.side-left .column.two {
     font-size: 1em;
   }
 
-  .mimic-two-column-sections .column,
-  .side-right .column,
-  .side-left .column,
-  .halves .column {
+  .row.mimic-two-column-sections .column,
+  .row.side-right .column.two,
+  .row.side-right .column.one.mimic-sidebar,
+  .row.side-left .column.one,
+  .row.side-left .column.two.mimic-sidebar,
+  .row.halves .column {
     font-size: 1em;
   }
 
-  .thirds .column {
+  .row.thirds .column {
     font-size: 1em;
   }
 
-  .quarters .column {
+  .row.quarters .column {
     font-size: 0.941em;
   }
 
@@ -8603,60 +9535,72 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
     font-size: 0.88em;
   }
 
-  .single .article-tagline {
+  .row.single .article-tagline,
+  .row.side-right .article-tagline.one,
+  .row.side-left .article-tagline.two {
     font-size: 1.43em;
   }
 
-  .mimic-two-column-sections .article-tagline,
-  .side-right .article-tagline,
-  .side-left .article-tagline,
-  .halves .article-tagline {
+  .row.mimic-two-column-sections .article-tagline,
+  .row.side-right .article-tagline.two,
+  .row.side-right .article-tagline.one.mimic-sidebar,
+  .row.side-left .article-tagline.one,
+  .row.side-left .article-tagline.two.mimic-sidebar,
+  .row.halves .article-tagline {
     font-size: 1.43em;
   }
 
-  .thirds .article-tagline {
+  .row.thirds .article-tagline {
     font-size: 1.43em;
   }
 
-  .quarters .article-tagline {
+  .row.quarters .article-tagline {
     font-size: 1.34563em;
   }
 
-  .single .article-tagline.home {
+  .row.single .article-tagline.home,
+  .row.side-right .article-tagline.home.one,
+  .row.side-left .article-tagline.home.two {
     font-size: 1.87379335em;
   }
 
-  .mimic-two-column-sections .article-tagline.home,
-  .side-right .article-tagline.home,
-  .side-left .article-tagline.home,
-  .halves .article-tagline.home {
+  .row.mimic-two-column-sections .article-tagline.home,
+  .row.side-right .article-tagline.home.two,
+  .row.side-right .article-tagline.home.one.mimic-sidebar,
+  .row.side-left .article-tagline.home.one,
+  .row.side-left .article-tagline.home.two.mimic-sidebar,
+  .row.halves .article-tagline.home {
     font-size: 1.87379335em;
   }
 
-  .thirds .article-tagline.home {
+  .row.thirds .article-tagline.home {
     font-size: 1.87379335em;
   }
 
-  .quarters .article-tagline.home {
+  .row.quarters .article-tagline.home {
     font-size: 1.76323954em;
   }
 
-  .single .intro-text {
+  .row.single .intro-text,
+  .row.side-right .intro-text.one,
+  .row.side-left .intro-text.two {
     font-size: 1.2155em;
   }
 
-  .mimic-two-column-sections .intro-text,
-  .side-right .intro-text,
-  .side-left .intro-text,
-  .halves .intro-text {
+  .row.mimic-two-column-sections .intro-text,
+  .row.side-right .intro-text.two,
+  .row.side-right .intro-text.one.mimic-sidebar,
+  .row.side-left .intro-text.one,
+  .row.side-left .intro-text.two.mimic-sidebar,
+  .row.halves .intro-text {
     font-size: 1.2155em;
   }
 
-  .thirds .intro-text {
+  .row.thirds .intro-text {
     font-size: 1.2155em;
   }
 
-  .quarters .intro-text {
+  .row.quarters .intro-text {
     font-size: 1.1437855em;
   }
 }
@@ -8668,30 +9612,34 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
 
   .main-header .sub-header-default,
   .main-header .sub-header {
-    font-size: 2.21411765rem;
+    font-size: 1.78823529rem;
   }
 
-  .single .article-deck {
+  .row.single .article-deck,
+  .row.side-right .article-deck.one,
+  .row.side-left .article-deck.two {
     font-size: 1.1292em;
   }
 
-  .mimic-two-column-sections .article-deck,
-  .side-right .article-deck,
-  .side-left .article-deck,
-  .halves .article-deck {
+  .row.mimic-two-column-sections .article-deck,
+  .row.side-right .article-deck.two,
+  .row.side-right .article-deck.one.mimic-sidebar,
+  .row.side-left .article-deck.one,
+  .row.side-left .article-deck.two.mimic-sidebar,
+  .row.halves .article-deck {
     font-size: 1.1292em;
   }
 
-  .thirds .article-deck {
+  .row.thirds .article-deck {
     font-size: 1.1292em;
   }
 
-  .quarters .article-deck {
+  .row.quarters .article-deck {
     font-size: 1.0584em;
   }
 
-  .column dl.faq > .expand-all-button,
-  .column dl.faq > .collapse-all-button {
+  .row dl.faq > .expand-all-button,
+  .row dl.faq > .collapse-all-button {
     font-size: 11.292px;
   }
 
@@ -8708,22 +9656,26 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
     margin-left: 1rem;
   }
 
-  .single .column {
+  .row.single .column,
+  .row.side-right .column.one,
+  .row.side-left .column.two {
     font-size: 0.941em;
   }
 
-  .mimic-two-column-sections .column,
-  .side-right .column,
-  .side-left .column,
-  .halves .column {
+  .row.mimic-two-column-sections .column,
+  .row.side-right .column.two,
+  .row.side-right .column.one.mimic-sidebar,
+  .row.side-left .column.one,
+  .row.side-left .column.two.mimic-sidebar,
+  .row.halves .column {
     font-size: 0.941em;
   }
 
-  .thirds .column {
+  .row.thirds .column {
     font-size: 0.941em;
   }
 
-  .quarters .column {
+  .row.quarters .column {
     font-size: 0.882em;
   }
 
@@ -8731,65 +9683,77 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
     font-size: 0.82808em;
   }
 
-  .single .article-tagline {
+  .row.single .article-tagline,
+  .row.side-right .article-tagline.one,
+  .row.side-left .article-tagline.two {
     font-size: 1.34563em;
   }
 
-  .mimic-two-column-sections .article-tagline,
-  .side-right .article-tagline,
-  .side-left .article-tagline,
-  .halves .article-tagline {
+  .row.mimic-two-column-sections .article-tagline,
+  .row.side-right .article-tagline.two,
+  .row.side-right .article-tagline.one.mimic-sidebar,
+  .row.side-left .article-tagline.one,
+  .row.side-left .article-tagline.two.mimic-sidebar,
+  .row.halves .article-tagline {
     font-size: 1.34563em;
   }
 
-  .thirds .article-tagline {
+  .row.thirds .article-tagline {
     font-size: 1.34563em;
   }
 
-  .quarters .article-tagline {
+  .row.quarters .article-tagline {
     font-size: 1.26126em;
   }
 
-  .single .article-tagline.home {
+  .row.single .article-tagline.home,
+  .row.side-right .article-tagline.home.one,
+  .row.side-left .article-tagline.home.two {
     font-size: 1.76323954em;
   }
 
-  .mimic-two-column-sections .article-tagline.home,
-  .side-right .article-tagline.home,
-  .side-left .article-tagline.home,
-  .halves .article-tagline.home {
+  .row.mimic-two-column-sections .article-tagline.home,
+  .row.side-right .article-tagline.home.two,
+  .row.side-right .article-tagline.home.one.mimic-sidebar,
+  .row.side-left .article-tagline.home.one,
+  .row.side-left .article-tagline.home.two.mimic-sidebar,
+  .row.halves .article-tagline.home {
     font-size: 1.76323954em;
   }
 
-  .thirds .article-tagline.home {
+  .row.thirds .article-tagline.home {
     font-size: 1.76323954em;
   }
 
-  .quarters .article-tagline.home {
+  .row.quarters .article-tagline.home {
     font-size: 1.65268573em;
   }
 
-  .single .intro-text {
+  .row.single .intro-text,
+  .row.side-right .intro-text.one,
+  .row.side-left .intro-text.two {
     font-size: 1.1437855em;
   }
 
-  .mimic-two-column-sections .intro-text,
-  .side-right .intro-text,
-  .side-left .intro-text,
-  .halves .intro-text {
+  .row.mimic-two-column-sections .intro-text,
+  .row.side-right .intro-text.two,
+  .row.side-right .intro-text.one.mimic-sidebar,
+  .row.side-left .intro-text.one,
+  .row.side-left .intro-text.two.mimic-sidebar,
+  .row.halves .intro-text {
     font-size: 1.1437855em;
   }
 
-  .thirds .intro-text {
+  .row.thirds .intro-text {
     font-size: 1.1437855em;
   }
 
-  .quarters .intro-text {
+  .row.quarters .intro-text {
     font-size: 1.072071em;
   }
 }
 
-@media all and (max-width: 1204px) and (min-width: 990px) {
+@media all and (max-width: 1385px) and (min-width: 990px) {
   .builder-banner-content {
     font-size: 2.1179vw;
     line-height: 2.8592vw;
@@ -8932,7 +9896,7 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
 @media all {
   .main-header .sub-header-default,
   .main-header .sub-header {
-    line-height: 0.9em;
+    line-height: 1em;
   }
 
   .article-header:not(.row) .header-content h1,
@@ -8971,46 +9935,54 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
     text-shadow: 0 0.3333px 0 #77898b, 0 0.6667px 0 #687779, 0 1px 0 #576365, 0 1.3333px 0 #475153, 0 1.6667px 0 #363e3f, 0 2px 0.3333px rgba(0, 0, 0, 0.1), 0 0 1.6667px rgba(0, 0, 0, 0.1), 0 0.3333px 1px rgba(0, 0, 0, 0.3), 0 1px 1.6667px rgba(0, 0, 0, 0.2), 0 1.6667px 3.3333px rgba(0, 0, 0, 0.25), 0 3.3333px 3.3333px rgba(0, 0, 0, 0.2), 0 6.6667px 6.6667px rgba(0, 0, 0, 0.15);
   }
 
-  .single .article-deck {
+  .row.single .article-deck,
+  .row.side-right .article-deck.one,
+  .row.side-left .article-deck.two {
     line-height: 1.5em;
   }
 
-  .mimic-two-column-sections .article-deck,
-  .side-right .article-deck,
-  .side-left .article-deck,
-  .halves .article-deck {
+  .row.mimic-two-column-sections .article-deck,
+  .row.side-right .article-deck.two,
+  .row.side-right .article-deck.one.mimic-sidebar,
+  .row.side-left .article-deck.one,
+  .row.side-left .article-deck.two.mimic-sidebar,
+  .row.halves .article-deck {
     line-height: 1.5em;
   }
 
-  .thirds .article-deck {
+  .row.thirds .article-deck {
     line-height: 1.5em;
   }
 
-  .quarters .article-deck {
+  .row.quarters .article-deck {
     line-height: 1.5em;
   }
 
-  .column dl.faq > .expand-all-button,
-  .column dl.faq > .collapse-all-button {
+  .row dl.faq > .expand-all-button,
+  .row dl.faq > .collapse-all-button {
     line-height: 12px;
   }
 
-  .single .column {
+  .row.single .column,
+  .row.side-right .column.one,
+  .row.side-left .column.two {
     line-height: 1.5em;
   }
 
-  .mimic-two-column-sections .column,
-  .side-right .column,
-  .side-left .column,
-  .halves .column {
+  .row.mimic-two-column-sections .column,
+  .row.side-right .column.two,
+  .row.side-right .column.one.mimic-sidebar,
+  .row.side-left .column.one,
+  .row.side-left .column.two.mimic-sidebar,
+  .row.halves .column {
     line-height: 1.5em;
   }
 
-  .thirds .column {
+  .row.thirds .column {
     line-height: 1.5em;
   }
 
-  .quarters .column {
+  .row.quarters .column {
     line-height: 1.5em;
   }
 
@@ -9030,60 +10002,72 @@ body:not(.ascc-v1-legacy) .sub-row.halves .sub-column {
     line-height: 1.5em;
   }
 
-  .single .article-tagline {
+  .row.single .article-tagline,
+  .row.side-right .article-tagline.one,
+  .row.side-left .article-tagline.two {
     line-height: 1.5em;
   }
 
-  .mimic-two-column-sections .article-tagline,
-  .side-right .article-tagline,
-  .side-left .article-tagline,
-  .halves .article-tagline {
+  .row.mimic-two-column-sections .article-tagline,
+  .row.side-right .article-tagline.two,
+  .row.side-right .article-tagline.one.mimic-sidebar,
+  .row.side-left .article-tagline.one,
+  .row.side-left .article-tagline.two.mimic-sidebar,
+  .row.halves .article-tagline {
     line-height: 1.5em;
   }
 
-  .thirds .article-tagline {
+  .row.thirds .article-tagline {
     line-height: 1.5em;
   }
 
-  .quarters .article-tagline {
+  .row.quarters .article-tagline {
     line-height: 1.5em;
   }
 
-  .single .article-tagline.home {
+  .row.single .article-tagline.home,
+  .row.side-right .article-tagline.home.one,
+  .row.side-left .article-tagline.home.two {
     line-height: 1.5em;
   }
 
-  .mimic-two-column-sections .article-tagline.home,
-  .side-right .article-tagline.home,
-  .side-left .article-tagline.home,
-  .halves .article-tagline.home {
+  .row.mimic-two-column-sections .article-tagline.home,
+  .row.side-right .article-tagline.home.two,
+  .row.side-right .article-tagline.home.one.mimic-sidebar,
+  .row.side-left .article-tagline.home.one,
+  .row.side-left .article-tagline.home.two.mimic-sidebar,
+  .row.halves .article-tagline.home {
     line-height: 1.5em;
   }
 
-  .thirds .article-tagline.home {
+  .row.thirds .article-tagline.home {
     line-height: 1.5em;
   }
 
-  .quarters .article-tagline.home {
+  .row.quarters .article-tagline.home {
     line-height: 1.5em;
   }
 
-  .single .intro-text {
+  .row.single .intro-text,
+  .row.side-right .intro-text.one,
+  .row.side-left .intro-text.two {
     line-height: 1.5em;
   }
 
-  .mimic-two-column-sections .intro-text,
-  .side-right .intro-text,
-  .side-left .intro-text,
-  .halves .intro-text {
+  .row.mimic-two-column-sections .intro-text,
+  .row.side-right .intro-text.two,
+  .row.side-right .intro-text.one.mimic-sidebar,
+  .row.side-left .intro-text.one,
+  .row.side-left .intro-text.two.mimic-sidebar,
+  .row.halves .intro-text {
     line-height: 1.5em;
   }
 
-  .thirds .intro-text {
+  .row.thirds .intro-text {
     line-height: 1.5em;
   }
 
-  .quarters .intro-text {
+  .row.quarters .intro-text {
     line-height: 1.5em;
   }
 }
